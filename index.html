@@ -3,54 +3,304 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MrsMillennial Designs — Handmade &amp; Digital Goods on Etsy</title>
-  <style>
-    :root { --bg: #faf9f7; --text: #1a1a1a; --muted: #666; --accent: #d35400; --light: #fff; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, sans-serif; line-height: 1.6; }
-    .container { max-width: 700px; margin: 0 auto; padding: 60px 24px; text-align: center; }
-    h1 { font-size: 36px; font-weight: 800; margin-bottom: 8px; }
-    h1 span { color: var(--accent); }
-    .tagline { font-size: 18px; color: var(--muted); margin-bottom: 40px; }
-    .btn { display: inline-block; padding: 14px 32px; background: var(--accent); color: var(--light); font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 8px; transition: background 0.2s; }
-    .btn:hover { background: #b94700; }
-    .info { margin-top: 48px; display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; }
-    .info-item { text-align: center; max-width: 200px; }
-    .info-item h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-    .info-item p { font-size: 13px; color: var(--muted); }
-    .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 12px; color: var(--muted); }
-    .footer a { color: var(--accent); text-decoration: none; }
-  </style>
+  <title>MrsMillennial Designs | Handmade Digital Art & Printable Keepsakes</title>
+  <meta name="description" content="Beautiful handmade digital art, handprint templates, and classroom resources. Create meaningful keepsakes and brighten classrooms with designs crafted with love.">
+  <meta property="og:title" content="MrsMillennial Designs">
+  <meta property="og:description" content="Handmade digital art & printable keepsakes crafted with love">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mrsmillennialdesigns.github.io">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Mrs<span>Millennial</span> Designs</h1>
-    <p class="tagline">Handmade &amp; digital goods — curated with care on Etsy.</p>
-    <a href="https://mrsmillennial.etsy.com" class="btn">Visit Our Etsy Shop</a>
 
-    <div class="info">
-      <div class="info-item">
-        <h3>Handmade Goods</h3>
-        <p>Unique, thoughtfully crafted products made with love.</p>
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="logo-flower">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="5" fill="#e8a0b4"/>
+          <ellipse cx="16" cy="6" rx="4" ry="6" fill="#b8a9c9" opacity="0.7"/>
+          <ellipse cx="16" cy="26" rx="4" ry="6" fill="#a8c5a0" opacity="0.7"/>
+          <ellipse cx="6" cy="16" rx="6" ry="4" fill="#e8a0b4" opacity="0.6"/>
+          <ellipse cx="26" cy="16" rx="6" ry="4" fill="#b8a9c9" opacity="0.6"/>
+          <ellipse cx="8.5" cy="8.5" rx="4" ry="5" fill="#a8c5a0" opacity="0.5" transform="rotate(-45 8.5 8.5)"/>
+          <ellipse cx="23.5" cy="8.5" rx="4" ry="5" fill="#e8a0b4" opacity="0.5" transform="rotate(45 23.5 8.5)"/>
+          <ellipse cx="8.5" cy="23.5" rx="4" ry="5" fill="#b8a9c9" opacity="0.5" transform="rotate(45 8.5 23.5)"/>
+          <ellipse cx="23.5" cy="23.5" rx="4" ry="5" fill="#a8c5a0" opacity="0.5" transform="rotate(-45 23.5 23.5)"/>
+        </svg>
       </div>
-      <div class="info-item">
-        <h3>Digital Downloads</h3>
-        <p>Instant-access digital designs and templates.</p>
-      </div>
-      <div class="info-item">
-        <h3>Shop with Confidence</h3>
-        <p>Backed by Etsy's buyer protection and our commitment to quality.</p>
-      </div>
-    </div>
+      <span>MrsMillennial</span> Designs
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/products.html">Shop</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-    <div class="footer">
-      <p>&copy; 2026 MrsMillennial Designs</p>
-      <p style="margin-top: 6px;">
-        <a href="https://mrsmillennial.etsy.com">Etsy Shop</a>
-        &middot;
-        <a href="/privacy">Privacy Policy</a>
-      </p>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-decoration flower-1"></div>
+  <div class="hero-decoration flower-2"></div>
+  <div class="hero-decoration flower-3"></div>
+  <div class="hero-decoration leaf-1"></div>
+  <div class="hero-decoration dot-1"></div>
+  <div class="hero-decoration dot-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Handcrafted Digital Designs</div>
+    <h1><span class="highlight">MrsMillennial</span> Designs</h1>
+    <p class="hero-tagline">Handmade digital art &amp; printable keepsakes crafted with love</p>
+    <div class="hero-buttons">
+      <a href="/products.html" class="btn btn-primary">Browse the Shop</a>
+      <a href="/about.html" class="btn btn-secondary">Meet Andrea</a>
     </div>
   </div>
+</section>
+
+<!-- Categories -->
+<section class="categories section-padding">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title fade-in">Shop by Category</h2>
+      <p class="section-subtitle fade-in">From keepsake handprint art to classroom resources, find the perfect design</p>
+    </div>
+    <div class="section-divider fade-in"><span>&#10047;</span></div>
+    <div class="category-grid">
+      <a href="/products.html?cat=handprint" class="category-card cat-handprint fade-in">
+        <div class="category-icon">🌸</div>
+        <h3>Handprint Art</h3>
+        <p>Beautiful keepsake crafts featuring your child's handprints and footprints</p>
+        <span class="category-count">51 designs</span>
+      </a>
+      <a href="/products.html?cat=digital-art" class="category-card cat-digital fade-in">
+        <div class="category-icon">🎨</div>
+        <h3>Digital Art</h3>
+        <p>SVG files, printable art, gift tags, and creative digital designs</p>
+        <span class="category-count">17 designs</span>
+      </a>
+      <a href="/products.html?cat=classroom" class="category-card cat-classroom fade-in">
+        <div class="category-icon">📚</div>
+        <h3>Classroom Resources</h3>
+        <p>Posters, decals, and teaching materials for inspired classrooms</p>
+        <span class="category-count">20 designs</span>
+      </a>
+      <a href="/products.html?cat=worksheet" class="category-card cat-worksheet fade-in">
+        <div class="category-icon">📝</div>
+        <h3>Worksheets</h3>
+        <p>Self-regulation and coping worksheets for kids and counselors</p>
+        <span class="category-count">1 designs</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section class="featured section-padding">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title fade-in">Featured Designs</h2>
+      <p class="section-subtitle fade-in">Our most loved handprint crafts and digital art pieces</p>
+    </div>
+    <div class="section-divider fade-in"><span>&#10047;</span></div>
+    <div class="product-grid">
+      <div class="fade-in"><a href="/products/1177323604.html" class="product-card" data-category="handprint" data-title="mother&#39;s day handprint art: diy poem gift (pdf &amp; jpg)">
+  <div class="product-card-image"><img src="https://i.etsystatic.com/34326585/r/il/f2367c/4844354249/il_570xN.4844354249_mfvw.jpg" alt="Mother&#39;s Day Handprint Art: DIY Poem Gift (PDF &amp; JPG)" loading="lazy"></div>
+  <div class="product-card-body">
+    <span class="product-category-badge badge-handprint">Handprint Art</span>
+    <h3 class="product-card-title">Mother&#39;s Day Handprint Art: DIY Poem Gift (PDF &amp; JPG)</h3>
+    <div class="product-card-price">$2.99</div>
+  </div>
+</a></div>
+      <div class="fade-in"><a href="/products/1186783016.html" class="product-card" data-category="handprint" data-title="wildflower handprint art: holiday decor gift (pdf download)">
+  <div class="product-card-image"><img src="https://i.etsystatic.com/32325262/r/il/030ada/4145026034/il_570xN.4145026034_igx8.jpg" alt="Wildflower Handprint Art: Holiday Decor Gift (PDF Download)" loading="lazy"></div>
+  <div class="product-card-body">
+    <span class="product-category-badge badge-handprint">Handprint Art</span>
+    <h3 class="product-card-title">Wildflower Handprint Art: Holiday Decor Gift (PDF Download)</h3>
+    <div class="product-card-price">$2.99</div>
+  </div>
+</a></div>
+      <div class="fade-in"><a href="/products/1186226671.html" class="product-card" data-category="digital-art" data-title="dinosaur bookmarks for kids: printable encouragement set (2x6...">
+  <div class="product-card-image"><img src="https://i.etsystatic.com/34326585/r/il/24d3c5/7351690643/il_570xN.7351690643_ov77.jpg" alt="Dinosaur Bookmarks for Kids: Printable Encouragement Set (2x6..." loading="lazy"></div>
+  <div class="product-card-body">
+    <span class="product-category-badge badge-digital-art">Digital Art</span>
+    <h3 class="product-card-title">Dinosaur Bookmarks for Kids: Printable Encouragement Set (2x6...</h3>
+    <div class="product-card-price">$1.69</div>
+  </div>
+</a></div>
+      <div class="fade-in"><a href="/products/1224533770.html" class="product-card" data-category="digital-art" data-title="watercolor space wall art print set: 4 “8 x 10” prints">
+  <div class="product-card-image"><img src="https://i.etsystatic.com/34326585/r/il/a820ca/3941391675/il_570xN.3941391675_t4gs.jpg" alt="Watercolor Space Wall Art Print Set: 4 “8 X 10” Prints" loading="lazy"></div>
+  <div class="product-card-body">
+    <span class="product-category-badge badge-digital-art">Digital Art</span>
+    <h3 class="product-card-title">Watercolor Space Wall Art Print Set: 4 “8 X 10” Prints</h3>
+    <div class="product-card-price">$3.99</div>
+  </div>
+</a></div>
+      <div class="fade-in"><a href="/products/1239891923.html" class="product-card" data-category="classroom" data-title="7 habits printable poster set: elementary classroom decor (digital...">
+  <div class="product-card-image"><img src="https://i.etsystatic.com/52840635/r/il/b2fb07/6087509645/il_1140xN.6087509645_63sv.jpg" alt="7 Habits Printable Poster Set: Elementary Classroom Decor (digital..." loading="lazy"></div>
+  <div class="product-card-body">
+    <span class="product-category-badge badge-classroom">Classroom</span>
+    <h3 class="product-card-title">7 Habits Printable Poster Set: Elementary Classroom Decor (digital...</h3>
+    <div class="product-card-price">$7.08</div>
+  </div>
+</a></div>
+      <div class="fade-in"><a href="/products/1267009154.html" class="product-card" data-category="classroom" data-title="seven habit poster set, includes 8th habit: 16x20 &amp; 8.5x11 leader...">
+  <div class="product-card-image"><img src="https://i.etsystatic.com/52840635/r/il/b2fb07/6087509645/il_1588xN.6087509645_63sv.jpg" alt="Seven Habit Poster Set, Includes 8th Habit: 16x20 &amp; 8.5x11 Leader..." loading="lazy"></div>
+  <div class="product-card-body">
+    <span class="product-category-badge badge-classroom">Classroom</span>
+    <h3 class="product-card-title">Seven Habit Poster Set, Includes 8th Habit: 16x20 &amp; 8.5x11 Leader...</h3>
+    <div class="product-card-price">$7.12</div>
+  </div>
+</a></div>
+      <div class="fade-in"><a href="/products/1291934906.html" class="product-card" data-category="worksheet" data-title="self regulation mega bundle worksheets, cards, coping...">
+  <div class="product-card-image"><img src="https://i.etsystatic.com/30202223/r/il/dcf5cc/4294571083/il_1140xN.4294571083_irs3.jpg" alt="Self Regulation Mega Bundle Worksheets, Cards, Coping..." loading="lazy"></div>
+  <div class="product-card-body">
+    <span class="product-category-badge badge-worksheet">Worksheets</span>
+    <h3 class="product-card-title">Self Regulation Mega Bundle Worksheets, Cards, Coping...</h3>
+    <div class="product-card-price"><span class="price-label">Price varies</span></div>
+  </div>
+</a></div>
+      <div class="fade-in"><a href="/products/899472457.html" class="product-card" data-category="handprint" data-title="footprint craft for mom, diy kid craft, keepsake gift, baby...">
+  <div class="product-card-image"><img src="https://i.etsystatic.com/41722285/r/il/0dc07c/5803997539/il_570xN.5803997539_ai5w.jpg" alt="Footprint Craft for Mom, DIY Kid Craft, Keepsake Gift, Baby..." loading="lazy"></div>
+  <div class="product-card-body">
+    <span class="product-category-badge badge-handprint">Handprint Art</span>
+    <h3 class="product-card-title">Footprint Craft for Mom, DIY Kid Craft, Keepsake Gift, Baby...</h3>
+    <div class="product-card-price"><span class="price-label">Price varies</span></div>
+  </div>
+</a></div>
+    </div>
+    <div class="text-center" style="margin-top: 40px;">
+      <a href="/products.html" class="btn btn-primary fade-in">View All 89 Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about-section section-padding">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual fade-in">
+        <div class="about-art">
+          <div class="about-art-text">
+            <div class="big-letter">A</div>
+            <div class="subtitle">Andrea, Designer &amp; Mom</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content fade-in">
+        <h2>Designs Crafted with Heart</h2>
+        <p>Andrea creates beautiful digital art, handprint templates, and classroom resources. Her designs help parents create meaningful keepsakes and help teachers brighten their classrooms.</p>
+        <p>Every design is thoughtfully crafted with a watercolor, wildflower aesthetic that brings warmth and beauty to your home and school.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">✨</div>
+            <span>Instant downloads</span>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">🏠</div>
+            <span>Frame-ready prints</span>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">👶</div>
+            <span>Kid-friendly crafts</span>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">📚</div>
+            <span>Teacher approved</span>
+          </div>
+        </div>
+        <div style="margin-top: 28px;">
+          <a href="/about.html" class="btn btn-secondary btn-sm">Learn More About Andrea</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter section-padding">
+  <div class="container">
+    <div class="newsletter-inner fade-in">
+      <h2>Stay in the Loop</h2>
+      <p>Get notified about new designs, seasonal collections, and special offers.</p>
+      <form class="newsletter-form" action="#">
+        <input type="email" placeholder="Enter your email" aria-label="Email address">
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><span>MrsMillennial</span> Designs</div>
+        <p class="footer-desc">Handmade digital art &amp; printable keepsakes crafted with love. Beautiful designs to help you create meaningful memories.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul class="footer-links">
+          <li><a href="/products.html">All Products</a></li>
+          <li><a href="/products.html?cat=handprint">Handprint Art</a></li>
+          <li><a href="/products.html?cat=digital-art">Digital Art</a></li>
+          <li><a href="/products.html?cat=classroom">Classroom</a></li>
+          <li><a href="/products.html?cat=worksheet">Worksheets</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html">About Andrea</a></li>
+          <li><a href="https://mrsmillennial.etsy.com" target="_blank" rel="noopener">Etsy Shop</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 MrsMillennial Designs. All rights reserved.</span>
+      <span>Crafted with love</span>
+    </div>
+  </div>
+</footer>
+<script>
+// Nav scroll effect
+const mainNav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  mainNav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile nav toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+// Close mobile nav on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
