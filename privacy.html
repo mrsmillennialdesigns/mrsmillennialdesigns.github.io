@@ -4,99 +4,144 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — MrsMillennial Designs</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; font-src 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/css/style.css">
   <style>
-    :root { --bg: #faf9f7; --text: #1a1a1a; --muted: #666; --accent: #d35400; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, sans-serif; line-height: 1.7; }
-    .container { max-width: 700px; margin: 0 auto; padding: 60px 24px; }
-    h1 { font-size: 32px; font-weight: 800; margin-bottom: 4px; }
-    .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0; }
-    h2 { font-size: 20px; font-weight: 700; margin: 32px 0 12px; }
-    p, li { font-size: 14px; color: #444; margin-bottom: 12px; }
-    ul { padding-left: 20px; margin-bottom: 16px; }
-    li { margin-bottom: 6px; }
-    strong { color: var(--text); }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; color: var(--muted); font-size: 12px; }
+    .policy{max-width:700px;margin:0 auto;padding:100px 24px 60px}
+    .policy h1{font-size:2rem;margin-bottom:4px}
+    .policy .subtitle{color:var(--muted);font-size:14px;margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid rgba(45,41,38,0.1)}
+    .policy h2{font-size:1.2rem;font-weight:700;font-family:var(--font);margin:32px 0 12px}
+    .policy p,.policy li{font-size:14px;color:var(--muted);margin-bottom:12px}
+    .policy ul{padding-left:20px;margin-bottom:16px}
+    .policy li{margin-bottom:6px}
+    .policy strong{color:var(--text)}
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <h1>Privacy Policy</h1>
-    <div class="subtitle">MrsMillennial Designs &mdash; Last updated: February 23, 2026</div>
-
-    <h2>Overview</h2>
-    <p><strong>MrsMillennial Designs</strong> operates an Etsy shop at <a href="https://mrsmillennial.etsy.com">mrsmillennial.etsy.com</a>. We use a personal desktop application called Axle to help manage our shop, including creating Pinterest pins, optimizing listings, and tracking performance. This privacy policy describes how we handle data.</p>
-
-    <h2>Data We Collect</h2>
-    <p>When the shop owner authenticates with Etsy or Pinterest, the application accesses:</p>
-    <ul>
-      <li><strong>Etsy:</strong> Shop profile, listings, listing statistics, orders, and revenue data for our shop (MrsMillennialDesigns).</li>
-      <li><strong>Pinterest:</strong> User profile, boards, and pins for our connected Pinterest account.</li>
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Mrs<span>Millennial</span> Designs</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/products.html">Shop</a></li>
+      <li><a href="/about.html">About</a></li>
     </ul>
-    <p>No data is collected from customers, visitors, or any third parties. Only the shop owner's own account data is accessed.</p>
-
-    <h2>How Data Is Stored</h2>
-    <ul>
-      <li>All data is stored <strong>locally on the shop owner's personal computer</strong> in a SQLite database.</li>
-      <li>There are <strong>no cloud servers, no external databases, and no third-party analytics</strong>.</li>
-      <li>OAuth tokens are stored locally and are never transmitted to any server other than the official Etsy and Pinterest API endpoints.</li>
-    </ul>
-
-    <h2>How Data Is Used</h2>
-    <p>Data from Etsy and Pinterest is used exclusively to:</p>
-    <ul>
-      <li>Display shop analytics and listing performance in a local dashboard.</li>
-      <li>Plan SEO improvements and manage listings.</li>
-      <li>Create and manage Pinterest pins to promote shop listings.</li>
-      <li>Track budgets and spending across shop operations.</li>
-    </ul>
-    <p>Data is <strong>never sold, shared, or disclosed</strong> to any third party.</p>
-
-    <h2>Third-Party Services</h2>
-    <p>Our shop management tool connects to the following APIs solely for business operations:</p>
-    <ul>
-      <li><strong>Etsy Open API v3</strong> &mdash; to read and manage shop data.</li>
-      <li><strong>Pinterest API v5</strong> &mdash; to create pins and manage boards.</li>
-      <li><strong>Anthropic (Claude) API</strong> &mdash; to power an AI assistant for shop management. Anthropic's <a href="https://www.anthropic.com/privacy">privacy policy</a> applies.</li>
-      <li><strong>OpenAI API</strong> &mdash; used as a fallback AI provider. OpenAI's <a href="https://openai.com/privacy">privacy policy</a> applies.</li>
-    </ul>
-
-    <h2>Data Retention</h2>
-    <p>Data persists locally as long as the application is installed. Removing the application and its data folder deletes all stored information. There is no remote backup or cloud sync.</p>
-
-    <h2>Data Sharing</h2>
-    <p>MrsMillennial Designs does <strong>not</strong>:</p>
-    <ul>
-      <li>Share data with advertisers or data brokers.</li>
-      <li>Collect data from users other than the shop owner.</li>
-      <li>Use tracking pixels, cookies, or analytics services on this website.</li>
-      <li>Transmit data to any server other than the official API endpoints listed above.</li>
-    </ul>
-
-    <h2>Security</h2>
-    <ul>
-      <li>OAuth 2.0 with PKCE is used for Etsy authentication.</li>
-      <li>OAuth 2.0 is used for Pinterest authentication.</li>
-      <li>All API communication uses HTTPS/TLS encryption.</li>
-    </ul>
-
-    <h2>Children's Privacy</h2>
-    <p>This application is not designed for or directed at children under 13. No data is knowingly collected from children.</p>
-
-    <h2>Changes to This Policy</h2>
-    <p>This policy may be updated as the application evolves. The "Last updated" date at the top reflects the most recent revision.</p>
-
-    <h2>Contact</h2>
-    <p>For questions about this privacy policy, contact us via our Etsy shop: <a href="https://mrsmillennial.etsy.com">MrsMillennialDesigns on Etsy</a>.</p>
-
-    <div class="footer">
-      <p><a href="/">&larr; Back to MrsMillennial Designs</a></p>
-      <p style="margin-top: 8px;">&copy; 2026 MrsMillennial Designs</p>
-    </div>
-
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</nav>
+
+<div class="policy">
+  <h1>Privacy Policy</h1>
+  <div class="subtitle">MrsMillennial Designs &mdash; Last updated: March 7, 2026</div>
+
+  <h2>Overview</h2>
+  <p><strong>MrsMillennial Designs</strong> ("we", "us") operates the website mrsmillennialdesigns.com. We sell digital art, printable keepsakes, and classroom resources as instant digital downloads. This policy describes how we collect, use, and protect your information.</p>
+
+  <h2>Information We Collect</h2>
+  <p>When you make a purchase, our payment processor (Stripe) collects:</p>
+  <ul>
+    <li><strong>Contact info:</strong> Name and email address (for order confirmation and digital delivery)</li>
+    <li><strong>Payment info:</strong> Credit/debit card details (processed securely by Stripe &mdash; we never see or store your full card number)</li>
+  </ul>
+  <p>When browsing our website, we do <strong>not</strong> collect:</p>
+  <ul>
+    <li>No cookies or tracking pixels</li>
+    <li>No analytics or behavioral tracking</li>
+    <li>No personal information unless you make a purchase</li>
+  </ul>
+
+  <h2>How We Use Your Information</h2>
+  <ul>
+    <li>To process your payment and deliver your digital download</li>
+    <li>To send your order confirmation email</li>
+    <li>To respond if you contact us about an order</li>
+  </ul>
+  <p>We do <strong>not</strong> use your information for marketing, advertising, or any other purpose.</p>
+
+  <h2>Payment Processing</h2>
+  <p>All payments are processed by <strong>Stripe</strong>, a PCI-DSS Level 1 certified payment processor. Your payment details are encrypted and transmitted directly to Stripe's servers. We never have access to your full card number. See <a href="https://stripe.com/privacy">Stripe's Privacy Policy</a>.</p>
+
+  <h2>Data Sharing</h2>
+  <p>We do <strong>not</strong>:</p>
+  <ul>
+    <li>Sell your data to third parties</li>
+    <li>Share your data with advertisers or data brokers</li>
+    <li>Use tracking pixels, cookies, or analytics services</li>
+    <li>Store your payment information on our servers</li>
+  </ul>
+  <p>The only third party that receives your data is <strong>Stripe</strong>, solely for payment processing.</p>
+
+  <h2>Data Retention</h2>
+  <p>Order records (name, email, purchase details) are retained by Stripe according to their data retention policies. We may keep order records for tax and accounting purposes as required by law.</p>
+
+  <h2>Digital Products &amp; Refunds</h2>
+  <p>All products are <strong>instant digital downloads</strong>. Due to the nature of digital goods, we generally do not offer refunds once a file has been downloaded. If you experience issues with your download, please contact us and we will work to resolve the problem.</p>
+
+  <h2>Security</h2>
+  <ul>
+    <li>All website traffic is encrypted via HTTPS/TLS</li>
+    <li>Payment processing uses Stripe's PCI-DSS Level 1 certified infrastructure</li>
+    <li>Content Security Policy headers protect against XSS attacks</li>
+    <li>No sensitive data is stored on our website servers</li>
+  </ul>
+
+  <h2>Children's Privacy</h2>
+  <p>Our website is not directed at children under 13. We do not knowingly collect information from children.</p>
+
+  <h2>Your Rights</h2>
+  <p>You may request to:</p>
+  <ul>
+    <li>Access the personal data we hold about you</li>
+    <li>Request deletion of your data</li>
+    <li>Correct inaccurate information</li>
+  </ul>
+  <p>Contact us at the address below to exercise these rights.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this policy as our business evolves. The "Last updated" date at the top reflects the most recent revision.</p>
+
+  <h2>Contact</h2>
+  <p>For questions about this privacy policy or your order, email us at: <strong>hello@mrsmillennialdesigns.com</strong></p>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
+        <p class="footer-desc">Handmade digital art & printable keepsakes crafted with love by Andrea.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul class="footer-links">
+          <li><a href="/products.html">All Products</a></li>
+          <li><a href="/products.html?cat=handprint">Handprint Art</a></li>
+          <li><a href="/products.html?cat=classroom">Classroom</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html">Our Story</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 MrsMillennial Designs. All rights reserved.</div>
+  </div>
+</footer>
+<script>
+const n=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>20));
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
 </body>
 </html>

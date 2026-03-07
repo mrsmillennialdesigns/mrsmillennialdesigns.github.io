@@ -143,6 +143,21 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--text)}
 .detail-desc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:20px}
 .detail-tags{display:flex;flex-wrap:wrap;gap:6px}
 .tag{font-size:12px;padding:4px 12px;background:var(--bg-alt);border-radius:50px;color:var(--muted)}
+
+/* BUY BUTTON */
+.buy-section{margin:24px 0}
+.buy-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px 32px;border-radius:50px;font-size:16px;font-weight:700;border:none;cursor:pointer;transition:all var(--transition);background:var(--rose);color:var(--white);box-shadow:0 4px 16px rgba(232,160,180,0.3);letter-spacing:0.3px}
+.buy-btn:hover{background:var(--rose-dark);color:var(--white);transform:translateY(-2px);box-shadow:0 6px 24px rgba(232,160,180,0.4)}
+.buy-btn svg{width:18px;height:18px;fill:currentColor}
+.buy-secure{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;font-size:11px;color:var(--muted);opacity:0.6}
+.buy-secure svg{width:12px;height:12px;fill:currentColor}
+
+/* IMAGE PROTECTION */
+.detail-main{position:relative;-webkit-user-select:none;user-select:none}
+.detail-main::after{content:'';position:absolute;inset:0;z-index:2}
+.detail-main img{pointer-events:none}
+.card-img{-webkit-user-select:none;user-select:none}
+.card-img img{pointer-events:none}
 .related-section{border-top:1px solid rgba(45,41,38,0.06);padding-top:40px;margin-bottom:60px}
 .related-section h2{font-size:1.4rem;margin-bottom:24px}
 

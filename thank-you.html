@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You! — MrsMillennial Designs</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; font-src 'self';">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .thank-you{max-width:600px;margin:0 auto;padding:120px 24px 80px;text-align:center}
+    .thank-icon{width:80px;height:80px;margin:0 auto 24px;background:var(--sage-light);border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .thank-icon svg{width:40px;height:40px;fill:var(--sage)}
+    .thank-you h1{font-size:2rem;margin-bottom:12px}
+    .thank-you .subtitle{color:var(--muted);font-size:1.1rem;margin-bottom:32px;line-height:1.6}
+    .thank-box{background:var(--white);border-radius:var(--radius);padding:28px;text-align:left;border:1px solid rgba(45,41,38,0.06);margin-bottom:32px}
+    .thank-box h3{font-family:var(--font);font-size:1rem;font-weight:700;margin-bottom:12px}
+    .thank-box p{font-size:14px;color:var(--muted);margin-bottom:8px;line-height:1.6}
+    .thank-box ul{padding-left:20px;margin:8px 0}
+    .thank-box li{font-size:14px;color:var(--muted);margin-bottom:4px}
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Mrs<span>Millennial</span> Designs</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/products.html">Shop</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="thank-you">
+  <div class="thank-icon">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+  </div>
+  <h1>Thank You for Your Purchase!</h1>
+  <p class="subtitle">Your order has been confirmed and your download is on its way.</p>
+
+  <div class="thank-box">
+    <h3>What happens next?</h3>
+    <p>You'll receive an email shortly with your download link. If you don't see it within a few minutes:</p>
+    <ul>
+      <li>Check your spam or promotions folder</li>
+      <li>Make sure you entered the correct email at checkout</li>
+      <li>Contact us at <strong>hello@mrsmillennialdesigns.com</strong></li>
+    </ul>
+  </div>
+
+  <div class="thank-box">
+    <h3>Printing Tips</h3>
+    <p>For the best results with your digital download:</p>
+    <ul>
+      <li>Print on <strong>cardstock</strong> for keepsakes and crafts</li>
+      <li>Use <strong>"Actual Size"</strong> in your print settings (not "Fit to Page")</li>
+      <li>For best color accuracy, use a color laser printer or professional print shop</li>
+    </ul>
+  </div>
+
+  <a href="/products.html" class="btn btn-primary">Continue Shopping</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
+        <p class="footer-desc">Handmade digital art & printable keepsakes crafted with love by Andrea.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul class="footer-links">
+          <li><a href="/products.html">All Products</a></li>
+          <li><a href="/products.html?cat=handprint">Handprint Art</a></li>
+          <li><a href="/products.html?cat=classroom">Classroom</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html">Our Story</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 MrsMillennial Designs. All rights reserved.</div>
+  </div>
+</footer>
+<script>
+const n=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>20));
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
+</body>
+</html>

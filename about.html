@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | MrsMillennial Designs</title>
   <meta name="description" content="Meet Andrea, the creator behind MrsMillennial Designs. Handmade digital art and printable keepsakes crafted with love.">
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; frame-src https://js.stripe.com; connect-src 'self' https://api.stripe.com; font-src 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -100,6 +104,15 @@ window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>20));
 const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
 t.addEventListener('click',()=>l.classList.toggle('open'));
 l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
+
+<script>
+document.addEventListener('contextmenu',function(e){
+  if(e.target.tagName==='IMG'||e.target.closest('.detail-main')||e.target.closest('.card-img')){e.preventDefault();}
+});
+document.addEventListener('dragstart',function(e){
+  if(e.target.tagName==='IMG'){e.preventDefault();}
+});
 </script>
 </body>
 </html>
