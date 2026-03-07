@@ -11,13 +11,15 @@
   <link rel="stylesheet" href="/css/style.css">
   <style>
     .bundle-grid{display:flex;flex-direction:column;gap:32px;padding:20px 0 60px}
-    .bundle-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(45,41,38,0.06);transition:box-shadow var(--transition);max-width:100%}
+    .bundle-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(45,41,38,0.06);transition:box-shadow var(--transition)}
     .bundle-card:hover{box-shadow:var(--shadow-lg)}
     .bundle-preview{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bg-alt);aspect-ratio:4/3}
     .bundle-preview img{width:100%;height:100%;object-fit:cover}
-    .bundle-body{padding:32px;display:flex;flex-direction:column;min-width:0;overflow:hidden}
+    .bundle-body{padding:32px;display:flex;flex-direction:column;min-width:0}
     .bundle-badge{display:inline-block;background:var(--gold);color:var(--white);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 12px;border-radius:20px;width:fit-content;margin-bottom:12px}
-    .bundle-body h2{font-size:1.4rem;line-height:1.3;margin-bottom:10px;word-wrap:break-word}
+    .bundle-body h2{font-size:1.4rem;line-height:1.3;margin-bottom:10px}
+    .bundle-body h2 a{color:inherit;text-decoration:none}
+    .bundle-body h2 a:hover{color:var(--rose-dark)}
     .bundle-desc{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px}
     .bundle-details{margin-bottom:16px}
     .bundle-count{font-size:13px;font-weight:600;color:var(--sage);background:rgba(168,197,160,0.12);padding:4px 12px;border-radius:20px}
@@ -25,16 +27,21 @@
     .bundle-original{font-size:14px;color:var(--muted);text-decoration:line-through}
     .bundle-price{font-size:1.8rem;font-weight:800;color:var(--rose-dark)}
     .bundle-save{background:rgba(232,160,180,0.12);color:var(--rose-dark);font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px}
-    .bundle-body .buy-btn{margin-top:auto}
-    .bundle-view-details{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;color:var(--rose-dark);transition:color 0.3s ease}
-    .bundle-view-details:hover{color:var(--rose)}
+    .bundle-buttons{display:flex;flex-direction:column;gap:10px;margin-top:auto}
+    .bundle-btn-view{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px 24px;border-radius:50px;font-size:15px;font-weight:700;background:var(--rose);color:var(--white);box-shadow:0 4px 16px rgba(232,160,180,0.3);transition:all var(--transition);text-decoration:none;box-sizing:border-box}
+    .bundle-btn-view:hover{background:var(--rose-dark);color:var(--white);transform:translateY(-2px);box-shadow:0 6px 24px rgba(232,160,180,0.4)}
+    .bundle-btn-buy{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px 24px;border-radius:50px;font-size:13px;font-weight:600;background:transparent;color:var(--rose-dark);border:1.5px solid var(--rose-light);transition:all var(--transition);text-decoration:none;box-sizing:border-box}
+    .bundle-btn-buy:hover{border-color:var(--rose);color:var(--rose-dark);transform:translateY(-2px)}
+    .bundle-btn-buy svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
     @media(max-width:768px){
       .bundle-card{grid-template-columns:1fr}
       .bundle-preview{aspect-ratio:16/9}
       .bundle-body{padding:20px 16px}
-      .bundle-body h2{font-size:1.2rem}
-      .bundle-price{font-size:1.5rem}
-      .bundle-body .buy-btn{font-size:14px;padding:14px 20px}
+      .bundle-body h2{font-size:1.15rem}
+      .bundle-desc{font-size:13px;margin-bottom:12px}
+      .bundle-price{font-size:1.4rem}
+      .bundle-btn-view{font-size:14px;padding:12px 16px}
+      .bundle-btn-buy{font-size:12px;padding:10px 16px}
     }
   </style>
 </head>
@@ -63,10 +70,10 @@
 <div class="container">
   <div class="bundle-grid">
     <div class="bundle-card">
-      <div class="bundle-preview"><img src="https://i.etsystatic.com/34326585/r/il/5b37e7/5981413805/il_570xN.5981413805_m3qb.jpg" alt="Seven Habits SVG, Leader In Me DIY T-Shi" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/b436f3/5962007948/il_570xN.5962007948_butj.jpg" alt="The 7 Habits of Highly Effective People " loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/759694/7344995011/il_570xN.7344995011_pf6h.jpg" alt="7 Habits of Highly Effective People Bull" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/f69691/6412176784/il_570xN.6412176784_km1j.jpg" alt="7 Habits Cartoon Posters: Leader In Me C" loading="lazy"></div>
+      <div class="bundle-preview"><img src="https://i.etsystatic.com/34326585/r/il/5b37e7/5981413805/il_570xN.5981413805_m3qb.jpg" alt="Seven Habits SVG" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/b436f3/5962007948/il_570xN.5962007948_butj.jpg" alt="7 Habits Bookmark" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/759694/7344995011/il_570xN.7344995011_pf6h.jpg" alt="7 Habits Bulletin Board" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/f69691/6412176784/il_570xN.6412176784_km1j.jpg" alt="7 Habits Cartoon Posters" loading="lazy"></div>
       <div class="bundle-body">
         <span class="bundle-badge">Best Seller</span>
-        <h2><a href="/bundles/7-habits-classroom-pack.html" style="color:inherit">7 Habits Ultimate Classroom Pack</a></h2>
+        <h2><a href="/bundles/7-habits-classroom-pack.html">7 Habits Ultimate Classroom Pack</a></h2>
         <p class="bundle-desc">Everything you need to bring the 7 Habits to life in your classroom. 14 poster sets, bookmarks, planners, bulletin boards, SVGs, and more.</p>
         <div class="bundle-details">
           <span class="bundle-count">14 designs included</span>
@@ -76,22 +83,20 @@
           <div class="bundle-price">$29.99</div>
           <div class="bundle-save">Save 38%</div>
         </div>
-        <a href="https://buy.stripe.com/4gMaEW89Nb235vW0gWcEw2k" class="buy-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-          Get Bundle — $29.99
-        </a>
-        <div class="buy-secure">
-          <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-          Secure checkout powered by Stripe
+        <div class="bundle-buttons">
+          <a href="/bundles/7-habits-classroom-pack.html" class="bundle-btn-view">See What's Included</a>
+          <a href="https://buy.stripe.com/4gMaEW89Nb235vW0gWcEw2k" class="bundle-btn-buy" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            Buy Now — $29.99
+          </a>
         </div>
-        <a href="/bundles/7-habits-classroom-pack.html" class="bundle-view-details">View what's included &rarr;</a>
       </div>
     </div>
     <div class="bundle-card">
-      <div class="bundle-preview"><img src="https://i.etsystatic.com/34326585/r/il/a9233c/7821085499/il_570xN.7821085499_6fta.jpg" alt="Mother’s Day Handprint Bouquet Craft | H" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/921c59/7800658941/il_570xN.7800658941_i6bs.jpg" alt="Personalized Mother’s Day Handprint Flow" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/33f1f4/7243449384/il_570xN.7243449384_9dwc.jpg" alt="Wildflower Handprint Art Printable | Flo" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/1d7d60/7790879949/il_570xN.7790879949_rnvs.jpg" alt="Custom Grandchildren Handprint Flower Ar" loading="lazy"></div>
+      <div class="bundle-preview"><img src="https://i.etsystatic.com/34326585/r/il/a9233c/7821085499/il_570xN.7821085499_6fta.jpg" alt="Mother's Day Handprint Bouquet" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/921c59/7800658941/il_570xN.7800658941_i6bs.jpg" alt="Personalized Mother's Day Handprint" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/33f1f4/7243449384/il_570xN.7243449384_9dwc.jpg" alt="Wildflower Handprint Art" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/1d7d60/7790879949/il_570xN.7790879949_rnvs.jpg" alt="Custom Grandchildren Handprint" loading="lazy"></div>
       <div class="bundle-body">
         <span class="bundle-badge">Popular</span>
-        <h2><a href="/bundles/mothers-day-handprint.html" style="color:inherit">Mother's Day Handprint Collection</a></h2>
+        <h2><a href="/bundles/mothers-day-handprint.html">Mother's Day Handprint Collection</a></h2>
         <p class="bundle-desc">11 heartwarming handprint crafts perfect for Mother's Day. Bouquets, poems, tea cups, personalized flower prints — make Mom feel extra special.</p>
         <div class="bundle-details">
           <span class="bundle-count">11 designs included</span>
@@ -101,22 +106,20 @@
           <div class="bundle-price">$24.99</div>
           <div class="bundle-save">Save 34%</div>
         </div>
-        <a href="https://buy.stripe.com/14AdR8ahVc67gaAbZEcEw2l" class="buy-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-          Get Bundle — $24.99
-        </a>
-        <div class="buy-secure">
-          <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-          Secure checkout powered by Stripe
+        <div class="bundle-buttons">
+          <a href="/bundles/mothers-day-handprint.html" class="bundle-btn-view">See What's Included</a>
+          <a href="https://buy.stripe.com/14AdR8ahVc67gaAbZEcEw2l" class="bundle-btn-buy" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            Buy Now — $24.99
+          </a>
         </div>
-        <a href="/bundles/mothers-day-handprint.html" class="bundle-view-details">View what's included &rarr;</a>
       </div>
     </div>
     <div class="bundle-card">
-      <div class="bundle-preview"><img src="https://i.etsystatic.com/34326585/r/il/2f3c0e/7396084850/il_570xN.7396084850_mpkr.jpg" alt="Yule Be In My Heart Handprint Art, Chris" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/319918/7414609832/il_570xN.7414609832_94xd.jpg" alt="Joy Ornament, Christmas Handprint Art: H" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/73bac6/6490504465/il_570xN.6490504465_8ypc.jpg" alt="Snowman Footprint Art: Holiday House Dec" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/73d830/6466497259/il_570xN.6466497259_dmc2.jpg" alt="Happy Holidays Handprint Art: DIY Winter" loading="lazy"></div>
+      <div class="bundle-preview"><img src="https://i.etsystatic.com/34326585/r/il/2f3c0e/7396084850/il_570xN.7396084850_mpkr.jpg" alt="Yule Be In My Heart Handprint Art" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/319918/7414609832/il_570xN.7414609832_94xd.jpg" alt="Joy Ornament Christmas Handprint" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/73bac6/6490504465/il_570xN.6490504465_8ypc.jpg" alt="Snowman Footprint Art" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/73d830/6466497259/il_570xN.6466497259_dmc2.jpg" alt="Happy Holidays Handprint Art" loading="lazy"></div>
       <div class="bundle-body">
         <span class="bundle-badge">Seasonal</span>
-        <h2><a href="/bundles/christmas-holiday-handprint.html" style="color:inherit">Christmas & Holiday Handprint Pack</a></h2>
+        <h2><a href="/bundles/christmas-holiday-handprint.html">Christmas & Holiday Handprint Pack</a></h2>
         <p class="bundle-desc">7 festive handprint and footprint crafts for the holiday season. Trees, snowmen, ornaments, gift tags, and keepsakes the whole family will love.</p>
         <div class="bundle-details">
           <span class="bundle-count">7 designs included</span>
@@ -126,22 +129,19 @@
           <div class="bundle-price">$12.99</div>
           <div class="bundle-save">Save 38%</div>
         </div>
-        <a href="https://buy.stripe.com/aFa4gyahV6LNaQgbZEcEw2m" class="buy-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-          Get Bundle — $12.99
-        </a>
-        <div class="buy-secure">
-          <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-          Secure checkout powered by Stripe
+        <div class="bundle-buttons">
+          <a href="/bundles/christmas-holiday-handprint.html" class="bundle-btn-view">See What's Included</a>
+          <a href="https://buy.stripe.com/aFa4gyahV6LNaQgbZEcEw2m" class="bundle-btn-buy" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            Buy Now — $12.99
+          </a>
         </div>
-        <a href="/bundles/christmas-holiday-handprint.html" class="bundle-view-details">View what's included &rarr;</a>
       </div>
     </div>
     <div class="bundle-card">
-      <div class="bundle-preview"><img src="https://i.etsystatic.com/34326585/r/il/45ac91/4760045018/il_570xN.4760045018_1nip.jpg" alt="Personalized Handprint Art: Wildflower F" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/b28491/4005425060/il_570xN.4005425060_r5p1.jpg" alt="Wildflower Handprint Art: DIY Family Kee" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/9070e9/3841035297/il_570xN.3841035297_90y5.jpg" alt="Handprint Flower Art: DIY Kids Keepsake " loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/c3c920/4862282012/il_570xN.4862282012_dlqv.jpg" alt="Handprint Flower Art Printable: DIY Kids" loading="lazy"></div>
+      <div class="bundle-preview"><img src="https://i.etsystatic.com/34326585/r/il/45ac91/4760045018/il_570xN.4760045018_1nip.jpg" alt="Personalized Handprint Wildflower Art" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/b28491/4005425060/il_570xN.4005425060_r5p1.jpg" alt="Wildflower Handprint Art" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/9070e9/3841035297/il_570xN.3841035297_90y5.jpg" alt="Handprint Flower Art" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/c3c920/4862282012/il_570xN.4862282012_dlqv.jpg" alt="Handprint Flower Art Printable" loading="lazy"></div>
       <div class="bundle-body">
-        
-        <h2><a href="/bundles/flower-handprint-art.html" style="color:inherit">Flower Handprint Art Collection</a></h2>
+        <h2><a href="/bundles/flower-handprint-art.html">Flower Handprint Art Collection</a></h2>
         <p class="bundle-desc">10 beautiful flower handprint designs — wildflowers, bouquets, iris, roses, and personalized stems. Perfect for any occasion or just because.</p>
         <div class="bundle-details">
           <span class="bundle-count">10 designs included</span>
@@ -151,22 +151,19 @@
           <div class="bundle-price">$18.99</div>
           <div class="bundle-save">Save 36%</div>
         </div>
-        <a href="https://buy.stripe.com/8x29ASeybc67f6wbZEcEw2n" class="buy-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-          Get Bundle — $18.99
-        </a>
-        <div class="buy-secure">
-          <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-          Secure checkout powered by Stripe
+        <div class="bundle-buttons">
+          <a href="/bundles/flower-handprint-art.html" class="bundle-btn-view">See What's Included</a>
+          <a href="https://buy.stripe.com/8x29ASeybc67f6wbZEcEw2n" class="bundle-btn-buy" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            Buy Now — $18.99
+          </a>
         </div>
-        <a href="/bundles/flower-handprint-art.html" class="bundle-view-details">View what's included &rarr;</a>
       </div>
     </div>
     <div class="bundle-card">
-      <div class="bundle-preview"><img src="https://i.etsystatic.com/34326585/r/il/86127a/7594351610/il_570xN.7594351610_lvnw.jpg" alt="Farm Birthday Invitation: Tractor Barnya" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/17b9a9/7153886279/il_570xN.7153886279_a78g.jpg" alt="Axolotl Birthday Invitation Template: Ed" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/fe690c/6809004023/il_570xN.6809004023_gzf0.jpg" alt="Neon Glow Birthday Invitation: Wild Danc" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/5eaeab/6804219569/il_570xN.6804219569_ozxv.jpg" alt="Axolotl Birthday Invitation Template: Ed" loading="lazy"></div>
+      <div class="bundle-preview"><img src="https://i.etsystatic.com/34326585/r/il/86127a/7594351610/il_570xN.7594351610_lvnw.jpg" alt="Farm Birthday Invitation" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/17b9a9/7153886279/il_570xN.7153886279_a78g.jpg" alt="Axolotl Birthday Invitation" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/fe690c/6809004023/il_570xN.6809004023_gzf0.jpg" alt="Neon Glow Birthday Invitation" loading="lazy"><img src="https://i.etsystatic.com/34326585/r/il/5eaeab/6804219569/il_570xN.6804219569_ozxv.jpg" alt="Axolotl Birthday Invitation Template" loading="lazy"></div>
       <div class="bundle-body">
-        
-        <h2><a href="/bundles/birthday-invitation.html" style="color:inherit">Birthday Invitation Bundle</a></h2>
+        <h2><a href="/bundles/birthday-invitation.html">Birthday Invitation Bundle</a></h2>
         <p class="bundle-desc">All 5 editable birthday invitation templates — farm, axolotl, neon glow, and Ms. Rachel themes. Customize in Canva, print or send digitally.</p>
         <div class="bundle-details">
           <span class="bundle-count">5 designs included</span>
@@ -176,15 +173,13 @@
           <div class="bundle-price">$12.99</div>
           <div class="bundle-save">Save 35%</div>
         </div>
-        <a href="https://buy.stripe.com/4gM00igGj9XZe2se7McEw2o" class="buy-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-          Get Bundle — $12.99
-        </a>
-        <div class="buy-secure">
-          <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-          Secure checkout powered by Stripe
+        <div class="bundle-buttons">
+          <a href="/bundles/birthday-invitation.html" class="bundle-btn-view">See What's Included</a>
+          <a href="https://buy.stripe.com/4gM00igGj9XZe2se7McEw2o" class="bundle-btn-buy" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            Buy Now — $12.99
+          </a>
         </div>
-        <a href="/bundles/birthday-invitation.html" class="bundle-view-details">View what's included &rarr;</a>
       </div>
     </div>
   </div>
@@ -237,32 +232,13 @@ l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.re
     fetch(endpoint,{method:'POST',body:JSON.stringify(data),keepalive:true});
   }
   t({event:'pageview'});
-  // Track product detail views
-  if(location.pathname.startsWith('/products/')&&location.pathname.endsWith('.html')){
-    var id=location.pathname.split('/').pop().replace('.html','');
-    var h1=document.querySelector('h1');
-    var price=document.querySelector('.detail-price');
-    t({event:'product_view',productId:id,productTitle:h1?h1.textContent.slice(0,60):'',productPrice:price?price.textContent:''});
-  }
-  // Track buy button clicks
   document.addEventListener('click',function(e){
-    var btn=e.target.closest('.buy-btn');
-    if(!btn)return;
-    var id=location.pathname.split('/').pop().replace('.html','');
-    var price=document.querySelector('.detail-price');
-    t({event:'buy_click',productId:id,productPrice:price?price.textContent:''});
-  });
-  // Track bundle clicks
-  document.addEventListener('click',function(e){
-    var btn=e.target.closest('.bundle-card .buy-btn');
+    var btn=e.target.closest('.bundle-btn-buy');
     if(!btn)return;
     var card=btn.closest('.bundle-card');
     var h2=card?card.querySelector('h2'):null;
     t({event:'bundle_click',bundle:h2?h2.textContent:''});
   });
-  // Track search
-  var si=document.getElementById('searchInput');
-  if(si){var st;si.addEventListener('input',function(){clearTimeout(st);st=setTimeout(function(){if(si.value.length>1)t({event:'search',query:si.value});},1000);});}
 })();
 </script>
 </body>
