@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Opening Classroom Sale - 30% Off | MrsMillennial Designs</title>
+  <meta name="description" content="Grand Opening Sale! 30% off the 7 Habits Ultimate Classroom Pack. Printable posters, bookmarks, bulletin boards & more. 777 five-star reviews.">
+  <meta property="og:title" content="Grand Opening Classroom Sale | MrsMillennial Designs">
+  <meta property="og:description" content="30% off classroom bundles. 7 Habits posters, decor & printables teachers love.">
+  <meta property="og:image" content="https://mrsmillennialdesigns.com/img/7h-overview.jpg">
+  <meta name="pinterest-rich-pin" content="true">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https://i.etsystatic.com data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .cl-hero{background:linear-gradient(155deg,#F0EDE6,#E8E4D8 50%,#F5F0E8);padding:100px 24px 60px;text-align:center}
+    .cl-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);color:#2D2926;margin-bottom:8px}
+    .cl-hero h1 span{color:#6b9960}
+    .cl-hero .sub{font-family:'Dancing Script',cursive;font-size:clamp(1.4rem,3vw,2rem);color:#4a7040;margin-bottom:16px}
+    .cl-sale-badge{display:inline-block;background:#4a7040;color:#fff;font-size:14px;font-weight:700;padding:8px 24px;border-radius:50px;margin-bottom:20px;letter-spacing:0.5px;text-transform:uppercase}
+    .cl-hero p{font-size:1rem;color:var(--muted);max-width:600px;margin:0 auto 24px;line-height:1.7}
+
+    /* Video container */
+    .ad-section{padding:48px 0;background:var(--white)}
+    .ad-container{max-width:900px;margin:0 auto;padding:0 24px}
+    .ad-wrapper{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
+
+    /* Embedded ad */
+    .V{width:100%;height:100%;position:absolute;inset:0;background:#F8F6F0}
+    .ov{position:absolute;inset:0;background:rgba(40,36,34,.85);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;z-index:100;transition:opacity .6s}
+    .ov.h{opacity:0;pointer-events:none}
+    .ov .play-btn{width:76px;height:76px;border-radius:50%;background:#6b9960;display:flex;align-items:center;justify-content:center;transition:transform .3s}
+    .ov:hover .play-btn{transform:scale(1.08)}
+    .ov .play-btn::after{content:'';border-left:22px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:4px}
+    .ov p{color:#fff;font-size:11px;margin-top:12px;opacity:.7;letter-spacing:1px;text-transform:uppercase}
+    .rep{display:none}.rep.on{display:flex}
+    .bar{position:absolute;bottom:0;left:0;height:3px;background:#6b9960;z-index:80;width:0;transition:width .15s linear}
+
+    .AS{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease-in-out;display:flex;align-items:center;justify-content:center;pointer-events:none;overflow:hidden}
+    .AS.on{opacity:1}.AS.off{opacity:0}
+
+    @keyframes fi{from{opacity:0}to{opacity:1}}
+    @keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fd{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes si{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+    @keyframes pinDrop{0%{opacity:0;transform:scale(0) rotate(-10deg)}60%{transform:scale(1.1) rotate(2deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+    @keyframes zp{0%{transform:scale(1)}100%{transform:scale(1.04)}}
+    @keyframes sparkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
+
+    /* S1 */
+    .AS1{background:linear-gradient(155deg,#F0EDE6,#E8E4D8 50%,#F5F0E8);flex-direction:column}
+    .AS1 .chalkline{width:80px;height:3px;background:#6b9960;margin:16px 0;opacity:0}
+    .AS1 .aa{font-family:'Playfair Display',serif;font-size:clamp(26px,4.5vw,44px);color:#2D2926;opacity:0;text-align:center;line-height:1.2}
+    .AS1 .aa span{color:#6b9960}
+    .AS1 .ab{font-family:'Dancing Script',cursive;font-size:clamp(18px,3vw,28px);color:#5C4E47;opacity:0;margin-top:8px}
+    .AS1 .ac{font-family:'Poppins',sans-serif;font-size:clamp(10px,1.3vw,13px);color:#5C4E47;opacity:0;margin-top:18px;letter-spacing:1px;text-transform:uppercase}
+    .AS1.on .aa{animation:fu 1.2s ease .3s forwards}
+    .AS1.on .chalkline{animation:fi 1s ease 1s forwards}
+    .AS1.on .ab{animation:fu 1s ease 1.3s forwards}
+    .AS1.on .ac{animation:fu .8s ease 2s forwards}
+
+    /* S2 posters on wall */
+    .AS2{background:#2F4F3A;flex-direction:column;padding:20px}
+    .AS2 .wall-label{font-family:'Dancing Script',cursive;font-size:clamp(14px,2.2vw,22px);color:rgba(255,255,255,.85);opacity:0;margin-bottom:14px}
+    .AS2 .poster-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(4px,.8vw,8px);width:clamp(360px,65vw,620px);justify-items:center}
+    .AS2 .row2{grid-column:1/-1;display:flex;gap:clamp(4px,.8vw,8px);justify-content:center}
+    .AS2 .poster{width:100%;aspect-ratio:3/4;border-radius:3px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.3);opacity:0;background:#fff}
+    .AS2 .poster img{width:100%;height:100%;object-fit:cover}
+    .AS2.on .wall-label{animation:fi .8s ease .2s forwards}
+    .AS2.on .p1{animation:pinDrop .6s ease .8s forwards}
+    .AS2.on .p2{animation:pinDrop .6s ease 1.3s forwards}
+    .AS2.on .p3{animation:pinDrop .6s ease 1.8s forwards}
+    .AS2.on .p4{animation:pinDrop .6s ease 2.3s forwards}
+    .AS2.on .p5{animation:pinDrop .6s ease 2.8s forwards}
+    .AS2.on .p6{animation:pinDrop .6s ease 3.3s forwards}
+    .AS2.on .p7{animation:pinDrop .6s ease 3.8s forwards}
+    .AS2 .sparkle{position:absolute;width:8px;height:8px;background:#C9A96E;border-radius:50%;opacity:0}
+    .AS2.on .sp1{animation:sparkle .4s ease 1.1s}
+    .AS2.on .sp2{animation:sparkle .4s ease 1.6s}
+    .AS2.on .sp3{animation:sparkle .4s ease 2.1s}
+    .AS2.on .sp4{animation:sparkle .4s ease 2.6s}
+    .AS2.on .sp5{animation:sparkle .4s ease 3.1s}
+    .AS2.on .sp6{animation:sparkle .4s ease 3.6s}
+    .AS2.on .sp7{animation:sparkle .4s ease 4.1s}
+
+    /* S3 showcase */
+    .AS3{background:#F8F6F0;gap:clamp(20px,4vw,40px)}
+    .AS3 .aimg{width:clamp(240px,42vw,420px);height:clamp(170px,30vw,300px);flex-shrink:0;opacity:0;border-radius:4px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.1)}
+    .AS3 .aimg img{width:100%;height:100%;object-fit:cover}
+    .AS3 .atx{display:flex;flex-direction:column;align-items:flex-start}
+    .AS3 .at1{font-family:'Playfair Display',serif;font-size:clamp(16px,2.6vw,26px);color:#2D2926;opacity:0;line-height:1.3}
+    .AS3 .at1 span{color:#6b9960}
+    .AS3 .at2{font-family:'Poppins',sans-serif;font-size:clamp(10px,1.3vw,13px);color:#5C4E47;opacity:0;margin-top:14px;line-height:1.9}
+    .AS3 .aprice{font-family:'Poppins',sans-serif;font-size:clamp(14px,2.2vw,22px);font-weight:700;color:#4a7040;opacity:0;margin-top:16px}
+    .AS3.on .aimg{animation:si 1s ease .2s forwards}
+    .AS3.on .at1{animation:fu 1s ease .8s forwards}
+    .AS3.on .at2{animation:fu .8s ease 1.4s forwards}
+    .AS3.on .aprice{animation:fu .7s ease 2s forwards}
+
+    /* S4 quote */
+    .AS4{background:linear-gradient(155deg,#F5F0E8,#EDE8DE);flex-direction:column;padding:40px}
+    .AS4 .aquote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2.4vw,24px);color:#2D2926;max-width:600px;text-align:center;line-height:1.5;opacity:0}
+    .AS4 .aquote span{color:#6b9960}
+    .AS4 .astars{color:#C9A96E;font-size:clamp(16px,2.4vw,24px);letter-spacing:4px;margin:16px 0;opacity:0}
+    .AS4 .aattr{font-family:'Poppins',sans-serif;font-size:clamp(10px,1.3vw,13px);color:#5C4E47;opacity:0}
+    .AS4 .astat{font-family:'Poppins',sans-serif;font-size:clamp(10px,1.4vw,14px);font-weight:600;color:#4a7040;margin-top:20px;opacity:0}
+    .AS4.on .aquote{animation:fu 1s ease .3s forwards}
+    .AS4.on .astars{animation:fi .6s ease 1.2s forwards}
+    .AS4.on .aattr{animation:fi .5s ease 1.5s forwards}
+    .AS4.on .astat{animation:fu .6s ease 1.9s forwards}
+
+    /* S5 CTA */
+    .AS5{background:linear-gradient(155deg,#F0EDE6,#E8E4D8 40%,#F5F0E8);flex-direction:column;padding:30px}
+    .AS5 .alogo{font-family:'Dancing Script',cursive;font-size:clamp(28px,5vw,46px);font-weight:700;color:#2D2926;opacity:0}
+    .AS5 .atag{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(10px,1.4vw,14px);color:#5C4E47;opacity:0;margin-top:4px;max-width:500px;text-align:center}
+    .AS5 .aln{width:60px;height:1.5px;background:#6b9960;margin:14px 0;opacity:0}
+    .AS5 .aft{opacity:0;text-align:center}
+    .AS5 .af{font-size:clamp(10px,1.4vw,14px);font-weight:500;color:#2D2926;margin:5px 0}
+    .AS5 .af.ah{color:#4a7040;font-weight:600;font-size:clamp(12px,1.6vw,16px)}
+    .AS5 .ast{color:#C9A96E;font-size:clamp(12px,1.8vw,18px);margin:4px 0;letter-spacing:3px}
+    .AS5 .aurl{font-size:clamp(12px,1.6vw,16px);font-weight:600;color:#2D2926;background:#fff;padding:12px 34px;border-radius:25px;box-shadow:0 2px 12px rgba(0,0,0,.08);margin-top:14px;opacity:0}
+    .AS5 .athx{font-size:clamp(9px,1.2vw,12px);color:#5C4E47;margin-top:14px;opacity:0;text-align:center}
+    .AS5 .aend{font-family:'Dancing Script',cursive;font-size:clamp(22px,3.5vw,32px);color:#4a7040;margin-top:10px;opacity:0}
+    .AS5.on .alogo{animation:fu .8s ease .2s forwards}
+    .AS5.on .atag{animation:fi .7s ease .7s forwards}
+    .AS5.on .aln{animation:fi .6s ease 1s forwards}
+    .AS5.on .aft{animation:fu .8s ease 1.2s forwards}
+    .AS5.on .aurl{animation:si .7s ease 1.9s forwards}
+    .AS5.on .athx{animation:fi .6s ease 2.5s forwards}
+    .AS5.on .aend{animation:fu .8s ease 3s forwards}
+
+    /* Sale section */
+    .sale-section{padding:60px 0;background:var(--bg)}
+    .sale-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;margin:0 auto;padding:0 24px}
+    .sale-card{background:var(--white);border-radius:var(--radius);padding:32px;text-align:center;border:2px solid rgba(107,153,96,.3);position:relative;overflow:hidden}
+    .sale-card.featured{border-color:#6b9960}
+    .sale-card.featured::before{content:'GRAND OPENING';position:absolute;top:16px;right:-32px;background:#4a7040;color:#fff;font-size:10px;font-weight:700;padding:4px 40px;transform:rotate(45deg);letter-spacing:1px}
+    .sale-card h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:8px}
+    .sale-card .orig-price{font-size:14px;color:var(--muted);text-decoration:line-through;margin-bottom:4px}
+    .sale-card .sale-price{font-size:2rem;font-weight:800;color:#4a7040;margin-bottom:4px}
+    .sale-card .savings{font-size:13px;color:#6b9960;font-weight:600;margin-bottom:16px}
+    .sale-card p{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:20px}
+    .sale-card .sale-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-size:15px;font-weight:700;background:#6b9960;color:var(--white);transition:all var(--transition);box-shadow:0 4px 16px rgba(107,153,96,0.3)}
+    .sale-card .sale-cta:hover{background:#4a7040;color:var(--white);transform:translateY(-2px)}
+    .sale-code{display:inline-block;background:rgba(107,153,96,.08);border:1px dashed #6b9960;padding:6px 18px;border-radius:8px;font-family:monospace;font-size:15px;font-weight:700;color:#4a7040;margin:12px 0;letter-spacing:2px}
+
+    /* Product grid */
+    .featured-section{padding:60px 0;background:var(--white)}
+    .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;max-width:960px;margin:0 auto;padding:0 24px}
+    .prod-card{background:var(--bg);border-radius:var(--radius);overflow:hidden;transition:all var(--transition);border:1px solid rgba(45,41,38,0.04)}
+    .prod-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+    .prod-card-img{aspect-ratio:4/3;overflow:hidden}
+    .prod-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .prod-card:hover .prod-card-img img{transform:scale(1.05)}
+    .prod-card-body{padding:14px}
+    .prod-card-body h4{font-family:var(--font);font-size:13px;font-weight:600;line-height:1.4;margin-bottom:6px;color:var(--text)}
+    .prod-card-body .price{font-size:1rem;font-weight:700;color:#4a7040}
+
+    @media(max-width:768px){
+      .sale-grid{grid-template-columns:1fr}
+      .ad-wrapper{border-radius:8px}
+      .prod-grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Mrs<span>Millennial</span> Designs</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/products.html">Shop</a></li>
+      <li><a href="/bundles.html">Bundles</a></li>
+      <li><a href="/mothers-day.html" style="color:var(--rose-dark)">Mother's Day Sale</a></li>
+      <li><a href="/classroom-sale.html" class="active" style="color:#4a7040">Classroom Sale</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="cl-hero">
+  <div class="cl-sale-badge">Grand Opening Sale</div>
+  <h1>Transform Your <span>Classroom</span></h1>
+  <div class="sub">30% Off the 7 Habits Ultimate Pack</div>
+  <p>The 7 Habits of Happy Kids poster set that teachers love. Colorful cartoon characters make leadership fun and relatable for every student. Instant download, print at school or home.</p>
+</section>
+
+<!-- Animated Ad -->
+<section class="ad-section">
+  <div class="ad-container">
+    <div class="ad-wrapper">
+      <div class="V" id="V">
+        <div class="bar" id="bar"></div>
+        <div class="ov" id="po">
+          <div class="play-btn"></div>
+          <p>Watch the 7 Habits Come to Life</p>
+        </div>
+        <div class="ov rep" id="ro">
+          <div class="play-btn" style="width:60px;height:60px"></div>
+          <p>Replay</p>
+        </div>
+
+        <div class="AS AS1">
+          <div class="aa">Transform Your <span>Classroom</span></div>
+          <div class="chalkline"></div>
+          <div class="ab">with the 7 Habits of Happy Kids</div>
+          <div class="ac">Printable poster set &bull; Instant download</div>
+        </div>
+
+        <div class="AS AS2">
+          <div class="wall-label">One poster at a time...</div>
+          <div class="poster-grid" style="position:relative">
+            <div class="poster p1"><img src="/img/7h-poster-1.jpg" alt="Habit 1: Be Proactive"></div>
+            <div class="poster p2"><img src="/img/7h-poster-2.jpg" alt="Habit 2: Begin with End in Mind"></div>
+            <div class="poster p3"><img src="/img/7h-poster-3.jpg" alt="Habit 3: Put First Things First"></div>
+            <div class="poster p4"><img src="/img/7h-poster-4.jpg" alt="Habit 4: Think Win-Win"></div>
+            <div class="row2">
+              <div class="poster p5" style="width:clamp(86px,15vw,148px)"><img src="/img/7h-poster-5.jpg" alt="Habit 5: Seek First to Understand"></div>
+              <div class="poster p6" style="width:clamp(86px,15vw,148px)"><img src="/img/7h-poster-6.jpg" alt="Habit 6: Synergize"></div>
+              <div class="poster p7" style="width:clamp(86px,15vw,148px)"><img src="/img/7h-poster-7.jpg" alt="Habit 7: Sharpen the Saw"></div>
+            </div>
+            <div class="sparkle sp1" style="top:20%;left:18%"></div>
+            <div class="sparkle sp2" style="top:15%;left:42%"></div>
+            <div class="sparkle sp3" style="top:22%;left:65%"></div>
+            <div class="sparkle sp4" style="top:18%;left:88%"></div>
+            <div class="sparkle sp5" style="top:60%;left:22%"></div>
+            <div class="sparkle sp6" style="top:55%;left:50%"></div>
+            <div class="sparkle sp7" style="top:62%;left:78%"></div>
+          </div>
+        </div>
+
+        <div class="AS AS3">
+          <div class="aimg"><img src="/img/7h-overview.jpg" alt="7 Habits poster set"></div>
+          <div class="atx">
+            <div class="at1">7 Colorful Posters<br>for Your <span>Leader In Me</span><br>Classroom</div>
+            <div class="at2">Cartoon characters kids love<br>Clear, simple habit messages<br>PDF & JPG formats<br>Print any size you need</div>
+            <div class="aprice">Only $4.99</div>
+          </div>
+        </div>
+
+        <div class="AS AS4">
+          <div class="aquote">"My students <span>absolutely love</span> these posters. The cartoon characters make the 7 habits so relatable for little ones."</div>
+          <div class="astars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="aattr">&mdash; Verified Teacher Review</div>
+          <div class="astat">Trusted by teachers everywhere &bull; 777 five-star reviews</div>
+        </div>
+
+        <div class="AS AS5">
+          <div class="alogo">MrsMillennial Designs</div>
+          <div class="atag">Handmade digital art & classroom printables crafted with love</div>
+          <div class="aln"></div>
+          <div class="aft">
+            <div class="af ah">36 Classroom Designs & Growing</div>
+            <div class="af">Instant Download &bull; Print at School or Home</div>
+            <div class="ast">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="af">777 Five-Star Reviews</div>
+          </div>
+          <div class="aurl">mrsmillennialdesigns.com</div>
+          <div class="athx">Thank you for supporting handmade & small business</div>
+          <div class="aend">Happy Teaching!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sale Offers -->
+<section class="sale-section">
+  <div class="container">
+    <h2 class="section-title">Grand Opening Specials</h2>
+    <div class="divider"><span class="divider-dot"></span></div>
+    <div class="sale-grid">
+      <div class="sale-card">
+        <h3>7 Habits Cartoon Posters</h3>
+        <div class="orig-price">$4.99</div>
+        <div class="sale-price">$3.49</div>
+        <div class="savings">Save 30%</div>
+        <p>7 colorful posters with cartoon characters kids love. Batman, Power Rangers, mermaids & more. PDF & JPG, print any size.</p>
+        <div class="sale-code">GRANDOPEN30</div>
+        <br><br>
+        <a href="/products/6412176784.html" class="sale-cta">Shop Posters</a>
+      </div>
+      <div class="sale-card featured">
+        <h3>7 Habits Ultimate Classroom Pack</h3>
+        <div class="orig-price">$48.63 value</div>
+        <div class="sale-price">$20.99</div>
+        <div class="savings">Save 57%</div>
+        <p>Everything you need: 14 poster sets, bookmarks, planners, bulletin boards, SVGs & more. The complete 7 Habits classroom toolkit.</p>
+        <div class="sale-code">GRANDOPEN30</div>
+        <br><br>
+        <a href="/bundles/7-habits-classroom-pack.html" class="sale-cta">Shop Bundle</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Classroom Products -->
+<section class="featured-section">
+  <div class="container">
+    <h2 class="section-title">More Classroom Favorites</h2>
+    <div class="divider"><span class="divider-dot"></span></div>
+    <div class="prod-grid">
+      <a href="/products/7153104681.html" class="prod-card">
+        <div class="prod-card-img"><img src="https://i.etsystatic.com/34326585/r/il/fdb5b9/7153104681/il_570xN.7153104681_grc2.jpg" alt="7 Habits Happy Kids Poster Set" loading="lazy"></div>
+        <div class="prod-card-body"><h4>7 Habits of Happy Kids Poster Set</h4><div class="price">$4.99</div></div>
+      </a>
+      <a href="/products/7042426628.html" class="prod-card">
+        <div class="prod-card-img"><img src="https://i.etsystatic.com/34326585/r/il/2924fc/7042426628/il_570xN.7042426628_2uh5.jpg" alt="Dark Academia 7 Habits Posters" loading="lazy"></div>
+        <div class="prod-card-body"><h4>7 Habits Dark Academia Classroom Decor</h4><div class="price">$4.99</div></div>
+      </a>
+      <a href="/products/7654742324.html" class="prod-card">
+        <div class="prod-card-img"><img src="https://i.etsystatic.com/34326585/r/il/4f8c07/7654742324/il_570xN.7654742324_7s6z.jpg" alt="Sloth 7 Habits Posters" loading="lazy"></div>
+        <div class="prod-card-body"><h4>7 Habits Sloth Classroom Decor</h4><div class="price">$4.99</div></div>
+      </a>
+      <a href="/products/5962007948.html" class="prod-card">
+        <div class="prod-card-img"><img src="https://i.etsystatic.com/34326585/r/il/b436f3/5962007948/il_570xN.5962007948_butj.jpg" alt="7 Habits Bookmarks" loading="lazy"></div>
+        <div class="prod-card-body"><h4>7 Habits Bookmarks</h4><div class="price">$1.50</div></div>
+      </a>
+    </div>
+    <div class="section-cta" style="margin-top:32px">
+      <a href="/products.html?cat=classroom" class="btn btn-primary" style="background:#6b9960;box-shadow:0 4px 16px rgba(107,153,96,.3)">Browse All 36 Classroom Designs</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
+        <p class="footer-desc">Handmade digital art & printable keepsakes crafted with love by Andrea.</p>
+        <p class="footer-stats">777 reviews &middot; 5.0 avg rating</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul class="footer-links">
+          <li><a href="/products.html">All Products</a></li>
+          <li><a href="/products.html?cat=handprint">Handprint Art</a></li>
+          <li><a href="/products.html?cat=classroom">Classroom</a></li>
+          <li><a href="/bundles.html">Bundles</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html">Our Story</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="https://mrsmillennial.etsy.com" target="_blank">Etsy Shop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 MrsMillennial Designs. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const n=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>20));
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+
+// Video player
+const V=document.getElementById('V'),po=document.getElementById('po'),ro=document.getElementById('ro'),bar=document.getElementById('bar');
+const DUR=35000;
+const TL=[
+  {s:'.AS1',a:0,z:5500},
+  {s:'.AS2',a:4700,z:14000},
+  {s:'.AS3',a:13200,z:21000},
+  {s:'.AS4',a:20200,z:27000},
+  {s:'.AS5',a:26200,z:99999},
+];
+function reset(){document.querySelectorAll('.AS').forEach(s=>{s.classList.remove('on','off')});bar.style.width='0';ro.classList.remove('on')}
+function go(){
+  reset();const t0=performance.now();
+  function tick(now){
+    const e=now-t0;
+    TL.forEach(t=>{const el=document.querySelector(t.s);if(!el)return;
+      if(e>=t.a&&e<t.z){if(!el.classList.contains('on')){el.classList.remove('off');el.classList.add('on')}}
+      else if(e>=t.z){if(!el.classList.contains('off')){el.classList.add('off');el.classList.remove('on')}}
+    });
+    bar.style.width=Math.min(e/DUR*100,100)+'%';
+    if(e<DUR)requestAnimationFrame(tick);
+    else setTimeout(()=>ro.classList.add('on'),600);
+  }
+  requestAnimationFrame(tick);
+}
+po.addEventListener('click',()=>{po.classList.add('h');setTimeout(go,400)});
+ro.addEventListener('click',()=>{ro.classList.remove('on');go()});
+</script>
+
+<script>
+document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG'){e.preventDefault()}});
+document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG'){e.preventDefault()}});
+</script>
+
+<script>
+(function(){
+  var endpoint='/a/track';
+  function t(data){data.referrer=document.referrer||'';data.page=location.pathname;navigator.sendBeacon?navigator.sendBeacon(endpoint,JSON.stringify(data)):fetch(endpoint,{method:'POST',body:JSON.stringify(data),keepalive:true});}
+  t({event:'pageview'});
+})();
+</script>
+</body>
+</html>
