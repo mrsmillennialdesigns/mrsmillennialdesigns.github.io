@@ -216,6 +216,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--text)}
   .detail-grid{grid-template-columns:1fr;gap:24px}
   .about-grid{grid-template-columns:1fr;gap:24px}
   .about-values{grid-template-columns:1fr}
+  .bundle-detail-hero{padding:24px 16px}
+  .bundle-detail-hero h1{font-size:1.4rem}
+  .bundle-detail-hero .bundle-price{font-size:1.5rem}
+  .bundle-detail-hero .buy-btn{font-size:14px;padding:14px 20px}
   .footer-grid{grid-template-columns:1fr}
   .filter-bar{flex-direction:column;align-items:stretch}
   .reviews-grid{grid-template-columns:1fr}
