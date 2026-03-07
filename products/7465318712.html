@@ -138,5 +138,44 @@ const t=document.getElementById('navToggle'),l=document.getElementById('navLinks
 t.addEventListener('click',()=>l.classList.toggle('open'));
 l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
 </script>
+
+<script>
+(function(){
+  var endpoint='/a/track';
+  function t(data){
+    data.referrer=document.referrer||'';
+    data.page=location.pathname;
+    navigator.sendBeacon?navigator.sendBeacon(endpoint,JSON.stringify(data)):
+    fetch(endpoint,{method:'POST',body:JSON.stringify(data),keepalive:true});
+  }
+  t({event:'pageview'});
+  // Track product detail views
+  if(location.pathname.startsWith('/products/')&&location.pathname.endsWith('.html')){
+    var id=location.pathname.split('/').pop().replace('.html','');
+    var h1=document.querySelector('h1');
+    var price=document.querySelector('.detail-price');
+    t({event:'product_view',productId:id,productTitle:h1?h1.textContent.slice(0,60):'',productPrice:price?price.textContent:''});
+  }
+  // Track buy button clicks
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.buy-btn');
+    if(!btn)return;
+    var id=location.pathname.split('/').pop().replace('.html','');
+    var price=document.querySelector('.detail-price');
+    t({event:'buy_click',productId:id,productPrice:price?price.textContent:''});
+  });
+  // Track bundle clicks
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.bundle-card .buy-btn');
+    if(!btn)return;
+    var card=btn.closest('.bundle-card');
+    var h2=card?card.querySelector('h2'):null;
+    t({event:'bundle_click',bundle:h2?h2.textContent:''});
+  });
+  // Track search
+  var si=document.getElementById('searchInput');
+  if(si){var st;si.addEventListener('input',function(){clearTimeout(st);st=setTimeout(function(){if(si.value.length>1)t({event:'search',query:si.value});},1000);});}
+})();
+</script>
 </body>
 </html>
