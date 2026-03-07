@@ -3,110 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | MrsMillennial Designs</title>
-  <meta name="description" content="Privacy Policy for MrsMillennial Designs.">
-  <link rel="stylesheet" href="/css/style.css">
+  <title>Privacy Policy — MrsMillennial Designs</title>
+  <style>
+    :root { --bg: #faf9f7; --text: #1a1a1a; --muted: #666; --accent: #d35400; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, sans-serif; line-height: 1.7; }
+    .container { max-width: 700px; margin: 0 auto; padding: 60px 24px; }
+    h1 { font-size: 32px; font-weight: 800; margin-bottom: 4px; }
+    .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0; }
+    h2 { font-size: 20px; font-weight: 700; margin: 32px 0 12px; }
+    p, li { font-size: 14px; color: #444; margin-bottom: 12px; }
+    ul { padding-left: 20px; margin-bottom: 16px; }
+    li { margin-bottom: 6px; }
+    strong { color: var(--text); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; color: var(--muted); font-size: 12px; }
+  </style>
 </head>
 <body>
+  <div class="container">
 
-<nav class="nav" id="mainNav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <div class="logo-flower">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="16" cy="16" r="5" fill="#e8a0b4"/>
-          <ellipse cx="16" cy="6" rx="4" ry="6" fill="#b8a9c9" opacity="0.7"/>
-          <ellipse cx="16" cy="26" rx="4" ry="6" fill="#a8c5a0" opacity="0.7"/>
-          <ellipse cx="6" cy="16" rx="6" ry="4" fill="#e8a0b4" opacity="0.6"/>
-          <ellipse cx="26" cy="16" rx="6" ry="4" fill="#b8a9c9" opacity="0.6"/>
-          <ellipse cx="8.5" cy="8.5" rx="4" ry="5" fill="#a8c5a0" opacity="0.5" transform="rotate(-45 8.5 8.5)"/>
-          <ellipse cx="23.5" cy="8.5" rx="4" ry="5" fill="#e8a0b4" opacity="0.5" transform="rotate(45 23.5 8.5)"/>
-          <ellipse cx="8.5" cy="23.5" rx="4" ry="5" fill="#b8a9c9" opacity="0.5" transform="rotate(45 8.5 23.5)"/>
-          <ellipse cx="23.5" cy="23.5" rx="4" ry="5" fill="#a8c5a0" opacity="0.5" transform="rotate(-45 23.5 23.5)"/>
-        </svg>
-      </div>
-      <span>MrsMillennial</span> Designs
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/">Home</a></li>
-      <li><a href="/products.html">Shop</a></li>
-      <li><a href="/about.html">About</a></li>
+    <h1>Privacy Policy</h1>
+    <div class="subtitle">MrsMillennial Designs &mdash; Last updated: February 23, 2026</div>
+
+    <h2>Overview</h2>
+    <p><strong>MrsMillennial Designs</strong> operates an Etsy shop at <a href="https://mrsmillennial.etsy.com">mrsmillennial.etsy.com</a>. We use a personal desktop application called Axle to help manage our shop, including creating Pinterest pins, optimizing listings, and tracking performance. This privacy policy describes how we handle data.</p>
+
+    <h2>Data We Collect</h2>
+    <p>When the shop owner authenticates with Etsy or Pinterest, the application accesses:</p>
+    <ul>
+      <li><strong>Etsy:</strong> Shop profile, listings, listing statistics, orders, and revenue data for our shop (MrsMillennialDesigns).</li>
+      <li><strong>Pinterest:</strong> User profile, boards, and pins for our connected Pinterest account.</li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <p>No data is collected from customers, visitors, or any third parties. Only the shop owner's own account data is accessed.</p>
+
+    <h2>How Data Is Stored</h2>
+    <ul>
+      <li>All data is stored <strong>locally on the shop owner's personal computer</strong> in a SQLite database.</li>
+      <li>There are <strong>no cloud servers, no external databases, and no third-party analytics</strong>.</li>
+      <li>OAuth tokens are stored locally and are never transmitted to any server other than the official Etsy and Pinterest API endpoints.</li>
+    </ul>
+
+    <h2>How Data Is Used</h2>
+    <p>Data from Etsy and Pinterest is used exclusively to:</p>
+    <ul>
+      <li>Display shop analytics and listing performance in a local dashboard.</li>
+      <li>Plan SEO improvements and manage listings.</li>
+      <li>Create and manage Pinterest pins to promote shop listings.</li>
+      <li>Track budgets and spending across shop operations.</li>
+    </ul>
+    <p>Data is <strong>never sold, shared, or disclosed</strong> to any third party.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>Our shop management tool connects to the following APIs solely for business operations:</p>
+    <ul>
+      <li><strong>Etsy Open API v3</strong> &mdash; to read and manage shop data.</li>
+      <li><strong>Pinterest API v5</strong> &mdash; to create pins and manage boards.</li>
+      <li><strong>Anthropic (Claude) API</strong> &mdash; to power an AI assistant for shop management. Anthropic's <a href="https://www.anthropic.com/privacy">privacy policy</a> applies.</li>
+      <li><strong>OpenAI API</strong> &mdash; used as a fallback AI provider. OpenAI's <a href="https://openai.com/privacy">privacy policy</a> applies.</li>
+    </ul>
+
+    <h2>Data Retention</h2>
+    <p>Data persists locally as long as the application is installed. Removing the application and its data folder deletes all stored information. There is no remote backup or cloud sync.</p>
+
+    <h2>Data Sharing</h2>
+    <p>MrsMillennial Designs does <strong>not</strong>:</p>
+    <ul>
+      <li>Share data with advertisers or data brokers.</li>
+      <li>Collect data from users other than the shop owner.</li>
+      <li>Use tracking pixels, cookies, or analytics services on this website.</li>
+      <li>Transmit data to any server other than the official API endpoints listed above.</li>
+    </ul>
+
+    <h2>Security</h2>
+    <ul>
+      <li>OAuth 2.0 with PKCE is used for Etsy authentication.</li>
+      <li>OAuth 2.0 is used for Pinterest authentication.</li>
+      <li>All API communication uses HTTPS/TLS encryption.</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>This application is not designed for or directed at children under 13. No data is knowingly collected from children.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>This policy may be updated as the application evolves. The "Last updated" date at the top reflects the most recent revision.</p>
+
+    <h2>Contact</h2>
+    <p>For questions about this privacy policy, contact us via our Etsy shop: <a href="https://mrsmillennial.etsy.com">MrsMillennialDesigns on Etsy</a>.</p>
+
+    <div class="footer">
+      <p><a href="/">&larr; Back to MrsMillennial Designs</a></p>
+      <p style="margin-top: 8px;">&copy; 2026 MrsMillennial Designs</p>
+    </div>
+
   </div>
-</nav>
-
-<div class="privacy-container">
-  <h1>Privacy Policy</h1>
-  <div class="privacy-subtitle">MrsMillennial Designs &mdash; Last updated: March 7, 2026</div>
-
-  <h2>Overview</h2>
-  <p><strong>MrsMillennial Designs</strong> operates an online shop at <a href="https://mrsmillennialdesigns.github.io">mrsmillennialdesigns.github.io</a> and on Etsy at <a href="https://mrsmillennial.etsy.com">mrsmillennial.etsy.com</a>. This privacy policy describes how we handle data.</p>
-
-  <h2>Data We Collect</h2>
-  <p>This website is a static site hosted on GitHub Pages. We do not collect, store, or process any personal data through this website. There are no cookies, analytics, or tracking scripts.</p>
-  <p>When you purchase our products through Etsy, Etsy's privacy policy applies to that transaction.</p>
-
-  <h2>Third-Party Services</h2>
-  <ul>
-    <li><strong>GitHub Pages</strong> &mdash; hosts this website. <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection">GitHub's privacy practices</a> apply.</li>
-    <li><strong>Etsy</strong> &mdash; processes all product purchases. <a href="https://www.etsy.com/legal/privacy">Etsy's privacy policy</a> applies.</li>
-  </ul>
-
-  <h2>Data Sharing</h2>
-  <p>MrsMillennial Designs does <strong>not</strong>:</p>
-  <ul>
-    <li>Share data with advertisers or data brokers.</li>
-    <li>Use tracking pixels, cookies, or analytics services on this website.</li>
-    <li>Collect any personal information through this website.</li>
-  </ul>
-
-  <h2>Children's Privacy</h2>
-  <p>This website is not designed for or directed at children under 13. No data is knowingly collected from children.</p>
-
-  <h2>Changes to This Policy</h2>
-  <p>This policy may be updated as needed. The "Last updated" date at the top reflects the most recent revision.</p>
-
-  <h2>Contact</h2>
-  <p>For questions about this privacy policy, contact us via our Etsy shop: <a href="https://mrsmillennial.etsy.com">MrsMillennialDesigns on Etsy</a>.</p>
-
-  <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(45,41,38,0.08); text-align: center;">
-    <p><a href="/">&larr; Back to MrsMillennial Designs</a></p>
-    <p style="margin-top: 8px; font-size: 0.82rem; color: var(--text-light);">&copy; 2026 MrsMillennial Designs</p>
-  </div>
-</div>
-
-<script>
-// Nav scroll effect
-const mainNav = document.getElementById('mainNav');
-window.addEventListener('scroll', () => {
-  mainNav.classList.toggle('scrolled', window.scrollY > 20);
-});
-
-// Mobile nav toggle
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
-
-// Close mobile nav on link click
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
-});
-
-// Fade-in on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
