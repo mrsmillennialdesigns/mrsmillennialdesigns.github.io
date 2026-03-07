@@ -132,6 +132,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--text)}
 .breadcrumb a{color:var(--muted)}
 .breadcrumb a:hover{color:var(--rose-dark)}
 .sep{color:rgba(45,41,38,0.2)}
+.back-link{margin-bottom:16px}
+.back-link a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--muted);transition:color var(--transition)}
+.back-link a:hover{color:var(--rose-dark)}
+.back-link svg{flex-shrink:0}
 .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-bottom:60px;align-items:start}
 .detail-main{aspect-ratio:1;border-radius:var(--radius);overflow:hidden;background:var(--white)}
 .detail-main-img{width:100%;height:100%;object-fit:contain}
@@ -145,8 +149,18 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--text)}
 .meta-item{font-size:13px;color:var(--muted)}
 .meta-item::before{content:'\\2713  ';color:var(--sage)}
 .detail-desc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:20px}
-.detail-tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:12px;padding:4px 12px;background:var(--bg-alt);border-radius:50px;color:var(--muted)}
+/* BUNDLE DETAIL */
+.bundle-detail-hero{background:var(--white);border-radius:var(--radius);padding:36px;margin-bottom:40px;border:1px solid rgba(45,41,38,0.06)}
+.bundle-detail-hero .bundle-badge{display:inline-block;background:var(--gold);color:var(--white);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 12px;border-radius:20px;margin-bottom:12px}
+.bundle-detail-hero h1{font-size:clamp(1.6rem,4vw,2.2rem);line-height:1.2;margin-bottom:12px}
+.bundle-detail-hero .bundle-desc{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:20px;max-width:600px}
+.bundle-detail-hero .bundle-pricing{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.bundle-detail-hero .bundle-original{font-size:14px;color:var(--muted);text-decoration:line-through}
+.bundle-detail-hero .bundle-price{font-size:1.8rem;font-weight:800;color:var(--rose-dark)}
+.bundle-detail-hero .bundle-save{background:rgba(232,160,180,0.12);color:var(--rose-dark);font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px}
+.bundle-detail-hero .buy-btn{display:inline-flex;max-width:360px}
+.bundle-included{padding-bottom:60px}
+.bundle-included h2{font-size:1.4rem;margin-bottom:24px}
 
 /* BUY BUTTON */
 .buy-section{margin:24px 0}
