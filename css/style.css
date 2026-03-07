@@ -170,6 +170,17 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--text)}
 .buy-secure{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;font-size:11px;color:var(--muted);opacity:0.6}
 .buy-secure svg{width:12px;height:12px;fill:currentColor}
 
+/* ETSY NOTICE */
+.etsy-notice{margin:40px 0;padding:0}
+.etsy-notice-inner{background:var(--bg-alt);border-radius:var(--radius);padding:28px 32px;text-align:center;border:1px solid rgba(45,41,38,0.06)}
+.etsy-notice-heart{font-size:1.4rem;margin-bottom:8px;color:var(--rose)}
+.etsy-notice-inner h3{font-family:var(--font);font-size:1rem;font-weight:700;margin-bottom:8px}
+.etsy-notice-inner>p{font-size:14px;color:var(--muted);line-height:1.7;max-width:520px;margin:0 auto 20px}
+.etsy-notice-alt{border-top:1px solid rgba(45,41,38,0.08);padding-top:16px}
+.etsy-notice-alt p{font-size:12px;color:var(--muted);opacity:0.7;line-height:1.6;max-width:480px;margin:0 auto 10px}
+.etsy-link{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:var(--muted);opacity:0.6;transition:all var(--transition)}
+.etsy-link:hover{opacity:1;color:var(--rose-dark)}
+
 /* IMAGE PROTECTION */
 .detail-main{position:relative;-webkit-user-select:none;user-select:none}
 .detail-main::after{content:'';position:absolute;inset:0;z-index:2}
