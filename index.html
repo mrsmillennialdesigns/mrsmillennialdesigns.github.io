@@ -3,54 +3,226 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MrsMillennial Designs — Handmade &amp; Digital Goods on Etsy</title>
-  <style>
-    :root { --bg: #faf9f7; --text: #1a1a1a; --muted: #666; --accent: #d35400; --light: #fff; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, sans-serif; line-height: 1.6; }
-    .container { max-width: 700px; margin: 0 auto; padding: 60px 24px; text-align: center; }
-    h1 { font-size: 36px; font-weight: 800; margin-bottom: 8px; }
-    h1 span { color: var(--accent); }
-    .tagline { font-size: 18px; color: var(--muted); margin-bottom: 40px; }
-    .btn { display: inline-block; padding: 14px 32px; background: var(--accent); color: var(--light); font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 8px; transition: background 0.2s; }
-    .btn:hover { background: #b94700; }
-    .info { margin-top: 48px; display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; }
-    .info-item { text-align: center; max-width: 200px; }
-    .info-item h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-    .info-item p { font-size: 13px; color: var(--muted); }
-    .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 12px; color: var(--muted); }
-    .footer a { color: var(--accent); text-decoration: none; }
-  </style>
+  <title>MrsMillennial Designs &mdash; Handmade Digital Art & Printable Keepsakes</title>
+  <meta name="description" content="Handmade digital art, handprint keepsakes, and classroom printables crafted with love by Andrea. 777 reviews, 5.0 stars.">
+  <meta property="og:title" content="MrsMillennial Designs">
+  <meta property="og:description" content="Handmade digital art & printable keepsakes crafted with love">
+  <meta property="og:image" content="https://i.etsystatic.com/34326585/r/isbl/a26665/71457069/isbl_fullxfull.71457069_mw1qfx2e.jpg">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Mrs<span>Millennial</span> Designs</h1>
-    <p class="tagline">Handmade &amp; digital goods — curated with care on Etsy.</p>
-    <a href="https://mrsmillennial.etsy.com" class="btn">Visit Our Etsy Shop</a>
 
-    <div class="info">
-      <div class="info-item">
-        <h3>Handmade Goods</h3>
-        <p>Unique, thoughtfully crafted products made with love.</p>
-      </div>
-      <div class="info-item">
-        <h3>Digital Downloads</h3>
-        <p>Instant-access digital designs and templates.</p>
-      </div>
-      <div class="info-item">
-        <h3>Shop with Confidence</h3>
-        <p>Backed by Etsy's buyer protection and our commitment to quality.</p>
-      </div>
-    </div>
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Mrs<span>Millennial</span> Designs</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/products.html" >Shop</a></li>
+      <li><a href="/about.html" >About</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-    <div class="footer">
-      <p>&copy; 2026 MrsMillennial Designs</p>
-      <p style="margin-top: 6px;">
-        <a href="https://mrsmillennial.etsy.com">Etsy Shop</a>
-        &middot;
-        <a href="/privacy">Privacy Policy</a>
-      </p>
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">777 Five-Star Reviews</div>
+    <h1>Mrs<span class="highlight">Millennial</span> Designs</h1>
+    <p class="hero-tagline">Handmade digital art & printable keepsakes crafted with love</p>
+    <div class="hero-buttons">
+      <a href="/products.html" class="btn btn-primary">Shop All Designs</a>
+      <a href="/about.html" class="btn btn-outline">Our Story</a>
     </div>
   </div>
+</section>
+
+<section class="section categories">
+  <div class="container">
+    <h2 class="section-title">Shop by Category</h2>
+    <div class="divider"><span class="divider-dot"></span></div>
+    <div class="cat-grid">
+      <a href="/products.html?cat=handprint" class="cat-card cat-handprint">
+        <div class="cat-icon">&#9995;</div>
+        <h3>Handprint Art</h3>
+        <p>Capture tiny hands forever with beautiful keepsake crafts</p>
+        <span class="cat-count">91 designs</span>
+      </a>
+      <a href="/products.html?cat=classroom" class="cat-card cat-classroom">
+        <div class="cat-icon">&#128218;</div>
+        <h3>Classroom Resources</h3>
+        <p>Posters, bookmarks, and printables for teachers</p>
+        <span class="cat-count">40 designs</span>
+      </a>
+      <a href="/products.html?cat=digital-art" class="cat-card cat-digital">
+        <div class="cat-icon">&#127912;</div>
+        <h3>Digital Art</h3>
+        <p>Beautiful printable art for your home and gifts</p>
+        <span class="cat-count">13 designs</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section featured">
+  <div class="container">
+    <h2 class="section-title">Featured Designs</h2>
+    <div class="divider"><span class="divider-dot"></span></div>
+    <div class="product-grid">
+      <a href="/products/6663645108.html" class="product-card">
+        <div class="card-img"><img src="https://i.etsystatic.com/34326585/r/il/653be7/6663645108/il_570xN.6663645108_qzw5.jpg" alt="Read Across America Handprint Craft: Keepsake Gift (PDF &amp; JPG)" loading="lazy"></div>
+        <div class="card-body">
+          <span class="badge badge-handprint">Handprint Art</span>
+          <h3>Read Across America Handprint Craft: Keepsake Gift (PDF &amp; JPG)</h3>
+          <div class="card-price">$2.99</div>
+        </div>
+      </a>
+      <a href="/products/7821832703.html" class="product-card">
+        <div class="card-img"><img src="https://i.etsystatic.com/34326585/r/il/c99856/7821832703/il_570xN.7821832703_i9lo.jpg" alt="Custom Easter Footprint PNG – Personalized Happy Easter Digital Download – Baby Bunny Feet Design – Clear Background Sublimation File" loading="lazy"></div>
+        <div class="card-body">
+          <span class="badge badge-handprint">Handprint Art</span>
+          <h3>Custom Easter Footprint PNG – Personalized Happy Easter Digital Downlo</h3>
+          <div class="card-price">$5.99</div>
+        </div>
+      </a>
+      <a href="/products/4760045018.html" class="product-card">
+        <div class="card-img"><img src="https://i.etsystatic.com/34326585/r/il/45ac91/4760045018/il_570xN.4760045018_1nip.jpg" alt="Personalized Handprint Art: Wildflower Family Keepsake (Digital Download)" loading="lazy"></div>
+        <div class="card-body">
+          <span class="badge badge-handprint">Handprint Art</span>
+          <h3>Personalized Handprint Art: Wildflower Family Keepsake (Digital Downlo</h3>
+          <div class="card-price">$2.99</div>
+        </div>
+      </a>
+      <a href="/products/5890334732.html" class="product-card">
+        <div class="card-img"><img src="https://i.etsystatic.com/34326585/r/il/95cc92/5890334732/il_570xN.5890334732_4xuz.jpg" alt="My Weekend Is All Booked, Black Cat &amp; Book Decal, DIY Halloween Shirt, png/ svg" loading="lazy"></div>
+        <div class="card-body">
+          <span class="badge badge-digital">Digital Art</span>
+          <h3>My Weekend Is All Booked, Black Cat &amp; Book Decal, DIY Halloween Shirt,</h3>
+          <div class="card-price">$1.99</div>
+        </div>
+      </a>
+      <a href="/products/7738267932.html" class="product-card">
+        <div class="card-img"><img src="https://i.etsystatic.com/34326585/r/il/259c7d/7738267932/il_570xN.7738267932_rchr.jpg" alt="Pastel Easter Egg Seamless Pattern PNG | Watercolor Spring Digital Paper | Commercial Use Background | Scrapbook, Fabric &amp; POD Design" loading="lazy"></div>
+        <div class="card-body">
+          <span class="badge badge-digital">Digital Art</span>
+          <h3>Pastel Easter Egg Seamless Pattern PNG | Watercolor Spring Digital Pap</h3>
+          <div class="card-price">$1.99</div>
+        </div>
+      </a>
+      <a href="/products/6001354242.html" class="product-card">
+        <div class="card-img"><img src="https://i.etsystatic.com/34326585/r/il/ce7187/6001354242/il_570xN.6001354242_jpoi.jpg" alt="Funny Fishing Dad SVG PNG, Reel Father&#x27;s Day Gift (Digital Download)" loading="lazy"></div>
+        <div class="card-body">
+          <span class="badge badge-digital">Digital Art</span>
+          <h3>Funny Fishing Dad SVG PNG, Reel Father&#x27;s Day Gift (Digital Download)</h3>
+          <div class="card-price">$1.99</div>
+        </div>
+      </a>
+      <a href="/products/3785528989.html" class="product-card">
+        <div class="card-img"><img src="https://i.etsystatic.com/34326585/r/il/09489a/3785528989/il_570xN.3785528989_g7b1.jpg" alt="Dinosaur Bookmarks for Kids: Printable Encouragement Set (2x6) (Digital Download)" loading="lazy"></div>
+        <div class="card-body">
+          <span class="badge badge-classroom">Classroom</span>
+          <h3>Dinosaur Bookmarks for Kids: Printable Encouragement Set (2x6) (Digita</h3>
+          <div class="card-price">$2.25</div>
+        </div>
+      </a>
+      <a href="/products/5981413805.html" class="product-card">
+        <div class="card-img"><img src="https://i.etsystatic.com/34326585/r/il/5b37e7/5981413805/il_570xN.5981413805_m3qb.jpg" alt="Seven Habits SVG, Leader In Me DIY T-Shirt (Digital File)" loading="lazy"></div>
+        <div class="card-body">
+          <span class="badge badge-classroom">Classroom</span>
+          <h3>Seven Habits SVG, Leader In Me DIY T-Shirt (Digital File)</h3>
+          <div class="card-price">$1.99</div>
+        </div>
+      </a>
+      <a href="/products/5962007948.html" class="product-card">
+        <div class="card-img"><img src="https://i.etsystatic.com/34326585/r/il/b436f3/5962007948/il_570xN.5962007948_butj.jpg" alt="The 7 Habits of Highly Effective People Bookmark (png, jpg, pdf, svg)" loading="lazy"></div>
+        <div class="card-body">
+          <span class="badge badge-classroom">Classroom</span>
+          <h3>The 7 Habits of Highly Effective People Bookmark (png, jpg, pdf, svg)</h3>
+          <div class="card-price">$1.50</div>
+        </div>
+      </a>
+    </div>
+    <div class="section-cta">
+      <a href="/products.html" class="btn btn-outline">View All 144 Designs</a>
+    </div>
+  </div>
+</section>
+
+<section class="section reviews-section">
+  <div class="container">
+    <h2 class="section-title">777 Happy Customers</h2>
+    <div class="divider"><span class="divider-dot"></span></div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Cute project idea.  I added real tiny flowers and laminated it."</p>
+        <span class="review-author">&mdash; Rosa</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"love the simplicity of the design"</p>
+        <span class="review-author">&mdash; Jessica</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Parfait. Conforme à la description."</p>
+        <span class="review-author">&mdash; Chrystelle</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Easy to Download. Printed on to card stock with no issues"</p>
+        <span class="review-author">&mdash; Adrianna</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Schnelle Verarbeitung und Sendung des Dokuments. War alles super :)"</p>
+        <span class="review-author">&mdash; nadja</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"The item turned out so cute for our Christmas crafts with our toddlers."</p>
+        <span class="review-author">&mdash; Amanda Rogers</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
+        <p class="footer-desc">Handmade digital art & printable keepsakes crafted with love by Andrea.</p>
+        <p class="footer-stats">777 reviews &middot; 5.0 avg rating</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul class="footer-links">
+          <li><a href="/products.html">All Products</a></li>
+          <li><a href="/products.html?cat=handprint">Handprint Art</a></li>
+          <li><a href="/products.html?cat=digital-art">Digital Art</a></li>
+          <li><a href="/products.html?cat=classroom">Classroom</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html">Our Story</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="https://mrsmillennial.etsy.com" target="_blank">Etsy Shop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 MrsMillennial Designs. All rights reserved.</div>
+  </div>
+</footer>
+<script>
+const n=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>20));
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
 </body>
 </html>

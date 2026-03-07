@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | MrsMillennial Designs</title>
+  <meta name="description" content="Meet Andrea, the creator behind MrsMillennial Designs. Handmade digital art and printable keepsakes crafted with love.">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Mrs<span>Millennial</span> Designs</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/" >Home</a></li>
+      <li><a href="/products.html" >Shop</a></li>
+      <li><a href="/about.html" class="active">About</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>About MrsMillennial Designs</h1>
+  <p>Crafted with love by Andrea</p>
+</div>
+
+<div class="container">
+  <div class="about-grid">
+    <div class="about-visual">
+      <img src="https://i.etsystatic.com/34326585/r/isbl/a26665/71457069/isbl_fullxfull.71457069_mw1qfx2e.jpg" alt="MrsMillennial Designs" class="about-banner">
+    </div>
+    <div class="about-text">
+      <h2>Hi, I'm Andrea</h2>
+      <p>Welcome to MrsMillennial Designs! I'm a designer, teacher, and mom who creates meaningful printables that blend modern style with timeless sentimentality.</p>
+      <p>I specialize in handprint keepsakes that help parents capture precious moments, classroom resources that brighten learning spaces, and digital art prints that add a personal touch to any home.</p>
+      <p>What started as crafts for my own 1st grade classroom and my toddler has grown into a shop with 144 designs and 777 five-star reviews from happy customers around the world.</p>
+      <p>Every design is created with love and care. Thank you for supporting our small business!</p>
+    </div>
+  </div>
+
+  <div class="about-values">
+    <div class="value-card">
+      <div class="value-icon">&#10084;</div>
+      <h3>Made with Love</h3>
+      <p>Every design is personally crafted with care and attention to detail.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">&#127968;</div>
+      <h3>Print at Home</h3>
+      <p>Instant digital downloads you can print at home, anytime you need.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">&#11088;</div>
+      <h3>777+ Reviews</h3>
+      <p>5.0-star average from customers who love their keepsakes.</p>
+    </div>
+  </div>
+
+  <div class="about-cta">
+    <a href="/products.html" class="btn btn-primary">Browse All Designs</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
+        <p class="footer-desc">Handmade digital art & printable keepsakes crafted with love by Andrea.</p>
+        <p class="footer-stats">777 reviews &middot; 5.0 avg rating</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul class="footer-links">
+          <li><a href="/products.html">All Products</a></li>
+          <li><a href="/products.html?cat=handprint">Handprint Art</a></li>
+          <li><a href="/products.html?cat=digital-art">Digital Art</a></li>
+          <li><a href="/products.html?cat=classroom">Classroom</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html">Our Story</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="https://mrsmillennial.etsy.com" target="_blank">Etsy Shop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 MrsMillennial Designs. All rights reserved.</div>
+  </div>
+</footer>
+<script>
+const n=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>20));
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
+</body>
+</html>
