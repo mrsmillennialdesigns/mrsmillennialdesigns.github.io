@@ -9,7 +9,7 @@
   <meta property="og:description" content="25% off custom designs. Handprint keepsakes she'll treasure forever.">
   <meta property="og:image" content="https://mrsmillennialdesigns.com/img/mothers-day-completed.jpg">
   <meta name="pinterest-rich-pin" content="true">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https://i.etsystatic.com data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https://i.etsystatic.com data:; font-src 'self' https://fonts.gstatic.com; media-src 'self'; connect-src 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="/css/style.css">
@@ -54,13 +54,22 @@
     @keyframes zp{0%{transform:scale(1)}100%{transform:scale(1.06)}}
     @keyframes goldWash{0%{opacity:0}30%{opacity:.6}50%{opacity:.8}70%{opacity:.5}100%{opacity:0}}
 
-    .AS1{background:linear-gradient(155deg,#FFF8F0,#FFF0E8 50%,#FDE8E0);flex-direction:column}
-    .AS1 .aa{font-family:'Dancing Script',cursive;font-size:clamp(28px,5vw,52px);color:#2D2926;opacity:0}
-    .AS1 .ab{width:60px;height:2px;background:#D4A0A0;margin:18px 0;opacity:0}
-    .AS1 .ac{font-family:'Playfair Display',serif;font-size:clamp(14px,2.5vw,24px);font-style:italic;color:#5C4E47;opacity:0;max-width:520px;text-align:center;line-height:1.4}
-    .AS1.on .aa{animation:fu 1.2s ease .3s forwards}
-    .AS1.on .ab{animation:fi 1s ease 1.1s forwards}
-    .AS1.on .ac{animation:fu 1.2s ease 1.5s forwards}
+    .AS1{background:#111;flex-direction:column}
+    .AS1 .hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+    .AS1 .vignette{position:absolute;inset:0;z-index:1;background:
+      radial-gradient(ellipse at center,rgba(45,41,38,.25) 0%,rgba(45,41,38,.65) 70%,rgba(20,18,16,.85) 100%)}
+    .AS1 .glow-bar{position:absolute;bottom:0;left:0;right:0;height:80px;z-index:1;
+      background:linear-gradient(0deg,rgba(212,160,160,.25),transparent);opacity:0}
+    .AS1 .aa{font-family:'Dancing Script',cursive;font-size:clamp(28px,5vw,52px);color:#fff;opacity:0;z-index:2;
+      text-shadow:0 2px 30px rgba(0,0,0,.5),0 0 60px rgba(212,160,160,.3)}
+    .AS1 .ab{width:60px;height:2px;background:#D4A0A0;margin:18px 0;opacity:0;z-index:2;
+      box-shadow:0 0 12px rgba(212,160,160,.4)}
+    .AS1 .ac{font-family:'Playfair Display',serif;font-size:clamp(14px,2.5vw,24px);font-style:italic;color:rgba(255,252,247,.95);opacity:0;max-width:520px;text-align:center;line-height:1.4;z-index:2;
+      text-shadow:0 1px 20px rgba(0,0,0,.4)}
+    .AS1.on .aa{animation:fu 1.4s ease .8s forwards}
+    .AS1.on .ab{animation:fi 1s ease 1.8s forwards}
+    .AS1.on .ac{animation:fu 1.2s ease 2.2s forwards}
+    .AS1.on .glow-bar{animation:fi 2s ease 1s forwards}
 
     .AS2{background:#FFFCF7;gap:clamp(20px,5vw,50px)}
     .AS2 .aimg{width:clamp(140px,25vw,250px);height:clamp(185px,33vw,330px);flex-shrink:0;opacity:0;border-radius:2px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06)}
@@ -201,12 +210,17 @@
         </div>
 
         <div class="AS AS1">
-          <div style="position:absolute;inset:0;pointer-events:none">
-            <div class="pet" style="left:10%;top:-8px;background:#D4A28E;--d:6s;--dl:0s;--x:-18px;--r:180deg"></div>
-            <div class="pet" style="left:32%;top:-8px;background:#D4A0A0;--d:7.5s;--dl:.6s;--x:14px;--r:240deg"></div>
-            <div class="pet" style="left:56%;top:-8px;background:#8DC4AD;--d:5.5s;--dl:1.1s;--x:-12px;--r:200deg"></div>
-            <div class="pet" style="left:78%;top:-8px;background:#D4A28E;--d:6.5s;--dl:1.6s;--x:18px;--r:160deg"></div>
-            <div class="pet" style="left:46%;top:-8px;background:#E8B83D;--d:8s;--dl:2.2s;--x:-22px;--r:300deg"></div>
+          <video class="hero-vid" id="heroVid" muted playsinline preload="auto">
+            <source src="/img/mothers-day-hero.mp4" type="video/mp4">
+          </video>
+          <div class="vignette"></div>
+          <div class="glow-bar"></div>
+          <div style="position:absolute;inset:0;pointer-events:none;z-index:2">
+            <div class="pet" style="left:10%;top:-8px;background:rgba(212,162,142,.6);--d:6s;--dl:0s;--x:-18px;--r:180deg"></div>
+            <div class="pet" style="left:32%;top:-8px;background:rgba(212,160,160,.5);--d:7.5s;--dl:.6s;--x:14px;--r:240deg"></div>
+            <div class="pet" style="left:56%;top:-8px;background:rgba(141,196,173,.5);--d:5.5s;--dl:1.1s;--x:-12px;--r:200deg"></div>
+            <div class="pet" style="left:78%;top:-8px;background:rgba(212,162,142,.5);--d:6.5s;--dl:1.6s;--x:18px;--r:160deg"></div>
+            <div class="pet" style="left:46%;top:-8px;background:rgba(232,184,61,.4);--d:8s;--dl:2.2s;--x:-22px;--r:300deg"></div>
           </div>
           <div class="aa">This Mother's Day</div>
           <div class="ab"></div>
@@ -361,23 +375,24 @@ l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.re
 })();
 
 // Video player
-const V=document.getElementById('V'),po=document.getElementById('po'),ro=document.getElementById('ro'),bar=document.getElementById('bar');
-const DUR=33000;
+const V=document.getElementById('V'),po=document.getElementById('po'),ro=document.getElementById('ro'),bar=document.getElementById('bar'),heroVid=document.getElementById('heroVid');
+const DUR=36000;
 const TL=[
-  {s:'.AS1',a:0,z:5000},
-  {s:'.AS2',a:4200,z:10500},
-  {s:'.AS3',a:9700,z:18000},
-  {s:'.AS4',a:17200,z:25000},
-  {s:'.AS5',a:24200,z:99999},
+  {s:'.AS1',a:0,z:8000},
+  {s:'.AS2',a:7200,z:13500},
+  {s:'.AS3',a:12700,z:21000},
+  {s:'.AS4',a:20200,z:28000},
+  {s:'.AS5',a:27200,z:99999},
 ];
-function reset(){document.querySelectorAll('.AS').forEach(s=>{s.classList.remove('on','off')});bar.style.width='0';ro.classList.remove('on')}
+function reset(){document.querySelectorAll('.AS').forEach(s=>{s.classList.remove('on','off')});bar.style.width='0';ro.classList.remove('on');heroVid.pause();heroVid.currentTime=0}
 function go(){
-  reset();const t0=performance.now();
+  reset();heroVid.currentTime=0;heroVid.play().catch(()=>{});const t0=performance.now();
   function tick(now){
     const e=now-t0;
     TL.forEach(t=>{const el=document.querySelector(t.s);if(!el)return;
       if(e>=t.a&&e<t.z){if(!el.classList.contains('on')){el.classList.remove('off');el.classList.add('on')}}
-      else if(e>=t.z){if(!el.classList.contains('off')){el.classList.add('off');el.classList.remove('on')}}
+      else if(e>=t.z){if(!el.classList.contains('off')){el.classList.add('off');el.classList.remove('on');
+        if(t.s==='.AS1')heroVid.pause()}}
     });
     bar.style.width=Math.min(e/DUR*100,100)+'%';
     if(e<DUR)requestAnimationFrame(tick);
