@@ -7,16 +7,26 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; font-src 'self';">
   <link rel="stylesheet" href="/css/style.css">
   <style>
-    .thank-you{max-width:600px;margin:0 auto;padding:120px 24px 80px;text-align:center}
+    .thank-you{max-width:640px;margin:0 auto;padding:120px 24px 80px;text-align:center}
     .thank-icon{width:80px;height:80px;margin:0 auto 24px;background:var(--sage-light);border-radius:50%;display:flex;align-items:center;justify-content:center}
     .thank-icon svg{width:40px;height:40px;fill:var(--sage)}
     .thank-you h1{font-size:2rem;margin-bottom:12px}
     .thank-you .subtitle{color:var(--muted);font-size:1.1rem;margin-bottom:32px;line-height:1.6}
-    .thank-box{background:var(--white);border-radius:var(--radius);padding:28px;text-align:left;border:1px solid rgba(45,41,38,0.06);margin-bottom:32px}
+    .product-name{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:24px;padding:16px;background:var(--bg-alt);border-radius:var(--radius)}
+    .download-btn{display:inline-flex;align-items:center;gap:10px;padding:18px 40px;border-radius:50px;font-size:17px;font-weight:700;background:var(--sage);color:var(--white);transition:all var(--transition);box-shadow:0 4px 16px rgba(168,197,160,0.4);margin-bottom:12px;text-decoration:none}
+    .download-btn:hover{background:var(--sage);filter:brightness(0.9);color:var(--white);transform:translateY(-2px);box-shadow:0 6px 24px rgba(168,197,160,0.5)}
+    .download-btn svg{width:20px;height:20px;fill:currentColor}
+    .download-note{font-size:13px;color:var(--muted);margin-bottom:32px}
+    .thank-box{background:var(--white);border-radius:var(--radius);padding:28px;text-align:left;border:1px solid rgba(45,41,38,0.06);margin-bottom:24px}
     .thank-box h3{font-family:var(--font);font-size:1rem;font-weight:700;margin-bottom:12px}
     .thank-box p{font-size:14px;color:var(--muted);margin-bottom:8px;line-height:1.6}
     .thank-box ul{padding-left:20px;margin:8px 0}
     .thank-box li{font-size:14px;color:var(--muted);margin-bottom:4px}
+    .no-download{background:var(--bg-alt);border-radius:var(--radius);padding:24px;margin-bottom:32px;border:1px solid rgba(45,41,38,0.06)}
+    .no-download p{font-size:14px;color:var(--muted);line-height:1.6;margin:0}
+    .no-download a{font-weight:600}
+    #download-section{display:none}
+    #fallback-section{display:none}
   </style>
 </head>
 <body>
@@ -27,7 +37,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="/">Home</a></li>
       <li><a href="/products.html">Shop</a></li>
-      <li><a href="/bundles.html" >Bundles</a></li>
+      <li><a href="/bundles.html">Bundles</a></li>
       <li><a href="/about.html">About</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -41,16 +51,24 @@
     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
   </div>
   <h1>Thank You for Your Purchase!</h1>
-  <p class="subtitle">Your order has been confirmed and your download is on its way.</p>
+  <p class="subtitle">Your order has been confirmed.</p>
 
-  <div class="thank-box">
-    <h3>What happens next?</h3>
-    <p>You'll receive an email shortly with your download link. If you don't see it within a few minutes:</p>
-    <ul>
-      <li>Check your spam or promotions folder</li>
-      <li>Make sure you entered the correct email at checkout</li>
-      <li>Contact us at <strong>mrsmillennialdesigns@outlook.com</strong></li>
-    </ul>
+  <!-- Shows when download is available -->
+  <div id="download-section">
+    <div class="product-name" id="product-name"></div>
+    <a id="download-btn" class="download-btn" download>
+      <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+      Download Your Files
+    </a>
+    <div class="download-note">Your download will start automatically. If it doesn't, click the button above.</div>
+  </div>
+
+  <!-- Shows when product not yet available for download -->
+  <div id="fallback-section">
+    <div class="no-download">
+      <p>Your purchase is confirmed! We're preparing your download. You'll receive an email at the address you used at checkout with your download link within a few minutes.</p>
+      <p style="margin-top:12px">If you don't receive it within 15 minutes, please contact us at <a href="mailto:mrsmillennialdesigns@outlook.com">mrsmillennialdesigns@outlook.com</a> and we'll send it right over.</p>
+    </div>
   </div>
 
   <div class="thank-box">
@@ -60,10 +78,17 @@
       <li>Print on <strong>cardstock</strong> for keepsakes and crafts</li>
       <li>Use <strong>"Actual Size"</strong> in your print settings (not "Fit to Page")</li>
       <li>For best color accuracy, use a color laser printer or professional print shop</li>
+      <li>Most designs are 8.5x11" or 8x10" — check your product description for sizes</li>
     </ul>
   </div>
 
-  <a href="/products.html" class="btn btn-primary">Continue Shopping</a>
+  <div class="thank-box">
+    <h3>Need Help?</h3>
+    <p>Contact us anytime at <a href="mailto:mrsmillennialdesigns@outlook.com">mrsmillennialdesigns@outlook.com</a></p>
+    <p>We typically respond within a few hours.</p>
+  </div>
+
+  <a href="/products.html" class="btn btn-primary" style="margin-top:8px">Continue Shopping</a>
 </div>
 
 <footer class="footer">
@@ -93,12 +118,208 @@
     <div class="footer-bottom">&copy; 2026 MrsMillennial Designs. All rights reserved.</div>
   </div>
 </footer>
+
 <script>
 const n=document.getElementById('mainNav');
 window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>20));
 const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
 t.addEventListener('click',()=>l.classList.toggle('open'));
 l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
+
+<script>
+// Product titles mapped by listing ID
+const PRODUCTS={
+"3763618207":"Mother's Day Handprint Art: DIY Poem Gift (PDF & JPG)",
+"3785528989":"Dinosaur Bookmarks for Kids: Printable Encouragement Set",
+"3817403706":"Customize An Existing Digital Print",
+"3827243374":"Pink Flower Handprint Art: DIY Kids Keepsake Gift",
+"3841035297":"Handprint Flower Art: DIY Kids Keepsake (PDF, JPG)",
+"3858952918":"Custom Pink Wildflower Print: Boho Nursery Wall Art",
+"3861569456":"Beach Fingerprint Art Craft For Kids, Printable Keepsake Gift",
+"3877002176":"Iris Flower Handprint Art – DIY Kids Keepsake",
+"3878095271":"Mother's Day Handprint Art: DIY Craft Gift (PDF & JPG)",
+"3899237746":"7 Habits Printable Poster Set: Elementary Classroom Decor",
+"3910595428":"Firework Handprint Craft for Kids",
+"3912033279":"Flower Footprint Art: DIY Keepsake Gift (PDF & JPG)",
+"3924485211":"Blue Flower Handprint Art: DIY Kids Keepsake (PDF)",
+"3941391675":"Watercolor Space Wall Art Print Set",
+"3954874909":"Father's Day Handprint Art: Grandpa Poem Keepsake (PDF)",
+"3963100682":"4th of July Handprint Art: USA Kids Craft",
+"3963324857":"Father's Day Handprint Art Gift: DIY Keepsake",
+"3963676945":"Family Handprint Art: DIY Kids Craft Keepsake (PDF & JPG)",
+"4005425060":"Wildflower Handprint Art: DIY Family Keepsake",
+"4029282007":"Nursery Wall Art, Handprint Keepsake (PDF Download)",
+"4038046982":"Welcome Classroom Pun Poster: Whale-Come",
+"4063877412":"The 7 Habits Bookmark Set: Leader in Me Printable (PDF)",
+"4110383001":"Seven Habit Poster Set, Includes 8th Habit",
+"4299997564":"Flower Bouquet Handprint Art: Grandma Keepsake Gift",
+"4595918525":"7 Habits Poster, Neon Blackboard Themed",
+"4711361070":"Personalized Handprint Art: Love You to the Moon",
+"4760045018":"Personalized Handprint Art: Wildflower Family Keepsake",
+"4760052136":"Handprint Art Printable: DIY Kids Keepsake Gift (PDF & JPG)",
+"4760056544":"Handprint Flower Art: DIY Kids Keepsake (PDF & JPG)",
+"4760066640":"Grandma Birthday Handprint Flower Craft: DIY Gift",
+"4760069090":"Handprint Flower Craft & Poem: Keepsake Gift for Mom",
+"4760076406":"Handprint Tree Keepsake Art, Personalized Kid's Gift",
+"4760080990":"Pink Flower Handprint Art: DIY Kids Keepsake (PDF)",
+"4796089692":"Purple Flower Handprint Art Printable",
+"4796102438":"Hello Fall Handprint Craft: DIY Autumn Craft",
+"4796103614":"Veterans Day Handprint Art: Thank You Card Keepsake",
+"4796115232":"Veterans Day Handprint Flower Art: Veteran Thank You Gift",
+"4808305687":"Sun & Moon Handprint Art: DIY Kids Keepsake",
+"4808306593":"Three Handprint Flower Art: Valentines Day Keepsake Gift",
+"4808331171":"Theodore Roosevelt Quote, Motivational Poster Print",
+"4844354249":"Mothers Day Handprint Art, Printable Handprint Keepsake Gift",
+"4844368969":"Father's Day Handprint Art: DIY Kids Craft Gift",
+"4844376353":"Summer Flower Handprint Art: DIY Kids Keepsake (PDF)",
+"4844380973":"Love and Cats Handprint Art, Minimalist Nursery Decor",
+"4862282012":"Handprint Flower Art Printable: DIY Kids Keepsake",
+"4929056172":"Grandfather Poem Handprint Art: Sibling Keepsake Gift",
+"4972433628":"Father's Day Handprint Art Craft, DIY Gift For Dad",
+"5168495186":"Seven Habits Poster Set, Colorful (8.5x11 & 16x20 PDF)",
+"5775824462":"Karma Is A Book, Swiftie Bookmark",
+"5787563166":"Handprint Art: Mother's Day Tea Cup Gift",
+"5796435691":"Breast Cancer Awareness Handprint Art: Pink Ribbon Gift",
+"5796825555":"Cancer Awareness Handprint Craft, Purple Ribbon Gift",
+"5809333295":"Motivational Bookmark Set",
+"5835640327":"Flower Handprint Art & Poem, Keepsake Gift PDF/JPG",
+"5879500545":"Valentines Day Handprint Art: Never Grow Up",
+"5883587654":"Custom Hi FIVE 5th Birthday Shirt SVG & PNG",
+"5883712728":"I Teach Tiny Humans, Teacher Svg",
+"5889223594":"Seven Habits Decal: Colorful SVG & PNG Files",
+"5890334732":"My Weekend Is All Booked, Black Cat & Book Decal",
+"5899529360":"Bee Student Valentine Gift Tag: Printable Favor",
+"5899596686":"Customizable Thank You Gift Tag: Printable Favor Tags",
+"5920326937":"Handprint Flower Art: DIY Kids Keepsake Gift (PDF)",
+"5920328681":"Mother's Day Flower Handprint Art: Keepsake Gift (PDF)",
+"5947661427":"Just Beecause Gift Tag: Printable Bee Thank You Favors",
+"5947692725":"Thanks A Latte Gift Tag: Printable Teacher Favor",
+"5962007948":"The 7 Habits Bookmark (png, jpg, pdf, svg)",
+"5981413805":"Seven Habits SVG, Leader In Me DIY T-Shirt",
+"5997994454":"Handprint Flower Bouquet Gift for Grandma",
+"6001354242":"Funny Fishing Dad SVG PNG",
+"6041683004":"Two 2nd Birthday Shirt Design, SVG PNG",
+"6049429399":"It's Not A Dad Bod Father Figure SVG",
+"6054782780":"Cat Dad SVG PNG, Funny Father's Day Gift",
+"6060352608":"Funny Coffee Recommendations SVG PNG",
+"6061150384":"Funny Coffee Lover SVG PNG",
+"6076732840":"4th of July Handprint Craft: USA Keepsake Art",
+"6107533027":"Matcha & Cats SVG: Funny Cat Lover Shirt Design",
+"6124771841":"Memorial Day Handprint Art: USA Floral Keepsake",
+"6205784204":"Growth Mindset Poster: I Can't Do That...Yet",
+"6207916340":"Spider-Man Hang In There Poster, Kids Room Decor",
+"6211281264":"When You Enter This Classroom Poster",
+"6225178070":"Handprint Keepsake Craft: Personalized Family Gift",
+"6271639622":"Halloween Handprint Art: Spooky Season",
+"6321506779":"Halloween Handprint Art Print Bundle",
+"6362677054":"Handprint Flower Craft: Watercolor Gift for Grandma",
+"6412176784":"7 Habits Cartoon Posters: Leader In Me Classroom Decor",
+"6453387905":"Veteran's Day Handprint Art Crafts",
+"6466497259":"Happy Holidays Handprint Art: DIY Winter Craft Gift",
+"6490504465":"Snowman Footprint Art: Holiday Keepsake",
+"6501866583":"Christmas Tree Handprint Art, Holiday Decor Gift",
+"6507951004":"Self-Regulation Workout for Kids: Poster & Worksheet",
+"6650411034":"Custom 8 Habits SVG: Personalized School Apparel",
+"6663046800":"St. Patrick's Day Handprint Clover Craft",
+"6663645108":"Read Across America Handprint Craft: Keepsake Gift",
+"6727992530":"Heart Breathing Poster: Calming Corner Art",
+"6732985677":"Mother's Day Handprint Flower Art: Editable Template",
+"6778676129":"Butterfly Handprint Art: DIY Kids Keepsake",
+"6783872957":"Black, White & Gold Award Certificate Template",
+"6794103067":"Handprint Flower Art Craft: Mother's Day Keepsake",
+"6804219569":"Axolotl Birthday Invitation Template",
+"6809004023":"Neon Glow Birthday Invitation: Wild Dance Party",
+"6819335294":"Editable Footprint Hammer Father's Day Craft",
+"6850300906":"Custom Listing Rush Order",
+"6867264875":"Dinosaur Handprint Father's Day Card",
+"6869927869":"Father's Day Handprint Art Card: Harmonica Design",
+"6967887613":"Fish In The Pond, Kids Counting Activity Worksheet",
+"7001881830":"Ms. Rachel Birthday Invitation",
+"7003549596":"Personalized Family Handprint Craft",
+"7042426628":"7 Habits of Happy Kids Posters, Dark Academia",
+"7153104681":"7 Habits of Happy Kids Poster Set | Leader In Me",
+"7153886279":"Axolotl Birthday Invitation Template",
+"7224958648":"Customizable Handprint Flower Art: Personalized Keepsake",
+"7231598083":"Fall Handprint Craft",
+"7243449384":"Wildflower Handprint Art Printable | Flower Bouquet Craft",
+"7243523710":"Halloween Footprint Art: Trick or Treat Keepsake",
+"7273579590":"7 Habits Daily Planner Template, Goal Tracker",
+"7294459609":"Icy Yule Christmas Gift Tags",
+"7297435035":"Breast Cancer Awareness Handprint Art",
+"7337680171":"Leader In Me Handprint Craft, 7 Habits Activity",
+"7344995011":"7 Habits Bulletin Board Borders",
+"7351690643":"Frog and Toad Bookmarks: Funny Bookmark Set",
+"7354025985":"Classroom Whiteboard Decal",
+"7396084850":"Yule Be In My Heart Handprint Art",
+"7410580486":"Valentines Day Handprint Art, Wicked Musical Inspired",
+"7414609832":"Joy Ornament, Christmas Handprint Art",
+"7427832835":"Christmas Handprint Art Bundle",
+"7465318712":"Valentines Day Handprint Art, Wicked Musical Inspired Gift",
+"7538210490":"Grandma & Me Handprint Painting Book",
+"7565256348":"Valentine's Day Poem & Handprint Craft",
+"7576256687":"New Years Eve 2026 Handprint Craft",
+"7583278821":"New Years Eve 2026 Handprint Art",
+"7594351610":"Farm Birthday Invitation: Tractor Barnyard Party",
+"7648273962":"Hammer Footprint Art: Father's Day Handprint Craft",
+"7654742324":"7 Habits of Happy Kids Poster Set | Sloth Classroom Decor",
+"7731807520":"Personalized Birth Flower Handprint Art",
+"7735024832":"Easter Footprint Craft 2026 Printable",
+"7737467737":"Personalized Handprint Flower Print: Custom Name",
+"7738267932":"Pastel Easter Egg Seamless Pattern PNG",
+"7790879949":"Custom Grandchildren Handprint Flower Art",
+"7800658941":"Personalized Mother's Day Handprint Flower Print",
+"7807028107":"He Is Risen Handprint Craft, Christian Easter",
+"7814723777":"Fluency Bookmark for Primary Readers",
+"7821085499":"Mother's Day Handprint Bouquet Craft",
+"7821262533":"St. Patrick's Day Handprint Craft Printable",
+"7821832703":"Custom Easter Footprint PNG"
+};
+
+// Check for product parameter from Stripe redirect
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get('product');
+
+  if (productId && PRODUCTS[productId]) {
+    // Show product name
+    document.getElementById('product-name').textContent = PRODUCTS[productId];
+
+    // Check if download file exists by trying to fetch it
+    const extensions = ['pdf', 'zip', 'jpg'];
+    let found = false;
+
+    function tryDownload(ext) {
+      const url = '/downloads/' + productId + '.' + ext;
+      return fetch(url, { method: 'HEAD' }).then(function(res) {
+        if (res.ok) {
+          document.getElementById('download-btn').href = url;
+          document.getElementById('download-btn').setAttribute('download', '');
+          document.getElementById('download-section').style.display = 'block';
+          found = true;
+          return true;
+        }
+        return false;
+      }).catch(function() { return false; });
+    }
+
+    // Try each extension
+    tryDownload('pdf').then(function(ok) {
+      if (!ok) return tryDownload('zip');
+    }).then(function(ok) {
+      if (!ok) return tryDownload('jpg');
+    }).then(function() {
+      if (!found) {
+        // File not yet uploaded — show email fallback
+        document.getElementById('download-section').style.display = 'none';
+        document.getElementById('fallback-section').style.display = 'block';
+      }
+    });
+  } else {
+    // No product ID or unknown product — show generic fallback
+    document.getElementById('fallback-section').style.display = 'block';
+  }
+})();
 </script>
 
 <script>
@@ -111,32 +332,9 @@ l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.re
     fetch(endpoint,{method:'POST',body:JSON.stringify(data),keepalive:true});
   }
   t({event:'pageview'});
-  // Track product detail views
-  if(location.pathname.startsWith('/products/')&&location.pathname.endsWith('.html')){
-    var id=location.pathname.split('/').pop().replace('.html','');
-    var h1=document.querySelector('h1');
-    var price=document.querySelector('.detail-price');
-    t({event:'product_view',productId:id,productTitle:h1?h1.textContent.slice(0,60):'',productPrice:price?price.textContent:''});
-  }
-  // Track buy button clicks
-  document.addEventListener('click',function(e){
-    var btn=e.target.closest('.buy-btn');
-    if(!btn)return;
-    var id=location.pathname.split('/').pop().replace('.html','');
-    var price=document.querySelector('.detail-price');
-    t({event:'buy_click',productId:id,productPrice:price?price.textContent:''});
-  });
-  // Track bundle clicks
-  document.addEventListener('click',function(e){
-    var btn=e.target.closest('.bundle-card .buy-btn');
-    if(!btn)return;
-    var card=btn.closest('.bundle-card');
-    var h2=card?card.querySelector('h2'):null;
-    t({event:'bundle_click',bundle:h2?h2.textContent:''});
-  });
-  // Track search
-  var si=document.getElementById('searchInput');
-  if(si){var st;si.addEventListener('input',function(){clearTimeout(st);st=setTimeout(function(){if(si.value.length>1)t({event:'search',query:si.value});},1000);});}
+  var params=new URLSearchParams(location.search);
+  var pid=params.get('product');
+  if(pid)t({event:'purchase_complete',productId:pid});
 })();
 </script>
 </body>
