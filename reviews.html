@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews | MrsMillennial Designs &mdash; 777+ Five-Star Reviews</title>
+  <meta name="description" content="Read 777+ five-star reviews from real customers. See handprint keepsakes, classroom printables, and custom designs in action. MrsMillennial Designs.">
+  <meta property="og:title" content="Reviews | MrsMillennial Designs">
+  <meta property="og:description" content="777+ five-star reviews from happy customers around the world">
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data: blob:; frame-src https://js.stripe.com; connect-src 'self' https://api.stripe.com https://formspree.io; font-src 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* Reviews Page Styles */
+    .rv-hero{text-align:center;padding:100px 24px 48px;background:linear-gradient(180deg,rgba(232,160,180,0.08),var(--bg))}
+    .rv-hero h1{font-size:clamp(2rem,5vw,2.8rem);margin-bottom:12px}
+    .rv-hero-stars{font-size:2rem;color:var(--gold);letter-spacing:4px;margin-bottom:12px}
+    .rv-hero-count{font-size:1.1rem;color:var(--muted);font-style:italic;margin-bottom:8px}
+    .rv-hero-badge{display:inline-block;background:rgba(232,160,180,0.12);border:1px solid rgba(232,160,180,0.25);color:var(--rose-dark);font-size:13px;font-weight:600;padding:6px 20px;border-radius:50px;letter-spacing:0.5px}
+    .rv-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:800px;margin:0 auto 48px;padding:0 24px}
+    .rv-stat{text-align:center;padding:20px 12px;background:var(--white);border-radius:var(--radius);border:1px solid rgba(45,41,38,0.04)}
+    .rv-stat-num{font-size:2rem;font-weight:800;color:var(--rose-dark);display:block}
+    .rv-stat-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;font-weight:600;margin-top:4px}
+
+    /* Filter tabs */
+    .rv-filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;padding:0 24px}
+    .rv-filter{padding:8px 20px;border-radius:50px;border:1.5px solid rgba(45,41,38,0.1);background:var(--white);color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.3s ease;font-family:var(--font)}
+    .rv-filter:hover{border-color:var(--rose);color:var(--rose-dark)}
+    .rv-filter.active{background:var(--rose);border-color:var(--rose);color:var(--white)}
+
+    /* Review cards */
+    .rv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;padding:0 24px;max-width:1200px;margin:0 auto 32px}
+    .rv-card{background:var(--white);border-radius:var(--radius);padding:24px;border:1px solid rgba(45,41,38,0.04);transition:all 0.3s ease}
+    .rv-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+    .rv-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .rv-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;flex-shrink:0}
+    .rv-meta{flex:1;min-width:0}
+    .rv-name{font-weight:700;font-size:14px;color:var(--text)}
+    .rv-date{font-size:12px;color:var(--muted)}
+    .rv-stars{color:var(--gold);font-size:14px;letter-spacing:1px;flex-shrink:0}
+    .rv-text{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px;font-style:italic}
+    .rv-product{font-size:12px;color:var(--muted);padding:6px 12px;background:var(--bg);border-radius:8px;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .rv-verified{font-size:11px;color:var(--sage);font-weight:600;margin-top:10px;letter-spacing:0.3px}
+
+    /* Load more */
+    .rv-load-more{text-align:center;padding:20px 0 60px}
+    .rv-load-btn{padding:14px 40px;border-radius:50px;border:1.5px solid var(--rose);background:transparent;color:var(--rose-dark);font-size:15px;font-weight:600;cursor:pointer;transition:all 0.3s ease;font-family:var(--font)}
+    .rv-load-btn:hover{background:var(--rose);color:#fff}
+
+    /* Customer Gallery */
+    .rv-gallery-section{background:var(--white);padding:60px 0}
+    .rv-gallery-header{text-align:center;margin-bottom:32px;padding:0 24px}
+    .rv-gallery-header h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:8px}
+    .rv-gallery-header p{color:var(--muted);font-style:italic}
+    .rv-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;max-width:1200px;margin:0 auto;padding:0 24px}
+    .rv-gallery-item{aspect-ratio:3/4;border-radius:10px;overflow:hidden;cursor:pointer;position:relative;background:var(--bg-alt)}
+    .rv-gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease}
+    .rv-gallery-item:hover img{transform:scale(1.05)}
+    .rv-gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.3) 0%,transparent 40%);opacity:0;transition:opacity 0.3s}
+    .rv-gallery-item:hover::after{opacity:1}
+    .rv-gallery-show{text-align:center;margin-top:24px}
+
+    /* Lightbox */
+    .rv-lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:1000;align-items:center;justify-content:center;padding:20px}
+    .rv-lightbox.active{display:flex}
+    .rv-lightbox img{max-width:90vw;max-height:90vh;border-radius:12px;object-fit:contain}
+    .rv-lightbox-close{position:absolute;top:20px;right:24px;color:#fff;font-size:32px;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border-radius:50%;border:none;transition:background 0.2s}
+    .rv-lightbox-close:hover{background:rgba(255,255,255,0.2)}
+    .rv-lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:28px;cursor:pointer;width:50px;height:50px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border-radius:50%;border:none;transition:background 0.2s}
+    .rv-lightbox-nav:hover{background:rgba(255,255,255,0.2)}
+    .rv-lightbox-prev{left:16px}
+    .rv-lightbox-next{right:16px}
+
+    /* Submit Review Form */
+    .rv-submit-section{padding:60px 0;background:var(--bg)}
+    .rv-submit-header{text-align:center;margin-bottom:32px;padding:0 24px}
+    .rv-submit-header h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:8px}
+    .rv-submit-header p{color:var(--muted);font-style:italic}
+    .rv-form{max-width:600px;margin:0 auto;padding:0 24px}
+    .rv-form-group{margin-bottom:20px}
+    .rv-form-group label{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px}
+    .rv-form-group input,.rv-form-group textarea,.rv-form-group select{width:100%;padding:12px 16px;border:1.5px solid rgba(45,41,38,0.12);border-radius:10px;font-size:14px;font-family:var(--font);background:var(--white);color:var(--text);transition:border-color 0.3s}
+    .rv-form-group input:focus,.rv-form-group textarea:focus,.rv-form-group select:focus{outline:none;border-color:var(--rose)}
+    .rv-form-group textarea{resize:vertical;min-height:100px}
+    .rv-star-select{display:flex;gap:4px;font-size:28px;cursor:pointer;direction:rtl;justify-content:flex-end}
+    .rv-star-select input{display:none}
+    .rv-star-select label{color:rgba(45,41,38,0.15);cursor:pointer;transition:color 0.2s}
+    .rv-star-select label:hover,.rv-star-select label:hover~label,.rv-star-select input:checked~label{color:var(--gold)}
+    .rv-form-submit{display:inline-flex;align-items:center;gap:8px;padding:14px 40px;border-radius:50px;font-size:15px;font-weight:700;border:none;cursor:pointer;background:var(--rose);color:var(--white);box-shadow:0 4px 16px rgba(232,160,180,0.3);transition:all 0.3s;font-family:var(--font);width:100%;justify-content:center}
+    .rv-form-submit:hover{background:var(--rose-dark);transform:translateY(-2px);box-shadow:0 6px 24px rgba(232,160,180,0.4)}
+    .rv-form-success{display:none;text-align:center;padding:40px 20px;background:var(--white);border-radius:var(--radius);border:1px solid rgba(168,197,160,0.3)}
+    .rv-form-success.show{display:block}
+    .rv-form-success h3{color:var(--sage);font-family:var(--font);margin-bottom:8px}
+
+    @media(max-width:768px){
+      .rv-summary{grid-template-columns:repeat(2,1fr)}
+      .rv-grid{grid-template-columns:1fr}
+      .rv-gallery{grid-template-columns:repeat(3,1fr)}
+      .rv-lightbox-nav{display:none}
+    }
+    @media(max-width:480px){
+      .rv-gallery{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+
+<div class="md-banner">
+  <a href="/mothers-day.html">
+    <span class="md-tag">Sale</span>
+    Mother's Day 25% Off Custom Designs &mdash; MOMDAY25
+  </a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="/classroom-sale.html">
+    <span class="md-tag" style="background:#4a7040">Sale</span>
+    Classroom 30% Off &mdash; CLASS30 &rarr;
+  </a>
+</div>
+<style>
+  .md-banner{background:linear-gradient(135deg,#FDE8E0,#F5D5CC);border-bottom:2px solid rgba(232,160,180,0.3);padding:12px 24px;text-align:center;position:relative;z-index:101}
+  .md-banner a{color:#2D2926;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+  .md-banner a:hover{color:var(--rose-dark)}
+  .md-banner .md-tag{background:var(--rose-dark);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px}
+</style>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Mrs<span>Millennial</span> Designs</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/products.html">Shop</a></li>
+      <li><a href="/bundles.html">Bundles</a></li>
+      <li><a href="/mothers-day.html" style="color:var(--rose-dark)">Mother's Day Sale</a></li>
+      <li><a href="/classroom-sale.html" style="color:#4a7040">Classroom Sale</a></li>
+      <li><a href="/reviews.html" class="active">Reviews</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="rv-hero">
+  <div class="rv-hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+  <h1>Customer Reviews</h1>
+  <p class="rv-hero-count"><span id="reviewCounter">777</span> five-star reviews from happy customers</p>
+  <div class="rv-hero-badge">5.0 Average Rating</div>
+</section>
+
+<!-- Summary Stats -->
+<div class="rv-summary">
+  <div class="rv-stat">
+    <span class="rv-stat-num" id="statTotal">777</span>
+    <div class="rv-stat-label">Total Reviews</div>
+  </div>
+  <div class="rv-stat">
+    <span class="rv-stat-num">5.0</span>
+    <div class="rv-stat-label">Average Rating</div>
+  </div>
+  <div class="rv-stat">
+    <span class="rv-stat-num">100%</span>
+    <div class="rv-stat-label">5-Star Reviews</div>
+  </div>
+  <div class="rv-stat">
+    <span class="rv-stat-num">144</span>
+    <div class="rv-stat-label">Products Reviewed</div>
+  </div>
+</div>
+
+<!-- Filter tabs -->
+<div class="rv-filters">
+  <button class="rv-filter active" data-filter="all">All Reviews</button>
+  <button class="rv-filter" data-filter="text">With Comments</button>
+  <button class="rv-filter" data-filter="handprint">Handprint Art</button>
+  <button class="rv-filter" data-filter="classroom">Classroom</button>
+  <button class="rv-filter" data-filter="custom">Custom Orders</button>
+</div>
+
+<!-- Review Cards -->
+<div class="rv-grid" id="reviewGrid"></div>
+<div class="rv-load-more" id="loadMore">
+  <button class="rv-load-btn" id="loadBtn">Show More Reviews</button>
+</div>
+
+<!-- Customer Gallery -->
+<section class="rv-gallery-section">
+  <div class="rv-gallery-header">
+    <h2>Our Work in Action</h2>
+    <p>Real photos from real customers &mdash; these are Andrea's designs brought to life in homes and classrooms around the world</p>
+  </div>
+  <div class="rv-gallery" id="galleryGrid"></div>
+  <div class="rv-gallery-show">
+    <button class="rv-load-btn" id="galleryLoadBtn">Show More Photos</button>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="rv-lightbox" id="lightbox">
+  <button class="rv-lightbox-close" id="lbClose">&times;</button>
+  <button class="rv-lightbox-nav rv-lightbox-prev" id="lbPrev">&#8249;</button>
+  <button class="rv-lightbox-nav rv-lightbox-next" id="lbNext">&#8250;</button>
+  <img src="" alt="Review" id="lbImg">
+</div>
+
+<!-- Submit Review -->
+<section class="rv-submit-section">
+  <div class="rv-submit-header">
+    <h2>Share Your Experience</h2>
+    <p>Purchased a design? We'd love to hear from you!</p>
+  </div>
+  <div class="rv-form" id="reviewForm">
+    <div class="rv-form-group">
+      <label>Your Name</label>
+      <input type="text" id="rvName" placeholder="Your first name">
+    </div>
+    <div class="rv-form-group">
+      <label>Product Purchased</label>
+      <input type="text" id="rvProduct" placeholder="Which design did you buy?">
+    </div>
+    <div class="rv-form-group">
+      <label>Rating</label>
+      <div class="rv-star-select">
+        <input type="radio" name="rating" value="5" id="s5" checked><label for="s5">&#9733;</label>
+        <input type="radio" name="rating" value="4" id="s4"><label for="s4">&#9733;</label>
+        <input type="radio" name="rating" value="3" id="s3"><label for="s3">&#9733;</label>
+        <input type="radio" name="rating" value="2" id="s2"><label for="s2">&#9733;</label>
+        <input type="radio" name="rating" value="1" id="s1"><label for="s1">&#9733;</label>
+      </div>
+    </div>
+    <div class="rv-form-group">
+      <label>Your Review</label>
+      <textarea id="rvText" placeholder="Tell us about your experience..."></textarea>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Have a photo of your creation? Attach it to the email that opens!</p>
+    <button type="button" class="rv-form-submit" id="rvSubmitBtn">Submit Review via Email</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
+        <p class="footer-desc">Handmade digital art & printable keepsakes crafted with love by Andrea.</p>
+        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">777 reviews</a> &middot; 5.0 avg rating</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul class="footer-links">
+          <li><a href="/products.html">All Products</a></li>
+          <li><a href="/products.html?cat=handprint">Handprint Art</a></li>
+          <li><a href="/products.html?cat=digital-art">Digital Art</a></li>
+          <li><a href="/products.html?cat=classroom">Classroom</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html">Our Story</a></li>
+          <li><a href="/reviews.html">Reviews</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="https://mrsmillennial.etsy.com" target="_blank">Etsy Shop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 MrsMillennial Designs. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const n=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>20));
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
+
+<script>
+// Review data
+const R=[{"n":"Rosa","d":"Mar 5, 2026","t":"Cute project idea. I added real tiny flowers and laminated it","p":""},{"n":"Jessica","d":"Feb 9, 2026","t":"love the simplicity of the design","p":"Habits or Mappy kids Poster set, classroom Decor (lbxz0 Pur Download."},{"n":"Chrystelle","d":"Feb 7, 2026","t":"Perfect. As described","p":"Wildflower Handprint Art: Holiday Decor Gift (PDF Download)"},{"n":"Nadia","d":"Jan 19, 2026","t":"Fast processing and delivery of the document. Everything was great :)","p":"Personalized Handprint Flower Print: Custom Name Stem and Greeting"},{"n":"Jan","d":"Jan 14, 2026","t":"fun to use for small kids","p":"Handprint Keepsake Craft: Personalized Family Gift (Digital Download)"},{"n":"Terry","d":"Jan 6, 2026","t":"So fun! Granddaughter love giving to Mom & Dad","p":"Joy Ornament, Christmas Handprint Art: Holiday Keepsake Gift (PDF / JPG)"},{"n":"Lauren Hudson","d":"Dec 17, 2025","t":"Super cute item for our preschoolers","p":"Joy Ornament, Christmas Handprint Art: Holiday Keepsake Gift (PDF / JPG)"},{"n":"Samantha","d":"Dec 16, 2025","t":"Perfect for a birthday surprise for my son's grandmother","p":"Iris Flower Handprint Art - DIY Kids Keepsake (PDF Printable)"},{"n":"Celieta","d":"Nov 23, 2025","t":"Matches description. Printed great on canvas and also handmade paper","p":"Joy Ornament Handprint Art: Holiday Keepsake Gift (PDF & JPG)"},{"n":"Jenna","d":"Nov 18, 2025","t":"Beautiful item! Seller was quick to respond and make needed corrections. Can't wait to frame it! Greeting","p":"Personalized Birth Flower Handprint Art, Custom Kids' Names, Year &"},{"n":"Kaytbentley","d":"Nov 16, 2025","t":"Good quality, pretty image. Satisfied!","p":""},{"n":"Jessica","d":"Nov 3, 2025","t":"Great last minute gift idea. Turned out so cute","p":""},{"n":"Brenda","d":"Oct 26, 2025","t":"Easy purchase - user friendly. Will make a nice Christmas present","p":"Personalized Handprint Flower Print: Custom Name Stem and Greeting"},{"n":"Dana","d":"Oct 21, 2025","t":"Exactly what I was looking for!","p":"Leader In Me Posters: 8 Habits Classroom Decor (Digital Download)"},{"n":"Steph","d":"Oct 19, 2025","t":"These were perfect for my adult learner to use!","p":"kids, Homeschool Printable"},{"n":"Kim","d":"Oct 12, 2025","t":"Just as described. Thank you","p":"Posters"},{"n":"Katharing","d":"Oct 8, 2025","t":"The print is very nice","p":"Personalized Handprint Flower Art: Custom Kids' Names"},{"n":"Tamara","d":"Oct 8, 2025","t":"Great for class Dads present BUD","p":"Father's Day Handprint Art Gift: DIY Keepsake (Digital Download)"},{"n":"Allison","d":"Sep 29, 2025","t":"So cute. And great customer service!","p":""},{"n":"Megan","d":"Sep 18, 2025","t":"This was a great product","p":"Pink Flower Handprint Art Printable - DIY Kids Craft, Instant Download, Custom Baby Handprint Keepsake, Mother's Day ..."},{"n":"Tina","d":"Sep 11, 2025","t":"great product I use it everyday","p":"Habit Posters, Leadership Posters, Classroom Decor, 7 Habits Posters"},{"n":"Diane","d":"Sep 9, 2025","t":"Great purchase. I will buy from this store again","p":"Grandpa Handprint Art, Birthday Handprint Art, Hammer Footprint Art"},{"n":"Natalie","d":"Sep 9, 2025","t":"Thanks so much this printed beautifully","p":"Editable Footprint Hammer Father's Day Craft (PDF Template)"},{"n":"Laura","d":"Aug 27, 2025","t":"Printed great to canvas and made a nice gift","p":"Made To Order Birth Flower Handprint Art Printable -Custom Birth Flower Art Print, Handprint Flower Craft, Custom Bab..."},{"n":"Skylar","d":"Aug 26, 2025","t":"This was fun to do with my baby for a Father's day gift!","p":"Grandpa Handprint Art, Birthday Handprint Art, Hammer Footprint Art"},{"n":"Laura","d":"Aug 21, 2025","t":"Printed great to canvas and made a nice gift","p":"Made To Order Birth Flower Handprint Art Printable -Custom Birth Flower Art Print, Handprint Flower Craft, Custom Bab..."},{"n":"Aur\u00e9lie","d":"Aug 8, 2025","t":"Top! Nothing to complain about. Recommend!","p":"wnload, Custom Baby Handprint Keepsake, Christmas C"},{"n":"Seiarra","d":"Aug 1, 2025","t":"This was a great product, as my school is new to Leader in me","p":"Habit Posters, School Counselor Office Decor, Educational Posters"},{"n":"Tiniiohannal","d":"Jul 27, 2025","t":"Very nice gift idea for grandmas/grandpas","p":"Personalized Three Handprint Art Printable - DIY Kids Craft, Instant Download, Custom Baby Handprint Keepsake, Christ..."},{"n":"Khristina Mulin","d":"Jul 27, 2025","t":"Great Father's Day gift idea","p":"Grandpa Handprint Art, Birthday Handprint Art, Hammer Footprint Art"},{"n":"Shelley","d":"Jul 25, 2025","t":"Great for our Leader in me program. Thank you","p":"8 Habit Bookmark, Printable Gift For Students, Bookmark For Kids, Leadership Bookmark Printable, Motivational Bookmark,"},{"n":"Dannielle","d":"Jul 22, 2025","t":"attentive and checked every step of the way to make sure I was happy with my order. Thank you so much!!! shop and for spreading the word to your friends! Come back anytime e Customize An Existing Digital Print","p":"She did absolutely amazing on my custom leader in me posters! I couldn't be more in love! She was quick and"},{"n":"Kristina","d":"Jul 20, 2025","t":"Super great product! Loved it","p":"Personalized Three Hendorint Art Printable \u2022 DiY Kids Cratt. Instanti Download, Custom Baby Handprint Keepsake, Chris..."},{"n":"Terry","d":"Jul 1, 2025","t":"","p":"Motivational Reading Bookmark Set, Set of 4 '2x6* Printable Bookmarks for kids, Homeschool Printable"},{"n":"Susan","d":"Jun 29, 2025","t":"The dads loved it and the kids had fun making it!","p":"Grandpa Handprint Art, Birthday Handprint Art, Hammer Footprint Art"},{"n":"Sign in with Apple user","d":"Jun 20, 2025","t":"Great gift for Father's Day especially this photo for our NYC carpenter DADDY Designs Included","p":"I Love Building Memories With You, Handprint Art Gift For Dad, 2 Different"},{"n":"Courtney","d":"Jun 19, 2025","t":"made a great gift for mother's day!","p":"carable moters bay Iwo handprint rlower Art crar, lemplate & Print Ready Files, Handprint Keepsake Gift for mom, Moth..."},{"n":"Erica","d":"Jun 17, 2025","t":"This is a great product!","p":"Grandpa Handprint Art, Birthday Handprint Art, Hammer Footprint Art"},{"n":"Kirsten","d":"Jun 17, 2025","t":"This was beautiful! I printed on card stock paper and framed it and my mom loved it. So special!","p":"Grandma, I Love You A Bunch Handprint Flower Craft, Printable Gift for Grandmother, Handprint Keepsake, Birthday Gift..."},{"n":"Imabmxchie","d":"Jun 16, 2025","t":"Beautiful photo looks so cute with my daughters hand print","p":"Wildflower Handprint Art Printable - DIY Kids Craft, Instant Download, Custom Baby Handprint Keepsake, Christmas Gift"},{"n":"Imabmxchic","d":"Jun 16, 2025","t":"Beautiful photo looks so cute with my daughters hand print","p":"Iris Flower Handprint Art Printable - DIY Kids Craft, Instant Download, Custom Baby Handprint Keepsake, Mother's Day ..."},{"n":"Amanda","d":"Jun 10, 2025","t":"Great customer service and easy to work with","p":"Easter Footprint Art Craft, Easter Craft Printable, Kid's Easter Activity, Baby Footprint Keepsake Gift, Easter 2024"},{"n":"Laura","d":"Jun 7, 2025","t":"Beautiful customized design and uploaded quickly","p":"Made To Order Handprint Art Printable -Custom Wildflower Handprint Art Print, Handprint Flower Craft, Custom Baby Han..."},{"n":"Sara","d":"Jun 5, 2025","t":"Super cute! It's adorable framed with my son's footprint; my husband is going to love it!","p":"Grandpa Handprint Art, Birthday Handprint Art, Hammer Footprint Art"},{"n":"Briana","d":"Jun 5, 2025","t":"","p":"Grandpa Handprint Art, Birthday Handprint Art, Hammer Footprint Art"},{"n":"Saraiperleberg","d":"May 29, 2025","t":"it to be rushed and it was absolutely worth it!! She's doing absolutely amazing work, responds fast, and fulfilled all my requests! Custom Listing Rush Order. Guaranteed to fulfill your order within 24 hours after purchase!","p":"I placed this amazing order for the custom handprint bouquet with lots of request, and additionally purchased"},{"n":"Nicole","d":"May 28, 2025","t":"Outstanding customer service for custom items. Highly recommend","p":"Made To Order Birth Flower Handprint Art Printable -Custom Birth Flower Art Print, Handprint Flower Craft, Custom Bab..."},{"n":"Hollie","d":"May 28, 2025","t":"Lovely digital print, sent quick","p":"randpa Handprint Art, Birthday Handprint Art, Hammer Footprint Al"},{"n":"Nadia","d":"May 26, 2025","t":"Quick and easy gift idea","p":"Grandma, I Love You A Bunch Handprint Flower Craft, Printable Gift for Grandmother, Handprint Keepsake, Birthday Gift..."},{"n":"Igutierrez1205","d":"May 19, 2025","t":"Seller was very responsive and helpful with my order. The picture came out lovely!","p":"Made To Order Birth Flower Handprint Art Printable -Custom Birth Flower Art Print, Handprint Flower Craft, Custom Bab..."},{"n":"Tara","d":"May 18, 2025","t":"","p":"I Love Building Memories With You, Handprint Art Gift For Dad, 2 Different"},{"n":"Vidbuster","d":"May 17, 2025","t":"","p":"It was the perfect handprint project for Mother's Day! Thank you!"},{"n":"Kelly","d":"May 15, 2025","t":"Super cute resource to use in my practice!","p":"Self-Regulation Workout for Kids, Self- Regulation 16 x20 Poster &"},{"n":"VIRGINIA","d":"May 12, 2025","t":"Easy to color and to review with students","p":"Habit Posters, School Counselor Office Decor, Educational Posters"},{"n":"Holly","d":"May 8, 2025","t":"Andrea was great at getting me the item early when i needed it for a project for my kiddo and her siblings!","p":"Custom Made Handprint Gift For Mother's Day- Personalized Handprint Flower Art Printable - Family Handprint Keepsake ..."},{"n":"Kira","d":"May 7, 2025","t":"Loved it. I would recommend","p":"Grandpa Handprint Art, Birthday Handprint Art, Hammer Footprint Art"},{"n":"Mari","d":"Apr 30, 2025","t":"Was very helpful answering my questions","p":"Made To Order Birth Flower Handprint Art Printable -Custom Birth Flower Art Print, Handprint Flower Craft, Custom Bab..."},{"n":"Billy","d":"Apr 25, 2025","t":"","p":"Grandpa Handprint Art, Birthday Handprint Art, Hammer Footprint Art"},{"n":"Isle95","d":"Apr 20, 2025","t":"Prints very nicely and will be easy to use!","p":"Editable Baby Handprintie we tiffer mom, Mother Day eidy Files"},{"n":"Lauren","d":"Apr 20, 2025","t":"Wonderful and beautiful treasure to keep","p":"Iris Flower Handprint Art Printable - DIY Kids Craft, Instant Download, Custom Baby Handprint Keepsake, Mother's Day ..."},{"n":"Vicky","d":"Apr 13, 2025","t":"Everything was super fast, you get it right away and can get started. Perfect for a last-minute gift. And it's very beautiful. Everyone was delighted with the personalized bouquet! &\u00e1","p":"Three Handprint Flower Art, Mothers Day Handprint Craft, Gift for grandma, Gift for mom, Baby Handprint Keepsake, Fam..."},{"n":"Cindy","d":"Apr 12, 2025","t":"Exactly what I was looking for","p":"Self-Regulation Workout for Kids, Self- Regulation 16 x20 Poster &"},{"n":"Kristin","d":"Mar 31, 2025","t":"Gift for grandparents - nice digital print","p":"Family and Friends"},{"n":"Clementine","d":"Mar 31, 2025","t":"Great present for grandma, i put it on a frame and she loved it :)","p":"Wildflower Handprint Art Printable - DIY Kids Craft, Instant Download, Custom Baby Handprint Keepsake, Christmas Gift"},{"n":"PinkTeddy","d":"Mar 19, 2025","t":"Cute! Thank you very much!","p":"Happy Birthday, Grandma Handprint Flower Craft, \"8x10\" and 8.5x11* Printable, Gift for Grandmother"},{"n":"Annika","d":"Mar 6, 2025","t":"Immediate shipping, quality was good","p":"Personalized Three Handprint Flower Art Printable - DIY Kids Craft, Instant Download, Custom Baby Handprint Keepsake,..."},{"n":"Jennifer","d":"Mar 2, 2025","t":"Great product for a dudes with donuts theme  - Designs Included","p":"I Love Building Memories With You, Handprint Art Gift For Dad, 2 Different"},{"n":"Wiebke","d":"Feb 24, 2025","t":"Very good and beautiful workmanship. Absolutely recommendable","p":"Personalized Three Handprint Art Printable - DIY Kids Craft, Instant Download, Custom Baby Handprint Keepsake, Christ..."},{"n":"Jessica","d":"Feb 11, 2025","t":"Very nice picture and smooth process","p":"ownload, Custom Baby Handprint Keepsake, Valentines Day or Birthd Gift"},{"n":"Chbbyclaxton","d":"Dec 30, 2024","t":"Absolutely perfect! Definitely served the purpose yet a little different. Love the uniqueness","p":"Classroom Decor, Habits 1-8, Kids LeadershipWall Art Set 24x36, 8.5x11"},{"n":"Sfgonzales3","d":"Dec 29, 2024","t":"Cute gift for the grandparents!","p":"Family and Friends"},{"n":"Autumn","d":"Dec 26, 2024","t":"Printed gorgeous and my mother in law loved it","p":"Happy Birthday, Grandma Handprint Flower Craft, \"8x10\" and 8.5x11*"},{"n":"Kristmas","d":"Dec 24, 2024","t":"Ok, let me tell you how special these designs are. The two humans I gave these two, cried. They are precious and the details are PERFECT!!! I would order from you again and again!!! Highly Recommend!!!","p":"Personalized Handprint Art Printable - DIY Kids Craft, Instant Download, Custom Baby Handprint Keepsake, Mother's Day..."},{"n":"Sheila","d":"Dec 16, 2024","t":"Very cute. Can't wait to see the finished product!","p":"Family and Friends"},{"n":"Kristmas","d":"Dec 16, 2024","t":"Beautiful work! My friend will love it!","p":"Custom Baby Handprint Keepsake, Mother's Day or Father's Day Gif"},{"n":"Robert","d":"Dec 9, 2024","t":"Super cute for my preschool class ","p":"amily and Friends"},{"n":"G","d":"Nov 19, 2024","t":"Love it! Would absolutely purchase from this business again!","p":"Grandpa Handprint Art, Personalized Gift for Him, Handprint Craft For Babies, Toddlers & Kids, Gift for Grandpa"},{"n":"C","d":"Nov 19, 2024","t":"Love it! Would absolutely purchase from this business again!","p":"Grandpa Handprint Art, Personalized Gift for Him, Handprint Craft For Babies, Toddlers & Kids, Gift for Grandpa"},{"n":"Hillary","d":"Sep 30, 2024","t":"Gorgeous, as pictured. Delivered digitally within seconds","p":"Wildflower Two Handprint Art, Printable Gift For Family and Friends"},{"n":"Samantha","d":"Sep 8, 2024","t":"This came out super cute","p":"Grandpa Handprint Art"},{"n":"Jserrao0496","d":"Aug 1, 2024","t":"daughter gets older perfect mother's day gift for grandma! love that i can re-use the template to recreate the picture as my","p":"Wildflower Handprint Art"},{"n":"Carolyn","d":"Aug 1, 2024","t":"My husband loved this picture","p":"Grandpa Handprint Art"},{"n":"Melissa","d":"Jul 30, 2024","t":"Just what I needed thank you, can't wait to make it","p":"ly Weekend Is All Booked PNG"},{"n":"Martina","d":"Jul 24, 2024","t":"Great file, easy to edit","p":"Wildflower Two Handprint Art"},{"n":"LH","d":"Jul 17, 2024","t":"Great quality and easy to use!","p":"Two Handprint Art Craft"},{"n":"Rachel","d":"Jul 8, 2024","t":"Beautiful result, customized based on my design interests. Love it!","p":"Kids"},{"n":"Erika","d":"Jul 1, 2024","t":"Oh dartis, Dont you eser Dow up Just stay this It was perfect! I used footprints instead of hands and still looks beautiful","p":""},{"n":"Gina","d":"Jun 27, 2024","t":"gift. printed beautifully on cardstock and looked amazing placed in a frame. Was given to a teacher as a retirement","p":"Custom/ Made-To- Order Printable Wall Art"},{"n":"Erika","d":"Jun 27, 2024","t":"","p":"Grandpa Handprint Art"},{"n":"Emma","d":"Jun 14, 2024","t":"Used feet, still looked amazing!","p":"Pink Wildflower Handprint Art"},{"n":"Ashley","d":"Jun 12, 2024","t":"Perfect for Mother's Day! Thank you!","p":"Pink Wildflower Handprint Art"},{"n":"Lori","d":"Jun 7, 2024","t":"Perfect Mother's Day gift for my daughter. \u2022 I ","p":"Wildflower Handprint Art, Mother's Day Handprint Gift For Mom, Grandma and Aunt"},{"n":"Lisa","d":"Jun 5, 2024","t":"This was perfect for what I needed! Thank you!","p":"Wildflower Two Handprint Art"},{"n":"Kristin","d":"Jun 5, 2024","t":"Great product love how it's made and comes out DIME","p":"I Love Building Memories With You, Handprint Art Gift For Dad"},{"n":"Megan","d":"Jun 2, 2024","t":"I hope my daycare dads enjoy this from their child!","p":"Grandpa Handprint Art"},{"n":"Kayla","d":"Jun 2, 2024","t":"Perfect, quick and easy. :)","p":"Wildflower Two Handprint Art"},{"n":"Kylie","d":"Jun 1, 2024","t":"This item was great! My grandmother loved it!","p":"Custom/ Made-To- Order Printable Wall Art"},{"n":"Lauren","d":"May 30, 2024","t":"Perfect! It was so cute as a Mother's Day gift","p":"Two Handprint Art Craft"},{"n":"LaTonya","d":"May 27, 2024","t":"The Perfect Father's Day artwork project for the preschool children","p":"I Love Building Memories With You, Handprint Art Gift For Dad"},{"n":"Meghan","d":"May 27, 2024","t":"This order was a digital print so no shipping was needed 32218","p":"Classroom Decor"},{"n":"Joy","d":"May 20, 2024","t":"Nice ides for an easy aift for oarents or crandoarents","p":"Printable This is the Hand You Used to Hold When I Was Only. Years Old Handprint Craft"},{"n":"Alice","d":"May 13, 2024","t":"beautitul desian and easy to use. Will detinitely keep this store in mind for tuture cravts","p":"Two Handprint Art Craft"},{"n":"Trinity","d":"May 13, 2024","t":"Beautiful and easy to print","p":"Three Handprint Art"},{"n":"Whitney","d":"May 12, 2024","t":"Sita on May 12. 20241","p":"other's Day Handprint Art, Mothers Day Gift 8x10, \"8.5 XI1\" & \"A4 rintahlol Instant Download ODE and IPEG Gift for Mo..."},{"n":"Kristin","d":"May 11, 2024","t":"Great product and prompt shipping","p":"Mother's Day Handprint Art"},{"n":"Nidie","d":"May 8, 2024","t":"The artwork is really pretty!","p":"Custom/ Made-To- Order Printable Wall Art"},{"n":"Sarah","d":"May 8, 2024","t":"Beautiful art. Just what I needed!","p":"Mothers Day Handprint Craft"},{"n":"Brittnee","d":"May 7, 2024","t":"Beautiful image! Perfect for Mother's Dayl","p":"Wildflower Handprint Art"},{"n":"Sara","d":"May 2, 2024","t":"Very responsive seller and quick to fix any issues I had. Fast delivery. Will order again","p":"Custom/ Made-To- Order Printable Wall Art] Handprint Keepsake Craft for Kids"},{"n":"Sonia","d":"May 1, 2024","t":"scholars. The vibrant colors really convey the importance of the 7 Habits","p":"Neon Wall Art Print"},{"n":"MARISSA","d":"Apr 29, 2024","t":"Beautiful custom design and quickly done!","p":"Custom/ Made-To- Order Printable Wall Art"},{"n":"Luiss","d":"Apr 29, 2024","t":"Beautiful, especially when framed! Bright vivid colors! \u2022 i a oublic responsel","p":"Happy Birthday, Grandma Handprint Flower Craft, \"8x10\" and 8.5\u00d711\""},{"n":"Alanah","d":"Apr 26, 2024","t":"Amazing! Perfect gift for Mother's Day!","p":"Wildflower Handprint Art] Mother's Day Handprint"},{"n":"Imedo86","d":"Apr 20, 2024","t":"Super cute and loved how it turned out","p":"Iris Flower Handprint Craft, \"8x10\" and \"8.5x11\" Printable) Instant Download PDF and JPEG Memory Keepsake"},{"n":"Alexis","d":"Apr 15, 2024","t":"I was an instant down load, out super easy to use, and tne colors poninted creat. nrce handonint Art oxlu and 1ixi. Printab el instant Down oed Par andi","p":"Png Gin for tom, bao, runt, Grand parents and rrenas"},{"n":"Meagankeith2","d":"Apr 1, 2024","t":"such a good idea for grandparents, parents, or anyone wanting a cute little reminder of how tiny those hands can be","p":"Pink Wildflower Handprint Art"},{"n":"Jessica","d":"Mar 24, 2024","t":"Great quality and communication. Perfect","p":""},{"n":"Ismittyx2","d":"Mar 20, 2024","t":"Inis is a beautirul piece or artwork uset tnat i cant wait to aod we unishing touches or my granas nandprints on. Andrea was the best, making sure it's as you want it before finalizing it \u2014Contact buyet Amanda on Feo 22.20241 Great present for my sister in law from her kids! a Contact buyen Claire on reb 1f, 20241 Great product. easy to personalize! \" response","p":"Pink Wildflower Handprint Art"},{"n":"Chelsea","d":"Feb 12, 2024","t":"Super cute Valentine for grandmas! \" lost a public response","p":"Purple Flower Handprint Art Craft for Kids"},{"n":"Jessieg","d":"Feb 4, 2024","t":"Super easy and great quality","p":"Two Handprint Art Craft"},{"n":"Amy","d":"Feb 3, 2024","t":"Beautiful product! It made a great gift","p":"Two Handprint Art Craft"},{"n":"Aschoent","d":"Jan 25, 2024","t":"Very pretty print! The colors look just as good in person","p":"Iris Flower Handprint Craft"},{"n":"Jana Vo\u00df","d":"Jan 16, 2024","t":"Beautiful and special picture! A great gift","p":"Colorful Wildflower Two Handprint Art"},{"n":"Allison","d":"Jan 10, 2024","t":"Perfect Christmas gift for grandparents ","p":"Custom/ Made-To- Order Printable Wall Art Handprint Keepsake Craft for Kids"},{"n":"Katie","d":"Dec 24, 2023","t":"Super cute! Would highly recommend","p":"Two Handprint Art Craft"},{"n":"Natalie","d":"Dec 17, 2023","t":"villanower Iwo handonntar axio and asxil Ynntadie Instant","p":"Download PDF and JPEG Gift for Mom, Dad, Grandparents and Friends"},{"n":"Melissa","d":"Dec 17, 2023","t":"Best person to communicate with","p":"Four Handprint Flower Art Project"},{"n":"Candace O'Sullivan","d":"Dec 11, 2023","t":"Absolutely adorable. Can't wait to do it with my newborn!","p":"Purple Flower Handprint Art Craft for Kids"},{"n":"Anie","d":"Dec 5, 2023","t":"Beautifully painted, the result turned out great","p":"Three Handprint Art"},{"n":"Ania","d":"Dec 5, 2023","t":"Beautifully painted, the result turned out great","p":"Three Handprint Art"},{"n":"Dralynns","d":"Dec 1, 2023","t":"Beautiful! My daughter is going to love it!! ","p":"Custom/ Made-To- Order Printable Wall Art"},{"n":"Taelsh","d":"Nov 7, 2023","t":"Fantastic customer service. I requested a custom piece that had enough room for 7 hands. Seller was quick to respond and get draft artwork across for approval","p":"Custom/ Made-To- Order Printable Wall Art, Handprint Keepsake Craft for Kids"},{"n":"Michele","d":"Oct 30, 2023","t":"Super cute! Wonderful gift to give!","p":"Wildflower Two Handprint Art"},{"n":"Jamie","d":"Oct 17, 2023","t":"Seller was amazing with my requests! It was perfect and my mom loved it!","p":"Custom/ Made-To- Order Printable Wall Art"},{"n":"DA","d":"Sep 26, 2023","t":"My grandkids loved making this for their mama!","p":"Colorful Wildflower Two Handprint Art"},{"n":"Elizabeth","d":"Aug 26, 2023","t":"Exactly as described and a great little gift for the grandparents. ","p":"Iris Flower Handprint Craft"},{"n":"Parkemancipe","d":"Aug 16, 2023","t":"Sooooo cute!","p":"Wild flower Two Handorint Artl '8x10\" and \"8 5x11\u00aa Printan el Ingtantl Download For and JPeo Gilutor Mom, Jad, Grandp..."},{"n":"Victoria","d":"Jul 27, 2023","t":"Love the way this turned out as a Mother's Day gift to myself! spec","p":""},{"n":"Alexandra","d":"Jul 5, 2023","t":"Ilv Flower With Two Hendorints. Diy Mothers Day Girtl Kids Handorint Ar Christine on Jun 21. 20231","p":"Wildflower Two Handprint Art"},{"n":"Coree","d":"Jun 29, 2023","t":"young toddler, it'll probably work well, but I wasn't able to use it for my Pre-k or 1st grade kiddos","p":"Wildflower Three Handprint Craft"},{"n":"Mie","d":"Jun 27, 2023","t":"My mother in law loved this gift! I printed on canvas at Walgreens","p":"Mother's Day Three Handprint Art"},{"n":"Donna","d":"Jun 24, 2023","t":"Custom order for Donna Jeanne","p":""},{"n":"Lauren","d":"Jun 13, 2023","t":"Grandparents loved it!","p":"Custom/ Made-To- Order Printable Wall Art"},{"n":"Casey","d":"Jun 6, 2023","t":"Cute little gift! My mother loved it!","p":"Mother's Day Three Handprint Art"},{"n":"Catherine","d":"Jun 3, 2023","t":"Such a wonderful print!","p":"Wildflower Two Handprint Art"},{"n":"Kelsey","d":"Jun 2, 2023","t":"Item as described. I would purchase from this seller again","p":"I Love Building Memories With You, Handprint Art Gift For Dad"},{"n":"Jessica","d":"May 24, 2023","t":"Perfect for Mother's Day or just because! Mothra po and Po Criter m, Bad, Aunt, Prana arent and Friends","p":"Easy to download, printed at a local shop to have a better than home print quality on higher grade paper."},{"n":"Patty","d":"May 14, 2023","t":"Absolutely loved this item! ","p":"Nildflower Two Handprint Art"},{"n":"Elysha","d":"May 12, 2023","t":"Beautiful!! So easy just print and paint!","p":"Nildflower Two Handprint Art"},{"n":"Mollie","d":"May 10, 2023","t":"Print is beautiful and as pictured! Looks great printed on card stock and in a nice frame. Perfect Mother's Day gift for moms and grandmas!","p":"Mustan Down a Por and Pe enor Kee and - Syl Printable"},{"n":"Rebeccasteinkell","d":"May 9, 2023","t":"So beautiful!","p":"Purple Flower Handprint Art Craft for Kids"},{"n":"Kendra","d":"May 9, 2023","t":"It was good quality thanks","p":"Wildflower Bouquet Handprint Craft"},{"n":"Mary","d":"May 9, 2023","t":"Absolutely love this! The entire process from finding the perfect Mother's Day gift for the grandkiddos to have","p":"other's Day Three Handprint Art"},{"n":"Tami","d":"May 8, 2023","t":"Everything was great! Super simple  m","p":"Wildflower Two Handprint Art *8\u00d710\" and \"8.5\u00d711\" Printable] Instant Download PDF and JPEG Gift for Mom, Dad, Grandpar..."},{"n":"Nicki","d":"May 8, 2023","t":"Beautiful and fun!","p":"Colorful Wildflower Two Handprint Art"},{"n":"Nicki","d":"May 6, 2023","t":"first time! This is darling! I can't wait to try it with my little one. I love that I can print as many as I need if we mess up the","p":"Wildflower Two Handprint Art"},{"n":"Sarah","d":"May 5, 2023","t":"This turned out so cute! Love it!","p":"Purple Flower Handprint Art Craft for Kids"},{"n":"Ashley","d":"May 4, 2023","t":"Its a 10 from me. I loved how these turned out. I cannot wait to share them with all the grandmas! It was super simple to receive and slightly harder to make and print thanks to my wiggly kid. (palm-to-face)","p":"Wildflower Handprint Art"},{"n":"Ariel","d":"May 3, 2023","t":"Great for a mother's day gift!","p":"Pastel Blue Wildflower Handprint Art Craft"},{"n":"Laurie","d":"Apr 11, 2023","t":"Awesome! Thank you so much!!!!","p":"Wildflower Two Handprint Art"},{"n":"Mckinzie Battles","d":"Mar 12, 2023","t":"i villanower Inree handonint Cran oxiu and asxll Frintaole Instant","p":"Download PDF and JPEG Gift for Mom, Dad, Grandparents and Friends"},{"n":"Prints and Pixels","d":"Mar 2, 2023","t":"Really great quality. A lovely design. Very happy with the purchase","p":"Vildflower Two Handprint Craft"},{"n":"Melissa","d":"Feb 19, 2023","t":"Great quality! Loved it. Fun activity to do with my toddler for his grandparents","p":"Pink Wildflower Handprint Art Craft"},{"n":"Whitney,","d":"Feb 18, 2023","t":"Turned out really cute, really happy with this print!","p":"Two Handprint Art Craft"},{"n":"Julia","d":"Feb 14, 2023","t":"Perfect gift from little hands what To and iPe Gift gom, Bad rend rent and Friends","p":""},{"n":"Ashley","d":"Feb 14, 2023","t":"Custom order for Ashley","p":""},{"n":"Icarlson015","d":"Feb 7, 2023","t":"Beautiful snd unique. Makes a really nice keepsake Kidsl Handorint Art with Name Stemsl Custom Girt Baloara on Jan 29. 20231 One of a kind very beautifully created very happy with it","p":"Wildflower Two Handprint Craft"},{"n":"M","d":"Jan 19, 2023","t":"This is incredibly beautiful! I will use this as the Mothers Day gift from my little guys and the pink from the girls. So perfect! Thank you for your creativity!","p":"Pastel Blue Wildflower Handprint Art Craft"},{"n":"Kaitlin","d":"Jan 18, 2023","t":"So cute. Made a special gift for a loved one","p":"Wildflower Two Handprint Craft"},{"n":"Me","d":"Jan 18, 2023","t":"Thanks so much. The flowers are adorable","p":"Wildflower Two Handprint Craft"},{"n":"Olga","d":"Jan 4, 2023","t":"they were very nice to give to my class","p":"Printable Bookmark Set"},{"n":"Ramsey","d":"Dec 27, 2022","t":"Quality of print was great. I used these as a gift for grandparents and they loved it","p":"Wildflower Two Handprint Craft"},{"n":"Christina","d":"Dec 26, 2022","t":"I got so many compliments. High quality and fairly priced","p":"Download PDF and JPEG Gift for Mom, Dad, Grandparents and Friends"},{"n":"Julie","d":"Dec 22, 2022","t":"whose For and ire frat Mom and end rins and friends","p":""},{"n":"Jennifer","d":"Dec 21, 2022","t":"From cart to print took 30 seconds. Such an easy and wonderful gift! Endless possibilities to who to gift to. Thanks!","p":"urple Flower Handprint Art Craft for Kids"},{"n":"Mackenzie","d":"Dec 12, 2022","t":"Great quality, super easy to print","p":"Wildflower Two Handprint Craft"},{"n":"Rakhi","d":"Dec 4, 2022","t":"The seller did an amazing customised item for me. I am so greatful","p":"Custom/ Made-To- Order Printable Wall Art"},{"n":"De melo","d":"Dec 3, 2022","t":"Matched the description, good quality","p":"Purple Flower Handprint Art Craft for Kids"},{"n":"Ashley","d":"Nov 30, 2022","t":"Very easy for a thoughtful gift! Thank you!","p":"Wildflower Two Handprint Craft"},{"n":"Brenda","d":"Nov 26, 2022","t":":) :) :) :)","p":"villarlower three Handprint Cran oxiu and d.oxll Pantable Instant Download PDF and JPEG Gift for Mom, Dad, Grandparen..."},{"n":"Purple","d":"Nov 24, 2022","t":"l appreciate the clarity and simplicity","p":"Minimalist Wall Art Set"},{"n":"Jennifer","d":"Nov 17, 2022","t":"Design and quality are perfect","p":"Wildflower Two Handprint Craft"},{"n":"Ginyer","d":"Nov 10, 2022","t":"Just as described\u2026 worked perfectly. Just what I needed","p":"Halloween Handprint Art Craft"},{"n":"Karen","d":"Oct 24, 2022","t":"So cute!!","p":"Happy Birthday, Grandma Handprint Flower Craft"},{"n":"Adrianna","d":"Jan 22, 2026","t":"","p":"Paint Activity, Fingerpaint Art Craft, PDF Instant Download"},{"n":"Amanda Rogers","d":"Jan 16, 2026","t":"","p":"The item turned out so cute for our Christmas crafts with our toddlers."},{"n":"Marie","d":"Nov 12, 2025","t":"","p":"Personalized Family Handprint Craft, Watercolor Handprint Flower Art: *8 x"},{"n":"Suzanne","d":"Oct 21, 2025","t":"","p":"Great bookmark to print out and use for our school family night about Leader in Me!"},{"n":"Paula Ford","d":"Sep 15, 2025","t":"","p":"Habit Posters, Leadership Posters, Classroom Decor, 7 Habits Posters"},{"n":"Sam","d":"Jul 30, 2025","t":"","p":"Grandma, I Love You A Bunch Handprint Flower Craft, Printable Gift for Grandmother, Handprint Keepsake, Birthday Gift..."},{"n":"Ana","d":"Jul 7, 2025","t":"","p":"ditable Fathers Day Craft, Two Footprint Hammer Craft, Father's Dal tandprint Craft, Grandpa Handprint Art, Hammer Fo..."},{"n":"Snappy Printz","d":"Jul 4, 2025","t":"","p":"My Weekend Is All Booked png, svg, Funny Book Lover svg, Book Humor, Funny Cat png, Gift for her, Cat T-shirt, Teache..."},{"n":"Linda","d":"Jun 12, 2025","t":"","p":"Editable Mother's Day Two Handprint Flower Art Craft, Template & Print Ready Files, Handprint Keepsake Gift for mom, ..."},{"n":"Cory-Brooke","d":"Jun 2, 2025","t":"","p":"Editable Mother's Day Two Handprint Flower Art Craft, Template & Print Ready Files, Handprint Keepsake Gift for mom, ..."},{"n":"Dalel","d":"May 22, 2025","t":"","p":"randpa Handprint Art, Birthday Handprint Art, Hammer Footprint Ar"},{"n":"Carolyn","d":"Mar 27, 2025","t":"","p":"Read Across America Handprint Craft, Read Across America Week activity for kids, First A Reader Then A Leader Printable"},{"n":"Rebecca","d":"Dec 6, 2024","t":"","p":"Family and Friends"},{"n":"Lisalehe","d":"Dec 3, 2024","t":"","p":"Family and Friends"},{"n":"_","d":"May 30, 2024","t":"","p":"Wildflower Two Handprint Art"},{"n":"Julig","d":"May 18, 2024","t":"","p":"Custom/ Made-To- Order Printable Wall Art"},{"n":"Julie","d":"May 18, 2024","t":"","p":"Love you to the moon & back Handprint Art"},{"n":"Jacki","d":"May 11, 2024","t":"","p":"Wildflower Handprint Art"},{"n":"Medo86","d":"Apr 20, 2024","t":"","p":"Pink Wildflower Handprint Art] Mother's Day Gift For Mom, Grandma and Aunt"},{"n":"Joanna","d":"Mar 22, 2024","t":"","p":"Iris Flower Handprint Craft"},{"n":"Tracy","d":"Feb 28, 2024","t":"","p":"Handprint Art, Birthday Handprint Art,No One Measures Up Handprint Art"},{"n":"Wayne","d":"Jan 5, 2024","t":"","p":"Wildflower Handprint Art"},{"n":"Mooreieg","d":"Jan 2, 2024","t":"","p":"Daisy Handprint Art"},{"n":"Sign in with Apple user","d":"Dec 22, 2023","t":"","p":"Love you to the moon & back Handprint Art"},{"n":"Maci","d":"Dec 8, 2023","t":"","p":"Wildflower Handprint Art"},{"n":"Mathy","d":"Oct 2, 2023","t":"","p":"Two Handprints For Babies, Toddlers & Kids"},{"n":"Shelby","d":"Sep 14, 2023","t":"","p":"I Love Building Memories With You, Handprint Art Gift For Dad"},{"n":"Kyemc2391","d":"Sep 14, 2023","t":"","p":"Wildflower Two Handprint Art, \"8x10\" and \"8.5x11* Printable] Instant Download For and Jreb Giltror Mom, Jad, Grandpar..."},{"n":"Reviewed by Inactive","d":"Sep 5, 2023","t":"","p":"Three Handprint Art"},{"n":"Addison","d":"Aug 31, 2023","t":"","p":"1-8"},{"n":"Ina","d":"Aug 11, 2023","t":"","p":"hree Handorint Art. 8x10 and 11xix Printaolel Instant Download Por ani NG Gift for Mom, Dad, Aunt, Grandparents and F..."},{"n":"Cristin","d":"Aug 10, 2023","t":"","p":"Two Handprint Art Craft"},{"n":"Josh","d":"Jul 29, 2023","t":"","p":"a Wildflower Two Handprint Art \"xiO\" and \"B SeT Printable Instant. Download PDF and JPEG Gift for Mom, Dad, Grandpare..."},{"n":"Sarah","d":"Jul 29, 2023","t":"","p":"Mother's Day Three Handprint Art 8x10 and 11x17 Printable"},{"n":"Brittneywesterbergl","d":"Jul 24, 2023","t":"","p":"Mother's Day Daisy Handprint Art \"8x10\" and *8.5x11\" Printable] Instant"},{"n":"NenuKai","d":"Jul 14, 2023","t":"","p":"I Love Building Memories With You, Handprint Art Gift For Dad"},{"n":"Taylor","d":"Jul 11, 2023","t":"","p":"Two Handprint Art Craft"},{"n":"Jennifer Black","d":"Jul 9, 2023","t":"","p":"I Love Building Memories With You, Handprint Art Gift For Dad"},{"n":"Samantha","d":"Jun 21, 2023","t":"","p":"I Love Building Memories with You Handprint Art Bundle"},{"n":"Laura keme","d":"Jun 19, 2023","t":"","p":"Wildflower Two Handprint Art"},{"n":"Sparrow424","d":"Jun 16, 2023","t":"","p":"Mother's Day Wildflower Handprint Art"},{"n":"Emma","d":"Jun 16, 2023","t":"","p":"Grandpa Handprint Art"},{"n":"Julie","d":"Jun 15, 2023","t":"","p":"Mother's Day Three Handprint Art"},{"n":"Patriciaveigel","d":"Jun 15, 2023","t":"","p":"Wildflower Two Handprint Art"},{"n":"Emma","d":"Jun 14, 2023","t":"","p":"Purple Flower Handprint Art Craft for Kids[\"8x10\" and *8.5x11\" Printable"},{"n":"Jacygray","d":"Jun 13, 2023","t":"","p":"Mothers Day Wildflower Two Handprint Art"},{"n":"Mary","d":"Jun 13, 2023","t":"","p":"1-8"},{"n":"Amber","d":"Jun 13, 2023","t":"","p":"Three Handprint Art"},{"n":"Rachie06","d":"Jun 13, 2023","t":"","p":"Lily Flower With Two Handprints"},{"n":"Nikki","d":"Jun 11, 2023","t":"","p":"Mother's Day Handprint Art"},{"n":"Katharina","d":"Jun 10, 2023","t":"","p":"Pastel Blue Wildflower Handprint Art Craft \"8x10\" and \"8.5x11\" Printable"},{"n":"Nicole","d":"Jun 8, 2023","t":"","p":"I Love Building Memories With You, Handprint Art Gift For Dad"},{"n":"Kathryn","d":"Jun 6, 2023","t":"","p":"Wildflower Bouquet Handprint Craft, \"8x10\" and *8.5x11\" Printable] Instant Download PDF and JPEG Gift for Mom, Dad, G..."},{"n":"Amanda","d":"Jun 6, 2023","t":"","p":"Daisy Handprint Art"},{"n":"Katie","d":"Jun 4, 2023","t":"","p":"Pink Wildflower Handprint Art Craft"},{"n":"Kacy","d":"Jun 1, 2023","t":"","p":"Wildflower Two Handprint Art"},{"n":"Tracy","d":"May 29, 2023","t":"","p":"stan Download Po and vete Memory ease d 8 SkI\" ritable"},{"n":"Mariah","d":"May 26, 2023","t":"","p":"Pastel Blue Wildflower Handprint Art Craft"},{"n":"Sabrina","d":"May 26, 2023","t":"","p":"Wildflower Bouquet Handprint Craft"},{"n":"Dana","d":"May 23, 2023","t":"","p":"Purple Flower Handprint Art Craft for Kids"},{"n":"Jordanmerc","d":"May 20, 2023","t":"","p":"Beach Fingerprint Art Project"},{"n":"Nicoledatt6","d":"May 19, 2023","t":"","p":"Happy Birthday, Grandma Handprint Flower Craft"},{"n":"Hannah","d":"May 18, 2023","t":"","p":"Wildflower Two Handprint Art"},{"n":"Peyton","d":"May 18, 2023","t":"","p":"Wildflower Bouquet Handprint Craft"},{"n":"Rhiannon","d":"May 17, 2023","t":"","p":"Mother's Day Three Handprint Art"},{"n":"Gin","d":"May 15, 2023","t":"","p":"ildflower Two Handprint Art"},{"n":"Eliana","d":"May 15, 2023","t":"","p":"Purple Flower Handprint Art Craft for Kids"},{"n":"Rachie06","d":"May 15, 2023","t":"","p":"ildflower Two Handprint Art"},{"n":"Kimberley","d":"May 14, 2023","t":"","p":"Mother's Day Wildflower Handprint Art"},{"n":"Kara Stevenson","d":"May 13, 2023","t":"","p":"Wildflower Two Handprint Art"},{"n":"Amanda","d":"May 13, 2023","t":"","p":"Wildflower Wall Art Bundle"},{"n":"Kaybutler829","d":"May 12, 2023","t":"","p":"Purple Flower Handprint Art Craft for Kids"},{"n":"Y","d":"May 11, 2023","t":"","p":"Wildflower Handprint Art"},{"n":"Wendy","d":"May 11, 2023","t":"","p":"Four Handprint Flower Art Project"},{"n":"Xblackhawkx24","d":"May 11, 2023","t":"","p":"Wildflower Two Handprint Art"},{"n":"Sam Dalman","d":"May 10, 2023","t":"","p":"Mother's Day Pink Wildtlower Handprint Art 8x10 and 8.5x11 Printable. Instant Download PDF andUPEG. Gift for Xom. Aun..."},{"n":"Brittany","d":"May 10, 2023","t":"","p":"I Love Building Memories with You Handprint Art Bundle"},{"n":"Samantha","d":"May 9, 2023","t":"","p":"Wildflower Two Handprint Art. \"8x10\" and *8.5x11\" Printable Instant"},{"n":"Simone","d":"May 9, 2023","t":"","p":"Mothers Day Wildflower Two Handprint Art"},{"n":"Oliviamayer93","d":"May 8, 2023","t":"","p":"Mother's Day Pink Wildflower Handprint Art"},{"n":"Rhiannon","d":"May 3, 2023","t":"","p":"Pastel Blue Wildflower Handprint Art Craft"},{"n":"Sarah","d":"May 3, 2023","t":"","p":"Two Handprint Art Craft"},{"n":"Dona","d":"May 3, 2023","t":"","p":"Wildflower Two Handprint Art"},{"n":"Ggeorge37","d":"May 2, 2023","t":"","p":"\u20228"},{"n":"Jacklyn","d":"May 2, 2023","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Piper","d":"May 1, 2023","t":"","p":"Mother's Day Pink Wildflower Handprint Art"},{"n":"Manuel","d":"May 1, 2023","t":"","p":""},{"n":"Lorri","d":"Apr 27, 2023","t":"","p":"Wildflower Two Handprint Art"},{"n":"Karlee","d":"Apr 22, 2023","t":"","p":"Pastel Blue Wildflower Handprint Art Craft"},{"n":"Meghanaubin","d":"Apr 20, 2023","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Tania","d":"Apr 18, 2023","t":"","p":"Reading Bookmark Set for Kids"},{"n":"Taylor hall","d":"Apr 18, 2023","t":"","p":"Wildflower Two Handprint Art"},{"n":"Tracy","d":"Apr 17, 2023","t":"","p":"I Love Building Memories with You Handprint Art Bundle"},{"n":"Nadia","d":"Apr 16, 2023","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Jacqueline","d":"Apr 14, 2023","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Hailey","d":"Apr 11, 2023","t":"","p":"Wildflower Two Handprint Art"},{"n":"Shawna","d":"Apr 9, 2023","t":"","p":"If I Had a Garden, Mother's Day Footprint Art"},{"n":"Yvette","d":"Apr 8, 2023","t":"","p":"Custom/ Made-To- Order Printable Wall Art"},{"n":"Aling","d":"Apr 6, 2023","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Danielle","d":"Apr 5, 2023","t":"","p":"Wildflower Two Handprint Craft *8x10* and *8.5x11\" Printable Instant Download PDF and JPEG Gift for Mom, Dad, Grandpa..."},{"n":"Emma","d":"Apr 3, 2023","t":"","p":"Pink Wildflower Handprint Art Craft"},{"n":"Smichelle93","d":"Apr 1, 2023","t":"","p":"Purple Flower Handprint Art Craft for Kids"},{"n":"Samantha","d":"Mar 26, 2023","t":"","p":"Pastel Blue Wildflower Handprint Art Craft"},{"n":"Knesbitt1012","d":"Mar 21, 2023","t":"","p":"Wildflower Three Handprint Craft"},{"n":"Kerry","d":"Mar 20, 2023","t":"","p":"3 Handprint Flower Art Project"},{"n":"Laura","d":"Mar 20, 2023","t":"","p":"Wildflower Three Handprint Craft"},{"n":"Julianne","d":"Mar 19, 2023","t":"","p":"Kid's Handorint Craft Valentine's Dav Poem"},{"n":"Sare","d":"Mar 18, 2023","t":"","p":"urple Flower Handprint Art Craft for Kids"},{"n":"Mikhaila","d":"Feb 26, 2023","t":"","p":"Mistletoes Merry Christmas - 2022 - 8\"x10* and \"8.5x11\" Printable - Instant Download Footprint Christmas Gift - Baby'..."},{"n":"Fiona","d":"Feb 23, 2023","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Kaylen","d":"Feb 22, 2023","t":"","p":"Colorful Wildflower Two Handprint Craft"},{"n":"Nicole","d":"Feb 21, 2023","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Anne","d":"Feb 17, 2023","t":"","p":"Wildflower Two Handprint Craft"},{"n":"KT","d":"Feb 17, 2023","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Ashleigh","d":"Feb 15, 2023","t":"","p":"Wildflower Bouquet Handprint Craft"},{"n":"Samantha","d":"Feb 13, 2023","t":"","p":"Orange Flower Handprint Art Project"},{"n":"Melissa","d":"Feb 8, 2023","t":"","p":"Wildflower Three Handprint Craft"},{"n":"Jennifer","d":"Feb 6, 2023","t":"","p":"Two Handprint Art Craft"},{"n":"Amanda","d":"Jan 24, 2023","t":"","p":"Mistletoes Merry Christmas - 2022 - 8x10* and *8.5x11* Printable - Instant Download Footprint Christmas Gift - Baby's..."},{"n":"Watkinsse1991","d":"Jan 12, 2023","t":"","p":"Vildflower Two Handprint Craft"},{"n":"Movievision","d":"Jan 9, 2023","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Samantha","d":"Jan 5, 2023","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Sarah","d":"Jan 3, 2023","t":"","p":"Purple Flower Handprint Art Craft for Kids"},{"n":"Aslynn","d":"Dec 31, 2022","t":"","p":"Wildflower Thre Handprint Craft \"8 TO\" and \" SeT Printable Instant Download PDF and JPEG Gift for Mom, Dad, Grandpare..."},{"n":"Cristina","d":"Dec 28, 2022","t":"","p":"Grandpa Handprint Art, Personalized Gift for Him"},{"n":"Reviewed by Inactive","d":"Dec 22, 2022","t":"","p":"Great craft to make for a gift. Love it."},{"n":"Renaelrevard","d":"Dec 14, 2022","t":"","p":"so Handprint Art Craft"},{"n":"Jessica","d":"Dec 12, 2022","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Katie","d":"Dec 12, 2022","t":"","p":"Vildflower Two Handprint Craft"},{"n":"Breanne","d":"Dec 7, 2022","t":"","p":"Grandparent's Day Two Handprint Craft"},{"n":"Gaby","d":"Nov 30, 2022","t":"","p":"Happy Birthday Handprint Flower Craft"},{"n":"Abby","d":"Nov 17, 2022","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Dorothea","d":"Nov 12, 2022","t":"","p":"Boho Sun & Moon Handprint Craft"},{"n":"Megan","d":"Nov 12, 2022","t":"","p":"Veterans Day Handprint Craft for Kids"},{"n":"Anna","d":"Nov 3, 2022","t":"","p":"3 Handprint Flower Art Project"},{"n":"Melissa","d":"Oct 30, 2022","t":"","p":"Custom/ Made-To- Order Printable Wall Art, Handprint Keepsake Craft for Kids"},{"n":"Bernadette","d":"Oct 21, 2022","t":"","p":"Wildflower Two Handprint Craft"},{"n":"Carla","d":"Oct 17, 2022","t":"","p":"Happy Birthday Handprint Flower Craft"},{"n":"Alfredia","d":"Oct 13, 2022","t":"","p":"Colorful Wildflower Two Handprint Craft"},{"n":"Paigey","d":"Oct 10, 2022","t":"","p":"Color it in Handprint Flower Craft and Poem"}];
+
+// Avatar colors
+const C=['#e8a0b4','#b8a9c9','#a8c5a0','#d4a853','#8bbbd4','#d4809a','#c5b89a','#9bb8a0'];
+function ac(n){let h=0;for(let i=0;i<n.length;i++)h=n.charCodeAt(i)+((h<<5)-h);return C[Math.abs(h)%C.length]}
+function ini(n){const p=n.split(' ');return p[0][0].toUpperCase()+(p.length>1?p[p.length-1][0].toUpperCase():'')}
+
+// Render a review card
+function rc(r){
+  const d=document.createElement('div');
+  d.className='rv-card';
+  let h=`<div class="rv-header"><div class="rv-avatar" style="background:${ac(r.n)}">${ini(r.n)}</div><div class="rv-meta"><div class="rv-name">${r.n}</div><div class="rv-date">${r.d}</div></div><span class="rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>`;
+  if(r.t)h+=`<p class="rv-text">&ldquo;${r.t}&rdquo;</p>`;
+  if(r.p)h+=`<div class="rv-product">${r.p}</div>`;
+  h+=`<div class="rv-verified">&#10003; Verified Purchase</div>`;
+  d.innerHTML=h;
+  return d;
+}
+
+// State
+let shown=0;
+const PER=24;
+let filtered=R;
+const grid=document.getElementById('reviewGrid');
+const loadBtn=document.getElementById('loadBtn');
+const loadMore=document.getElementById('loadMore');
+
+function render(){
+  const batch=filtered.slice(shown,shown+PER);
+  batch.forEach(r=>grid.appendChild(rc(r)));
+  shown+=batch.length;
+  loadMore.style.display=shown>=filtered.length?'none':'block';
+  loadBtn.textContent=`Show More Reviews (${filtered.length-shown} remaining)`;
+}
+
+function reset(data){
+  filtered=data;
+  shown=0;
+  grid.innerHTML='';
+  render();
+}
+
+loadBtn.addEventListener('click',render);
+
+// Filters
+document.querySelectorAll('.rv-filter').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.rv-filter').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    if(f==='all')reset(R);
+    else if(f==='text')reset(R.filter(r=>r.t));
+    else if(f==='handprint')reset(R.filter(r=>(r.p||'').toLowerCase().includes('handprint')));
+    else if(f==='classroom')reset(R.filter(r=>(r.p||'').toLowerCase().match(/classroom|poster|bookmark|habit|leader/)));
+    else if(f==='custom')reset(R.filter(r=>(r.p||'').toLowerCase().match(/custom|personali/)));
+  });
+});
+
+// Initial render
+render();
+
+// Gallery
+const screenshots=["IMG_6296.PNG","IMG_6297.PNG","IMG_6298.PNG","IMG_6299.PNG","IMG_6300.PNG","IMG_6301.PNG","IMG_6302.PNG","IMG_6303.PNG","IMG_6304.PNG","IMG_6305.PNG","IMG_6306.PNG","IMG_6307.PNG","IMG_6308.PNG","IMG_6309.PNG","IMG_6310.PNG","IMG_6311.PNG","IMG_6312.PNG","IMG_6313.PNG","IMG_6314.PNG","IMG_6315.PNG","IMG_6316.PNG","IMG_6317.PNG","IMG_6318.PNG","IMG_6319.PNG","IMG_6320.PNG","IMG_6321.PNG","IMG_6322.PNG","IMG_6323.PNG","IMG_6324.PNG","IMG_6325.PNG","IMG_6326.PNG","IMG_6327.PNG","IMG_6328.PNG","IMG_6329.PNG","IMG_6330.PNG","IMG_6331.PNG","IMG_6332.PNG","IMG_6333.PNG","IMG_6334.PNG","IMG_6335.PNG","IMG_6336.PNG","IMG_6337.PNG","IMG_6338.PNG","IMG_6339.PNG","IMG_6340.PNG","IMG_6341.PNG","IMG_6342.PNG","IMG_6343.PNG","IMG_6344.PNG","IMG_6345.PNG","IMG_6346.PNG","IMG_6347.PNG","IMG_6348.PNG","IMG_6349.PNG","IMG_6350.PNG","IMG_6351.PNG","IMG_6352.PNG","IMG_6353.PNG","IMG_6354.PNG","IMG_6355.PNG","IMG_6356.PNG","IMG_6357.PNG","IMG_6358.PNG","IMG_6359.PNG","IMG_6360.PNG","IMG_6361.PNG","IMG_6362.PNG","IMG_6363.PNG","IMG_6364.PNG","IMG_6365.PNG","IMG_6366.PNG","IMG_6367.PNG","IMG_6368.PNG","IMG_6369.PNG","IMG_6370.PNG","IMG_6371.PNG","IMG_6372.PNG","IMG_6373.PNG","IMG_6374.PNG","IMG_6375.PNG","IMG_6376.PNG","IMG_6377.PNG","IMG_6378.PNG","IMG_6379.PNG","IMG_6380.PNG","IMG_6381.PNG","IMG_6382.PNG","IMG_6383.PNG","IMG_6384.PNG","IMG_6385.PNG","IMG_6386.PNG","IMG_6387.PNG","IMG_6388.PNG","IMG_6389.PNG","IMG_6390.PNG","IMG_6391.PNG","IMG_6392.PNG","IMG_6393.PNG","IMG_6394.PNG","IMG_6395.PNG","IMG_6396.PNG","IMG_6397.PNG","IMG_6398.PNG","IMG_6399.PNG","IMG_6400.PNG","IMG_6401.PNG","IMG_6402.PNG","IMG_6403.PNG","IMG_6404.PNG","IMG_6405.PNG","IMG_6406.PNG","IMG_6407.PNG","IMG_6408.PNG","IMG_6409.PNG","IMG_6410.PNG","IMG_6411.PNG","IMG_6412.PNG"];
+let galShown=0;
+const GAL_PER=18;
+const galGrid=document.getElementById('galleryGrid');
+const galBtn=document.getElementById('galleryLoadBtn');
+
+function renderGallery(){
+  const batch=screenshots.slice(galShown,galShown+GAL_PER);
+  batch.forEach((f,i)=>{
+    const d=document.createElement('div');
+    d.className='rv-gallery-item';
+    d.innerHTML=`<img src="/img/reviews/${f}" alt="Customer review ${galShown+i+1}" loading="lazy">`;
+    d.addEventListener('click',()=>openLightbox(galShown-batch.length+i));
+    galGrid.appendChild(d);
+  });
+  galShown+=batch.length;
+  if(galShown>=screenshots.length)galBtn.parentElement.style.display='none';
+  else galBtn.textContent=`Show More Photos (${screenshots.length-galShown} remaining)`;
+}
+galBtn.addEventListener('click',renderGallery);
+renderGallery();
+
+// Lightbox
+let lbIdx=0;
+const lb=document.getElementById('lightbox');
+const lbImg=document.getElementById('lbImg');
+function openLightbox(idx){
+  lbIdx=idx;
+  lbImg.src='/img/reviews/'+screenshots[idx];
+  lb.classList.add('active');
+  document.body.style.overflow='hidden';
+}
+document.getElementById('lbClose').addEventListener('click',()=>{lb.classList.remove('active');document.body.style.overflow=''});
+document.getElementById('lbPrev').addEventListener('click',()=>{lbIdx=(lbIdx-1+screenshots.length)%screenshots.length;lbImg.src='/img/reviews/'+screenshots[lbIdx]});
+document.getElementById('lbNext').addEventListener('click',()=>{lbIdx=(lbIdx+1)%screenshots.length;lbImg.src='/img/reviews/'+screenshots[lbIdx]});
+lb.addEventListener('click',e=>{if(e.target===lb){lb.classList.remove('active');document.body.style.overflow=''}});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('active'))return;
+  if(e.key==='Escape'){lb.classList.remove('active');document.body.style.overflow=''}
+  if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+screenshots.length)%screenshots.length;lbImg.src='/img/reviews/'+screenshots[lbIdx]}
+  if(e.key==='ArrowRight'){lbIdx=(lbIdx+1)%screenshots.length;lbImg.src='/img/reviews/'+screenshots[lbIdx]}
+});
+
+// Form submission via mailto
+document.getElementById('rvSubmitBtn').addEventListener('click',function(){
+  const name=document.getElementById('rvName').value.trim();
+  const product=document.getElementById('rvProduct').value.trim();
+  const text=document.getElementById('rvText').value.trim();
+  const rating=document.querySelector('input[name="rating"]:checked');
+  const stars=rating?rating.value:'5';
+  if(!name||!product||!text){alert('Please fill in your name, product, and review.');return;}
+  const subject=encodeURIComponent('New Review from '+name+' - MrsMillennialDesigns.com');
+  const body=encodeURIComponent('New Customer Review\n\nName: '+name+'\nProduct: '+product+'\nRating: '+stars+' stars\n\nReview:\n'+text+'\n\n---\nPlease attach a photo of your creation to this email if you have one!');
+  window.location.href='mailto:mrsmillennialdesigns@outlook.com?subject='+subject+'&body='+body;
+});
+</script>
+
+<script>
+document.addEventListener('contextmenu',function(e){
+  if(e.target.tagName==='IMG'||e.target.closest('.detail-main')||e.target.closest('.card-img')){e.preventDefault();}
+});
+document.addEventListener('dragstart',function(e){
+  if(e.target.tagName==='IMG'){e.preventDefault();}
+});
+</script>
+
+<script>
+(function(){
+  var endpoint='/a/track';
+  function t(data){
+    data.referrer=document.referrer||'';
+    data.page=location.pathname;
+    navigator.sendBeacon?navigator.sendBeacon(endpoint,JSON.stringify(data)):
+    fetch(endpoint,{method:'POST',body:JSON.stringify(data),keepalive:true});
+  }
+  t({event:'pageview'});
+})();
+</script>
+</body>
+</html>
