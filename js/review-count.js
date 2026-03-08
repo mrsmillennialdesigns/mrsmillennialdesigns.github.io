@@ -2,8 +2,14 @@
 (function(){
   var API='https://mmd-review-counter.mrsmillennial.workers.dev';
   var FALLBACK=777;
+  var HIGH_KEY='mmd_review_high';
+
+  // Always use the highest count we've ever seen
+  try{var stored=parseInt(localStorage.getItem(HIGH_KEY)||'0');if(stored>FALLBACK)FALLBACK=stored}catch(e){}
 
   function update(total){
+    // Save new high watermark
+    if(total>FALLBACK){FALLBACK=total;try{localStorage.setItem(HIGH_KEY,String(total))}catch(e){}}
     document.querySelectorAll('.footer-stats').forEach(function(el){
       el.innerHTML=el.innerHTML.replace(/\d+ reviews/,'<a href="/reviews.html" style="color:rgba(255,255,255,0.5)">'+total+' reviews</a>');
     });
