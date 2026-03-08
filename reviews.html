@@ -7,7 +7,7 @@
   <meta name="description" content="Read 777+ five-star reviews from real customers. Handprint keepsakes, classroom printables, and custom designs. MrsMillennial Designs.">
   <meta property="og:title" content="Reviews | MrsMillennial Designs">
   <meta property="og:description" content="777+ five-star reviews from happy customers around the world">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data: blob:; frame-src https://js.stripe.com; connect-src 'self' https://api.stripe.com; font-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data: blob:; frame-src https://js.stripe.com; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev https://api.stripe.com; font-src 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="/css/style.css">
@@ -637,22 +637,12 @@ document.getElementById('submitBtn').addEventListener('click',function(){
   saved.unshift(newReview);
   localStorage.setItem('mmd_user_reviews',JSON.stringify(saved));
   
-  // Update counter
-  var extra=0;
-  try{extra=parseInt(localStorage.getItem('mmd_review_extra')||'0')}catch(e){}
-  extra++;
-  localStorage.setItem('mmd_review_extra',String(extra));
-  
   // Add to current page
   R.unshift(newReview);
   reset(R);
-  
-  // Update counts on page
-  var total=777+extra;
-  document.querySelectorAll('.rv-count').forEach(function(el){el.textContent=total});
-  document.querySelectorAll('.footer-stats').forEach(function(el){
-    el.innerHTML=el.innerHTML.replace(/\d+ reviews/,'<a href="/reviews.html" style="color:rgba(255,255,255,0.5)">'+total+' reviews</a>');
-  });
+
+  // Increment global counter via API (updates for ALL visitors)
+  if(window.mmdIncrementReview)window.mmdIncrementReview();
   
   // Show success
   document.getElementById('reviewFormWrap').style.display='none';
