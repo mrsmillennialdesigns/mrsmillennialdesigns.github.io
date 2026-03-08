@@ -132,7 +132,7 @@
 
     /* Sale section */
     .sale-section{padding:60px 0;background:var(--bg)}
-    .sale-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;margin:0 auto;padding:0 24px}
+    .sale-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;max-width:1000px;margin:0 auto;padding:0 24px}
     .sale-card{background:var(--white);border-radius:var(--radius);padding:32px;text-align:center;border:2px solid var(--rose-light);position:relative;overflow:hidden}
     .sale-card.featured{border-color:var(--rose)}
     .sale-card.featured::before{content:'BEST VALUE';position:absolute;top:16px;right:-30px;background:var(--rose-dark);color:#fff;font-size:10px;font-weight:700;padding:4px 36px;transform:rotate(45deg);letter-spacing:1px}
@@ -156,7 +156,7 @@
     .cd-label{font-size:10px;text-transform:uppercase;color:var(--muted);letter-spacing:1px}
 
     @media(max-width:768px){
-      .sale-grid{grid-template-columns:1fr}
+      .sale-grid{grid-template-columns:1fr;gap:20px}
       .ad-wrapper{border-radius:8px}
     }
   </style>
@@ -286,25 +286,35 @@
     <h2 class="section-title">Mother's Day Specials</h2>
     <div class="divider"><span class="divider-dot"></span></div>
     <div class="sale-grid">
+      <div class="sale-card">
+        <h3>Single Printable</h3>
+        <div class="orig-price">Starting at $2.99</div>
+        <div class="sale-price">$2.24</div>
+        <div class="savings">Save 25%</div>
+        <p>Pick any handprint keepsake design. Instant download — print at home, add tiny hands, gift it today.</p>
+        <div class="sale-code">MOMDAY25</div>
+        <br><br>
+        <a href="/products.html?cat=handprint" class="sale-cta">Shop Printables</a>
+      </div>
       <div class="sale-card featured">
         <h3>Mother's Day Bundle</h3>
         <div class="orig-price">$55.89 value</div>
         <div class="sale-price">$18.74</div>
-        <div class="savings">Save 66% with MOMDAY25</div>
-        <p>11 heartwarming handprint keepsakes in one bundle — bouquets, poems, tea cups, personalized flowers. Instant download, print at home.</p>
+        <div class="savings">Save 66%</div>
+        <p>All 11 Mother's Day handprint designs in one download — bouquets, poems, tea cups, and more. The ultimate gift pack.</p>
         <div class="sale-code">MOMDAY25</div>
         <br><br>
         <a href="/bundles/mothers-day-handprint.html" class="sale-cta">See What's Included</a>
       </div>
       <div class="sale-card">
-        <h3>Printable Keepsakes</h3>
-        <div class="orig-price">Starting at $2.99</div>
-        <div class="sale-price">$2.24</div>
-        <div class="savings">Save 25% with MOMDAY25</div>
-        <p>91+ instant-download handprint designs. Print at home, add a little paint, and create a one-of-a-kind gift — no wait, no custom order needed.</p>
+        <h3>Custom Design</h3>
+        <div class="orig-price">Starting at $25.00</div>
+        <div class="sale-price">$18.75</div>
+        <div class="savings">Save 25%</div>
+        <p>Andrea will hand-create a one-of-a-kind keepsake designed just for your family. Names, colors, your vision — made real.</p>
         <div class="sale-code">MOMDAY25</div>
         <br><br>
-        <a href="/products.html?cat=handprint" class="sale-cta">Shop Printables</a>
+        <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Mother%27s%20Day%20Custom%20Design%20-%20MOMDAY25&body=Hi%20Andrea%2C%0A%0AI%27d%20like%20a%20custom%20design%20for%20Mother%27s%20Day!%0A%0APromo%20code%3A%20MOMDAY25%0A%0A%E2%80%A2%20My%20vision%20%2F%20idea%3A%0A%E2%80%A2%20Names%20to%20include%3A%0A%E2%80%A2%20Colors%20%2F%20theme%3A%0A%E2%80%A2%20Date%20needed%20by%3A%0A%0AThank%20you!" class="sale-cta">Request Custom</a>
       </div>
     </div>
   </div>
