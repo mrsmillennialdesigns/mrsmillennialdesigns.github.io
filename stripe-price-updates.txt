@@ -1,0 +1,58 @@
+STRIPE PRICE UPDATES NEEDED
+Update these payment links in your Stripe dashboard to match new prices.
+================================================================================
+
+$2.00 -> $5.99  |  3817403706  |  Customize An Existing Digital Print  |  https://buy.stripe.com/7sY8wO4XBdab3nO6FkcEw0P
+$2.99 -> $5.99  |  3827243374  |  Pink Flower Handprint Art: DIY Kids Keepsake Gift  |  https://buy.stripe.com/bJe3cuahV7PRe2s1l0cEw1X
+$4.99 -> $6.99  |  3858952918  |  Custom Pink Wildflower Print: Boho Nursery Wall Art (16  |  https://buy.stripe.com/cNi4gy9dRfij6A04xccEw1N
+$2.99 -> $5.99  |  3877002176  |  Iris Flower Handprint Art – DIY Kids Keepsake (PDF Prin  |  https://buy.stripe.com/3cI7sKdu78TV0bCgfUcEw1E
+$2.99 -> $5.99  |  3878095271  |  Mother's Day Handprint Art: DIY Craft Gift (PDF & JPG)  |  https://buy.stripe.com/00waEW2Ptb238I8bZEcEw1a
+$2.99 -> $5.99  |  3924485211  |  Blue Flower Handprint Art: DIY Kids Keepsake (PDF)  |  https://buy.stripe.com/dRm5kC61F0np7E4d3IcEw1V
+$2.99 -> $5.99  |  3963324857  |  Father's Day Handprint Art Gift: DIY Keepsake (Digital   |  https://buy.stripe.com/aFadR8fCf1rtgaAgfUcEw13
+$2.99 -> $5.99  |  3963676945  |  Family Handprint Art: DIY Kids Craft Keepsake (PDF & JP  |  https://buy.stripe.com/fZubJ0fCf7PRaQg5BgcEw1T
+$2.99 -> $5.99  |  4029282007  |  Nursery Wall Art, Handprint Keepsake (PDF Download)  |  https://buy.stripe.com/fZudR81Lpc67e2sgfUcEw20
+$2.99 -> $5.99  |  4299997564  |  Flower Bouquet Handprint Art: Grandma Keepsake Gift (PD  |  https://buy.stripe.com/6oU3cufCfb231fG0gWcEw1p
+$2.99 -> $5.99  |  4711361070  |  Personalized Handprint Art: 'Love You to the Moon' DIY   |  https://buy.stripe.com/00w28q61Fgmn5vW1l0cEw1R
+$2.99 -> $5.99  |  4760045018  |  Personalized Handprint Art: Wildflower Family Keepsake   |  https://buy.stripe.com/5kQ00i3Tx6LN5vWgfUcEw03
+$2.99 -> $5.99  |  4760076406  |  Handprint Tree Keepsake Art, Personalized Kid's Gift (P  |  https://buy.stripe.com/8x214m9dRb234rS8NscEw1z
+$2.99 -> $5.99  |  4796102438  |  Hello Fall Handprint Craft: DIY Autumn Craft (Digital D  |  https://buy.stripe.com/28E6oGahV7PRe2s4xccEw12
+$2.99 -> $5.99  |  4844354249  |  Mothers Day Handprint Art, Printable Handprint Keepsake  |  https://buy.stripe.com/7sYeVcgGj1rt6A06FkcEw1q
+$2.99 -> $5.99  |  4844376353  |  Summer Flower Handprint Art: DIY Kids Keepsake (PDF)  |  https://buy.stripe.com/6oUfZgblZ2vx4rS2p4cEw1t
+$2.99 -> $5.99  |  5787563166  |  Handprint Art: Mother's Day Tea Cup Gift (PDF & JPG)  |  https://buy.stripe.com/dRm00iblZ5HJ5vW1l0cEw1w
+$3.00 -> $5.99  |  5883587654  |  Custom Hi, FIVE 5th Birthday Shirt SVG & PNG (Digital F  |  https://buy.stripe.com/3cI3cu0Hl0np2jK2p4cEw2g
+$1.99 -> $5.99  |  5883712728  |  I Teach Tiny Humans, Teacher Svg - DIY gift for teacher  |  https://buy.stripe.com/8x29AS3Tx8TV3nOe7McEw1O
+$1.99 -> $5.99  |  5899529360  |  Bee Student Valentine Gift Tag: Printable Favor (Digita  |  https://buy.stripe.com/6oU6oGfCf0np4rS8NscEw1P
+$1.99 -> $5.99  |  5899596686  |  Customizable Thank You Gift Tag: Printable Favor Tags (  |  https://buy.stripe.com/14A28qblZ8TV2jK6FkcEw0N
+$2.99 -> $5.99  |  5920328681  |  Mother's Day Flower Handprint Art: Keepsake Gift (PDF)  |  https://buy.stripe.com/00waEW9dReef0bCbZEcEw1K
+$1.99 -> $5.99  |  5947661427  |  Just Beecause Gift Tag: Printable Bee Thank You Favors   |  https://buy.stripe.com/fZu28qfCf0np2jK7JocEw0O
+$1.99 -> $5.99  |  5947692725  |  Thanks A Latte Gift Tag: Printable Teacher Favor (Digit  |  https://buy.stripe.com/aFa4gyblZeef2jK4xccEw1J
+$1.99 -> $5.99  |  5981413805  |  Seven Habits SVG, Leader In Me DIY T-Shirt (Digital Fil  |  https://buy.stripe.com/7sYfZg75J6LN5vWe7McEw05
+$2.99 -> $5.99  |  6225178070  |  Handprint Keepsake Craft: Personalized Family Gift (Dig  |  https://buy.stripe.com/9B600i89N5HJaQgd3IcEw0H
+$2.99 -> $5.99  |  6466497259  |  Happy Holidays Handprint Art: DIY Winter Craft Gift (Di  |  https://buy.stripe.com/8x214mahVgmne2sgfUcEw1G
+$2.99 -> $5.99  |  6490504465  |  Snowman Footprint Art: Holiday House Decor Gift, Christ  |  https://buy.stripe.com/3cIcN42Ptc673nO1l0cEw1F
+$2.99 -> $5.99  |  6501866583  |  Christmas Tree Handprint Art, Holiday Decor Gift for Fr  |  https://buy.stripe.com/3cI6oG1Lp2vxe2se7McEw1M
+$3.99 -> $6.99  |  6650411034  |  Custom 8 Habits SVG: Personalized School Apparel (PNG,   |  https://buy.stripe.com/6oUbJ089N8TVcYo9RwcEw22
+$2.99 -> $5.99  |  6732985677  |  Mother's Day Handprint Flower Art: Editable Template (D  |  https://buy.stripe.com/5kQ5kC2Pt5HJbUk8NscEw15
+$2.99 -> $5.99  |  6778676129  |  Butterfly Handprint Art: DIY Kids Keepsake (Digital Art  |  https://buy.stripe.com/dRm6oG75J2vx2jKgfUcEw25
+$2.99 -> $5.99  |  6783872957  |  Black, White & Gold Customizable Award Certificate Temp  |  https://buy.stripe.com/bJebJ00Hl9XZ4rS9RwcEw1x
+$3.99 -> $6.99  |  6804219569  |  Axolotl Birthday Invitation Template: Editable Canva De  |  https://buy.stripe.com/14A00ifCfc67aQg5BgcEw2h
+$3.99 -> $6.99  |  6809004023  |  Neon Glow Birthday Invitation: Wild Dance Party, Editab  |  https://buy.stripe.com/14A5kC89Nfij2jK9RwcEw2d
+$2.99 -> $5.99  |  6819335294  |  Editable Footprint Hammer Father's Day Craft (PDF Templ  |  https://buy.stripe.com/fZubJ04XB4DF8I87JocEw11
+$2.99 -> $5.99  |  6869927869  |  Father's Day Handprint Art Card: Harmonica Design (Edit  |  https://buy.stripe.com/cNiaEW1Lp4DFgaA5BgcEw0D
+$1.99 -> $5.99  |  6967887613  |  Customizable Fish In The Pond, Kids’ Counting Activity   |  https://buy.stripe.com/4gMeVcdu74DFf6wfbQcEw1f
+$3.99 -> $6.99  |  7001881830  |  Ms. Rachel Birthday Invitation: Self-Editable Canva Tem  |  https://buy.stripe.com/fZubJ0ahVfijaQg0gWcEw2i
+$3.99 -> $6.99  |  7003549596  |  Personalized Family Handprint Craft, Watercolor Handpri  |  https://buy.stripe.com/14A14mblZ2vx9Mcd3IcEw2f
+$3.99 -> $6.99  |  7153886279  |  Axolotl Birthday Invitation Template: Editable Canva De  |  https://buy.stripe.com/eVq4gyahV4DFaQgaVAcEw2c
+$2.99 -> $5.99  |  7224958648  |  Customizable Handprint Flower Art: Personalized Keepsak  |  https://buy.stripe.com/9B65kC0Hlc675vW3t8cEw1D
+$2.99 -> $5.99  |  7231598083  |  Fall Handprint Craft (Digital Download)  |  https://buy.stripe.com/6oU7sK2Pt2vx1fGbZEcEw0E
+$2.99 -> $5.99  |  7243523710  |  Halloween Footprint Art: Trick or Treat Keepsake (Digit  |  https://buy.stripe.com/dRm00i89N9XZcYo2p4cEw0M
+$3.99 -> $6.99  |  7427832835  |  Christmas Handprint Art Bundle | 3 Winter Handprint & F  |  https://buy.stripe.com/00w14m4XB8TVgaA4xccEw2a
+$3.99 -> $6.99  |  7594351610  |  Farm Birthday Invitation: Tractor Barnyard Party (Edita  |  https://buy.stripe.com/28EfZg9dR4DFbUkd3IcEw1Q
+$2.99 -> $5.99  |  7648273962  |  Hammer Footprint Art: Father's Day Handprint Craft (PDF  |  https://buy.stripe.com/4gMdR8ahV3zB8I85BgcEw0V
+$5.99 -> $7.99  |  7731807520  |  Personalized Birth Flower Handprint Art, Custom Kids’ N  |  https://buy.stripe.com/9B6dR8fCf4DFgaA3t8cEw0i
+$4.99 -> $6.99  |  7737467737  |  Personalized Handprint Flower Print: Custom Name Stem a  |  https://buy.stripe.com/00waEWeyb6LN2jK4xccEw0b
+$5.25 -> $7.99  |  7790879949  |  Custom Grandchildren Handprint Flower Art with Name Ste  |  https://buy.stripe.com/cNi8wO4XBdab3nOgfUcEw0l
+$4.99 -> $6.99  |  7800658941  |  Personalized Mother’s Day Handprint Flower Print, Custo  |  https://buy.stripe.com/9B68wO3Tx1rtbUk0gWcEw0f
+$2.99 -> $5.99  |  7807028107  |  He Is Risen Handprint Craft, Christian Easter Handprint  |  https://buy.stripe.com/dRmaEW1Lp8TVcYo1l0cEw0d
+$3.99 -> $6.99  |  7821085499  |  Mother’s Day Handprint Bouquet Craft | Handprint Flower  |  https://buy.stripe.com/3cIcN4cq36LN8I8fbQcEw04
+$5.99 -> $7.99  |  7821832703  |  Custom Easter Footprint PNG – Personalized Happy Easter  |  https://buy.stripe.com/aFadR82Pt9XZ0bC7JocEw02
