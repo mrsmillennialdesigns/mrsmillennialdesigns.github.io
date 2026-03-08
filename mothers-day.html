@@ -376,13 +376,13 @@ l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.re
 
 // Video player
 const V=document.getElementById('V'),po=document.getElementById('po'),ro=document.getElementById('ro'),bar=document.getElementById('bar'),heroVid=document.getElementById('heroVid');
-const DUR=27000;
+const DUR=29000;
 const TL=[
-  {s:'.AS1',a:0,z:8000},
-  {s:'.AS2',a:7200,z:11500},
-  {s:'.AS3',a:10700,z:16500},
-  {s:'.AS4',a:15700,z:20500},
-  {s:'.AS5',a:19700,z:99999},
+  {s:'.AS1',a:0,z:10500},
+  {s:'.AS2',a:9700,z:14000},
+  {s:'.AS3',a:13200,z:19000},
+  {s:'.AS4',a:18200,z:23000},
+  {s:'.AS5',a:22200,z:99999},
 ];
 function reset(){document.querySelectorAll('.AS').forEach(s=>{s.classList.remove('on','off')});bar.style.width='0';ro.classList.remove('on');heroVid.pause();heroVid.currentTime=0}
 function go(){
