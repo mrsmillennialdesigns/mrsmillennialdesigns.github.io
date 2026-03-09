@@ -1,2 +1,5 @@
 stripe-setup.js
 stripe-links.json
+_tmp/
+img/raw/
+img/customer-photos/raw/

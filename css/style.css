@@ -246,6 +246,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--text)}
   .cat-grid{grid-template-columns:1fr}
   .product-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .detail-grid{grid-template-columns:1fr;gap:24px}
+  .detail-thumbs{gap:6px;overflow-x:auto;flex-wrap:nowrap;padding-bottom:8px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+  .detail-thumbs .thumb{width:52px;height:52px;flex-shrink:0;scroll-snap-align:start}
   .about-grid{grid-template-columns:1fr;gap:24px}
   .about-values{grid-template-columns:1fr}
   .bundle-detail-hero{padding:24px 16px}
