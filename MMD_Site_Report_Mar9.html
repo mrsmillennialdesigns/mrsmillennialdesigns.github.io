@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MrsMillennial Designs — Site Report (March 9, 2026)</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0f0f14;color:#d0d0d0;padding:24px;max-width:900px;margin:0 auto;line-height:1.7}
+h1{color:#f4a0b5;font-size:1.8rem;margin-bottom:4px}
+h2{color:#f4a0b5;font-size:1.3rem;margin:32px 0 12px;border-bottom:1px solid #2a2a3a;padding-bottom:8px}
+h3{color:#c4b5fd;font-size:1rem;margin:16px 0 8px}
+.date{color:#888;font-size:13px;margin-bottom:24px}
+.section{background:#1a1a24;border:1px solid #2a2a3a;border-radius:12px;padding:20px;margin-bottom:16px}
+.status{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-right:6px}
+.status.done{background:#1a3a1a;color:#7cdb7c}
+.status.new{background:#1a2a3a;color:#70b0db}
+.status.pending{background:#3a3a1a;color:#dba040}
+.status.blocked{background:#3a1a1a;color:#db7070}
+.status.ditched{background:#2a1a1a;color:#aa6060}
+ul{margin-left:20px;margin-bottom:8px}
+li{margin-bottom:4px;font-size:14px}
+code{background:#222;padding:2px 6px;border-radius:4px;font-size:12px;color:#c4b5fd}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}
+th{background:#1a1a24;text-align:left;padding:8px;color:#f4a0b5;border-bottom:2px solid #2a2a3a}
+td{padding:8px;border-bottom:1px solid #1a1a24}
+.num{font-family:monospace;color:#7cdb7c;font-weight:700}
+.warn{color:#dba040}
+.crit{color:#db7070;font-weight:700}
+hr{border:none;border-top:1px solid #2a2a3a;margin:32px 0}
+.highlight{background:#1a2a1a;border:1px solid #2a4a2a;border-radius:12px;padding:20px;margin-bottom:16px}
+</style>
+</head>
+<body>
+
+<h1>MrsMillennial Designs</h1>
+<div class="date">Complete Site Report — March 9, 2026 (Updated 2:30 AM)</div>
+
+<h2>Site Overview</h2>
+<div class="highlight">
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Live URL</td><td class="num">mrsmillennialdesigns.com</td></tr>
+<tr><td>Total Products</td><td class="num">150</td></tr>
+<tr><td>Product Pages</td><td class="num">152 HTML files</td></tr>
+<tr><td>Seamless Patterns (Active)</td><td class="num">6 ($1.75 each)</td></tr>
+<tr><td>Bundles</td><td class="num">5</td></tr>
+<tr><td>Stripe Payment Links</td><td class="num">All products linked</td></tr>
+<tr><td>Auto-Delivery Downloads</td><td class="num">42 files (35 products)</td></tr>
+<tr><td>Hosting</td><td>GitHub Pages (free)</td></tr>
+<tr><td>Active Ads</td><td>Pinterest + Facebook (Mother's Day + Classroom)</td></tr>
+</table>
+</div>
+
+<h2>Tonight's Session (Mar 9, ~12 AM — 2:30 AM)</h2>
+
+<h3>1. Seamless Pattern Pricing</h3>
+<div class="section">
+<span class="status done">DONE</span>
+<ul>
+<li>All seamless patterns priced at <strong>$1.75</strong> (site price = Etsy - $2)</li>
+<li>BOGO promotion considered then removed — flat $1.75 pricing instead</li>
+<li>Created <strong>5 new Stripe payment links</strong> at $1.75 for all active patterns</li>
+</ul>
+</div>
+
+<h3>2. Kids Affirmations V2 — New Pattern (Built from Scratch)</h3>
+<div class="section">
+<span class="status done">LIVE</span>
+<ul>
+<li>Listing <code>8800000050</code> — 14 affirmations in bold rainbow colors on cream</li>
+<li>Built element-by-element: 4 cols x 10 rows, staggered grid, Arial Bold font</li>
+<li><code>draw_wrapped()</code> function ensures 100% seamless tiling at all edges</li>
+<li>Passed seamless verification: 2x2 tile test + horizontal/vertical seam closeups</li>
+<li>Stripe: <code>prod_U7AqticwD6t7G7</code> at $1.75</li>
+</ul>
+</div>
+
+<h3>3. Beach Penguins — New Pattern (Built from Screenshots)</h3>
+<div class="section">
+<span class="status new">NEW — LIVE</span>
+<ul>
+<li>Listing <code>8800000060</code> — 5 cute penguin poses on sandy beach background</li>
+<li>Process: Screenshot 7 penguins → cleaned backgrounds (scipy morphological cleanup) → removed 2 laying-down poses → built seamless tile</li>
+<li>500px tall penguins, 6x6 grid, half-drop stagger, alternating flip</li>
+<li><strong>100% seamless</strong> — passed center, horizontal, and vertical seam tests</li>
+<li>Stripe: <code>prod_U7BKskXl8S260C</code> at $1.75</li>
+</ul>
+</div>
+
+<h3>4. Cow Pattern — Attempted & Ditched</h3>
+<div class="section">
+<span class="status ditched">DITCHED</span>
+<ul>
+<li>4 cow screenshots cleaned with aggressive background removal + scipy connected component analysis</li>
+<li>Source images too small (~100x140px after cleanup) — 3x upscale looked pixelated</li>
+<li>Pattern was technically seamless but element quality not sellable</li>
+<li>"100% or it's a scam to post" — quality didn't meet standard, ditched</li>
+</ul>
+</div>
+
+<h3>5. Watermark Protection (All Seamless)</h3>
+<div class="section">
+<span class="status done">DONE</span>
+<ul>
+<li>All <strong>18 seamless preview images</strong> (6 patterns x 3 each) now have visible watermarks</li>
+<li>Dark gray diagonal text (opacity ~20%) — visible on light backgrounds</li>
+<li>Previous white watermarks were invisible on cream — replaced with dual-layer (dark + light shadow)</li>
+<li>Raw unwatermarked files saved for customer delivery</li>
+</ul>
+</div>
+
+<h3>6. Auto-Delivery System</h3>
+<div class="section">
+<span class="status done">DONE</span>
+<ul>
+<li><strong>All 6 active seamless patterns</strong> now have download files in <code>/downloads/</code></li>
+<li>Thank-you page updated: recognizes all seamless product IDs, tries .pdf → .zip → .jpg → .png</li>
+<li>Flow: Customer buys → Stripe redirects to <code>thank-you.html?product=ID</code> → instant download button</li>
+<li>30 other products already had download files (PDFs, ZIPs) — working</li>
+<li><strong>Desktop backup:</strong> <code>~/Desktop/Seamless Patterns/</code> has all 5 raw tiles</li>
+</ul>
+</div>
+
+<h2>Active Seamless Patterns</h2>
+<div class="section">
+<table>
+<tr><th>ID</th><th>Name</th><th>Price</th><th>Delivery</th><th>Watermark</th></tr>
+<tr><td>8800000030</td><td>Watercolor Wildflower Garden</td><td>$1.75</td><td class="num">YES</td><td class="num">YES</td></tr>
+<tr><td>8800000036</td><td>Watercolor Fairy Tale Castle</td><td>$1.75</td><td class="num">YES</td><td class="num">YES</td></tr>
+<tr><td>8800000040</td><td>Kids Affirmations V1</td><td>$1.75</td><td class="num">YES</td><td class="num">YES</td></tr>
+<tr><td>8800000042</td><td>Pink Castle & Clouds</td><td>$1.75</td><td class="num">YES</td><td class="num">YES</td></tr>
+<tr><td>8800000050</td><td>Kids Affirmations V2</td><td>$1.75</td><td class="num">YES</td><td class="num">YES</td></tr>
+<tr><td>8800000060</td><td>Beach Penguins</td><td>$1.75</td><td class="num">YES</td><td class="num">YES</td></tr>
+</table>
+<p style="margin-top:8px;font-size:12px;color:#888">4 patterns archived (31, 35, 38, 7738267932) — no Stripe links or no delivery files</p>
+</div>
+
+<h2>Product Breakdown</h2>
+<div class="section">
+<table>
+<tr><th>Category</th><th>Count</th></tr>
+<tr><td>Handprint Art</td><td class="num">84</td></tr>
+<tr><td>Classroom</td><td class="num">32</td></tr>
+<tr><td>Digital Art / SVG</td><td class="num">23</td></tr>
+<tr><td>Seamless Patterns</td><td class="num">6</td></tr>
+<tr><td>Custom / Personalized</td><td class="num">4</td></tr>
+<tr><td><strong>Total Active</strong></td><td class="num"><strong>150</strong></td></tr>
+</table>
+</div>
+
+<h2>Delivery Status</h2>
+<div class="section">
+<table>
+<tr><th>Status</th><th>Count</th></tr>
+<tr><td>Products with auto-delivery files</td><td class="num">35</td></tr>
+<tr><td>Products needing delivery files</td><td class="warn">114</td></tr>
+<tr><td>Total download files</td><td class="num">42</td></tr>
+</table>
+<p style="margin-top:8px;font-size:13px">Andrea can use <strong>Drea</strong> (<code>http://100.84.51.101:4600</code>) to match remaining delivery files to products.</p>
+</div>
+
+<h2>Stripe Payment Links</h2>
+<div class="section">
+<table>
+<tr><th>ID</th><th>Product</th><th>Link</th></tr>
+<tr><td>8800000030</td><td>Wildflower Garden</td><td><code>buy.stripe.com/aFadR82Pt1rt6A0bZEcEx0J</code></td></tr>
+<tr><td>8800000036</td><td>Fairy Tale Castle</td><td><code>buy.stripe.com/6oUdR8cq3b23aQgfbQcEx0K</code></td></tr>
+<tr><td>8800000040</td><td>Affirmations V1</td><td><code>buy.stripe.com/5kQ28qfCf4DF8I8gfUcEx0L</code></td></tr>
+<tr><td>8800000042</td><td>Pink Castle</td><td><code>buy.stripe.com/eVqeVccq32vxbUk6FkcEx0M</code></td></tr>
+<tr><td>8800000050</td><td>Affirmations V2</td><td><code>buy.stripe.com/cNi7sKfCfgmnf6w6FkcEx0N</code></td></tr>
+<tr><td>8800000060</td><td>Beach Penguins</td><td><code>buy.stripe.com/8x2dR82Pt4DF6A08NscEx0O</code></td></tr>
+</table>
+</div>
+
+<h2>File Structure</h2>
+<div class="section">
+<table>
+<tr><th>Path</th><th>Purpose</th></tr>
+<tr><td><code>img/</code></td><td>Watermarked product images (shown on site)</td></tr>
+<tr><td><code>img/raw/</code></td><td>Clean product images (for customer delivery)</td></tr>
+<tr><td><code>img/raw/patterns/</code></td><td>Clean hi-res 3600x3600 pattern PNGs</td></tr>
+<tr><td><code>img/patterns/</code></td><td>Production-ready pattern files</td></tr>
+<tr><td><code>downloads/</code></td><td>Auto-delivery files (thank-you page serves these)</td></tr>
+<tr><td><code>delivery/</code></td><td>Organized by product ID (for Drea/R2 push)</td></tr>
+<tr><td><code>~/Desktop/Seamless Patterns/</code></td><td>Desktop backup of all raw seamless tiles</td></tr>
+</table>
+</div>
+
+<h2>Pending / Action Items</h2>
+<div class="section">
+<table>
+<tr><th>Item</th><th>Priority</th><th>Owner</th></tr>
+<tr><td>Andrea: Match delivery files for 114 remaining products via Drea</td><td class="warn">HIGH</td><td>Andrea</td></tr>
+<tr><td>Enable Cloudflare R2 for scalable file delivery</td><td class="warn">MEDIUM</td><td>Alex</td></tr>
+<tr><td>More seamless patterns (user has penguin + other references)</td><td class="warn">MEDIUM</td><td>Alex</td></tr>
+<tr><td>Conversion rate + traffic tracking setup</td><td>MEDIUM</td><td>Alex</td></tr>
+<tr><td>Update hardcoded "777 reviews" in meta descriptions</td><td>LOW</td><td>Alex</td></tr>
+<tr><td>Pinterest App ID 1548537 — trial access pending</td><td>LOW</td><td>Waiting</td></tr>
+<tr><td>Site polish pass (UX, loading, mobile refinements)</td><td>LOW</td><td>Alex</td></tr>
+</table>
+</div>
+
+<h2>Git Commits (This Session)</h2>
+<div class="section">
+<ol style="font-size:13px">
+<li><code>d3644f4</code> — Add Beach Penguins seamless pattern, fix all seamless delivery & watermarks</li>
+<li><code>33cfac8</code> — Add Kids Affirmations V2 seamless pattern — new listing #147</li>
+<li><code>a0de411</code> — Update seamless Stripe payment links to $1.75</li>
+<li><code>c0cf155</code> — Replace BOGO with $1.75 pricing on seamless patterns</li>
+<li><code>385a658</code> — Add universal watermark protection, remove 3 seamless patterns, add BOGO promo</li>
+<li><code>0df8abe</code> — Remove file-matcher from public site, serve privately via Tailscale</li>
+<li><code>048de6a</code> — Add Stripe payment links for 7 seamless patterns + Father's Day bundle</li>
+<li><code>99e8ad5</code> — Fix broken buy buttons, wrong product IDs, and product count mismatches</li>
+<li><code>afa212e</code> — Add watermarks to all product & customer images, rebuild affirmations pattern</li>
+</ol>
+</div>
+
+<hr>
+<p style="font-size:12px;color:#666;text-align:center;margin-top:16px">Generated by Claude Opus 4.6 — March 9, 2026, 2:30 AM</p>
+
+</body>
+</html>
