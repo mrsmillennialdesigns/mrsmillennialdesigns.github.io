@@ -170,6 +170,23 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--text)}
 .buy-secure{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;font-size:11px;color:var(--muted);opacity:0.6}
 .buy-secure svg{width:12px;height:12px;fill:currentColor}
 
+/* CUSTOM ORDER NOTICE */
+.custom-order-notice{margin-top:20px;padding:16px 20px;background:linear-gradient(135deg,#FDE8E0,#F5D5CC);border-radius:var(--radius);border:1px solid rgba(232,160,180,0.3)}
+.custom-order-notice strong{display:block;font-size:14px;margin-bottom:6px;color:var(--text)}
+.custom-order-notice p{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
+
+/* CUSTOMER PHOTOS GALLERY */
+.customer-photos{margin:40px 0;padding:0}
+.customer-photos h2{font-size:1.3rem;margin-bottom:6px}
+.customer-photos .cp-subtitle{font-size:14px;color:var(--muted);font-style:italic;margin-bottom:16px}
+.cp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.cp-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s}
+.cp-grid img:hover{transform:scale(1.03);box-shadow:var(--shadow-lg)}
+@media(max-width:640px){.cp-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* BEST SELLER BADGE */
+.badge-bestseller{background:linear-gradient(135deg,#d4a853,#e8c068);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;display:inline-block;margin-right:8px}
+
 /* ETSY NOTICE */
 .etsy-notice{margin:40px 0;padding:0}
 .etsy-notice-inner{background:var(--bg-alt);border-radius:var(--radius);padding:28px 32px;text-align:center;border:1px solid rgba(45,41,38,0.06)}
