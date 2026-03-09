@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Gallery | MrsMillennial Designs</title>
+  <meta name="description" content="See how families bring our designs to life. Real customer photos of handprint keepsakes, footprint art, and classroom printables from MrsMillennial Designs.">
+  <meta property="og:title" content="Customer Gallery | MrsMillennial Designs">
+  <meta property="og:description" content="Real families, real keepsakes. See our designs come to life in homes around the world.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data: blob:; frame-src https://js.stripe.com; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev https://api.stripe.com; font-src 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/review-count.js" defer></script>
+  <style>
+    .gal-hero{text-align:center;padding:100px 24px 48px;background:linear-gradient(180deg,rgba(232,160,180,0.08),var(--bg))}
+    .gal-hero h1{font-size:clamp(2rem,5vw,2.8rem);margin-bottom:12px}
+    .gal-hero p{color:var(--muted);font-size:1.1rem;font-style:italic;max-width:600px;margin:0 auto 16px}
+    .gal-hero-badge{display:inline-block;background:rgba(232,160,180,0.12);border:1px solid rgba(232,160,180,0.25);color:var(--rose-dark);font-size:13px;font-weight:600;padding:6px 20px;border-radius:50px;letter-spacing:0.5px}
+    .gal-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;padding:0 24px}
+    .gal-stat{text-align:center}
+    .gal-stat-num{font-size:2rem;font-weight:800;color:var(--rose-dark);display:block}
+    .gal-stat-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;font-weight:600}
+    .gal-filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;padding:0 24px}
+    .gal-filter{padding:8px 20px;border-radius:50px;border:1.5px solid rgba(45,41,38,0.1);background:var(--white);color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.3s ease;font-family:var(--font)}
+    .gal-filter:hover{border-color:var(--rose);color:var(--rose-dark)}
+    .gal-filter.active{background:var(--rose);border-color:var(--rose);color:var(--white)}
+    .gal-grid{columns:3;column-gap:16px;padding:0 24px;max-width:1200px;margin:0 auto 60px}
+    .gal-item{break-inside:avoid;margin-bottom:16px;border-radius:12px;overflow:hidden;background:var(--white);border:1px solid rgba(45,41,38,0.04);transition:all 0.3s ease;cursor:pointer}
+    .gal-item:hover{box-shadow:0 8px 30px rgba(45,41,38,0.12);transform:translateY(-3px)}
+    .gal-item img{width:100%;display:block}
+    .gal-caption{padding:14px 16px}
+    .gal-caption-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;line-height:1.4}
+    .gal-caption-sub{font-size:12px;color:var(--muted);line-height:1.4}
+    .gal-caption-stars{color:var(--gold);font-size:12px;letter-spacing:1px;margin-top:4px}
+    .gal-lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:24px}
+    .gal-lightbox.open{display:flex}
+    .gal-lightbox img{max-width:90%;max-height:85vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+    .gal-lightbox-close{position:absolute;top:20px;right:24px;color:#fff;font-size:2rem;cursor:pointer;background:rgba(255,255,255,0.1);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;transition:background 0.3s}
+    .gal-lightbox-close:hover{background:rgba(255,255,255,0.25)}
+    .gal-lightbox-caption{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:#fff;text-align:center;font-size:14px;font-weight:600;background:rgba(0,0,0,0.5);padding:10px 24px;border-radius:50px;white-space:nowrap}
+    .gal-cta{text-align:center;padding:60px 24px;background:var(--white)}
+    .gal-cta h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:12px}
+    .gal-cta p{color:var(--muted);font-style:italic;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
+    .gal-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .gal-cta-btns .btn{padding:14px 32px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;transition:all 0.3s;font-family:var(--font);display:inline-block}
+    .gal-cta-btns .btn-primary{background:var(--rose);color:#fff;border:1.5px solid var(--rose)}
+    .gal-cta-btns .btn-primary:hover{background:var(--rose-dark);transform:translateY(-2px)}
+    .gal-cta-btns .btn-outline{background:transparent;color:var(--rose-dark);border:1.5px solid var(--rose)}
+    .gal-cta-btns .btn-outline:hover{background:var(--rose);color:#fff;transform:translateY(-2px)}
+    @media(max-width:900px){.gal-grid{columns:2}}
+    @media(max-width:560px){.gal-grid{columns:2;column-gap:10px;padding:0 12px}.gal-item{margin-bottom:10px}.gal-caption{padding:10px 12px}}
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Mrs<span>Millennial</span> Designs</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/products.html">Shop</a></li>
+      <li><a href="/bundles.html">Bundles</a></li>
+      <li><a href="/reviews.html">Reviews</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="gal-hero">
+  <div class="gal-hero-stars" style="font-size:2rem;color:var(--gold);letter-spacing:4px;margin-bottom:12px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+  <h1>Customer Gallery</h1>
+  <p>Real families bringing our designs to life. These photos were shared by our amazing customers and show the love, creativity, and personal touch that makes each piece unique.</p>
+  <div class="gal-hero-badge">40+ Customer Photos</div>
+</section>
+
+<div class="gal-stats">
+  <div class="gal-stat"><span class="gal-stat-num rv-count">777</span><div class="gal-stat-label">Happy Customers</div></div>
+  <div class="gal-stat"><span class="gal-stat-num">4.95</span><div class="gal-stat-label">Avg Rating</div></div>
+  <div class="gal-stat"><span class="gal-stat-num">40+</span><div class="gal-stat-label">Photos Shared</div></div>
+</div>
+
+<div class="gal-filters">
+  <button class="gal-filter active" data-filter="all">All Photos</button>
+  <button class="gal-filter" data-filter="handprint">Handprint Art</button>
+  <button class="gal-filter" data-filter="footprint">Footprint Art</button>
+  <button class="gal-filter" data-filter="framed">Beautifully Framed</button>
+  <button class="gal-filter" data-filter="classroom">Classroom</button>
+  <button class="gal-filter" data-filter="fathersday">Father's Day</button>
+</div>
+
+<div class="gal-grid" id="galGrid"></div>
+
+<div class="gal-lightbox" id="lightbox">
+  <button class="gal-lightbox-close" id="lightboxClose">&times;</button>
+  <img src="" alt="" id="lightboxImg">
+  <div class="gal-lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<section class="gal-cta">
+  <h2>Want to See Your Creation Here?</h2>
+  <p>Purchase a design, create your keepsake, and share a photo with us! We love featuring our customers.</p>
+  <div class="gal-cta-btns">
+    <a href="/products.html" class="btn btn-primary">Browse Designs</a>
+    <a href="/reviews.html#writeReview" class="btn btn-outline">Share Your Photo</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
+        <p class="footer-desc">Handmade digital art &amp; printable keepsakes crafted with love by Andrea.</p>
+        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">777 reviews</a> &middot; 5.0 avg rating</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul class="footer-links">
+          <li><a href="/products.html">All Products</a></li>
+          <li><a href="/products.html?cat=handprint">Handprint Art</a></li>
+          <li><a href="/products.html?cat=digital-art">Digital Art</a></li>
+          <li><a href="/products.html?cat=classroom">Classroom</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html">Our Story</a></li>
+          <li><a href="/reviews.html">Reviews</a></li>
+          <li><a href="/gallery.html">Customer Gallery</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="https://mrsmillennial.etsy.com" target="_blank">Etsy Shop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 MrsMillennial Designs. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const n=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>20));
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
+
+<script>
+var G=[
+  {img:"/img/customer-photos/IMG_6429_0.jpg",title:"Mother's Day Keepsake",desc:"Peach handprints with wildflower bouquet in a beautiful wood frame",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6441_0.jpg",title:"Blue Handprint Bouquet",desc:"Gorgeous blue handprint art professionally framed on the wall",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6416_0.jpg",title:"Family Display",desc:"Multiple framed wildflower handprint prints displayed together",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6421_0.jpg",title:"Grandma & Grandpa Gift",desc:"Colorful handprints with 'Mother's Day 2022' in a white frame",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6436_0.jpg",title:"Grandmother's Heart",desc:"Blue & pink handprints with 'A garden of love grows in a grandmother's heart'",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6413_0.jpg",title:"Mother's Day Poem Art",desc:"Completed handprint flower art with a heartfelt Mother's Day poem",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6334_0.jpg",title:"Making Memories",desc:"A little one adding her handprint to the wildflower bouquet design",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6422_0.jpg",title:"Twin Gold Frames",desc:"Two matching gold-framed yellow handprint wildflower bouquets",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6451_0.jpg",title:"Grandma's Love",desc:"'Grandma, I love you a bunch' — Love, Kalani 2025",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6446_0.jpg",title:"Father's Day 2024",desc:"'When it comes to being the best dad, you NAILED it!' footprint hammer",cat:["footprint","fathersday"]},
+  {img:"/img/customer-photos/IMG_6450_0.jpg",title:"Father's Day 2025",desc:"Red footprint hammer design — 'You Nailed It, Dad!'",cat:["footprint","fathersday"]},
+  {img:"/img/customer-photos/IMG_6452_0.jpg",title:"Father's Day Crossed Hammers",desc:"Two footprints as crossed hammers — Happy Father's Day 2025",cat:["footprint","fathersday"]},
+  {img:"/img/customer-photos/IMG_6420_0.jpg",title:"For Grammy",desc:"Teal handprint bouquet personalized with 'Jackson' for Grammy",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6423_0.jpg",title:"Santino's Art",desc:"Yellow handprint bouquet — 'Made with love by Santino 2022'",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6354_0.jpg",title:"Cali Mae's Bouquet",desc:"Red & yellow handprints with wildflower bouquet in a gold frame",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6445_0.jpg",title:"Twin Footprint Bouquets",desc:"Two matching pink footprint wildflower bouquets, beautifully framed",cat:["footprint","framed"]},
+  {img:"/img/customer-photos/IMG_6438_0.jpg",title:"Baby Grant's Footprints",desc:"Peach footprints with wildflower bouquet in an ornate white frame",cat:["footprint","framed"]},
+  {img:"/img/customer-photos/IMG_6447_0.jpg",title:"Don't You Ever Grow Up",desc:"Yellow footprints with mason jar flowers and heartfelt poem",cat:["footprint"]},
+  {img:"/img/customer-photos/IMG_6449_0.jpg",title:"Purple Footprint Bouquet",desc:"Delicate purple footprint with wildflower bouquet on oval paper",cat:["footprint"]},
+  {img:"/img/customer-photos/IMG_6414_0.jpg",title:"Yellow Wildflower Bouquet",desc:"Bright yellow handprint with a beautiful wildflower bouquet",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6415_0.jpg",title:"Blue Lavender Bouquet",desc:"Blue handprint with lavender and wildflower arrangement",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6419_0.jpg",title:"Blue Iris Handprint",desc:"Blue handprint art with iris and lavender wildflower bouquet",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6425_0.jpg",title:"Purple Wildflower Art",desc:"Purple handprint with daisies and yellow wildflowers",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6426_0.jpg",title:"Lavender & Iris",desc:"Purple handprint with blue iris, lavender, and eucalyptus",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6418_0.jpg",title:"Sibling Handprints",desc:"Brown & yellow sibling handprints in a rustic frame with wildflowers",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6430_0.jpg",title:"Side-By-Side Frames",desc:"Two matching handprint bouquets in dark green frames",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6431_0.jpg",title:"Neutral Tones",desc:"Brown handprints with cotton & neutral wildflower bouquet",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6433_0.jpg",title:"Happy Nana's Day",desc:"Three kids' handprints — Weston, Luna & Isaias made this for Nana",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6434_0.jpg",title:"Remy & Reese",desc:"Green handprints with wildflower bouquet — made with love",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6424_0.jpg",title:"Yellow & Orange",desc:"Two handprints in warm tones with wildflower bouquet",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6427_0.jpg",title:"Navy Handprint",desc:"Dark navy handprint with warm wildflower bouquet in a frame",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6428_0.jpg",title:"Kitchen Display",desc:"Yellow handprint wildflower art framed and displayed in the kitchen",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6432_0.jpg",title:"Light Wood Frame",desc:"Yellow handprint with purple & yellow wildflowers in a natural frame",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6346_0.jpg",title:"Garden of Love",desc:"Pink handprint with a poem about love growing in a garden",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6361_0.jpg",title:"Teal & Gold",desc:"Green handprint with wildflower bouquet — held up to show the finished piece",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6417_0.jpg",title:"Footprint Album",desc:"Two footprint flower arts displayed together in a photo album",cat:["footprint"]},
+  {img:"/img/customer-photos/IMG_6387_0.jpg",title:"Gift Wrapped",desc:"A child proudly holding a framed handprint art as a wrapped gift",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6435_0.jpg",title:"Dinosaur Bookmarks",desc:"Colorful dinosaur encouragement bookmarks for the classroom",cat:["classroom"]},
+  {img:"/img/customer-photos/IMG_6364_0.jpg",title:"7 Habits Poster",desc:"The 7 Habits neon blackboard poster displayed in a classroom window",cat:["classroom"]},
+  {img:"/img/customer-photos/IMG_6316_0.jpg",title:"Blue Bouquet",desc:"Blue handprints with matching blue wildflower bouquet in green frame",cat:["handprint","framed"]},
+  {img:"/img/customer-photos/IMG_6297_0.jpg",title:"New Year's Celebration",desc:"Yellow handprint with balloons and party hat — Happy New Year!",cat:["handprint"]},
+  {img:"/img/customer-photos/IMG_6375_0.jpg",title:"Stay Little Forever",desc:"Yellow footprints with wildflowers in a mason jar and sweet poem",cat:["footprint"]}
+];
+
+var grid=document.getElementById('galGrid');
+var shown=0;
+var activeFilter='all';
+
+function renderGallery(){
+  grid.innerHTML='';
+  var filtered=activeFilter==='all'?G:G.filter(function(p){return p.cat.indexOf(activeFilter)!==-1});
+  filtered.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='gal-item';
+    d.setAttribute('data-cats',p.cat.join(' '));
+    d.innerHTML='<img src="'+p.img+'" alt="'+p.title+'" loading="lazy"><div class="gal-caption"><div class="gal-caption-title">'+p.title+'</div><div class="gal-caption-sub">'+p.desc+'</div><div class="gal-caption-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>';
+    d.addEventListener('click',function(){openLightbox(p.img,p.title)});
+    grid.appendChild(d);
+  });
+}
+
+// Filters
+document.querySelectorAll('.gal-filter').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.gal-filter').forEach(function(b){b.classList.remove('active')});
+    btn.classList.add('active');
+    activeFilter=btn.getAttribute('data-filter');
+    renderGallery();
+  });
+});
+
+// Lightbox
+var lb=document.getElementById('lightbox');
+var lbImg=document.getElementById('lightboxImg');
+var lbCap=document.getElementById('lightboxCaption');
+
+function openLightbox(src,cap){
+  lbImg.src=src;
+  lbCap.textContent=cap;
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  lb.classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('lightboxClose').addEventListener('click',closeLightbox);
+lb.addEventListener('click',function(e){if(e.target===lb)closeLightbox()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+
+renderGallery();
+</script>
+
+<script>
+(function(){
+  var endpoint='/a/track';
+  function tr(data){
+    data.referrer=document.referrer||'';
+    data.page=location.pathname;
+    navigator.sendBeacon?navigator.sendBeacon(endpoint,JSON.stringify(data)):
+    fetch(endpoint,{method:'POST',body:JSON.stringify(data),keepalive:true});
+  }
+  tr({event:'pageview'});
+})();
+</script>
+</body>
+</html>
