@@ -5,3 +5,7 @@ img/raw/
 img/customer-photos/raw/
 file-matcher.html
 file-matcher.json
+delivery/
+.wrangler/
+_build_shop_backup.py
+create_downloads.py
