@@ -101,12 +101,6 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--text)}
 .badge-svgpng{background:rgba(120,160,200,0.15);color:#5a85ad}
 .badge-seamless{background:rgba(180,140,200,0.15);color:#9b6bb5}
 .badge-wallart{background:rgba(160,190,170,0.15);color:#5a8a6a}
-.badge-bogo{background:linear-gradient(135deg,#d4a853,#e8c068);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;display:inline-block;margin-right:8px;animation:bogoPulse 2s ease-in-out infinite}
-@keyframes bogoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-.bogo-banner{background:linear-gradient(135deg,rgba(212,168,83,0.15),rgba(232,196,104,0.1));border:1.5px solid rgba(212,168,83,0.35);border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center}
-.bogo-banner h3{color:#d4a853;font-size:18px;margin:0 0 6px;font-weight:800;letter-spacing:0.3px}
-.bogo-banner p{color:var(--text-muted);font-size:13px;margin:0;line-height:1.5}
-.bogo-banner strong{color:var(--text)}
 
 /* PLACEHOLDER */
 .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg-alt),var(--bg))}
