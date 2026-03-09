@@ -1,0 +1,42 @@
+name: Bump Review Count
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Number of new reviews to add (default 1)'
+        required: false
+        default: '1'
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Increment review count
+        run: |
+          INCREMENT=${{ github.event.inputs.count || '1' }}
+          CURRENT=$(grep -oP 'var BASE=\K[0-9]+' js/review-count.js)
+          NEW=$((CURRENT + INCREMENT))
+          sed -i "s/var BASE=${CURRENT}/var BASE=${NEW}/" js/review-count.js
+          echo "Updated review count: ${CURRENT} → ${NEW}"
+
+      - name: Update meta descriptions
+        run: |
+          NEW=$(grep -oP 'var BASE=\K[0-9]+' js/review-count.js)
+          # Update any hardcoded "777 reviews" references in meta tags
+          find . -name "*.html" -exec sed -i "s/[0-9]\+ reviews/${NEW} reviews/g" {} +
+          find . -name "*.html" -exec sed -i "s/[0-9]\+ five-star reviews/${NEW} five-star reviews/g" {} +
+          find . -name "*.html" -exec sed -i "s/[0-9]\+ Five-Star Reviews/${NEW} Five-Star Reviews/g" {} +
+
+      - name: Commit and push
+        run: |
+          NEW=$(grep -oP 'var BASE=\K[0-9]+' js/review-count.js)
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Bump review count to ${NEW}"
+          git push
