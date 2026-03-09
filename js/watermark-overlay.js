@@ -16,6 +16,10 @@
   function protect(img) {
     if (img.dataset.wmProtected) return;
     if (img.closest('.nav') || img.closest('.footer') || img.width < 40 || img.height < 40) return;
+    // Skip thumbnails — already protected by parent detail-main overlay
+    if (img.classList.contains('thumb')) return;
+    // Skip gallery images — protected via CSS ::before on .gal-item
+    if (img.closest('.gal-item')) return;
     img.dataset.wmProtected = '1';
 
     var wrap = document.createElement('span');
