@@ -1190,5 +1190,15 @@
     "sku": "",
     "stripeProductId": "prod_U7Ad5JpPquRK7x",
     "stripePriceId": "price_1T8wIIBiY2vwqUNMGQ9f2vBj"
+  },
+  "8800000050": {
+    "productId": "",
+    "priceId": "",
+    "paymentUrl": "https://buy.stripe.com/cNi7sKfCfgmnf6w6FkcEx0N",
+    "title": "Kids Affirmations V2 Seamless Pattern PNG | I Am Enough Strong Worthy Brave Positive Words | Commercial Use",
+    "price": 1.75,
+    "sku": "",
+    "stripeProductId": "prod_U7AqticwD6t7G7",
+    "stripePriceId": "price_1T8wUiBiY2vwqUNM5VeMSSXl"
   }
 }
