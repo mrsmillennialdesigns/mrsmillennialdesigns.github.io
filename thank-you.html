@@ -275,7 +275,13 @@ const PRODUCTS={
 "7814723777":"Fluency Bookmark for Primary Readers",
 "7821085499":"Mother's Day Handprint Bouquet Craft",
 "7821262533":"St. Patrick's Day Handprint Craft Printable",
-"7821832703":"Custom Easter Footprint PNG"
+"7821832703":"Custom Easter Footprint PNG",
+"8800000030":"Watercolor Wildflower Garden Seamless Pattern PNG",
+"8800000036":"Watercolor Fairy Tale Castle Seamless Pattern PNG",
+"8800000040":"Kids Affirmations Seamless Pattern PNG",
+"8800000042":"Pink Castle & Clouds Seamless Pattern PNG",
+"8800000050":"Kids Affirmations V2 Seamless Pattern PNG",
+"8800000060":"Beach Penguins Seamless Pattern PNG"
 };
 
 // Check for product parameter from Stripe redirect
@@ -288,7 +294,7 @@ const PRODUCTS={
     document.getElementById('product-name').textContent = PRODUCTS[productId];
 
     // Check if download file exists by trying to fetch it
-    const extensions = ['pdf', 'zip', 'jpg'];
+    const extensions = ['pdf', 'zip', 'jpg', 'png'];
     let found = false;
 
     function tryDownload(ext) {
@@ -310,6 +316,8 @@ const PRODUCTS={
       if (!ok) return tryDownload('zip');
     }).then(function(ok) {
       if (!ok) return tryDownload('jpg');
+    }).then(function(ok) {
+      if (!ok) return tryDownload('png');
     }).then(function() {
       if (!found) {
         // File not yet uploaded — show email fallback

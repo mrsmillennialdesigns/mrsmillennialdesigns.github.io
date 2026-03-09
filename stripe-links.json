@@ -1200,5 +1200,13 @@
     "sku": "",
     "stripeProductId": "prod_U7AqticwD6t7G7",
     "stripePriceId": "price_1T8wUiBiY2vwqUNM5VeMSSXl"
+  },
+  "8800000060": {
+    "productId": "prod_U7BKskXl8S260C",
+    "priceId": "price_1T8wyEBiY2vwqUNMQPQXrLen",
+    "paymentUrl": "https://buy.stripe.com/8x2dR82Pt4DF6A08NscEx0O",
+    "title": "Beach Penguins Seamless Pattern PNG | Cute Summer Digital Paper | Commercial Use Background",
+    "price": 1.75,
+    "sku": ""
   }
 }
