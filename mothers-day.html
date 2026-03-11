@@ -31,7 +31,7 @@
     .ad-container{max-width:900px;margin:0 auto;padding:0 24px}
     .ad-wrapper{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
 
-    /* Embedded ad styles */
+    /* Embedded ad */
     .V{width:100%;height:100%;position:absolute;inset:0;background:#FFF8F0}
     .ov{position:absolute;inset:0;background:rgba(40,36,34,.85);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;z-index:100;transition:opacity .6s}
     .ov.h{opacity:0;pointer-events:none}
@@ -44,72 +44,90 @@
 
     .AS{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease-in-out;display:flex;align-items:center;justify-content:center;pointer-events:none;overflow:hidden}
     .AS.on{opacity:1}.AS.off{opacity:0}
-    .pet{position:absolute;width:10px;height:10px;border-radius:50% 0 50% 0;opacity:0}
-    .AS.on .pet{animation:pf var(--d) ease-in-out var(--dl) infinite}
-    @keyframes pf{0%{transform:translate(0,-20px) rotate(0);opacity:0}8%{opacity:.45}50%{opacity:.25}100%{transform:translate(var(--x),500px) rotate(var(--r));opacity:0}}
+
     @keyframes fi{from{opacity:0}to{opacity:1}}
     @keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
     @keyframes fd{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
     @keyframes si{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
-    @keyframes sw{0%,100%{transform:rotate(-1.2deg)}50%{transform:rotate(1.2deg)}}
-    @keyframes zp{0%{transform:scale(1)}100%{transform:scale(1.06)}}
-    @keyframes goldWash{0%{opacity:0}30%{opacity:.6}50%{opacity:.8}70%{opacity:.5}100%{opacity:0}}
+    @keyframes pinDrop{0%{opacity:0;transform:scale(0) rotate(-10deg)}60%{transform:scale(1.1) rotate(2deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+    @keyframes zp{0%{transform:scale(1)}100%{transform:scale(1.04)}}
+    @keyframes sparkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
+    .pet{position:absolute;width:10px;height:10px;border-radius:50% 0 50% 0;opacity:0}
+    .AS.on .pet{animation:pf var(--d) ease-in-out var(--dl) infinite}
+    @keyframes pf{0%{transform:translate(0,-20px) rotate(0);opacity:0}8%{opacity:.45}50%{opacity:.25}100%{transform:translate(var(--x),500px) rotate(var(--r));opacity:0}}
 
-    .AS1{background:#111;flex-direction:column}
-    .AS1 .hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-    .AS1 .vignette{position:absolute;inset:0;z-index:1;background:
-      radial-gradient(ellipse at center,rgba(45,41,38,.25) 0%,rgba(45,41,38,.65) 70%,rgba(20,18,16,.85) 100%)}
-    .AS1 .glow-bar{position:absolute;bottom:0;left:0;right:0;height:80px;z-index:1;
-      background:linear-gradient(0deg,rgba(212,160,160,.25),transparent);opacity:0}
-    .AS1 .aa{font-family:'Dancing Script',cursive;font-size:clamp(28px,5vw,52px);color:#fff;opacity:0;z-index:2;
-      text-shadow:0 2px 30px rgba(0,0,0,.5),0 0 60px rgba(212,160,160,.3)}
-    .AS1 .ab{width:60px;height:2px;background:#D4A0A0;margin:18px 0;opacity:0;z-index:2;
-      box-shadow:0 0 12px rgba(212,160,160,.4)}
-    .AS1 .ac{font-family:'Playfair Display',serif;font-size:clamp(14px,2.5vw,24px);font-style:italic;color:rgba(255,252,247,.95);opacity:0;max-width:520px;text-align:center;line-height:1.4;z-index:2;
-      text-shadow:0 1px 20px rgba(0,0,0,.4)}
-    .AS1.on .aa{animation:fu 1.4s ease .8s forwards}
-    .AS1.on .ab{animation:fi 1s ease 1.8s forwards}
-    .AS1.on .ac{animation:fu 1.2s ease 2.2s forwards}
-    .AS1.on .glow-bar{animation:fi 2s ease 1s forwards}
+    /* S1: Hook */
+    .AS1{background:linear-gradient(155deg,#FFF8F0,#FDE8E0 40%,#F5D5CC);flex-direction:column}
+    .AS1 .roseline{width:80px;height:3px;background:#D4A0A0;margin:16px 0;opacity:0}
+    .AS1 .aa{font-family:'Dancing Script',cursive;font-size:clamp(26px,4.5vw,44px);color:#2D2926;opacity:0;text-align:center;line-height:1.2}
+    .AS1 .ab{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2.8vw,26px);color:#5C4E47;opacity:0;max-width:550px;text-align:center;line-height:1.4;margin-top:8px}
+    .AS1 .ac{font-family:'Poppins',sans-serif;font-size:clamp(10px,1.3vw,13px);color:#5C4E47;opacity:0;margin-top:18px;letter-spacing:1px;text-transform:uppercase}
+    .AS1 .sale-badge-s1{display:inline-block;background:var(--rose-dark,#A85264);color:#fff;font-family:'Poppins',sans-serif;font-size:clamp(11px,1.5vw,15px);font-weight:700;padding:8px 24px;border-radius:50px;letter-spacing:1px;margin-top:20px;opacity:0}
+    .AS1.on .aa{animation:fu 1.2s ease .3s forwards}
+    .AS1.on .roseline{animation:fi 1s ease 1s forwards}
+    .AS1.on .ab{animation:fu 1s ease 1.3s forwards}
+    .AS1.on .ac{animation:fu .8s ease 2s forwards}
+    .AS1.on .sale-badge-s1{animation:si .6s ease 2.6s forwards}
 
-    .AS2{background:#FFFCF7;gap:clamp(20px,5vw,50px)}
-    .AS2 .aimg{width:clamp(140px,25vw,250px);height:clamp(185px,33vw,330px);flex-shrink:0;opacity:0;border-radius:2px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06)}
-    .AS2 .aimg img{width:100%;height:100%;object-fit:contain;background:#fff}
-    .AS2 .atx{display:flex;flex-direction:column;align-items:flex-start}
-    .AS2 .at1{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2.8vw,28px);color:#5C4E47;opacity:0;line-height:1.3}
-    .AS2 .at2{font-family:'Dancing Script',cursive;font-size:clamp(18px,3.5vw,34px);color:#B87D7D;opacity:0;margin-top:12px}
-    .AS2 .at3{font-family:'Poppins',sans-serif;font-size:clamp(10px,1.3vw,13px);color:#5C4E47;opacity:0;margin-top:22px;line-height:2}
-    .AS2.on .aimg{animation:si .7s ease .1s forwards}
-    .AS2.on .at1{animation:fu .7s ease .5s forwards}
-    .AS2.on .at2{animation:fu .7s ease .9s forwards}
-    .AS2.on .at3{animation:fu .5s ease 1.3s forwards}
+    /* S2: Customer photos gallery wall */
+    .AS2{background:#3D2B2B;flex-direction:column;padding:clamp(6px,1.5vw,16px)}
+    .AS2 .wall-label{font-family:'Dancing Script',cursive;font-size:clamp(12px,2.2vw,22px);color:rgba(255,255,255,.85);opacity:0;margin-bottom:clamp(4px,1vw,10px)}
+    .AS2 .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(4px,1vw,10px);width:min(92%,650px)}
+    .AS2 .photo{width:100%;aspect-ratio:1;border-radius:clamp(2px,.4vw,4px);overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.3);opacity:0;background:#3D2B2B}
+    .AS2 .photo img{width:100%;height:100%;object-fit:cover}
+    .AS2 .sparkle{position:absolute;width:8px;height:8px;background:#E8B83D;border-radius:50%;opacity:0}
+    .AS2.on .wall-label{animation:fi .8s ease .2s forwards}
+    .AS2.on .p1{animation:pinDrop .6s ease .8s forwards}
+    .AS2.on .p2{animation:pinDrop .6s ease 1.3s forwards}
+    .AS2.on .p3{animation:pinDrop .6s ease 1.8s forwards}
+    .AS2.on .p4{animation:pinDrop .6s ease 2.3s forwards}
+    .AS2.on .p5{animation:pinDrop .6s ease 2.8s forwards}
+    .AS2.on .p6{animation:pinDrop .6s ease 3.3s forwards}
+    .AS2.on .p7{animation:pinDrop .6s ease 3.8s forwards}
+    .AS2.on .p8{animation:pinDrop .6s ease 4.3s forwards}
+    .AS2.on .sp1{animation:sparkle .4s ease 1.1s}
+    .AS2.on .sp2{animation:sparkle .4s ease 1.6s}
+    .AS2.on .sp3{animation:sparkle .4s ease 2.1s}
+    .AS2.on .sp4{animation:sparkle .4s ease 2.6s}
+    .AS2.on .sp5{animation:sparkle .4s ease 3.1s}
+    .AS2.on .sp6{animation:sparkle .4s ease 3.6s}
+    .AS2.on .sp7{animation:sparkle .4s ease 4.1s}
+    .AS2.on .sp8{animation:sparkle .4s ease 4.6s}
 
-    .AS3{background:#FFFCF7;flex-direction:column}
-    .AS3 .awrap{position:relative;width:clamp(180px,30vw,300px);height:clamp(235px,39vw,390px);opacity:0}
-    .AS3 .abase{position:absolute;inset:0;overflow:hidden;border-radius:2px;box-shadow:0 4px 25px rgba(0,0,0,.06);background:#fff}
-    .AS3 .abase img{width:100%;height:100%;object-fit:contain}
-    .AS3 .agold{position:absolute;inset:0;background:radial-gradient(circle at 55% 25%,rgba(232,184,61,.5),rgba(240,201,77,.2) 50%,transparent 75%);opacity:0;z-index:2;pointer-events:none}
-    .AS3 .acomp{position:absolute;inset:0;overflow:hidden;border-radius:2px;z-index:3;opacity:0}
-    .AS3 .acomp img{width:100%;height:100%;object-fit:cover}
-    .AS3 .alabel{font-family:'Dancing Script',cursive;font-size:clamp(16px,2.5vw,24px);color:#2D2926;opacity:0;margin-top:18px}
-    .AS3 .alabel2{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(12px,1.8vw,18px);color:#5C4E47;opacity:0;margin-top:6px}
-    .AS3.on .awrap{animation:fi .4s ease .1s forwards}
-    .AS3.on .abase img{animation:zp 4s ease 0s forwards}
-    .AS3.on .agold{animation:goldWash 1.5s ease 1.2s forwards}
-    .AS3.on .acomp{animation:fi 1s ease 2s forwards}
-    .AS3.on .alabel{animation:fu .6s ease 2.8s forwards}
-    .AS3.on .alabel2{animation:fu .5s ease 3.2s forwards}
+    /* S3: Template → Finished showcase */
+    .AS3{background:#FFFCF7;flex-direction:column;gap:0}
+    .AS3 .compare{display:flex;align-items:center;justify-content:center;gap:clamp(12px,3vw,30px)}
+    .AS3 .aimg{width:clamp(140px,26vw,240px);aspect-ratio:3/4;flex-shrink:0;opacity:0;border-radius:4px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.1);background:#fff}
+    .AS3 .aimg img{width:100%;height:100%;object-fit:cover}
+    .AS3 .arrow{font-family:'Poppins',sans-serif;font-size:clamp(20px,3.5vw,36px);color:#D4A0A0;opacity:0}
+    .AS3 .aimg2{width:clamp(140px,26vw,240px);aspect-ratio:3/4;flex-shrink:0;opacity:0;border-radius:4px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.1)}
+    .AS3 .aimg2 img{width:100%;height:100%;object-fit:cover}
+    .AS3 .labels{display:flex;justify-content:center;gap:clamp(80px,18vw,180px);margin-top:clamp(8px,1.5vw,16px);opacity:0}
+    .AS3 .labels span{font-family:'Poppins',sans-serif;font-size:clamp(10px,1.3vw,14px);color:#5C4E47}
+    .AS3 .labels span.finished{color:#B87D7D;font-weight:600}
+    .AS3.on .aimg{animation:si .8s ease .2s forwards}
+    .AS3.on .arrow{animation:fi .5s ease 1s forwards}
+    .AS3.on .aimg2{animation:si .8s ease 1.5s forwards}
+    .AS3.on .labels{animation:fu .6s ease 2.3s forwards}
 
-    .AS4{background:linear-gradient(180deg,#E8DED2,#F0E8DD 30%,#F5EDE3);gap:clamp(25px,5vw,55px)}
-    .AS4 .afr{opacity:0;transform-origin:top center;flex-shrink:0}
-    .AS4 .afr img{width:clamp(160px,28vw,280px);height:auto;border-radius:4px;box-shadow:0 10px 40px rgba(0,0,0,.18)}
-    .AS4 .atx{display:flex;flex-direction:column;align-items:flex-start}
-    .AS4 .at1{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2.8vw,28px);color:#5C4E47;opacity:0;max-width:280px;line-height:1.35}
-    .AS4 .at2{font-family:'Poppins',sans-serif;font-size:clamp(10px,1.6vw,16px);color:#B87D7D;opacity:0;margin-top:14px}
-    .AS4.on .afr{animation:fd .7s ease .1s forwards,sw 3s ease .8s infinite}
-    .AS4.on .at1{animation:fu .7s ease .6s forwards}
-    .AS4.on .at2{animation:fu .5s ease 1s forwards}
+    /* S4: Sale details / How it works */
+    .AS4{background:linear-gradient(155deg,#FFF8F0,#FDE8E0);flex-direction:column;align-items:center;justify-content:center;padding:clamp(10px,2vw,24px)}
+    .AS4 .sale-big{font-family:'Playfair Display',serif;font-size:clamp(24px,4.5vw,44px);font-weight:700;color:var(--rose-dark,#A85264);opacity:0}
+    .AS4 .code-box{display:inline-block;border:2px dashed var(--rose-dark,#A85264);padding:4px 20px;border-radius:8px;font-family:monospace;font-size:clamp(12px,2vw,20px);font-weight:700;color:var(--rose-dark,#A85264);letter-spacing:3px;margin:clamp(4px,1vw,10px) 0;opacity:0}
+    .AS4 .steps{text-align:left;margin-top:clamp(6px,1.2vw,14px);opacity:0}
+    .AS4 .step{font-family:'Poppins',sans-serif;font-size:clamp(10px,1.3vw,14px);color:#2D2926;margin:clamp(2px,.5vw,5px) 0;display:flex;align-items:center;gap:6px}
+    .AS4 .step .emoji{font-size:clamp(12px,1.6vw,18px)}
+    .AS4 .step .stxt b{font-weight:600}
+    .AS4 .step .stxt span{font-size:clamp(8px,1vw,11px);color:#5C4E47}
+    .AS4 .price-row{margin-top:clamp(6px,1.2vw,14px);opacity:0;display:flex;align-items:baseline;gap:10px;font-family:'Poppins',sans-serif}
+    .AS4 .price-row .from{font-size:clamp(10px,1.2vw,13px);color:#5C4E47}
+    .AS4 .price-row .amt{font-size:clamp(16px,2.5vw,28px);font-weight:700;color:var(--rose-dark,#A85264)}
+    .AS4.on .sale-big{animation:fu .8s ease .2s forwards}
+    .AS4.on .code-box{animation:si .6s ease .9s forwards}
+    .AS4.on .steps{animation:fu .8s ease 1.4s forwards}
+    .AS4.on .price-row{animation:fu .6s ease 2.4s forwards}
 
+    /* S5: CTA */
     .AS5{background:linear-gradient(155deg,#FFF8F0,#FDE8E0 40%,#F5D5CC);flex-direction:column;padding:30px}
     .AS5 .alogo{font-family:'Dancing Script',cursive;font-size:clamp(28px,5vw,46px);font-weight:700;color:#2D2926;opacity:0}
     .AS5 .atag{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(10px,1.4vw,14px);color:#5C4E47;opacity:0;margin-top:4px;max-width:500px;text-align:center}
@@ -122,14 +140,14 @@
     .AS5 .athx{font-size:clamp(9px,1.2vw,12px);color:#5C4E47;margin-top:14px;opacity:0;text-align:center}
     .AS5 .aend{font-family:'Dancing Script',cursive;font-size:clamp(22px,3.5vw,36px);color:#B87D7D;margin-top:10px;opacity:0}
     .AS5 .ahrt{font-size:22px;color:#E8B83D;opacity:0;margin-top:4px}
-    .AS5.on .alogo{animation:fu .5s ease .1s forwards}
-    .AS5.on .atag{animation:fi .4s ease .4s forwards}
-    .AS5.on .aln{animation:fi .3s ease .6s forwards}
-    .AS5.on .aft{animation:fu .5s ease .7s forwards}
-    .AS5.on .aurl{animation:si .5s ease 1s forwards}
-    .AS5.on .athx{animation:fi .4s ease 1.3s forwards}
-    .AS5.on .aend{animation:fu .5s ease 1.6s forwards}
-    .AS5.on .ahrt{animation:fi .3s ease 1.9s forwards}
+    .AS5.on .alogo{animation:fu .8s ease .2s forwards}
+    .AS5.on .atag{animation:fi .7s ease .7s forwards}
+    .AS5.on .aln{animation:fi .6s ease 1s forwards}
+    .AS5.on .aft{animation:fu .8s ease 1.2s forwards}
+    .AS5.on .aurl{animation:si .7s ease 1.9s forwards}
+    .AS5.on .athx{animation:fi .6s ease 2.5s forwards}
+    .AS5.on .aend{animation:fu .8s ease 3s forwards}
+    .AS5.on .ahrt{animation:fi .3s ease 3.5s forwards}
 
     /* Sale section */
     .sale-section{padding:60px 0;background:var(--bg)}
@@ -214,53 +232,73 @@
           <p>Replay</p>
         </div>
 
+        <!-- S1: Hook -->
         <div class="AS AS1">
-          <video class="hero-vid" id="heroVid" muted playsinline preload="auto">
-            <source src="/img/mothers-day-hero.mp4" type="video/mp4">
-          </video>
-          <div class="vignette"></div>
-          <div class="glow-bar"></div>
-          <div style="position:absolute;inset:0;pointer-events:none;z-index:2">
-            <div class="pet" style="left:10%;top:-8px;background:rgba(212,162,142,.6);--d:6s;--dl:0s;--x:-18px;--r:180deg"></div>
-            <div class="pet" style="left:32%;top:-8px;background:rgba(212,160,160,.5);--d:7.5s;--dl:.6s;--x:14px;--r:240deg"></div>
-            <div class="pet" style="left:56%;top:-8px;background:rgba(141,196,173,.5);--d:5.5s;--dl:1.1s;--x:-12px;--r:200deg"></div>
-            <div class="pet" style="left:78%;top:-8px;background:rgba(212,162,142,.5);--d:6.5s;--dl:1.6s;--x:18px;--r:160deg"></div>
-            <div class="pet" style="left:46%;top:-8px;background:rgba(232,184,61,.4);--d:8s;--dl:2.2s;--x:-22px;--r:300deg"></div>
+          <div style="position:absolute;inset:0;pointer-events:none">
+            <div class="pet" style="left:15%;top:-8px;background:rgba(212,162,142,.5);--d:7s;--dl:0s;--x:-14px;--r:180deg"></div>
+            <div class="pet" style="left:45%;top:-8px;background:rgba(212,160,160,.4);--d:8s;--dl:.8s;--x:10px;--r:240deg"></div>
+            <div class="pet" style="left:72%;top:-8px;background:rgba(141,196,173,.4);--d:6s;--dl:1.5s;--x:-12px;--r:200deg"></div>
           </div>
-          <div class="aa">This Mother's Day</div>
-          <div class="ab"></div>
-          <div class="ac">Give Her a Gift She'll Treasure Forever</div>
+          <div class="aa">This Mother&rsquo;s Day</div>
+          <div class="roseline"></div>
+          <div class="ab">&ldquo;The gift she&rsquo;ll treasure<br>more than flowers&rdquo;</div>
+          <div class="ac">Handprint keepsakes &bull; Instant download &bull; Print at home</div>
+          <div class="sale-badge-s1">25% OFF SALE</div>
         </div>
 
+        <!-- S2: Customer gallery wall -->
         <div class="AS AS2">
-          <div class="aimg"><img src="/img/mothers-day-template.png" alt="Wildflower bouquet printable"></div>
-          <div class="atx">
-            <div class="at1">Start with a beautiful<br>printable bouquet</div>
-            <div class="at2">Just add tiny hands...</div>
-            <div class="at3">Print at home<br>Dip little hands in paint<br>Press onto the paper<br>A keepsake is born</div>
+          <div class="wall-label">Loved by 777+ families...</div>
+          <div class="photo-grid" style="position:relative">
+            <div class="photo p1"><img src="/img/customer-photos/4005425060_customer_0.jpg" alt="Customer handprint art"></div>
+            <div class="photo p2"><img src="/img/customer-photos/4005425060_customer_3.jpg" alt="Gold framed handprints"></div>
+            <div class="photo p3"><img src="/img/customer-photos/4005425060_customer_8.jpg" alt="Two framed wildflower handprints"></div>
+            <div class="photo p4"><img src="/img/customer-photos/4005425060_customer_9.jpg" alt="Happy Nanas Day art"></div>
+            <div class="photo p5"><img src="/img/customer-photos/4005425060_customer_18.jpg" alt="Pink footprint keepsakes"></div>
+            <div class="photo p6"><img src="/img/customer-photos/4005425060_customer_17.jpg" alt="Hand holding framed art"></div>
+            <div class="photo p7"><img src="/img/customer-photos/4005425060_customer_14.jpg" alt="Little girl making handprint"></div>
+            <div class="photo p8"><img src="/img/customer-photos/4760045018_customer_8.jpg" alt="Peach personalized keepsake"></div>
+            <div class="sparkle sp1" style="top:20%;left:18%"></div>
+            <div class="sparkle sp2" style="top:15%;left:42%"></div>
+            <div class="sparkle sp3" style="top:22%;left:65%"></div>
+            <div class="sparkle sp4" style="top:18%;left:88%"></div>
+            <div class="sparkle sp5" style="top:60%;left:15%"></div>
+            <div class="sparkle sp6" style="top:55%;left:40%"></div>
+            <div class="sparkle sp7" style="top:62%;left:68%"></div>
+            <div class="sparkle sp8" style="top:58%;left:90%"></div>
           </div>
         </div>
 
+        <!-- S3: Template → Finished -->
         <div class="AS AS3">
-          <div class="awrap">
-            <div class="abase"><img src="/img/mothers-day-template.png" alt="Template"></div>
-            <div class="agold"></div>
-            <div class="acomp"><img src="/img/mothers-day-completed.jpg" alt="Completed handprint bouquet"></div>
+          <div class="compare">
+            <div class="aimg"><img src="/img/mothers-day-template.png" alt="Wildflower bouquet template"></div>
+            <div class="arrow">&rarr;</div>
+            <div class="aimg2"><img src="/img/mothers-day-completed.jpg" alt="Completed handprint keepsake"></div>
           </div>
-          <div class="alabel">A little paint, a little love...</div>
-          <div class="alabel2">and something truly special is made</div>
+          <div class="labels">
+            <span>Template</span>
+            <span class="finished">Finished!</span>
+          </div>
         </div>
 
+        <!-- S4: Sale details -->
         <div class="AS AS4">
-          <div class="afr">
-            <img src="/img/mothers-day-completed.jpg" alt="Framed handprint keepsake">
+          <div class="sale-big">25% OFF</div>
+          <div class="code-box">MOMDAY25</div>
+          <div class="steps">
+            <div class="step"><span class="emoji">&#9889;</span><b>Buy &amp; Download</b> &mdash; <span>Instant delivery</span></div>
+            <div class="step"><span class="emoji">&#128424;</span><b>Print at Home</b> &mdash; <span>Any printer</span></div>
+            <div class="step"><span class="emoji">&#128588;</span><b>Add Handprints</b> &mdash; <span>A memory together</span></div>
+            <div class="step"><span class="emoji">&#128247;</span><b>Frame &amp; Gift</b> &mdash; <span>Happy tears guaranteed</span></div>
           </div>
-          <div class="atx">
-            <div class="at1">A memory that<br>lasts forever</div>
-            <div class="at2">The perfect gift for Grandma</div>
+          <div class="price-row">
+            <span class="from">Starting at</span>
+            <span class="amt">$3.00</span>
           </div>
         </div>
 
+        <!-- S5: CTA -->
         <div class="AS AS5">
           <div style="position:absolute;inset:0;pointer-events:none">
             <div class="pet" style="left:14%;top:-8px;background:#D4A28E;--d:8s;--dl:0s;--x:-10px;--r:180deg"></div>
@@ -277,7 +315,7 @@
           </div>
           <div class="aurl">mrsmillennialdesigns.com</div>
           <div class="athx">Thank you for supporting handmade &amp; small business</div>
-          <div class="aend">Happy Mother's Day</div>
+          <div class="aend">Happy Mother&rsquo;s Day</div>
           <div class="ahrt">&hearts;</div>
         </div>
       </div>
@@ -425,25 +463,24 @@ l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.re
   update();setInterval(update,1000);
 })();
 
-// Video player
-const V=document.getElementById('V'),po=document.getElementById('po'),ro=document.getElementById('ro'),bar=document.getElementById('bar'),heroVid=document.getElementById('heroVid');
-const DUR=31000;
+// Animated ad player
+const V=document.getElementById('V'),po=document.getElementById('po'),ro=document.getElementById('ro'),bar=document.getElementById('bar');
+const DUR=35000;
 const TL=[
-  {s:'.AS1',a:0,z:12000},
-  {s:'.AS2',a:11200,z:15500},
-  {s:'.AS3',a:14700,z:20500},
-  {s:'.AS4',a:19700,z:24500},
-  {s:'.AS5',a:23700,z:99999},
+  {s:'.AS1',a:0,z:5500},
+  {s:'.AS2',a:4700,z:14000},
+  {s:'.AS3',a:13200,z:21000},
+  {s:'.AS4',a:20200,z:27000},
+  {s:'.AS5',a:26200,z:99999},
 ];
-function reset(){document.querySelectorAll('.AS').forEach(s=>{s.classList.remove('on','off')});bar.style.width='0';ro.classList.remove('on');heroVid.pause();heroVid.currentTime=0}
+function reset(){document.querySelectorAll('.AS').forEach(s=>{s.classList.remove('on','off')});bar.style.width='0';ro.classList.remove('on')}
 function go(){
-  reset();heroVid.currentTime=0;heroVid.play().catch(()=>{});const t0=performance.now();
+  reset();const t0=performance.now();
   function tick(now){
     const e=now-t0;
     TL.forEach(t=>{const el=document.querySelector(t.s);if(!el)return;
       if(e>=t.a&&e<t.z){if(!el.classList.contains('on')){el.classList.remove('off');el.classList.add('on')}}
-      else if(e>=t.z){if(!el.classList.contains('off')){el.classList.add('off');el.classList.remove('on');
-        if(t.s==='.AS1')heroVid.pause()}}
+      else if(e>=t.z){if(!el.classList.contains('off')){el.classList.add('off');el.classList.remove('on')}}
     });
     bar.style.width=Math.min(e/DUR*100,100)+'%';
     if(e<DUR)requestAnimationFrame(tick);
