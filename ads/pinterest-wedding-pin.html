@@ -6,95 +6,81 @@
   <title>Pinterest Wedding Pin — 1000x1500</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{background:#111;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+    body{background:#111;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Georgia','Times New Roman',serif}
 
-    .pin{position:relative;width:1000px;height:1500px;overflow:hidden;background:#2d2926;transform-origin:top center}
+    .pin{position:relative;width:1000px;height:1500px;overflow:hidden;background:#faf8f4;transform-origin:top center}
     @media(max-height:1500px){.pin{transform:scale(calc(min(100vh,1500px)/1500));margin:auto}}
 
-    /* Background image */
-    .pin-bg{position:absolute;inset:0;z-index:0}
-    .pin-bg img{width:100%;height:100%;object-fit:cover;opacity:0.35}
-    .pin-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(45,41,38,0.3) 0%,rgba(45,41,38,0.15) 25%,rgba(45,41,38,0.15) 50%,rgba(45,41,38,0.75) 75%,rgba(45,41,38,0.95) 100%)}
+    /* Top brand bar */
+    .pin-brand{padding:32px 0 24px;text-align:center;background:#faf8f4}
+    .brand-text{font-size:18px;font-weight:300;letter-spacing:3px;text-transform:uppercase;color:#6b6560;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+    .brand-text strong{font-weight:700;color:#3d3632}
+    .brand-line{width:50px;height:1.5px;background:#c4a872;margin:14px auto 0}
 
-    /* Content layout */
-    .pin-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:space-between;height:100%;padding:60px 50px 50px;text-align:center;color:#fff}
+    /* Hero mockup image */
+    .pin-hero{width:100%;height:620px;overflow:hidden;position:relative}
+    .pin-hero img{width:100%;height:100%;object-fit:cover}
 
-    /* Top section — branding */
-    .pin-top{display:flex;flex-direction:column;align-items:center}
-    .brand{font-size:22px;font-weight:300;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:8px}
-    .brand span{font-weight:700;color:#d4a853}
-    .brand-line{width:60px;height:2px;background:linear-gradient(90deg,transparent,#d4a853,transparent);margin-bottom:40px}
+    /* Content area */
+    .pin-body{padding:40px 60px 0;text-align:center;background:#faf8f4}
 
-    /* Center — headline */
-    .pin-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:850px}
-    .hook-line{font-size:26px;font-weight:400;color:#d4a853;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
-    .headline{font-size:72px;font-weight:800;line-height:1.08;margin-bottom:28px;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,0.4)}
-    .headline em{font-style:italic;font-weight:400;color:#d4a853}
-    .subline{font-size:28px;font-weight:300;line-height:1.5;color:rgba(255,255,255,0.8);max-width:700px}
-    .subline strong{font-weight:700;color:#fff}
+    .hook{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:#c4a872;margin-bottom:16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+    .headline{font-size:48px;font-weight:400;line-height:1.2;color:#2d2926;margin-bottom:16px;letter-spacing:-0.5px}
+    .headline em{font-style:italic;color:#8b7650}
+    .subline{font-size:19px;font-weight:300;line-height:1.65;color:#6b6560;max-width:700px;margin:0 auto 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 
     /* Divider */
-    .divider{width:100px;height:3px;background:linear-gradient(90deg,transparent,#d4a853,transparent);margin:36px 0}
+    .divider{width:70px;height:1.5px;background:#c4a872;margin:0 auto 28px}
 
-    /* Value props */
-    .props{display:flex;gap:28px;margin-bottom:30px;flex-wrap:wrap;justify-content:center}
-    .prop{display:flex;align-items:center;gap:10px;font-size:20px;color:rgba(255,255,255,0.85);font-weight:500}
-    .prop-dot{width:8px;height:8px;border-radius:50%;background:#d4a853;flex-shrink:0}
+    /* Feature list */
+    .features{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:36px}
+    .feat{display:inline-flex;align-items:center;gap:8px;font-size:16px;color:#4a4540;font-weight:400;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+    .feat-dot{width:6px;height:6px;border-radius:50%;background:#c4a872}
 
-    /* Bottom — pricing + CTA */
-    .pin-bottom{display:flex;flex-direction:column;align-items:center}
-    .compare{font-size:22px;color:rgba(255,255,255,0.5);margin-bottom:8px}
-    .compare s{color:rgba(255,255,255,0.35)}
-    .price-box{display:flex;align-items:baseline;gap:12px;margin-bottom:20px}
-    .price-from{font-size:22px;color:rgba(255,255,255,0.6);font-weight:400}
-    .price{font-size:64px;font-weight:900;color:#d4a853;line-height:1;text-shadow:0 4px 20px rgba(212,168,83,0.3)}
-    .price-note{font-size:18px;color:rgba(255,255,255,0.6);margin-bottom:28px}
-
-    .cta{display:inline-block;background:#d4a853;color:#2d2926;font-size:24px;font-weight:800;padding:20px 56px;border-radius:50px;text-transform:uppercase;letter-spacing:2px;box-shadow:0 6px 30px rgba(212,168,83,0.4);margin-bottom:20px}
-
-    .url{font-size:18px;color:rgba(255,255,255,0.45);letter-spacing:1px}
+    /* Price + CTA */
+    .pin-footer{text-align:center;padding:0 60px 44px;background:#faf8f4}
+    .price-label{font-size:13px;color:#8b8580;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+    .price{font-size:52px;font-weight:400;color:#8b7650;line-height:1;margin-bottom:20px;letter-spacing:-0.5px}
+    .cta{display:inline-block;background:#2d2926;color:#faf8f4;font-size:18px;font-weight:700;padding:18px 52px;border-radius:50px;text-transform:uppercase;letter-spacing:2px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin-bottom:14px}
+    .url{font-size:14px;color:#a09890;letter-spacing:1px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
   </style>
 </head>
 <body>
   <div class="pin">
-    <div class="pin-bg">
-      <img src="file:///Users/alexhosage/Desktop/mmd-website/img/photo-packages/guests-crowd-phones.jpg" alt="">
+    <!-- Top brand -->
+    <div class="pin-brand">
+      <div class="brand-text">Mrs<strong>Millennial</strong> Designs</div>
+      <div class="brand-line"></div>
     </div>
-    <div class="pin-content">
-      <!-- Top branding -->
-      <div class="pin-top">
-        <div class="brand">Mrs<span>Millennial</span> Designs</div>
-        <div class="brand-line"></div>
+
+    <!-- Hero mockup -->
+    <div class="pin-hero">
+      <img src="../img/photo-packages/mockups/wedding-framed-print.png" alt="Framed wedding print on display">
+    </div>
+
+    <!-- Body content -->
+    <div class="pin-body">
+      <div class="hook">Wedding Photo Packages</div>
+      <h1 class="headline">Everyone's Part<br>of <em>the Story</em></h1>
+      <p class="subline">Your guests capture the real, candid moments. We curate, professionally edit, and deliver a polished hardcover album to your door.</p>
+
+      <div class="divider"></div>
+
+      <div class="features">
+        <div class="feat"><span class="feat-dot"></span>Guided Shot List</div>
+        <div class="feat"><span class="feat-dot"></span>QR Upload Signs</div>
+        <div class="feat"><span class="feat-dot"></span>Professional Editing</div>
+        <div class="feat"><span class="feat-dot"></span>Hardcover Album</div>
+        <div class="feat"><span class="feat-dot"></span>Digital Gallery</div>
       </div>
+    </div>
 
-      <!-- Center headline -->
-      <div class="pin-center">
-        <div class="hook-line">Your Guests Are Already Taking Photos</div>
-        <h1 class="headline">Your Wedding Album,<br><em>Without the $5,000<br>Price Tag</em></h1>
-        <p class="subline">We give you a <strong>shot script</strong> + <strong>QR codes</strong>.<br>Your guests capture every moment.<br>We edit &amp; print a <strong>stunning hardcover album</strong>.</p>
-
-        <div class="divider"></div>
-
-        <div class="props">
-          <div class="prop"><span class="prop-dot"></span>Shot Script</div>
-          <div class="prop"><span class="prop-dot"></span>QR Code Signs</div>
-          <div class="prop"><span class="prop-dot"></span>Pro Editing</div>
-          <div class="prop"><span class="prop-dot"></span>Hardcover Album</div>
-          <div class="prop"><span class="prop-dot"></span>Digital Downloads</div>
-        </div>
-      </div>
-
-      <!-- Bottom pricing + CTA -->
-      <div class="pin-bottom">
-        <div class="compare">Traditional photographer: <s>$3,000 &ndash; $5,000+</s></div>
-        <div class="price-box">
-          <span class="price-from">From</span>
-          <span class="price">$49.99</span>
-        </div>
-        <div class="price-note">Album Included &bull; Free Shipping</div>
-        <div class="cta">Shop Wedding Packages</div>
-        <div class="url">mrsmillennialdesigns.com</div>
-      </div>
+    <!-- Footer: Price + CTA -->
+    <div class="pin-footer">
+      <div class="price-label">Starting at</div>
+      <div class="price">$49.99</div>
+      <div class="cta">Shop Wedding Packages</div>
+      <div class="url">mrsmillennialdesigns.com</div>
     </div>
   </div>
 </body>

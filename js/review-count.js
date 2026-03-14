@@ -1,7 +1,7 @@
 // Dynamic review counter — fetches live count from API, updates across all pages
 (function(){
   var API='https://mmd-review-counter.mrsmillennial.workers.dev';
-  var FALLBACK=777;
+  var FALLBACK=778;
   var HIGH_KEY='mmd_review_high';
 
   // Always use the highest count we've ever seen
