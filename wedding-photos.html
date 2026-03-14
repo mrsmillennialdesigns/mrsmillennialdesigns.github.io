@@ -16,7 +16,7 @@
   <style>
     /* ========== HERO ========== */
     .w-hero{position:relative;overflow:hidden;padding:0;background:var(--text)}
-    .w-hero-img{width:100%;height:620px;object-fit:cover;display:block;opacity:0.45}
+    .w-hero-img{width:100%;height:700px;object-fit:cover;display:block;opacity:0.45}
     .w-hero-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:linear-gradient(180deg,rgba(45,41,38,0.10) 0%,rgba(45,41,38,0.55) 100%)}
     .w-hero-content{max-width:720px;color:#fff}
     .w-hero-badge{display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:13px;font-weight:600;padding:6px 18px;border-radius:50px;margin-bottom:20px;letter-spacing:0.5px}
@@ -49,7 +49,8 @@
     .hiw-arrow{display:none}
 
     /* ========== PACKAGES ========== */
-    .pkg-section{padding:72px 24px;background:var(--white)}
+    .pkg-section{padding:72px 24px;background:var(--white);position:relative}
+    .pkg-section::before{content:'';position:absolute;inset:0;background:url('/img/photo-packages/guests-crowd-phones.jpg') center/cover no-repeat;opacity:0.03;pointer-events:none}
     .pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:920px;margin:0 auto}
     .pkg-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:2px solid rgba(45,41,38,0.06);position:relative;display:flex;flex-direction:column;transition:all 0.3s ease}
     .pkg-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
@@ -394,6 +395,43 @@
           <div class="w-review-meta">
             <div class="w-review-name">Lauren M.</div>
             <div class="w-review-role">Wedding Planner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- Review 6 -->
+      <div class="w-review-card">
+        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="w-review-text">"I recommended this to my best friend after seeing her photos. She paid $4,200 for a photographer and got 350 photos. I paid $49.99, got 500+ photos from our guests, AND a printed album. She's still waiting for her prints. Mine are on the shelf."</p>
+        <div class="w-review-author">
+          <div class="w-review-avatar" style="background:linear-gradient(135deg,#b8965a,#d4a853)">TH</div>
+          <div class="w-review-meta">
+            <div class="w-review-name">Taylor H.</div>
+            <div class="w-review-role">Bride &mdash; Simple Package</div>
+          </div>
+        </div>
+      </div>
+      <!-- Review 7 -->
+      <div class="w-review-card">
+        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="w-review-text">"The coordinator script was the secret weapon. My brother-in-law isn't a 'photo guy' at all, but give him a checklist and he's unstoppable. He captured every single moment on the list plus 50 candid shots we never expected. The album tells our entire day start to finish."</p>
+        <div class="w-review-author">
+          <div class="w-review-avatar" style="background:linear-gradient(135deg,#8fa888,#adc4a5)">RJ</div>
+          <div class="w-review-meta">
+            <div class="w-review-name">Rachel J.</div>
+            <div class="w-review-role">Bride &mdash; Max Package</div>
+          </div>
+        </div>
+      </div>
+      <!-- Review 8 -->
+      <div class="w-review-card">
+        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="w-review-text">"We eloped with 30 guests and didn't want to hire a photographer for such an intimate event. This was the perfect solution. The QR code sign on the dinner table was a hit &mdash; everyone was snapping photos all night. The 30-page album is one of our most prized possessions."</p>
+        <div class="w-review-author">
+          <div class="w-review-avatar" style="background:linear-gradient(135deg,#96783e,#b8965a)">AN</div>
+          <div class="w-review-meta">
+            <div class="w-review-name">Alex &amp; Nina</div>
+            <div class="w-review-role">Elopement &mdash; Simple Package</div>
           </div>
         </div>
       </div>
