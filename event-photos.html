@@ -15,13 +15,19 @@
   <style>
     :root{--accent:#b8965a;--accent-dark:#96783e;--accent-light:#dbc9a0;--warm:#d4a853;--warm-light:rgba(212,168,83,0.12)}
 
-    .w-hero{padding:120px 24px 80px;text-align:center;background:linear-gradient(180deg,rgba(143,168,136,0.08),var(--bg));position:relative;overflow:hidden}
-    .w-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(143,168,136,0.06),transparent 60%),radial-gradient(ellipse at 70% 60%,rgba(212,168,83,0.04),transparent 60%);pointer-events:none}
-    .w-hero-content{position:relative;z-index:1;max-width:680px;margin:0 auto}
-    .w-badge{display:inline-block;background:var(--warm-light);border:1px solid rgba(212,168,83,0.25);color:#9e7d2e;font-size:13px;font-weight:600;padding:6px 16px;border-radius:50px;margin-bottom:20px;letter-spacing:0.5px}
-    .w-hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin-bottom:16px}
-    .w-hero .tagline{font-size:clamp(1rem,2vw,1.15rem);color:var(--muted);font-style:italic;margin-bottom:12px;line-height:1.7}
-    .w-hero .sub{font-size:14px;color:var(--muted);margin-bottom:32px}
+    .w-hero{position:relative;overflow:hidden;padding:0;background:var(--text)}
+    .w-hero-img{width:100%;height:700px;object-fit:cover;display:block;opacity:0.45}
+    .w-hero-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:linear-gradient(180deg,rgba(45,41,38,0.10) 0%,rgba(45,41,38,0.55) 100%)}
+    .w-hero-content{max-width:720px;color:#fff}
+    .w-badge{display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:13px;font-weight:600;padding:6px 18px;border-radius:50px;margin-bottom:20px;letter-spacing:0.5px}
+    .w-hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5.5vw,3.4rem);line-height:1.1;margin-bottom:16px;color:#fff;font-weight:400}
+    .w-hero .tagline{font-size:clamp(1rem,2vw,1.15rem);color:rgba(255,255,255,0.85);font-style:italic;margin-bottom:12px;line-height:1.7}
+    .w-hero .sub{font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:32px}
+    .w-hero .hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn-hero-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-size:16px;font-weight:700;border:none;cursor:pointer;transition:all 0.3s;background:var(--gold);color:#fff;box-shadow:0 4px 20px rgba(212,168,83,0.4)}
+    .btn-hero-primary:hover{background:#c49a3d;color:#fff;transform:translateY(-2px)}
+    .btn-hero-outline{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-size:16px;font-weight:600;border:1.5px solid rgba(255,255,255,0.4);cursor:pointer;transition:all 0.3s;background:transparent;color:#fff}
+    .btn-hero-outline:hover{border-color:#fff;color:#fff;transform:translateY(-2px)}
 
     .gallery-mosaic{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .gallery-mosaic img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)}
@@ -103,6 +109,10 @@
     .cta-bottom p{color:var(--muted);font-style:italic;margin-bottom:32px}
 
     @media(max-width:768px){
+      .w-hero-img{height:500px}
+      .w-hero h1{font-size:2rem}
+      .hero-buttons{flex-direction:column}
+      .hero-buttons a,.btn-hero-primary,.btn-hero-outline{width:100%;justify-content:center;text-align:center}
       .gallery-mosaic{grid-template-columns:1fr 1fr}
       .gallery-mosaic img:nth-child(n+5){display:none}
       .event-types-grid{grid-template-columns:1fr 1fr}
@@ -114,6 +124,7 @@
       .addon-img{width:100%;height:160px}
     }
     @media(max-width:480px){
+      .w-hero-img{height:460px}
       .gallery-mosaic{grid-template-columns:1fr}
       .gallery-mosaic img:nth-child(n+4){display:none}
       .event-types-grid{grid-template-columns:1fr}
@@ -143,14 +154,17 @@
 
 <!-- 1. Hero -->
 <section class="w-hero">
-  <div class="w-hero-content">
-    <div class="w-badge">Event Photography</div>
-    <h1>Every Celebration Deserves a Beautiful Album</h1>
-    <p class="tagline">Birthdays, anniversaries, corporate events, church gatherings, newborn sessions &mdash; your guests capture every moment, we turn it into a professional album they'll treasure forever.</p>
-    <p class="sub">Photo book + digital downloads + professional shot script + QR codes &mdash; all included. Free shipping.</p>
-    <div class="hero-buttons">
-      <a href="#packages" class="btn btn-primary" style="background:var(--accent);box-shadow:0 4px 16px rgba(184,150,90,0.3)">View Packages</a>
-      <a href="#event-types" class="btn btn-outline">Explore Event Types</a>
+  <img src="/img/photo-packages/diverse-birthday-group.jpg" alt="Family celebrating a birthday together" class="w-hero-img">
+  <div class="w-hero-overlay">
+    <div class="w-hero-content">
+      <div class="w-badge">Event Photography</div>
+      <h1>Every Celebration Deserves a Beautiful Album</h1>
+      <p class="tagline">Birthdays, anniversaries, corporate events, church gatherings, newborn sessions &mdash; your guests capture every moment, we turn it into a professional album they'll treasure forever.</p>
+      <p class="sub">Photo book + digital downloads + professional shot script + QR codes &mdash; all included. Free shipping.</p>
+      <div class="hero-buttons">
+        <a href="#packages" class="btn-hero-primary">View Packages</a>
+        <a href="#event-types" class="btn-hero-outline">Explore Event Types</a>
+      </div>
     </div>
   </div>
 </section>
