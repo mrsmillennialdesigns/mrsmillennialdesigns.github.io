@@ -16,6 +16,9 @@
   function protect(img) {
     if (img.dataset.wmProtected) return;
     if (img.closest('.nav') || img.closest('.footer') || img.width < 40 || img.height < 40) return;
+    // Skip photo package pages — these are stock/mockup images, not our products
+    if (img.src && img.src.indexOf('/photo-packages/') !== -1) return;
+    if (document.body.classList.contains('no-watermark')) return;
     // Skip thumbnails — already protected by parent detail-main overlay
     if (img.classList.contains('thumb')) return;
     // Skip gallery images — protected via CSS ::before on .gal-item
