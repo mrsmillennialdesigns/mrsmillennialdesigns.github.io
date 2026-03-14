@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Ad — Events — 1200x628</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#111;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+
+    .ad{position:relative;width:1200px;height:628px;overflow:hidden;background:#2d2926;display:flex;transform-origin:top center}
+    @media(max-width:1200px){.ad{transform:scale(calc(min(100vw,1200px)/1200));margin:auto}}
+
+    /* Left — collage of event images */
+    .ad-left{width:50%;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px}
+    .ad-left img{width:100%;height:100%;object-fit:cover;opacity:0.75}
+    .ad-left::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 40%,#2d2926 100%);pointer-events:none}
+
+    .brand-badge{position:absolute;top:24px;left:24px;z-index:2;background:rgba(45,41,38,0.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:10px 20px;border-radius:8px;border:1px solid rgba(212,168,83,0.3)}
+    .brand-badge span{font-size:15px;font-weight:300;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7)}
+    .brand-badge strong{font-weight:700;color:#d4a853}
+
+    /* Right — content */
+    .ad-right{width:50%;display:flex;flex-direction:column;justify-content:center;padding:36px 44px 36px 20px;color:#fff;position:relative;z-index:1}
+
+    .hook{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:#d4a853;margin-bottom:14px}
+    .headline{font-size:36px;font-weight:800;line-height:1.15;margin-bottom:12px}
+    .headline em{font-style:italic;font-weight:400;color:#d4a853}
+    .sub{font-size:16px;line-height:1.6;color:rgba(255,255,255,0.7);margin-bottom:20px}
+    .sub strong{color:#fff;font-weight:600}
+
+    /* Event types chips */
+    .event-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+    .chip{padding:5px 14px;border-radius:30px;background:rgba(212,168,83,0.08);border:1px solid rgba(212,168,83,0.25);font-size:13px;font-weight:600;color:rgba(255,255,255,0.8)}
+
+    /* Included row */
+    .includes{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:22px;font-size:14px;color:rgba(255,255,255,0.7)}
+    .incl{display:flex;align-items:center;gap:6px}
+    .incl-check{color:#d4a853;font-weight:700;font-size:16px}
+
+    /* Price + CTA */
+    .bottom-row{display:flex;align-items:center;gap:24px}
+    .price-block{}
+    .price-row{display:flex;align-items:baseline;gap:8px}
+    .price-from{font-size:14px;color:rgba(255,255,255,0.5)}
+    .price{font-size:42px;font-weight:900;color:#d4a853;line-height:1}
+    .price-note{font-size:12px;color:rgba(255,255,255,0.4);margin-top:2px}
+
+    .cta-btn{display:inline-block;background:#d4a853;color:#2d2926;font-size:18px;font-weight:800;padding:16px 40px;border-radius:50px;text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap;box-shadow:0 4px 20px rgba(212,168,83,0.35)}
+
+    .gold-line{position:absolute;top:0;right:0;width:4px;height:100%;background:linear-gradient(180deg,transparent,#d4a853 30%,#d4a853 70%,transparent)}
+  </style>
+</head>
+<body>
+  <div class="ad">
+    <!-- Left: Image collage -->
+    <div class="ad-left">
+      <img src="file:///Users/alexhosage/Desktop/mmd-website/img/photo-packages/birthday-cake-candles.jpg" alt="">
+      <img src="file:///Users/alexhosage/Desktop/mmd-website/img/photo-packages/anniversary-couple.jpg" alt="">
+      <img src="file:///Users/alexhosage/Desktop/mmd-website/img/photo-packages/corporate-event.jpg" alt="">
+      <img src="file:///Users/alexhosage/Desktop/mmd-website/img/photo-packages/scene-newborn.jpg" alt="">
+      <div class="brand-badge">
+        <span>Mrs<strong>Millennial</strong> Designs</span>
+      </div>
+    </div>
+
+    <!-- Right: Content -->
+    <div class="ad-right">
+      <div class="hook">Event Photo Packages</div>
+      <h1 class="headline">Every Guest is a<br><em>Photographer.</em><br>We Make It Count.</h1>
+      <p class="sub">Shot script + QR codes for guests to upload photos. We <strong>professionally edit</strong> everything and ship a <strong>hardcover album</strong> to your door.</p>
+
+      <div class="event-chips">
+        <span class="chip">Birthdays</span>
+        <span class="chip">Anniversaries</span>
+        <span class="chip">Corporate</span>
+        <span class="chip">Newborn</span>
+        <span class="chip">Church</span>
+        <span class="chip">Reunions</span>
+      </div>
+
+      <div class="includes">
+        <div class="incl"><span class="incl-check">&#10003;</span> Shot Script</div>
+        <div class="incl"><span class="incl-check">&#10003;</span> QR Codes</div>
+        <div class="incl"><span class="incl-check">&#10003;</span> Editing</div>
+        <div class="incl"><span class="incl-check">&#10003;</span> Album</div>
+        <div class="incl"><span class="incl-check">&#10003;</span> Downloads</div>
+      </div>
+
+      <div class="bottom-row">
+        <div class="price-block">
+          <div class="price-row">
+            <span class="price-from">From</span>
+            <span class="price">$49.99</span>
+          </div>
+          <div class="price-note">Hardcover album included &bull; Free shipping</div>
+        </div>
+        <div class="cta-btn">Shop Now</div>
+      </div>
+    </div>
+    <div class="gold-line"></div>
+  </div>
+</body>
+</html>

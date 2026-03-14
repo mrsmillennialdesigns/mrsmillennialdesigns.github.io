@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinterest Wedding Pin — 1000x1500</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#111;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+
+    .pin{position:relative;width:1000px;height:1500px;overflow:hidden;background:#2d2926;transform-origin:top center}
+    @media(max-height:1500px){.pin{transform:scale(calc(min(100vh,1500px)/1500));margin:auto}}
+
+    /* Background image */
+    .pin-bg{position:absolute;inset:0;z-index:0}
+    .pin-bg img{width:100%;height:100%;object-fit:cover;opacity:0.35}
+    .pin-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(45,41,38,0.3) 0%,rgba(45,41,38,0.15) 25%,rgba(45,41,38,0.15) 50%,rgba(45,41,38,0.75) 75%,rgba(45,41,38,0.95) 100%)}
+
+    /* Content layout */
+    .pin-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:space-between;height:100%;padding:60px 50px 50px;text-align:center;color:#fff}
+
+    /* Top section — branding */
+    .pin-top{display:flex;flex-direction:column;align-items:center}
+    .brand{font-size:22px;font-weight:300;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:8px}
+    .brand span{font-weight:700;color:#d4a853}
+    .brand-line{width:60px;height:2px;background:linear-gradient(90deg,transparent,#d4a853,transparent);margin-bottom:40px}
+
+    /* Center — headline */
+    .pin-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:850px}
+    .hook-line{font-size:26px;font-weight:400;color:#d4a853;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
+    .headline{font-size:72px;font-weight:800;line-height:1.08;margin-bottom:28px;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,0.4)}
+    .headline em{font-style:italic;font-weight:400;color:#d4a853}
+    .subline{font-size:28px;font-weight:300;line-height:1.5;color:rgba(255,255,255,0.8);max-width:700px}
+    .subline strong{font-weight:700;color:#fff}
+
+    /* Divider */
+    .divider{width:100px;height:3px;background:linear-gradient(90deg,transparent,#d4a853,transparent);margin:36px 0}
+
+    /* Value props */
+    .props{display:flex;gap:28px;margin-bottom:30px;flex-wrap:wrap;justify-content:center}
+    .prop{display:flex;align-items:center;gap:10px;font-size:20px;color:rgba(255,255,255,0.85);font-weight:500}
+    .prop-dot{width:8px;height:8px;border-radius:50%;background:#d4a853;flex-shrink:0}
+
+    /* Bottom — pricing + CTA */
+    .pin-bottom{display:flex;flex-direction:column;align-items:center}
+    .compare{font-size:22px;color:rgba(255,255,255,0.5);margin-bottom:8px}
+    .compare s{color:rgba(255,255,255,0.35)}
+    .price-box{display:flex;align-items:baseline;gap:12px;margin-bottom:20px}
+    .price-from{font-size:22px;color:rgba(255,255,255,0.6);font-weight:400}
+    .price{font-size:64px;font-weight:900;color:#d4a853;line-height:1;text-shadow:0 4px 20px rgba(212,168,83,0.3)}
+    .price-note{font-size:18px;color:rgba(255,255,255,0.6);margin-bottom:28px}
+
+    .cta{display:inline-block;background:#d4a853;color:#2d2926;font-size:24px;font-weight:800;padding:20px 56px;border-radius:50px;text-transform:uppercase;letter-spacing:2px;box-shadow:0 6px 30px rgba(212,168,83,0.4);margin-bottom:20px}
+
+    .url{font-size:18px;color:rgba(255,255,255,0.45);letter-spacing:1px}
+  </style>
+</head>
+<body>
+  <div class="pin">
+    <div class="pin-bg">
+      <img src="file:///Users/alexhosage/Desktop/mmd-website/img/photo-packages/guests-crowd-phones.jpg" alt="">
+    </div>
+    <div class="pin-content">
+      <!-- Top branding -->
+      <div class="pin-top">
+        <div class="brand">Mrs<span>Millennial</span> Designs</div>
+        <div class="brand-line"></div>
+      </div>
+
+      <!-- Center headline -->
+      <div class="pin-center">
+        <div class="hook-line">Your Guests Are Already Taking Photos</div>
+        <h1 class="headline">Your Wedding Album,<br><em>Without the $5,000<br>Price Tag</em></h1>
+        <p class="subline">We give you a <strong>shot script</strong> + <strong>QR codes</strong>.<br>Your guests capture every moment.<br>We edit &amp; print a <strong>stunning hardcover album</strong>.</p>
+
+        <div class="divider"></div>
+
+        <div class="props">
+          <div class="prop"><span class="prop-dot"></span>Shot Script</div>
+          <div class="prop"><span class="prop-dot"></span>QR Code Signs</div>
+          <div class="prop"><span class="prop-dot"></span>Pro Editing</div>
+          <div class="prop"><span class="prop-dot"></span>Hardcover Album</div>
+          <div class="prop"><span class="prop-dot"></span>Digital Downloads</div>
+        </div>
+      </div>
+
+      <!-- Bottom pricing + CTA -->
+      <div class="pin-bottom">
+        <div class="compare">Traditional photographer: <s>$3,000 &ndash; $5,000+</s></div>
+        <div class="price-box">
+          <span class="price-from">From</span>
+          <span class="price">$49.99</span>
+        </div>
+        <div class="price-note">Album Included &bull; Free Shipping</div>
+        <div class="cta">Shop Wedding Packages</div>
+        <div class="url">mrsmillennialdesigns.com</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
