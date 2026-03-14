@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Photo Packages &mdash; From $49.99 | MrsMillennial Designs</title>
+  <meta name="description" content="Beautiful wedding photo albums without the $5,000 photographer price tag. Your guests capture every moment, we create a stunning hardcover album. Simple $49.99, Max $199.">
+  <meta property="og:title" content="Wedding Photo Packages | MrsMillennial Designs">
+  <meta property="og:description" content="Hardcover wedding albums from $49.99. Your guests are the photographers.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; font-src 'self'; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/review-count.js" defer></script>
+  <style>
+    :root{--accent:#b8965a;--accent-dark:#96783e;--accent-light:#dbc9a0;--warm:#d4a853;--warm-light:rgba(212,168,83,0.12)}
+
+    .w-hero{padding:120px 24px 80px;text-align:center;background:linear-gradient(180deg,rgba(143,168,136,0.08),var(--bg));position:relative;overflow:hidden}
+    .w-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(143,168,136,0.06),transparent 60%),radial-gradient(ellipse at 70% 60%,rgba(212,168,83,0.04),transparent 60%);pointer-events:none}
+    .w-hero-content{position:relative;z-index:1;max-width:680px;margin:0 auto}
+    .w-badge{display:inline-block;background:var(--warm-light);border:1px solid rgba(212,168,83,0.25);color:#9e7d2e;font-size:13px;font-weight:600;padding:6px 16px;border-radius:50px;margin-bottom:20px;letter-spacing:0.5px}
+    .w-hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin-bottom:16px}
+    .w-hero .tagline{font-size:clamp(1rem,2vw,1.15rem);color:var(--muted);font-style:italic;margin-bottom:12px;line-height:1.7}
+    .w-hero .sub{font-size:14px;color:var(--muted);margin-bottom:32px}
+
+    .pkg-section{padding:72px 24px}
+    .pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;margin:0 auto}
+    .pkg-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:2px solid rgba(45,41,38,0.06);position:relative;display:flex;flex-direction:column}
+    .pkg-card.featured{border-color:var(--accent)}
+    .pkg-card.featured::before{content:'Most Popular';position:absolute;top:16px;right:16px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;z-index:1}
+    .pkg-header{padding:32px 28px 0;text-align:center}
+    .pkg-name{font-family:var(--font);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent-dark);margin-bottom:8px}
+    .pkg-price{font-size:2.4rem;font-weight:800;color:var(--text);margin-bottom:4px}
+    .pkg-price-note{font-size:13px;color:var(--muted);margin-bottom:24px}
+    .pkg-body{padding:0 28px 28px;flex:1;display:flex;flex-direction:column}
+    .pkg-features{list-style:none;margin-bottom:24px;flex:1}
+    .pkg-features li{padding:10px 0;border-bottom:1px solid rgba(45,41,38,0.04);font-size:14px;color:var(--muted);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+    .pkg-features li::before{content:'';display:inline-block;width:20px;height:20px;min-width:20px;border-radius:50%;background:rgba(168,197,160,0.2);position:relative;margin-top:2px}
+    .pkg-features li::after{content:'\2713';position:absolute;color:var(--sage);font-size:12px;font-weight:700}
+    .pkg-features li{position:relative}
+    .pkg-check{color:var(--sage);font-weight:700;margin-right:2px;font-size:15px;flex-shrink:0;margin-top:1px}
+    .pkg-btn{display:block;width:100%;padding:16px;border-radius:50px;font-size:16px;font-weight:700;border:none;cursor:pointer;transition:all var(--transition);text-align:center;text-decoration:none;box-sizing:border-box}
+    .pkg-btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 16px rgba(143,168,136,0.3)}
+    .pkg-btn-primary:hover{background:var(--accent-dark);color:#fff;transform:translateY(-2px);box-shadow:0 6px 24px rgba(143,168,136,0.4)}
+    .pkg-btn-outline{background:transparent;color:var(--accent-dark);border:2px solid var(--accent-light)}
+    .pkg-btn-outline:hover{border-color:var(--accent);color:var(--accent-dark);transform:translateY(-2px)}
+
+    .included-section{padding:72px 24px;background:var(--white)}
+    .included-inner{max-width:800px;margin:0 auto}
+    .included-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+    .included-item{display:flex;gap:14px;align-items:flex-start;padding:20px;background:var(--bg);border-radius:12px}
+    .included-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+    .included-item h3{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:4px}
+    .included-item p{font-size:13px;color:var(--muted);line-height:1.6}
+
+    .timeline-section{padding:72px 24px;background:var(--bg)}
+    .timeline-inner{max-width:700px;margin:0 auto}
+    .timeline-steps{margin-top:32px}
+    .tl-step{display:flex;gap:20px;margin-bottom:28px;align-items:flex-start}
+    .tl-num{width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0}
+    .tl-text h3{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:4px}
+    .tl-text p{font-size:14px;color:var(--muted);line-height:1.6}
+
+    .faq-section{padding:72px 24px;background:var(--white)}
+    .faq-inner{max-width:700px;margin:0 auto}
+    .faq-item{border-bottom:1px solid rgba(45,41,38,0.06);padding:20px 0}
+    .faq-q{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:8px;cursor:pointer}
+    .faq-a{font-size:14px;color:var(--muted);line-height:1.7}
+
+    .cta-bottom{padding:72px 24px;text-align:center;background:linear-gradient(135deg,rgba(143,168,136,0.08),rgba(212,168,83,0.04))}
+    .cta-bottom h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:12px}
+    .cta-bottom p{color:var(--muted);font-style:italic;margin-bottom:32px}
+
+    @media(max-width:768px){
+      .pkg-grid{grid-template-columns:1fr}
+      .included-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<div class="gallery-banner"><a href="https://www.pinterest.com/MrsMillennialDesigns" target="_blank" rel="noopener" style="color:var(--text)"><svg style="width:14px;height:14px;vertical-align:-2px;fill:#E60023;margin-right:2px" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.15 9.42 7.6 11.18-.1-.94-.2-2.38.04-3.41.22-.93 1.4-5.93 1.4-5.93s-.36-.71-.36-1.77c0-1.66.96-2.9 2.16-2.9 1.02 0 1.51.77 1.51 1.68 0 1.03-.65 2.56-1 3.98-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.26 3.78-5.5 0-2.88-2.07-4.89-5.02-4.89-3.42 0-5.43 2.57-5.43 5.22 0 1.03.4 2.14.9 2.74.1.12.11.22.08.34-.09.38-.3 1.2-.34 1.36-.06.22-.18.27-.42.16-1.56-.73-2.54-3.01-2.54-4.85 0-3.94 2.87-7.56 8.27-7.56 4.34 0 7.71 3.1 7.71 7.23 0 4.31-2.72 7.79-6.5 7.79-1.27 0-2.46-.66-2.87-1.44l-.78 2.98c-.28 1.09-1.05 2.45-1.56 3.28C9.58 23.81 10.77 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg> @MrsMillennialDesigns</a> <span style="color:rgba(45,41,38,0.25);margin:0 8px">|</span> <a href="https://www.instagram.com/mrs.millennialdesigns" target="_blank" rel="noopener" style="color:var(--text)"><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:2px" viewBox="0 0 24 24"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#feda75"/><stop offset="25%" stop-color="#fa7e1e"/><stop offset="50%" stop-color="#d62976"/><stop offset="75%" stop-color="#962fbf"/><stop offset="100%" stop-color="#4f5bd5"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig)"/><circle cx="12" cy="12" r="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="#fff"/></svg> @mrs.millennialdesigns</a> <span style="color:rgba(45,41,38,0.25);margin:0 8px">|</span> <a href="/gallery.html" style="color:var(--text)"><span class="gb-heart" style="color:var(--rose)">&#10084;</span> <span style="font-weight:700">Customer Gallery</span></a></div>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Mrs<span>Millennial</span> Designs</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/products.html">Shop</a></li>
+      <li><a href="/bundles.html">Bundles</a></li>
+      <li><a href="/photo-packages.html" class="active">Photo Packages</a></li>
+      <li><a href="/reviews.html">Reviews</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="w-hero">
+  <div class="w-hero-content">
+    <div class="w-badge">Wedding Photography</div>
+    <h1>Your Wedding Album, Without the $5,000 Price Tag</h1>
+    <p class="tagline">Your guests are already taking photos. We give them direction, polish the results, and deliver a stunning hardcover album to your door.</p>
+    <p class="sub">Hardcover photo book + digital downloads + professional shot scripts included in every package.</p>
+    <div class="hero-buttons">
+      <a href="#packages" class="btn btn-primary" style="background:var(--accent);box-shadow:0 4px 16px rgba(143,168,136,0.3)">View Packages</a>
+      <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 24px 48px;background:var(--bg)">
+  <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px">
+    <img src="/img/photo-packages/gelato-hardcover-1.jpg" alt="Your hardcover wedding album" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);grid-row:1/3" loading="lazy">
+    <img src="/img/photo-packages/wedding-ceremony.jpg" alt="Wedding ceremony captured by guests" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)" loading="lazy">
+    <img src="/img/photo-packages/guests-phones-wedding.jpg" alt="Guests capturing moments" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)" loading="lazy">
+    <img src="/img/photo-packages/album-open-spread.jpg" alt="Album open to wedding photos" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)" loading="lazy">
+    <img src="/img/photo-packages/canvas-living-room.jpg" alt="Canvas print displayed at home" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)" loading="lazy">
+  </div>
+</section>
+
+<section class="pkg-section" id="packages" style="background:var(--white)">
+  <div style="text-align:center;margin-bottom:48px">
+    <h2 class="section-title">Wedding Packages</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
+    <p style="color:var(--muted);font-size:14px">Every package includes a printed album, digital downloads, and a professional shot script.</p>
+  </div>
+  <div class="pkg-grid">
+    <div class="pkg-card">
+      <div class="pkg-header">
+        <div class="pkg-name">Simple</div>
+        <div class="pkg-price">$49.99</div>
+        <div class="pkg-price-note">One-time payment &mdash; no hidden fees</div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-features">
+          <li><span class="pkg-check">&#10003;</span> Hardcover photo book (8x8", 30 pages)</li>
+          <li><span class="pkg-check">&#10003;</span> Custom-designed book cover</li>
+          <li><span class="pkg-check">&#10003;</span> All photos professionally edited &amp; color-corrected</li>
+          <li><span class="pkg-check">&#10003;</span> High-res digital download of all photos</li>
+          <li><span class="pkg-check">&#10003;</span> Professional shot script (38 key shots)</li>
+          <li><span class="pkg-check">&#10003;</span> QR code printouts for guest uploads</li>
+          <li><span class="pkg-check">&#10003;</span> Free shipping to your door</li>
+        </ul>
+        <!-- TODO: Replace href with Stripe payment link -->
+        <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Wedding%20Simple%20Package&body=Hi!%20I'd%20like%20to%20order%20the%20Wedding%20Simple%20package%20($49.99).%0A%0AWedding%20date:%0ANames:%0A" class="pkg-btn pkg-btn-outline">Get Started &mdash; $49.99</a>
+      </div>
+    </div>
+    <div class="pkg-card featured">
+      <div class="pkg-header">
+        <div class="pkg-name" style="color:var(--warm)">Max</div>
+        <div class="pkg-price">$199</div>
+        <div class="pkg-price-note">Everything in Simple, plus premium extras</div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-features">
+          <li><span class="pkg-check">&#10003;</span> <strong>Hardcover photo book (8x8", 60 pages)</strong></li>
+          <li><span class="pkg-check">&#10003;</span> Custom-designed book cover</li>
+          <li><span class="pkg-check">&#10003;</span> All photos professionally edited &amp; color-corrected</li>
+          <li><span class="pkg-check">&#10003;</span> High-res digital download of all photos</li>
+          <li><span class="pkg-check">&#10003;</span> <strong>11x14" stretched canvas print</strong> of your best photo</li>
+          <li><span class="pkg-check">&#10003;</span> Detailed shot script (122 key shots)</li>
+          <li><span class="pkg-check">&#10003;</span> QR code printouts for guest uploads</li>
+          <li><span class="pkg-check">&#10003;</span> <strong>Lead coordinator cheat sheet</strong></li>
+          <li><span class="pkg-check">&#10003;</span> Free shipping on everything</li>
+        </ul>
+        <!-- TODO: Replace href with Stripe payment link -->
+        <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Wedding%20Max%20Package&body=Hi!%20I'd%20like%20to%20order%20the%20Wedding%20Max%20package%20($199).%0A%0AWedding%20date:%0ANames:%0A" class="pkg-btn pkg-btn-primary">Get Started &mdash; $199</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="included-section">
+  <div class="included-inner">
+    <h2 class="section-title" style="text-align:center">What's Included</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
+    <div class="included-grid">
+      <div class="included-item">
+        <div class="included-icon">&#128218;</div>
+        <div>
+          <h3>Hardcover Photo Book</h3>
+          <p>Premium hardcover with a beautiful custom-designed cover. 30 pages (Simple) or 60 pages (Max) of your best moments, professionally laid out.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">&#128247;</div>
+        <div>
+          <h3>Professionally Edited Photos</h3>
+          <p>Every photo is enhanced with professional color correction, lighting adjustments, and touch-ups. No amateur-looking results.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">&#128196;</div>
+        <div>
+          <h3>Shot Scripts</h3>
+          <p>Professional photography checklists organized by wedding timeline. Your lead coordinator follows the script so nothing gets missed.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">&#128241;</div>
+        <div>
+          <h3>QR Code Uploads</h3>
+          <p>Print and place QR codes at your venue. Guests scan and upload their photos instantly &mdash; no app download needed.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">&#128228;</div>
+        <div>
+          <h3>Digital Downloads</h3>
+          <p>High-resolution digital copies of every edited photo. Share on social media, print your own copies, save them forever.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">&#128444;</div>
+        <div>
+          <h3>Canvas Print (Max)</h3>
+          <p>An 11x14" stretched canvas of your favorite wedding photo, printed in the USA and shipped directly to you. Ready to hang.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="timeline-section" id="how-it-works">
+  <div class="timeline-inner">
+    <h2 class="section-title" style="text-align:center">How It Works</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
+    <div class="timeline-steps">
+      <div class="tl-step">
+        <div class="tl-num">1</div>
+        <div class="tl-text">
+          <h3>Order Your Package</h3>
+          <p>Choose Simple or Max and complete your order. We'll email you your shot script, QR code printouts, and a lead coordinator guide within 24 hours.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-num">2</div>
+        <div class="tl-text">
+          <h3>Assign Your Lead Coordinator</h3>
+          <p>Pick one trusted friend or family member to follow the shot script. They don't need to be a photographer &mdash; we give them everything they need.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-num">3</div>
+        <div class="tl-text">
+          <h3>Set Up QR Codes at Your Venue</h3>
+          <p>Print the QR codes and place them on tables, at the bar, near the dance floor. Encourage every guest to scan and upload their photos throughout the night.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-num">4</div>
+        <div class="tl-text">
+          <h3>We Edit, Design &amp; Ship</h3>
+          <p>After your wedding, we collect all uploaded photos, professionally edit every shot, design your album layout, and ship your hardcover book within 2 weeks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="faq-inner">
+    <h2 class="section-title" style="text-align:center">Common Questions</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
+    <div class="faq-item">
+      <div class="faq-q">How many photos do we need?</div>
+      <div class="faq-a">We recommend 10+ guests each taking 20+ photos, giving you 200&ndash;1,000+ shots to work with. More is always better &mdash; we'll curate the best ones for your album.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if some photos are blurry or low quality?</div>
+      <div class="faq-a">Our editing process catches and fixes most quality issues. Truly unusable photos are filtered out during the curation process. With 200+ shots, you'll have plenty of great ones.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I choose which photos go in the album?</div>
+      <div class="faq-a">Yes! After we edit the photos, we'll send you a preview of the album layout. You can request changes before we send it to print.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does shipping take?</div>
+      <div class="faq-a">Your hardcover album ships within 2 weeks of your wedding. Canvas prints (Max package) ship separately within 1&ndash;2 weeks. Both ship tracked to your door.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use this alongside a traditional photographer?</div>
+      <div class="faq-a">Absolutely! Many couples use our package as a complement to their photographer. Guest photos capture candid angles and moments a single photographer can't be in two places to get.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What does the lead coordinator do?</div>
+      <div class="faq-a">They follow our detailed shot script to make sure every key moment is captured &mdash; the vows, the first kiss, the cake cutting, family portraits. Think of them as the director, while all the guests are the camera crew.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-bottom">
+  <h2>Your Day Deserves to Be Remembered</h2>
+  <p>Every laugh, every tear, every dance move &mdash; captured by the people who love you most.</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <a href="#packages" class="btn btn-primary" style="background:var(--accent);box-shadow:0 4px 16px rgba(143,168,136,0.3)">Choose Your Package</a>
+    <a href="/event-photos.html" class="btn btn-outline">Looking for Event Packages?</a>
+  </div>
+  <p style="margin-top:24px;font-size:13px;color:var(--muted)">Questions? <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Wedding%20Photo%20Package%20Question" style="color:var(--accent-dark)">Email us</a> &mdash; we respond within 24 hours.</p>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
+        <p class="footer-desc">Premium printable designs & event photo packages for life's biggest moments.</p>
+        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">777 reviews</a> &middot; 5.0 avg rating</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul class="footer-links">
+          <li><a href="/products.html">All Products</a></li>
+          <li><a href="/bundles.html">Bundles</a></li>
+          <li><a href="/custom-orders.html">Custom Orders</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="/photo-packages.html">Photo Packages</a></li>
+          <li><a href="/wedding-photos.html">Wedding Photos</a></li>
+          <li><a href="/event-photos.html">Event Photos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html">Our Story</a></li>
+          <li><a href="/reviews.html">Reviews</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 MrsMillennial Designs. All rights reserved.</div>
+  </div>
+</footer>
+<script>
+const n=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>20));
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
+<script>
+(function(){
+  var endpoint='/a/track';
+  function t(data){data.referrer=document.referrer||'';data.page=location.pathname;navigator.sendBeacon?navigator.sendBeacon(endpoint,JSON.stringify(data)):fetch(endpoint,{method:'POST',body:JSON.stringify(data),keepalive:true});}
+  t({event:'pageview'});
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.pkg-btn');
+    if(!btn)return;
+    var card=btn.closest('.pkg-card');
+    var name=card?card.querySelector('.pkg-name'):null;
+    t({event:'photo_pkg_click',package:name?name.textContent:'',type:'wedding'});
+  });
+})();
+</script>
+<script src="/js/watermark-overlay.js" defer></script>
+</body>
+</html>
