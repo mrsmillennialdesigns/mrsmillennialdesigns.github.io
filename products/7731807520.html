@@ -8,7 +8,7 @@
   <meta property="og:title" content="Personalized Birth Flower Handprint Art, Custom Kids’ Names, Year &amp; Greeting">
   <meta property="og:image" content="https://i.etsystatic.com/34326585/r/il/92bd2a/7731807520/il_fullxfull.7731807520_ky73.jpg">
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; frame-src https://js.stripe.com; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev https://api.stripe.com; font-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; frame-src https://js.stripe.com; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev https://api.stripe.com https://mmd-checkout.mrsmillennial.workers.dev; font-src 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="/css/style.css">
@@ -30,6 +30,7 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
+    <a href="/cart.html" class="nav-cart" aria-label="Shopping cart" style="position:relative;margin-left:auto;margin-right:12px;color:var(--text);text-decoration:none;font-size:20px;display:flex;align-items:center">&#128722;<span class="cart-count" style="position:absolute;top:-6px;right:-10px;background:var(--rose);color:#fff;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;line-height:1">0</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -66,15 +67,31 @@
         <p>This is a made-to-order personalized design completed within 24&ndash;72 hours. A proof of your design will be sent for your approval before the order is finalized. Need it faster? Add a <strong>$10 rush order</strong> for guaranteed 24-hour delivery.</p>
       </div>
       <div class="buy-section">
-        <a href="https://buy.stripe.com/28EbJ04XB7PR1fG2p4cEw33" class="buy-btn" target="_blank" rel="noopener">
+        <button class="buy-btn" data-cart-add data-id="7731807520" data-price-id="price_1T8m4hBiY2vwqUNM6CmLw2zc" data-title="Personalized Birth Flower Handprint Art, Custom Kids’ Names, Year &amp; Greeting" data-price="5.00" data-image="https://i.etsystatic.com/34326585/r/il/92bd2a/7731807520/il_fullxfull.7731807520_ky73.jpg" data-type="digital">
           <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-          Buy Now — $5.00
-        </a>
+          Add to Cart — $5.00
+        </button>
         <div class="buy-secure">
           <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
           Secure checkout powered by Stripe
         </div>
       </div>
+      <div class="print-upsell" style="margin-top:24px;border:2px dashed rgba(45,41,38,0.12);border-radius:14px;padding:20px;background:rgba(184,150,90,0.04)">
+  <h4 style="font-size:14px;font-weight:700;margin-bottom:8px;font-family:'Playfair Display',serif">Want it printed &amp; shipped?</h4>
+  <p style="font-size:13px;color:#6b6560;line-height:1.6;margin-bottom:12px">Get a museum-quality print on premium matte paper, shipped free to your door.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button class="buy-btn" style="font-size:12px;padding:10px 16px" data-cart-add data-id="print_8x10_7731807520" data-price-id="price_1TAztJBiY2vwqUNMmXpdVqKp" data-title="8×10 Print — Personalized Birth Flower Handprint Art," data-price="19.99" data-image="https://i.etsystatic.com/34326585/r/il/92bd2a/7731807520/il_fullxfull.7731807520_ky73.jpg" data-type="print">8×10 — $19.99</button>
+    <button class="buy-btn" style="font-size:12px;padding:10px 16px" data-cart-add data-id="print_11x14_7731807520" data-price-id="price_1TAztMBiY2vwqUNMZzYrH83v" data-title="11×14 Print — Personalized Birth Flower Handprint Art," data-price="24.99" data-image="https://i.etsystatic.com/34326585/r/il/92bd2a/7731807520/il_fullxfull.7731807520_ky73.jpg" data-type="print">11×14 — $24.99</button>
+    <button class="buy-btn" style="font-size:12px;padding:10px 16px" data-cart-add data-id="print_16x20_7731807520" data-price-id="price_1TAzu4BiY2vwqUNMqnr816qA" data-title="16×20 Print — Personalized Birth Flower Handprint Art," data-price="29.99" data-image="https://i.etsystatic.com/34326585/r/il/92bd2a/7731807520/il_fullxfull.7731807520_ky73.jpg" data-type="print">16×20 — $29.99</button>
+  </div>
+  <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(45,41,38,0.08)">
+    <h4 style="font-size:13px;font-weight:700;margin-bottom:8px;font-family:'Playfair Display',serif;color:var(--muted)">Or get it on...</h4>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="buy-btn" style="font-size:12px;padding:10px 16px;background:var(--sage)" data-cart-add data-id="mug_7731807520" data-price-id="price_1TAzwnBiY2vwqUNMyVk7Cx14" data-title="Mug — Personalized Birth Flower Hand" data-price="19.99" data-image="https://i.etsystatic.com/34326585/r/il/92bd2a/7731807520/il_fullxfull.7731807520_ky73.jpg" data-type="merch">Mug — $19.99</button>
+      <button class="buy-btn" style="font-size:12px;padding:10px 16px;background:var(--sage)" data-cart-add data-id="tshirt_7731807520" data-price-id="price_1TAzwpBiY2vwqUNMczsrDu5d" data-title="T-Shirt — Personalized Birth Flower Hand" data-price="34.99" data-image="https://i.etsystatic.com/34326585/r/il/92bd2a/7731807520/il_fullxfull.7731807520_ky73.jpg" data-type="merch">T-Shirt — $34.99</button>
+    </div>
+  </div>
+</div>
       <div class="detail-desc">This is more than just a craft; it&#x27;s a &quot;tiny time capsule&quot;. Our birth flower handprint art merges the timeless tradition of a child&#x27;s handprint keepsake with a beautiful, floral design. You receive a high-quality, printable digital file featuring the designated birth flower for your chosen month(s).<br><br>Features:<br>Customizable: Choose the birth month flowers for one or more family members to create a one-of-a-kind bouquet.<br>Easy to make: The digital format allows for instant download, so you can start creating in minutes.<br>Personal touch: The inclusion of a handprint transforms the artwork into a treasured and sentimental memory.<br>Versatile gift: An ideal and heartfelt present for mothers, grandmothers, or anyone special in your life.<br>Digital download: No physical product is shipped, giving you the flexibility to print as many copies as you like.<br>Use this template to create a touching, personalized piece of art that will be cherished for years to come.<br><br>How To Order:<br>1. Choose birth flowers for the design. <br>2. Choose name stem or flower stem.<br>3. List names to be included.<br>4. Additional text requests (personalized greeting, year, type of font etc.)<br>5. Additional flowers, graphics, or colors you’d like in the custom design. <br><br>Your order will be ready within 24-72 hours (usually less) and you will receive a notification from Etsy that your file is ready for download.<br>You will get JPG final 300 dpi high resolution RGB file.<br>One file without a handprint for Craft.<br><br>****<br>All custom orders can take anywhere from 24-72 hours to fulfill. A rush order listing is available for purchase in my shop to guarantee you receive your item in 24 hours or less! ⬇️<br><br>NEED YOUR ORDER IN A RUSH? Click here for more information! <br>-&gt; https://mrsmillennial.etsy.com/listing/4303063192<br><br>To access your digital files from your account:<br><br>Sign in to Etsy.com and go to your account.<br>Go to Purchases and Reviews.<br>Next to the order, select Download Files. This goes to the Downloads page for all the files attached to your order.<br>Help article if you have any problems:<br>https://www.etsy.com/help/article/3949<br><br>More Handprints and Footprints: https://mrsmillennial.etsy.com<br><br>Print at home, at a local print shop or printing service, or online.<br>Print on heavyweight, matte photo paper, card stock, or canvas for best results.<br>Use child-safe washable ink or paint.<br><br>Colors can be different! It depends on the settings of your monitor.<br>Ready to use!<br><br>For personal use or as a gift. You can print as many as you need.<br>Distributing this image by electronic means or for commercial purposes is strictly prohibited.<br>All Rights Reserved, Mrs.Millennial Designs. <br><br>Digital items cannot be returned.<br>If you need any changes, please message me. <br>Final print quality depends on the type of printer and paper.<br><br>Thanks for stopping by! I hope you’ll visit my shop again soon. <br>https://mrsmillennial.etsy.com</div>
     </div>
   </div>
@@ -132,7 +149,7 @@
       <div>
         <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
         <p class="footer-desc">Premium printable designs & event photo packages for life's biggest moments.</p>
-        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">777 reviews</a> &middot; 5.0 avg rating</p>
+        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">778 reviews</a> &middot; 5.0 avg rating</p>
       </div>
       <div>
         <h4>Shop</h4>
@@ -210,5 +227,6 @@ l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.re
 })();
 </script>
 <script src="/js/watermark-overlay.js" defer></script>
+<script src="/js/cart.js"></script>
 </body>
 </html>

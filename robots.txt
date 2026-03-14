@@ -2,6 +2,11 @@ User-agent: *
 Allow: /
 Disallow: /img/
 Disallow: /downloads/
+Disallow: /delivery/
+Disallow: /thank-you.html
+Disallow: /thank-you-photos.html
+Disallow: /ads/
+Disallow: /workers/
 
 User-agent: GPTBot
 Disallow: /

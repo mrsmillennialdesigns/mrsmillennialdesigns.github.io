@@ -7,7 +7,7 @@
   <meta name="description" content="Professional photo albums for birthday celebrations. Your guests capture the cake, the candles, the chaos — we create a stunning keepsake album. From $49.99 with free shipping.">
   <meta property="og:title" content="Birthday Photo Packages | MrsMillennial Designs">
   <meta property="og:description" content="Professional photo albums for birthday celebrations. Your guests capture the cake, the candles, the chaos — we create a stunning keepsake album. From $49.99 with free shipping.">
-  <meta property="og:image" content="/img/photo-packages/diverse-birthday-group.jpg">
+  <meta property="og:image" content="/img/photo-packages/mockups/birthday-album-hands.png">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; font-src 'self'; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -95,8 +95,9 @@
       .hiw-grid{grid-template-columns:1fr 1fr;gap:20px}
     }
     @media(max-width:768px){
-      .ev-hero-img{height:750px}
+      .ev-hero-img{height:450px}
       .ev-hero h1{font-size:2rem}
+      .showcase-grid{grid-template-columns:1fr 1fr !important}
       .pkg-grid{grid-template-columns:1fr}
       .addon-card{flex-direction:column;text-align:center;padding:28px 24px}
       .addon-img{width:120px;height:120px}
@@ -109,8 +110,9 @@
       .hero-buttons a{width:100%;justify-content:center;text-align:center}
     }
     @media(max-width:480px){
-      .ev-hero-img{height:550px}
+      .ev-hero-img{height:350px}
       .hiw-grid{grid-template-columns:1fr}
+      .showcase-grid{grid-template-columns:1fr 1fr !important}
     }
   </style>
 </head>
@@ -129,6 +131,7 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
+    <a href="/cart.html" class="nav-cart" aria-label="Shopping cart" style="position:relative;margin-left:auto;margin-right:12px;color:var(--text);text-decoration:none;font-size:20px;display:flex;align-items:center">&#128722;<span class="cart-count" style="position:absolute;top:-6px;right:-10px;background:var(--rose);color:#fff;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;line-height:1">0</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -137,7 +140,7 @@
 
 <!-- ==================== HERO ==================== -->
 <section class="ev-hero">
-  <img src="/img/photo-packages/diverse-birthday-group.jpg" alt="Birthday Photo Packages" class="ev-hero-img" loading="eager">
+  <img src="/img/photo-packages/mockups/birthday-album-hands.png" alt="Hands holding a birthday celebration photo album" class="ev-hero-img" loading="eager">
   <div class="ev-hero-overlay">
     <div class="ev-hero-content">
       <div class="ev-hero-badge">Birthday Photography</div>
@@ -152,6 +155,21 @@
   </div>
 </section>
 
+<!-- ==================== ALBUM SHOWCASE GALLERY ==================== -->
+<section style="padding:48px 24px 0;background:var(--bg)">
+  <div style="max-width:1000px;margin:0 auto">
+    <h2 class="section-title" style="text-align:center">Real Birthday Albums, Real Families</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--gold)"></span></div>
+    <p style="text-align:center;color:var(--muted);font-size:15px;max-width:560px;margin:0 auto 28px;font-style:italic">Every album is professionally designed with your family's photos. Here's what yours could look like.</p>
+    <div class="showcase-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+      <img src="/img/photo-packages/mockups/birthday-album-baby-open.png" alt="Open album spread of baby's first birthday with Minnie Mouse theme" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)" loading="lazy">
+      <img src="/img/photo-packages/mockups/birthday-album-child-open.png" alt="Open album spread of child's birthday party with colorful decorations" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)" loading="lazy">
+      <img src="/img/photo-packages/mockups/birthday-album-family-open.png" alt="Open album spread of family birthday party celebration" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)" loading="lazy">
+      <img src="/img/photo-packages/mockups/birthday-album-couple.png" alt="Photo book on table showing diverse couple at birthday party" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)" loading="lazy">
+    </div>
+  </div>
+</section>
+
 <!-- ==================== HOW IT WORKS (4 steps with images) ==================== -->
 <section class="hiw-section" id="how-it-works">
   <div class="hiw-inner">
@@ -161,25 +179,25 @@
     <div class="hiw-grid">
       <div class="hiw-step">
         <div class="hiw-num">1</div>
-        <img src="/img/photo-packages/canva-hardcover-hands.png" alt="Pick your photo package" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/mockups/birthday-softcover-girl.png" alt="Softcover birthday album with girl holding gold balloon" class="hiw-step-img" loading="lazy">
         <h3>Pick Your Package</h3>
         <p>Choose Simple ($49.99) or Max ($199). We email your shot script, QR codes, and coordinator guide within 24 hours.</p>
       </div>
       <div class="hiw-step">
         <div class="hiw-num">2</div>
-        <img src="/img/photo-packages/album-full-grid.jpg" alt="Your coordinator gets the professional shot checklist" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/mockups/birthday-album-child-open.png" alt="Open birthday album showing professionally designed pages with party decorations" class="hiw-step-img" loading="lazy">
         <h3>Your Coordinator Gets the Script</h3>
         <p>One person follows our professional shot checklist. They don&rsquo;t need to be a photographer &mdash; we tell them exactly what to capture and when.</p>
       </div>
       <div class="hiw-step">
         <div class="hiw-num">3</div>
-        <img src="/img/photo-packages/canva-qr-table.png" alt="Guests scan QR codes and upload photos" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/mockups/wedding-qr-table.png" alt="QR code poster on table for guests to scan and upload photos" class="hiw-step-img" loading="lazy">
         <h3>Guests Scan &amp; Share</h3>
         <p>QR codes on tables, at the entrance, near the food. Everyone scans and uploads photos from their phones &mdash; no app needed.</p>
       </div>
       <div class="hiw-step">
         <div class="hiw-num">4</div>
-        <img src="/img/photo-packages/canva-hanging-print.png" alt="We create your professionally designed album" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/mockups/birthday-album-hands.png" alt="Hands holding a finished birthday celebration photo album" class="hiw-step-img" loading="lazy">
         <h3>We Create Your Album</h3>
         <p>Professionally edited, beautifully designed, shipped to your door within 2 weeks. Free shipping included.</p>
       </div>
@@ -201,6 +219,20 @@
   </div>
 </section>
 
+<!-- Event Merch Bundle Add-on -->
+<section style="padding:0 24px 0;background:var(--white)">
+  <div style="max-width:900px;margin:24px auto 0;background:var(--white);border-radius:14px;border:2px dashed rgba(45,41,38,0.12);padding:28px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+    <div style="flex-shrink:0;width:120px;height:120px;background:linear-gradient(135deg,var(--sage),rgba(184,150,90,0.3));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem">&#9749;&#128085;</div>
+    <div style="flex:1;min-width:200px">
+      <div style="display:inline-block;background:var(--sage);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Save $10</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:6px">Event Merch Bundle</h3>
+      <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:12px">Custom 11oz ceramic mug + heavyweight crewneck t-shirt featuring your event photos. The perfect keepsake for everyone who celebrated with you.</p>
+      <span style="font-size:1.3rem;font-weight:800;color:var(--accent-dark,var(--text))">$44.99</span><span style="font-size:12px;color:var(--muted);margin-left:8px;font-weight:400"><s>$54.98</s> — Save $10</span>
+      <div style="margin-top:14px"><button class="pkg-btn" style="display:inline-block;padding:12px 28px;font-size:14px;border:none;cursor:pointer;border-radius:50px;background:var(--accent,var(--rose));color:#fff;font-weight:700" data-cart-add data-id="event_merch_bundle" data-price-id="price_1TAzxnBiY2vwqUNMzpJefJ3U" data-title="Event Merch Bundle — Mug + T-Shirt" data-price="44.99" data-image="" data-type="merch">Add to Cart — $44.99</button></div>
+    </div>
+  </div>
+</section>
+
 <!-- ==================== PACKAGES ==================== -->
 <section class="pkg-section" id="packages">
   <div style="text-align:center;margin-bottom:48px">
@@ -211,6 +243,7 @@
   <div class="pkg-grid">
     <!-- SIMPLE PACKAGE -->
     <div class="pkg-card">
+      <img src="/img/photo-packages/mockups/birthday-softcover-girl.png" alt="Softcover birthday photo album with girl holding gold balloon" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block" loading="lazy">
       <div class="pkg-header">
         <div class="pkg-name">Simple</div>
         <div class="pkg-price">$49.99</div>
@@ -230,6 +263,7 @@
     </div>
     <!-- MAX PACKAGE -->
     <div class="pkg-card featured">
+      <img src="/img/photo-packages/mockups/birthday-hardcover-one.png" alt="Hardcover birthday album cover showing baby's first birthday" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block" loading="lazy">
       <div class="pkg-header">
         <div class="pkg-name" style="color:var(--gold)">Max</div>
         <div class="pkg-price">$199</div>
@@ -274,7 +308,7 @@
       <div>
         <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
         <p class="footer-desc">Premium printable designs & event photo packages for life's biggest moments.</p>
-        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">777 reviews</a> &middot; 5.0 avg rating</p>
+        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">778 reviews</a> &middot; 5.0 avg rating</p>
       </div>
       <div>
         <h4>Shop</h4>
@@ -340,5 +374,6 @@ l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.re
 })();
 </script>
 <script src="/js/watermark-overlay.js" defer></script>
+<script src="/js/cart.js"></script>
 </body>
 </html>

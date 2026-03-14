@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop All Designs | MrsMillennial Designs</title>
-  <meta name="description" content="Browse all 150 handmade digital designs by MrsMillennial Designs.">
+  <meta name="description" content="Browse all 149 handmade digital designs by MrsMillennial Designs.">
   
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; frame-src https://js.stripe.com; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev https://api.stripe.com; font-src 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -28,6 +28,7 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
+    <a href="/cart.html" class="nav-cart" aria-label="Shopping cart" style="position:relative;margin-left:auto;margin-right:12px;color:var(--text);text-decoration:none;font-size:20px;display:flex;align-items:center">&#128722;<span class="cart-count" style="position:absolute;top:-6px;right:-10px;background:var(--rose);color:#fff;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;line-height:1">0</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -36,24 +37,24 @@
 
 <div class="page-header">
   <h1>Shop All Designs</h1>
-  <p>150 handmade designs crafted with love</p>
+  <p>149 handmade designs crafted with love</p>
 </div>
 
 <div class="container">
   <div class="filter-bar">
     <div class="filter-buttons">
-      <button class="filter-btn active" data-cat="all">All (150)</button>
+      <button class="filter-btn active" data-cat="all">All (149)</button>
       <button class="filter-btn" data-cat="handprint">Handprint Art (90)</button>
       <button class="filter-btn" data-cat="classroom">Classroom (36)</button>
       <button class="filter-btn" data-cat="invitations">Invitations (5)</button>
       <button class="filter-btn" data-cat="svg-png">SVG / PNG (9)</button>
-      <button class="filter-btn" data-cat="seamless">Seamless Patterns (6)</button>
+      <button class="filter-btn" data-cat="seamless">Seamless Patterns (7)</button>
       <button class="filter-btn" data-cat="wall-art">Wall Art Prints (2)</button>
     </div>
     <input type="text" id="searchInput" class="search-input" placeholder="Search designs...">
   </div>
 
-  <div class="product-count" id="productCount">147 designs</div>
+  <div class="product-count" id="productCount">149 designs</div>
   <div class="product-grid" id="productGrid">
       <a href="/products/6663645108.html" class="product-card" data-sku="dhp-010" data-cat="handprint" data-title="read across america handprint craft: keepsake gift (pdf &amp; jpg)">
         <div class="card-img"><img src="https://i.etsystatic.com/34326585/r/il/653be7/6663645108/il_570xN.6663645108_qzw5.jpg" alt="Read Across America Handprint Craft: Keepsake Gift (PDF &amp; JPG)" loading="lazy"></div>
@@ -1348,7 +1349,7 @@
       <div>
         <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
         <p class="footer-desc">Premium printable designs & event photo packages for life's biggest moments.</p>
-        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">777 reviews</a> &middot; 5.0 avg rating</p>
+        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">778 reviews</a> &middot; 5.0 avg rating</p>
       </div>
       <div>
         <h4>Shop</h4>
@@ -1467,5 +1468,6 @@ document.addEventListener('dragstart',function(e){
 })();
 </script>
 <script src="/js/watermark-overlay.js" defer></script>
+<script src="/js/cart.js"></script>
 </body>
 </html>

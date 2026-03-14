@@ -9,3 +9,28 @@ delivery/
 .wrangler/
 _build_shop_backup.py
 create_downloads.py
+node_modules/
+package-lock.json
+
+# Build/admin scripts
+update-products-cart.js
+update-print-prices.js
+add-16x20-print.js
+add-merch-upsell.js
+update_all_pages.py
+generate_event_subpages.py
+fix_all_products.py
+render-videos.mjs
+
+# Internal data files
+stripe-price-updates.txt
+sku-reference.txt
+photo-stripe-links.json
+print-links.json
+
+# Internal docs
+MMD_Marketing_Plan.html
+MMD_Site_Report_Mar9.html
+
+# Worker source (deployed separately via wrangler)
+workers/

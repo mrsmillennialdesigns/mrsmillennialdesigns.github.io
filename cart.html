@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart | MrsMillennial Designs</title>
+  <meta name="description" content="Review your cart and checkout. Premium printable designs from MrsMillennial Designs.">
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; frame-src https://js.stripe.com; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev https://mmd-checkout.mrsmillennial.workers.dev https://api.stripe.com; font-src 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* Cart Layout */
+    .cart-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 40px;
+      padding: 40px 0 80px;
+      align-items: start;
+    }
+
+    /* Cart Items */
+    .cart-items { min-width: 0; }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(45,41,38,0.06);
+    }
+
+    .cart-item:first-child { padding-top: 0; }
+    .cart-item:last-child { border-bottom: none; }
+
+    .cart-item-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      object-fit: cover;
+      background: var(--bg-alt);
+    }
+
+    .cart-item-info { min-width: 0; }
+
+    .cart-item-title {
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 4px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .cart-item-price {
+      font-size: 14px;
+      color: var(--rose-dark);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .cart-item-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .qty-control {
+      display: inline-flex;
+      align-items: center;
+      border: 1.5px solid rgba(45,41,38,0.1);
+      border-radius: 50px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .qty-btn {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      color: var(--muted);
+      transition: all var(--transition);
+      font-family: var(--font);
+    }
+
+    .qty-btn:hover {
+      background: var(--bg-alt);
+      color: var(--text);
+    }
+
+    .qty-value {
+      width: 36px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      font-family: var(--font);
+    }
+
+    .remove-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: var(--muted);
+      opacity: 0.5;
+      transition: all var(--transition);
+      padding: 12px;
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .remove-btn:hover {
+      opacity: 1;
+      color: #c44;
+    }
+
+    .cart-item-right {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .cart-item-total {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    /* Cart Summary */
+    .cart-summary {
+      position: sticky;
+      top: 88px;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid rgba(45,41,38,0.06);
+    }
+
+    .cart-summary h2 {
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .summary-row.total {
+      border-top: 1px solid rgba(45,41,38,0.08);
+      margin-top: 8px;
+      padding-top: 16px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .summary-shipping {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--sage);
+      font-weight: 500;
+      padding: 10px 0;
+    }
+
+    .summary-shipping svg {
+      flex-shrink: 0;
+    }
+
+    .checkout-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      background: var(--text);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(45,41,38,0.15);
+      letter-spacing: 0.3px;
+      font-family: var(--font);
+      margin-top: 20px;
+    }
+
+    .checkout-btn:hover {
+      background: #1a1715;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(45,41,38,0.25);
+    }
+
+    .checkout-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .summary-continue {
+      display: block;
+      text-align: center;
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color var(--transition);
+    }
+
+    .summary-continue:hover {
+      color: var(--rose-dark);
+    }
+
+    .summary-secure {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--muted);
+      opacity: 0.5;
+    }
+
+    .summary-secure svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+    }
+
+    /* Empty Cart */
+    .cart-empty {
+      text-align: center;
+      padding: 80px 20px;
+      grid-column: 1 / -1;
+    }
+
+    .cart-empty-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      opacity: 0.3;
+    }
+
+    .cart-empty h2 {
+      font-family: var(--font);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .cart-empty p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    /* Cart icon in nav */
+    .nav-cart {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 0;
+    }
+
+    .nav-cart:hover { color: var(--text); }
+
+    .nav-cart svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -6px;
+      right: -10px;
+      background: var(--gold);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      min-width: 18px;
+      height: 18px;
+      line-height: 18px;
+      text-align: center;
+      border-radius: 50%;
+      font-family: var(--font);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .cart-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px 0 60px;
+      }
+
+      .cart-summary {
+        position: static;
+      }
+
+      .cart-item {
+        grid-template-columns: 64px 1fr;
+        gap: 14px;
+      }
+
+      .cart-item-right {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 78px;
+      }
+
+      .cart-item-img {
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cart-item-right {
+        padding-left: 0;
+      }
+
+      .page-header {
+        padding: 72px 12px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="gallery-banner"><a href="https://www.pinterest.com/MrsMillennialDesigns" target="_blank" rel="noopener" style="color:var(--text)"><svg style="width:14px;height:14px;vertical-align:-2px;fill:#E60023;margin-right:2px" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.15 9.42 7.6 11.18-.1-.94-.2-2.38.04-3.41.22-.93 1.4-5.93 1.4-5.93s-.36-.71-.36-1.77c0-1.66.96-2.9 2.16-2.9 1.02 0 1.51.77 1.51 1.68 0 1.03-.65 2.56-1 3.98-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.26 3.78-5.5 0-2.88-2.07-4.89-5.02-4.89-3.42 0-5.43 2.57-5.43 5.22 0 1.03.4 2.14.9 2.74.1.12.11.22.08.34-.09.38-.3 1.2-.34 1.36-.06.22-.18.27-.42.16-1.56-.73-2.54-3.01-2.54-4.85 0-3.94 2.87-7.56 8.27-7.56 4.34 0 7.71 3.1 7.71 7.23 0 4.31-2.72 7.79-6.5 7.79-1.27 0-2.46-.66-2.87-1.44l-.78 2.98c-.28 1.09-1.05 2.45-1.56 3.28C9.58 23.81 10.77 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg> @MrsMillennialDesigns</a> <span style="color:rgba(45,41,38,0.25);margin:0 8px">|</span> <a href="https://www.instagram.com/mrs.millennialdesigns" target="_blank" rel="noopener" style="color:var(--text)"><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:2px" viewBox="0 0 24 24"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#feda75"/><stop offset="25%" stop-color="#fa7e1e"/><stop offset="50%" stop-color="#d62976"/><stop offset="75%" stop-color="#962fbf"/><stop offset="100%" stop-color="#4f5bd5"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig)"/><circle cx="12" cy="12" r="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="#fff"/></svg> @mrs.millennialdesigns</a> <span style="color:rgba(45,41,38,0.25);margin:0 8px">|</span> <a href="/gallery.html" style="color:var(--text)"><span class="gb-heart" style="color:var(--rose)">&#10084;</span> <span style="font-weight:700">Customer Gallery</span></a></div>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Mrs<span>Millennial</span> Designs</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/products.html">Shop</a></li>
+      <li><a href="/bundles.html">Bundles</a></li>
+      <li><a href="/photo-packages.html">Photo Packages</a></li>
+      <li><a href="/reviews.html">Reviews</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a href="/cart.html" class="nav-cart" aria-label="Shopping cart" style="position:relative;margin-left:auto;margin-right:12px;color:var(--text);text-decoration:none;font-size:20px;display:flex;align-items:center">&#128722;<span class="cart-count" style="position:absolute;top:-6px;right:-10px;background:var(--rose);color:#fff;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;line-height:1">0</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Your Cart</h1>
+  <p>Review your items and checkout when you're ready</p>
+</div>
+
+<div class="container">
+  <div class="cart-layout" id="cartLayout">
+    <!-- Cart contents rendered by JavaScript -->
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
+        <p class="footer-desc">Premium printable designs & event photo packages for life's biggest moments.</p>
+        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">778 reviews</a> &middot; 5.0 avg rating</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul class="footer-links">
+          <li><a href="/products.html">All Products</a></li>
+          <li><a href="/bundles.html">Bundles</a></li>
+          <li><a href="/custom-orders.html">Custom Orders</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="/photo-packages.html">Photo Packages</a></li>
+          <li><a href="/wedding-photos.html">Wedding Photos</a></li>
+          <li><a href="/event-photos.html">Event Photos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html">Our Story</a></li>
+          <li><a href="/reviews.html">Reviews</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 MrsMillennial Designs. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const n=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>20));
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
+
+<script src="/js/cart.js"></script>
+<script src="/js/review-count.js"></script>
+
+<script>
+(function() {
+  'use strict';
+
+  var container = document.getElementById('cartLayout');
+
+  function formatPrice(n) {
+    return '$' + n.toFixed(2);
+  }
+
+  function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  function renderCart() {
+    var items = window.MMDCart.get();
+
+    if (!items.length) {
+      container.innerHTML =
+        '<div class="cart-empty">' +
+          '<div class="cart-empty-icon">&#128722;</div>' +
+          '<h2>Your cart is empty</h2>' +
+          '<p>Looks like you haven\'t added anything yet.</p>' +
+          '<a href="/products.html" class="btn btn-primary">Continue Shopping</a>' +
+        '</div>';
+      return;
+    }
+
+    var itemsHTML = '<div class="cart-items">';
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      var lineTotal = (parseFloat(item.price) || 0) * (item.qty || 1);
+
+      var imgSrc = item.image || '';
+      var imgTag = imgSrc
+        ? '<img class="cart-item-img" src="' + imgSrc + '" alt="' + (item.title || '').replace(/"/g, '&quot;') + '">'
+        : '<div class="cart-item-img" style="display:flex;align-items:center;justify-content:center;background:var(--bg-alt);color:var(--muted);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;opacity:0.4">Image</div>';
+
+      itemsHTML +=
+        '<div class="cart-item" data-id="' + item.id + '">' +
+          imgTag +
+          '<div class="cart-item-info">' +
+            '<div class="cart-item-title">' + esc(item.title || 'Untitled Item') + '</div>' +
+            '<div class="cart-item-price">' + formatPrice(parseFloat(item.price) || 0) + '</div>' +
+          '</div>' +
+          '<div class="cart-item-right">' +
+            '<div class="cart-item-actions">' +
+              '<div class="qty-control">' +
+                '<button class="qty-btn" data-action="dec" data-id="' + item.id + '" aria-label="Decrease quantity">&minus;</button>' +
+                '<span class="qty-value">' + (item.qty || 1) + '</span>' +
+                '<button class="qty-btn" data-action="inc" data-id="' + item.id + '" aria-label="Increase quantity">+</button>' +
+              '</div>' +
+              '<button class="remove-btn" data-id="' + item.id + '" aria-label="Remove item">&times;</button>' +
+            '</div>' +
+            '<div class="cart-item-total">' + formatPrice(lineTotal) + '</div>' +
+          '</div>' +
+        '</div>';
+    }
+    itemsHTML += '</div>';
+
+    var subtotal = window.MMDCart.total();
+    var summaryHTML =
+      '<div class="cart-summary">' +
+        '<h2>Order Summary</h2>' +
+        '<div class="summary-row">' +
+          '<span>Subtotal (' + window.MMDCart.count() + ' items)</span>' +
+          '<span>' + formatPrice(subtotal) + '</span>' +
+        '</div>' +
+        '<div class="summary-row">' +
+          '<span>Shipping</span>' +
+          '<span style="color:var(--sage);font-weight:600">Free</span>' +
+        '</div>' +
+        '<div class="summary-shipping">' +
+          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>' +
+          'Free digital delivery on all orders' +
+        '</div>' +
+        '<div class="summary-row total">' +
+          '<span>Total</span>' +
+          '<span>' + formatPrice(subtotal) + '</span>' +
+        '</div>' +
+        '<button class="checkout-btn" id="checkoutBtn">' +
+          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>' +
+          'Checkout' +
+        '</button>' +
+        '<a href="/products.html" class="summary-continue">&larr; Continue Shopping</a>' +
+        '<div class="summary-secure">' +
+          '<svg viewBox="0 0 24 24"><path d="M19 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2zM7 11V7a5 5 0 0 1 10 0v4"/></svg>' +
+          'Secure checkout via Stripe' +
+        '</div>' +
+      '</div>';
+
+    container.innerHTML = itemsHTML + summaryHTML;
+    bindEvents();
+  }
+
+  function bindEvents() {
+    // Quantity buttons
+    container.querySelectorAll('.qty-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var id = this.getAttribute('data-id');
+        var action = this.getAttribute('data-action');
+        var items = window.MMDCart.get();
+        var item = items.find(function(c) { return c.id === id; });
+        if (!item) return;
+
+        var newQty = (item.qty || 1) + (action === 'inc' ? 1 : -1);
+        if (newQty <= 0) {
+          window.MMDCart.remove(id);
+        } else {
+          window.MMDCart.update(id, newQty);
+        }
+      });
+    });
+
+    // Remove buttons
+    container.querySelectorAll('.remove-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var id = this.getAttribute('data-id');
+        window.MMDCart.remove(id);
+      });
+    });
+
+    // Checkout button
+    var checkoutBtn = document.getElementById('checkoutBtn');
+    if (checkoutBtn) {
+      checkoutBtn.addEventListener('click', function() {
+        var btn = this;
+        btn.disabled = true;
+        btn.textContent = 'Redirecting...';
+        window.MMDCart.checkout().catch(function() {
+          btn.disabled = false;
+          btn.textContent = 'Checkout';
+        });
+      });
+    }
+  }
+
+  // Listen for cart changes and re-render
+  document.addEventListener('cart-updated', renderCart);
+
+  // Initial render (wait for cart.js to be ready)
+  if (window.MMDCart) {
+    renderCart();
+  } else {
+    document.addEventListener('DOMContentLoaded', renderCart);
+  }
+})();
+</script>
+
+<script>
+document.addEventListener('contextmenu',function(e){
+  if(e.target.tagName==='IMG'||e.target.closest('.detail-main')||e.target.closest('.card-img')){e.preventDefault();}
+});
+document.addEventListener('dragstart',function(e){
+  if(e.target.tagName==='IMG'){e.preventDefault();}
+});
+</script>
+
+<script>
+(function(){
+  var endpoint='/a/track';
+  function t(data){
+    data.referrer=document.referrer||'';
+    data.page=location.pathname;
+    navigator.sendBeacon?navigator.sendBeacon(endpoint,JSON.stringify(data)):
+    fetch(endpoint,{method:'POST',body:JSON.stringify(data),keepalive:true});
+  }
+  t({event:'pageview'});
+})();
+</script>
+<script src="/js/watermark-overlay.js" defer></script>
+</body>
+</html>

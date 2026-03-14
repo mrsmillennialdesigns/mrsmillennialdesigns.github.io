@@ -7,7 +7,7 @@
   <meta name="description" content="Professional event documentation without the professional price. Team events, conferences, company parties — everyone's already taking photos. Let's make them count. From $49.99.">
   <meta property="og:title" content="Corporate Event Photo Packages | MrsMillennial Designs">
   <meta property="og:description" content="Professional event documentation without the professional price. Team events, conferences, company parties — everyone's already taking photos. Let's make them count. From $49.99.">
-  <meta property="og:image" content="/img/photo-packages/corporate-conference.jpg">
+  <meta property="og:image" content="/img/photo-packages/mockups/corporate-album-together.png">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; font-src 'self'; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -40,6 +40,35 @@
     .hiw-num{position:absolute;top:12px;left:12px;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;box-shadow:0 2px 8px rgba(212,168,83,0.4);z-index:2}
     .hiw-step h3{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:6px;color:var(--text)}
     .hiw-step p{font-size:13px;color:var(--muted);line-height:1.6}
+
+    /* ========== ALBUM SHOWCASE ========== */
+    .album-showcase{padding:72px 24px;background:var(--white)}
+    .album-showcase-inner{max-width:960px;margin:0 auto}
+    .album-showcase-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+    .album-showcase-card{border-radius:var(--radius);overflow:hidden;background:var(--bg);border:1px solid rgba(45,41,38,0.06);transition:all 0.3s ease}
+    .album-showcase-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+    .album-showcase-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+    .album-showcase-body{padding:20px 24px}
+    .album-showcase-body h3{font-family:var(--font);font-size:16px;font-weight:700;margin-bottom:6px}
+    .album-showcase-body p{font-size:13px;color:var(--muted);line-height:1.6}
+    .album-showcase-tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;padding:3px 10px;border-radius:20px;margin-top:10px}
+    .tag-simple{background:rgba(143,168,136,0.15);color:#5a7a52}
+    .tag-max{background:rgba(212,168,83,0.15);color:#9e7d2e}
+
+    /* ========== PACKAGE CARD IMAGES ========== */
+    .pkg-card-img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+
+    /* ========== WHAT'S INCLUDED ALBUM PREVIEW ========== */
+    .included-album-preview{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;margin-bottom:12px;max-width:800px;margin-left:auto;margin-right:auto}
+    .included-album-card{border-radius:var(--radius);overflow:hidden;background:var(--white);border:1px solid rgba(45,41,38,0.06)}
+    .included-album-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+    .included-album-caption{padding:14px 18px;text-align:center}
+    .included-album-caption h4{font-family:var(--font);font-size:14px;font-weight:700;margin-bottom:4px}
+    .included-album-caption p{font-size:12px;color:var(--muted)}
+    @media(max-width:768px){
+      .album-showcase-grid{grid-template-columns:1fr}
+      .included-album-preview{grid-template-columns:1fr}
+    }
 
     /* ========== QR POSTER ADD-ON ========== */
     .addon-section{padding:0 24px 72px;background:var(--white)}
@@ -95,7 +124,7 @@
       .hiw-grid{grid-template-columns:1fr 1fr;gap:20px}
     }
     @media(max-width:768px){
-      .ev-hero-img{height:750px}
+      .ev-hero-img{height:450px}
       .ev-hero h1{font-size:2rem}
       .pkg-grid{grid-template-columns:1fr}
       .addon-card{flex-direction:column;text-align:center;padding:28px 24px}
@@ -109,7 +138,7 @@
       .hero-buttons a{width:100%;justify-content:center;text-align:center}
     }
     @media(max-width:480px){
-      .ev-hero-img{height:550px}
+      .ev-hero-img{height:350px}
       .hiw-grid{grid-template-columns:1fr}
     }
   </style>
@@ -129,6 +158,7 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
+    <a href="/cart.html" class="nav-cart" aria-label="Shopping cart" style="position:relative;margin-left:auto;margin-right:12px;color:var(--text);text-decoration:none;font-size:20px;display:flex;align-items:center">&#128722;<span class="cart-count" style="position:absolute;top:-6px;right:-10px;background:var(--rose);color:#fff;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;line-height:1">0</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -137,7 +167,7 @@
 
 <!-- ==================== HERO ==================== -->
 <section class="ev-hero">
-  <img src="/img/photo-packages/corporate-conference.jpg" alt="Corporate Event Photo Packages" class="ev-hero-img" loading="eager">
+  <img src="/img/photo-packages/mockups/corporate-album-together.png" alt="Professional hardcover corporate event photo album on white desk with glasses and clips" class="ev-hero-img" loading="eager">
   <div class="ev-hero-overlay">
     <div class="ev-hero-content">
       <div class="ev-hero-badge">Corporate Photography</div>
@@ -161,27 +191,54 @@
     <div class="hiw-grid">
       <div class="hiw-step">
         <div class="hiw-num">1</div>
-        <img src="/img/photo-packages/canva-hardcover-hands.png" alt="Pick your photo package" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/mockups/corporate-album-together.png" alt="Professional hardcover corporate team photo album" class="hiw-step-img" loading="lazy">
         <h3>Pick Your Package</h3>
         <p>Choose Simple ($49.99) or Max ($199). We email your shot script, QR codes, and coordinator guide within 24 hours.</p>
       </div>
       <div class="hiw-step">
         <div class="hiw-num">2</div>
-        <img src="/img/photo-packages/album-full-grid.jpg" alt="Your coordinator gets the professional shot checklist" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/mockups/corporate-album-teamwork.png" alt="Corporate team photo album with teamwork theme" class="hiw-step-img" loading="lazy">
         <h3>Your Coordinator Gets the Script</h3>
         <p>One person follows our professional shot checklist. They don&rsquo;t need to be a photographer &mdash; we tell them exactly what to capture and when.</p>
       </div>
       <div class="hiw-step">
         <div class="hiw-num">3</div>
-        <img src="/img/photo-packages/canva-qr-table.png" alt="Guests scan QR codes and upload photos" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/mockups/wedding-qr-stand.png" alt="QR code stand for guests to scan and upload photos" class="hiw-step-img" loading="lazy">
         <h3>Guests Scan &amp; Share</h3>
         <p>QR codes on tables, at the entrance, near the food. Everyone scans and uploads photos from their phones &mdash; no app needed.</p>
       </div>
       <div class="hiw-step">
         <div class="hiw-num">4</div>
-        <img src="/img/photo-packages/canva-hanging-print.png" alt="We create your professionally designed album" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/mockups/corporate-album-together.png" alt="Professionally designed corporate team photo album" class="hiw-step-img" loading="lazy">
         <h3>We Create Your Album</h3>
         <p>Professionally edited, beautifully designed, shipped to your door within 2 weeks. Free shipping included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ALBUM SHOWCASE ==================== -->
+<section class="album-showcase">
+  <div class="album-showcase-inner">
+    <h2 class="section-title" style="text-align:center">Your Corporate Album, Two Ways</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--gold)"></span></div>
+    <p style="text-align:center;color:var(--muted);font-size:15px;max-width:560px;margin:0 auto;font-style:italic">Professional team-building albums designed to celebrate your company culture and shared achievements.</p>
+    <div class="album-showcase-grid">
+      <div class="album-showcase-card">
+        <img src="/img/photo-packages/mockups/corporate-album-teamwork.png" alt="Open spiral-bound corporate photo album on wood desk featuring team photos and motivational teamwork messaging" loading="lazy">
+        <div class="album-showcase-body">
+          <h3>Simple &mdash; Spiral-Bound Softcover</h3>
+          <p>A polished softcover album perfect for team events and conferences. 30 pages of professionally edited team photos with motivational layouts. Starting at $49.99.</p>
+          <span class="album-showcase-tag tag-simple">Simple Package</span>
+        </div>
+      </div>
+      <div class="album-showcase-card">
+        <img src="/img/photo-packages/mockups/corporate-album-together.png" alt="Open hardcover corporate photo album on white desk with professional women team photos and motivational Together Everyone Achieves More messaging" loading="lazy">
+        <div class="album-showcase-body">
+          <h3>Max &mdash; Premium Hardcover</h3>
+          <p>A premium hardcover album with custom cover design, 60 pages, and a polished presentation worthy of boardroom display. Includes hanging poster print. $199.</p>
+          <span class="album-showcase-tag tag-max">Max Package</span>
+        </div>
       </div>
     </div>
   </div>
@@ -201,6 +258,20 @@
   </div>
 </section>
 
+<!-- Event Merch Bundle Add-on -->
+<section style="padding:0 24px 0;background:var(--white)">
+  <div style="max-width:900px;margin:24px auto 0;background:var(--white);border-radius:14px;border:2px dashed rgba(45,41,38,0.12);padding:28px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+    <div style="flex-shrink:0;width:120px;height:120px;background:linear-gradient(135deg,var(--sage),rgba(184,150,90,0.3));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem">&#9749;&#128085;</div>
+    <div style="flex:1;min-width:200px">
+      <div style="display:inline-block;background:var(--sage);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Save $10</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:6px">Event Merch Bundle</h3>
+      <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:12px">Custom 11oz ceramic mug + heavyweight crewneck t-shirt featuring your event photos. The perfect keepsake for everyone who celebrated with you.</p>
+      <span style="font-size:1.3rem;font-weight:800;color:var(--accent-dark,var(--text))">$44.99</span><span style="font-size:12px;color:var(--muted);margin-left:8px;font-weight:400"><s>$54.98</s> — Save $10</span>
+      <div style="margin-top:14px"><button class="pkg-btn" style="display:inline-block;padding:12px 28px;font-size:14px;border:none;cursor:pointer;border-radius:50px;background:var(--accent,var(--rose));color:#fff;font-weight:700" data-cart-add data-id="event_merch_bundle" data-price-id="price_1TAzxnBiY2vwqUNMzpJefJ3U" data-title="Event Merch Bundle — Mug + T-Shirt" data-price="44.99" data-image="" data-type="merch">Add to Cart — $44.99</button></div>
+    </div>
+  </div>
+</section>
+
 <!-- ==================== PACKAGES ==================== -->
 <section class="pkg-section" id="packages">
   <div style="text-align:center;margin-bottom:48px">
@@ -211,6 +282,7 @@
   <div class="pkg-grid">
     <!-- SIMPLE PACKAGE -->
     <div class="pkg-card">
+      <img src="/img/photo-packages/mockups/corporate-album-teamwork.png" alt="Spiral-bound softcover corporate team photo album on wood desk" class="pkg-card-img" loading="lazy">
       <div class="pkg-header">
         <div class="pkg-name">Simple</div>
         <div class="pkg-price">$49.99</div>
@@ -230,6 +302,7 @@
     </div>
     <!-- MAX PACKAGE -->
     <div class="pkg-card featured">
+      <img src="/img/photo-packages/mockups/corporate-album-together.png" alt="Premium hardcover corporate team photo album on white desk with professional styling" class="pkg-card-img" loading="lazy">
       <div class="pkg-header">
         <div class="pkg-name" style="color:var(--gold)">Max</div>
         <div class="pkg-price">$199</div>
@@ -248,6 +321,62 @@
           <li><span class="pkg-check">&#10003;</span> Free shipping on everything</li>
         </ul>
         <a href="https://buy.stripe.com/9B614meyb5HJe2s4xccEx0W" class="pkg-btn pkg-btn-primary">Choose This Package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHAT'S INCLUDED ==================== -->
+<section style="padding:72px 24px;background:var(--bg)">
+  <div style="max-width:800px;margin:0 auto">
+    <h2 class="section-title" style="text-align:center">What&rsquo;s Included</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--gold)"></span></div>
+    <p style="text-align:center;color:var(--muted);font-size:15px;max-width:520px;margin:0 auto 0;font-style:italic">Every package is tailored for corporate events &mdash; from team retreats to annual galas.</p>
+    <div class="included-album-preview">
+      <div class="included-album-card">
+        <img src="/img/photo-packages/mockups/corporate-album-teamwork.png" alt="Simple package spiral-bound corporate album with teamwork theme on wood desk" loading="lazy">
+        <div class="included-album-caption">
+          <h4>Simple &mdash; Softcover Album</h4>
+          <p>8x11", 30 pages, spiral-bound. Professional editing included.</p>
+        </div>
+      </div>
+      <div class="included-album-card">
+        <img src="/img/photo-packages/mockups/corporate-album-together.png" alt="Max package hardcover corporate album with team achievement theme on styled white desk" loading="lazy">
+        <div class="included-album-caption">
+          <h4>Max &mdash; Hardcover Album</h4>
+          <p>8x8", 60 pages, custom cover. Plus hanging poster print.</p>
+        </div>
+      </div>
+    </div>
+    <div class="corp-features-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;max-width:800px;margin-left:auto;margin-right:auto">
+    <style>@media(max-width:480px){.corp-features-grid{grid-template-columns:1fr !important}}</style>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:18px;background:var(--white);border-radius:12px">
+        <div style="font-size:1.3rem;flex-shrink:0">&#128247;</div>
+        <div>
+          <h4 style="font-family:var(--font);font-size:14px;font-weight:700;margin-bottom:3px">Professional Editing</h4>
+          <p style="font-size:12px;color:var(--muted);line-height:1.5">Every photo color-corrected, enhanced, and polished.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:18px;background:var(--white);border-radius:12px">
+        <div style="font-size:1.3rem;flex-shrink:0">&#128196;</div>
+        <div>
+          <h4 style="font-family:var(--font);font-size:14px;font-weight:700;margin-bottom:3px">Corporate Shot Script</h4>
+          <p style="font-size:12px;color:var(--muted);line-height:1.5">Tailored checklist for team events, galas, and conferences.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:18px;background:var(--white);border-radius:12px">
+        <div style="font-size:1.3rem;flex-shrink:0">&#128241;</div>
+        <div>
+          <h4 style="font-family:var(--font);font-size:14px;font-weight:700;margin-bottom:3px">QR Code Uploads</h4>
+          <p style="font-size:12px;color:var(--muted);line-height:1.5">Guests scan and upload from their phones. No app needed.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:18px;background:var(--white);border-radius:12px">
+        <div style="font-size:1.3rem;flex-shrink:0">&#128230;</div>
+        <div>
+          <h4 style="font-family:var(--font);font-size:14px;font-weight:700;margin-bottom:3px">Free Shipping</h4>
+          <p style="font-size:12px;color:var(--muted);line-height:1.5">Album, poster, and QR poster all ship free to your door.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -274,7 +403,7 @@
       <div>
         <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
         <p class="footer-desc">Premium printable designs & event photo packages for life's biggest moments.</p>
-        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">777 reviews</a> &middot; 5.0 avg rating</p>
+        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">778 reviews</a> &middot; 5.0 avg rating</p>
       </div>
       <div>
         <h4>Shop</h4>
@@ -340,5 +469,6 @@ l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.re
 })();
 </script>
 <script src="/js/watermark-overlay.js" defer></script>
+<script src="/js/cart.js"></script>
 </body>
 </html>

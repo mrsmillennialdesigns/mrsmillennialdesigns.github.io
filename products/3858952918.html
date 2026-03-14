@@ -8,7 +8,7 @@
   <meta property="og:title" content="Custom Pink Wildflower Print: Boho Nursery Wall Art (16x20) (Digital Download)">
   <meta property="og:image" content="https://i.etsystatic.com/34326585/r/il/fd8f71/3858952918/il_fullxfull.3858952918_39p9.jpg">
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; frame-src https://js.stripe.com; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev https://api.stripe.com; font-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; frame-src https://js.stripe.com; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev https://api.stripe.com https://mmd-checkout.mrsmillennial.workers.dev; font-src 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="/css/style.css">
@@ -30,6 +30,7 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
+    <a href="/cart.html" class="nav-cart" aria-label="Shopping cart" style="position:relative;margin-left:auto;margin-right:12px;color:var(--text);text-decoration:none;font-size:20px;display:flex;align-items:center">&#128722;<span class="cart-count" style="position:absolute;top:-6px;right:-10px;background:var(--rose);color:#fff;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;line-height:1">0</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -66,10 +67,10 @@
         <p>This is a made-to-order personalized design completed within 24&ndash;72 hours. A proof of your design will be sent for your approval before the order is finalized. Need it faster? Add a <strong>$10 rush order</strong> for guaranteed 24-hour delivery.</p>
       </div>
       <div class="buy-section">
-        <a href="https://buy.stripe.com/aFacN44XB8TV5vW4xccEw2u" class="buy-btn" target="_blank" rel="noopener">
+        <button class="buy-btn" data-cart-add data-id="3858952918" data-price-id="price_1T8m3hBiY2vwqUNM5xgCDhn8" data-title="Custom Pink Wildflower Print: Boho Nursery Wall Art (16x20) (Digital Download)" data-price="5.00" data-image="https://i.etsystatic.com/34326585/r/il/fd8f71/3858952918/il_fullxfull.3858952918_39p9.jpg" data-type="digital">
           <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-          Buy Now — $5.00
-        </a>
+          Add to Cart — $5.00
+        </button>
         <div class="buy-secure">
           <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
           Secure checkout powered by Stripe
@@ -132,7 +133,7 @@
       <div>
         <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
         <p class="footer-desc">Premium printable designs & event photo packages for life's biggest moments.</p>
-        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">777 reviews</a> &middot; 5.0 avg rating</p>
+        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">778 reviews</a> &middot; 5.0 avg rating</p>
       </div>
       <div>
         <h4>Shop</h4>
@@ -210,5 +211,6 @@ l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.re
 })();
 </script>
 <script src="/js/watermark-overlay.js" defer></script>
+<script src="/js/cart.js"></script>
 </body>
 </html>

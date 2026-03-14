@@ -8,7 +8,7 @@
   <meta property="og:title" content="Veteran’s Day, One &amp; Two Handprint Art Crafts | Veteran’s Day Thank You Card (Printable)">
   <meta property="og:image" content="https://i.etsystatic.com/34326585/r/il/028ca4/6453387905/il_fullxfull.6453387905_s8gv.jpg">
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; frame-src https://js.stripe.com; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev https://api.stripe.com; font-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; frame-src https://js.stripe.com; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev https://api.stripe.com https://mmd-checkout.mrsmillennial.workers.dev; font-src 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="/css/style.css">
@@ -30,6 +30,7 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
+    <a href="/cart.html" class="nav-cart" aria-label="Shopping cart" style="position:relative;margin-left:auto;margin-right:12px;color:var(--text);text-decoration:none;font-size:20px;display:flex;align-items:center">&#128722;<span class="cart-count" style="position:absolute;top:-6px;right:-10px;background:var(--rose);color:#fff;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;line-height:1">0</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -62,15 +63,31 @@
         <div class="meta-item">Print at home</div>
       </div>
       <div class="buy-section">
-        <a href="https://buy.stripe.com/7sY6oG4XBeef0bCaVAcEw2Z" class="buy-btn" target="_blank" rel="noopener">
+        <button class="buy-btn" data-cart-add data-id="6453387905" data-price-id="price_1T8m4bBiY2vwqUNMM3rmJ55D" data-title="Veteran’s Day, One &amp; Two Handprint Art Crafts | Veteran’s Day Thank You Card (Printable)" data-price="3.00" data-image="https://i.etsystatic.com/34326585/r/il/028ca4/6453387905/il_fullxfull.6453387905_s8gv.jpg" data-type="digital">
           <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-          Buy Now — $3.00
-        </a>
+          Add to Cart — $3.00
+        </button>
         <div class="buy-secure">
           <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
           Secure checkout powered by Stripe
         </div>
       </div>
+      <div class="print-upsell" style="margin-top:24px;border:2px dashed rgba(45,41,38,0.12);border-radius:14px;padding:20px;background:rgba(184,150,90,0.04)">
+  <h4 style="font-size:14px;font-weight:700;margin-bottom:8px;font-family:'Playfair Display',serif">Want it printed &amp; shipped?</h4>
+  <p style="font-size:13px;color:#6b6560;line-height:1.6;margin-bottom:12px">Get a museum-quality print on premium matte paper, shipped free to your door.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button class="buy-btn" style="font-size:12px;padding:10px 16px" data-cart-add data-id="print_8x10_6453387905" data-price-id="price_1TAztJBiY2vwqUNMmXpdVqKp" data-title="8×10 Print — Veteran’s Day, One &amp; Two Handprint Art C" data-price="19.99" data-image="https://i.etsystatic.com/34326585/r/il/028ca4/6453387905/il_fullxfull.6453387905_s8gv.jpg" data-type="print">8×10 — $19.99</button>
+    <button class="buy-btn" style="font-size:12px;padding:10px 16px" data-cart-add data-id="print_11x14_6453387905" data-price-id="price_1TAztMBiY2vwqUNMZzYrH83v" data-title="11×14 Print — Veteran’s Day, One &amp; Two Handprint Art C" data-price="24.99" data-image="https://i.etsystatic.com/34326585/r/il/028ca4/6453387905/il_fullxfull.6453387905_s8gv.jpg" data-type="print">11×14 — $24.99</button>
+    <button class="buy-btn" style="font-size:12px;padding:10px 16px" data-cart-add data-id="print_16x20_6453387905" data-price-id="price_1TAzu4BiY2vwqUNMqnr816qA" data-title="16×20 Print — Veteran’s Day, One &amp; Two Handprint Art C" data-price="29.99" data-image="https://i.etsystatic.com/34326585/r/il/028ca4/6453387905/il_fullxfull.6453387905_s8gv.jpg" data-type="print">16×20 — $29.99</button>
+  </div>
+  <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(45,41,38,0.08)">
+    <h4 style="font-size:13px;font-weight:700;margin-bottom:8px;font-family:'Playfair Display',serif;color:var(--muted)">Or get it on...</h4>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="buy-btn" style="font-size:12px;padding:10px 16px;background:var(--sage)" data-cart-add data-id="mug_6453387905" data-price-id="price_1TAzwnBiY2vwqUNMyVk7Cx14" data-title="Mug — Veteran’s Day, One &amp; Two H" data-price="19.99" data-image="https://i.etsystatic.com/34326585/r/il/028ca4/6453387905/il_fullxfull.6453387905_s8gv.jpg" data-type="merch">Mug — $19.99</button>
+      <button class="buy-btn" style="font-size:12px;padding:10px 16px;background:var(--sage)" data-cart-add data-id="tshirt_6453387905" data-price-id="price_1TAzwpBiY2vwqUNMczsrDu5d" data-title="T-Shirt — Veteran’s Day, One &amp; Two H" data-price="34.99" data-image="https://i.etsystatic.com/34326585/r/il/028ca4/6453387905/il_fullxfull.6453387905_s8gv.jpg" data-type="merch">T-Shirt — $34.99</button>
+    </div>
+  </div>
+</div>
       <div class="detail-desc">Instantly printable, Veteran’s Day handprint craft with 1 and 2 handprint designs included! <br><br>High resolution 1 and 2 Handprint Designs:<br>•8.5x11 pdf<br>•8x10 jpg<br> *Happy to accommodate any size or format, message me!*<br><br>Thank a Veteran this Veteran’s Day with this handprint craft, made straight from the heart. Handprint art crafts are fun for kids of all ages! Quick set up and even easier clean up. An easy craft printable that your child will have a blast making. Makes a wonderful handprint keepsake gift or decor you can display year after year! <br><br>Print this INSTANT DOWNLOAD at home and add your child’s painted handprints. You can also trace the hands if you don’t have paint.<br><br>With this purchase you will receive a one handprint and a two handprint craft in the following formats: <br>•8x10 jpg<br>•8.5x11 pdf</div>
     </div>
   </div>
@@ -128,7 +145,7 @@
       <div>
         <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
         <p class="footer-desc">Premium printable designs & event photo packages for life's biggest moments.</p>
-        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">777 reviews</a> &middot; 5.0 avg rating</p>
+        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">778 reviews</a> &middot; 5.0 avg rating</p>
       </div>
       <div>
         <h4>Shop</h4>
@@ -206,5 +223,6 @@ l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.re
 })();
 </script>
 <script src="/js/watermark-overlay.js" defer></script>
+<script src="/js/cart.js"></script>
 </body>
 </html>

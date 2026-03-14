@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding Photo Packages &mdash; From $49.99 | MrsMillennial Designs</title>
-  <meta name="description" content="Beautiful wedding photo albums without the $5,000 photographer price tag. Your guests capture every moment, we create a stunning hardcover album. Simple $49.99, Max $199.">
+  <meta name="description" content="Beautiful collaborative wedding photo albums. Your guests capture every moment together, we create a stunning hardcover album.">
   <meta property="og:title" content="Wedding Photo Packages | MrsMillennial Designs">
-  <meta property="og:description" content="Hardcover wedding albums from $49.99. Your guests are the photographers. Shot script + QR codes + professional editing + printed album shipped to your door.">
-  <meta property="og:image" content="/img/photo-packages/guests-crowd-phones.jpg">
+  <meta property="og:description" content="Your guests capture every moment together. We professionally edit and print a stunning hardcover wedding album. Shot script + QR codes + free shipping included.">
+  <meta property="og:image" content="/img/photo-packages/mockups/wedding-wall-print.png">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; font-src 'self'; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -16,7 +16,7 @@
   <style>
     /* ========== HERO ========== */
     .w-hero{position:relative;overflow:hidden;padding:0;background:var(--text)}
-    .w-hero-img{width:100%;height:700px;object-fit:cover;display:block;opacity:0.45}
+    .w-hero-img{width:100%;height:750px;object-fit:cover;display:block;opacity:0.45}
     .w-hero-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:linear-gradient(180deg,rgba(45,41,38,0.10) 0%,rgba(45,41,38,0.55) 100%)}
     .w-hero-content{max-width:720px;color:#fff}
     .w-hero-badge{display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:13px;font-weight:600;padding:6px 18px;border-radius:50px;margin-bottom:20px;letter-spacing:0.5px}
@@ -50,9 +50,9 @@
 
     /* ========== PACKAGES ========== */
     .pkg-section{padding:72px 24px;background:var(--white);position:relative}
-    .pkg-section::before{content:'';position:absolute;inset:0;background:url('/img/photo-packages/guests-crowd-phones.jpg') center/cover no-repeat;opacity:0.03;pointer-events:none}
+    .pkg-section::before{content:'';position:absolute;inset:0;background:url('/img/photo-packages/mockups/wedding-wall-print.png') center/cover no-repeat;opacity:0.03;pointer-events:none}
     .pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:920px;margin:0 auto}
-    .pkg-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:2px solid rgba(45,41,38,0.06);position:relative;display:flex;flex-direction:column;transition:all 0.3s ease}
+    .pkg-card{background:var(--white);border-radius:var(--radius);overflow:visible;border:2px solid rgba(45,41,38,0.06);position:relative;display:flex;flex-direction:column;transition:all 0.3s ease}
     .pkg-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
     .pkg-card.featured{border-color:var(--gold)}
     .pkg-card.featured::before{content:'Most Popular';position:absolute;top:16px;right:16px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;z-index:1}
@@ -117,7 +117,7 @@
     .faq-q::after{content:'+';font-size:20px;font-weight:400;color:var(--muted);transition:transform 0.3s ease;flex-shrink:0}
     .faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--gold)}
     .faq-a{font-size:14px;color:var(--muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease;padding:0 0}
-    .faq-item.open .faq-a{max-height:200px;padding:0 0 20px}
+    .faq-item.open .faq-a{max-height:800px;padding:0 0 20px}
 
     /* ========== FINAL CTA ========== */
     .cta-bottom{padding:80px 24px;text-align:center;position:relative;overflow:hidden;background:var(--text)}
@@ -147,15 +147,18 @@
       .included-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:768px){
-      .w-hero-img{height:500px}
+      .w-hero-img{height:550px}
       .w-hero h1{font-size:2rem}
       .w-gallery-grid{grid-template-columns:1fr 1fr;gap:8px}
       .w-gallery-grid img:nth-child(5),.w-gallery-grid img:nth-child(6){display:none}
+      .pkg-section{padding:48px 16px}
       .pkg-grid{grid-template-columns:1fr}
-      .addon-card{flex-direction:column;text-align:center;padding:28px 24px}
+      .pkg-card{overflow:visible;max-height:none;height:auto}
+      .addon-card{flex-direction:column;text-align:center;padding:24px 16px}
       .addon-img{width:120px;height:120px}
       .addon-price{display:block;margin-bottom:12px}
       .addon-btn{margin-left:0}
+      .faq-item.open .faq-a{max-height:none}
       .w-reviews-grid{grid-template-columns:1fr}
       .included-grid{grid-template-columns:1fr}
       .hiw-grid{grid-template-columns:1fr 1fr}
@@ -165,8 +168,13 @@
       .hero-buttons a{width:100%;justify-content:center;text-align:center}
     }
     @media(max-width:480px){
-      .w-hero-img{height:460px}
+      .w-hero-img{height:400px}
       .hiw-grid{grid-template-columns:1fr}
+      .pkg-section{padding:36px 12px}
+      .pkg-card{overflow:visible;max-height:none}
+      .addon-card{padding:20px 12px}
+      .w-gallery-grid{grid-template-columns:1fr;gap:8px}
+      .w-gallery-grid img:nth-child(3),.w-gallery-grid img:nth-child(4),.w-gallery-grid img:nth-child(5),.w-gallery-grid img:nth-child(6){display:none}
     }
   </style>
 </head>
@@ -185,6 +193,7 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
+    <a href="/cart.html" class="nav-cart" aria-label="Shopping cart" style="position:relative;margin-left:auto;margin-right:12px;color:var(--text);text-decoration:none;font-size:20px;display:flex;align-items:center">&#128722;<span class="cart-count" style="position:absolute;top:-6px;right:-10px;background:var(--rose);color:#fff;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;line-height:1">0</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -193,13 +202,13 @@
 
 <!-- ==================== HERO ==================== -->
 <section class="w-hero">
-  <img src="/img/photo-packages/guests-crowd-phones.jpg" alt="Bride and groom surrounded by guests holding phones with string lights" class="w-hero-img" loading="eager">
+  <img src="/img/photo-packages/mockups/wedding-wall-print.png" alt="Couple's wedding photo displayed as elegant wall art print in living room" class="w-hero-img" loading="eager">
   <div class="w-hero-overlay">
     <div class="w-hero-content">
       <div class="w-hero-badge">Wedding Photo Packages</div>
       <h1>Your Guests Have the Power. Let's Use It.</h1>
       <p class="tagline">Every guest at your wedding has a high-res camera in their pocket. We give one person a professional shot script, your guests capture the magic, and we turn it all into a stunning hardcover album.</p>
-      <p class="sub">Fun. Easy. Affordable. Hardcover album + digital downloads + shot script + QR codes &mdash; all included.</p>
+      <p class="sub">Thoughtful. Collaborative. Polished. Hardcover album + digital downloads + shot script + QR codes &mdash; all included.</p>
       <div class="hero-buttons">
         <a href="#packages" class="btn-hero-primary">View Packages</a>
         <a href="#how-it-works" class="btn-hero-outline">How It Works</a>
@@ -212,12 +221,12 @@
 <section class="w-gallery">
   <div class="w-gallery-inner">
     <div class="w-gallery-grid">
-      <img src="/img/photo-packages/guests-crowd-phones.jpg" alt="Guests capturing every wedding moment on their phones" loading="lazy">
-      <img src="/img/photo-packages/canva-qr-table.png" alt="Capture the Love QR code sign on table with candles" loading="lazy">
-      <img src="/img/photo-packages/canva-hardcover-hands.png" alt="Hands holding a finished hardcover wedding photo book" loading="lazy">
-      <img src="/img/photo-packages/album-beach-wedding.jpg" alt="Wedding album open to beautiful beach wedding spread" loading="lazy">
-      <img src="/img/photo-packages/canva-qr-easel.png" alt="QR code sign on glass easel at a wedding venue" loading="lazy">
-      <img src="/img/photo-packages/canva-hanging-print.png" alt="Wedding photo hanging print on wood hanger display" loading="lazy">
+      <img src="/img/photo-packages/mockups/wedding-wall-print.png" alt="Wedding photo displayed as wall art in elegant living room" loading="lazy">
+      <img src="/img/photo-packages/mockups/wedding-album-hands.png" alt="Woman holding and reading a hardcover wedding photo album" loading="lazy">
+      <img src="/img/photo-packages/mockups/wedding-hanging-print.png" alt="Wedding photo on wood hanger print over console table with ceramics" loading="lazy">
+      <img src="/img/photo-packages/mockups/wedding-framed-print.png" alt="Framed wedding photo in modern office with plants" loading="lazy">
+      <img src="/img/photo-packages/mockups/wedding-photo-print.png" alt="Wedding photo print laid flat with greenery styling" loading="lazy">
+      <img src="/img/photo-packages/mockups/wedding-qr-stand.png" alt="Capture the Love QR poster on acrylic stand at wedding venue" loading="lazy">
     </div>
     <p class="w-gallery-caption">Your guests take the photos. We make them beautiful.</p>
   </div>
@@ -226,7 +235,7 @@
 <!-- ==================== ENGAGEMENT CALLOUT ==================== -->
 <section class="eng-callout">
   <div class="eng-callout-inner">
-    <p>Also available: <strong>Engagement photo packages</strong> &mdash; same great service for your engagement shoot. <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Engagement%20Photo%20Package%20Question">Ask us about it</a></p>
+    <p>Also available: <strong>Engagement photo packages</strong> &mdash; same thoughtful approach for your engagement shoot. <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Engagement%20Photo%20Package%20Question">Ask us about it</a></p>
   </div>
 </section>
 
@@ -239,25 +248,25 @@
     <div class="hiw-grid">
       <div class="hiw-step">
         <div class="hiw-num">1</div>
-        <img src="/img/photo-packages/canva-hardcover-hands.png" alt="Pick your wedding photo package" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/mockups/wedding-album-hands.png" alt="Woman holding a premium wedding photo album" class="hiw-step-img" loading="lazy">
         <h3>Pick Your Package</h3>
         <p>Choose Simple or Max. We email your shot script, QR codes, and coordinator guide within 24 hours.</p>
       </div>
       <div class="hiw-step">
         <div class="hiw-num">2</div>
-        <img src="/img/photo-packages/scene-guest-phone-wedding.jpg" alt="Lead coordinator following the shot script" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/mockups/wedding-framed-print.png" alt="Framed wedding photo showcasing professional quality results" class="hiw-step-img" loading="lazy">
         <h3>Give Your Coordinator the Script</h3>
         <p>Pick one trusted person to follow our shot script. They don't need to be a photographer &mdash; we tell them exactly what to capture and when.</p>
       </div>
       <div class="hiw-step">
         <div class="hiw-num">3</div>
-        <img src="/img/photo-packages/canva-qr-easel.png" alt="Guests scanning QR codes to upload photos" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/mockups/wedding-qr-table.png" alt="Capture the Love QR poster on table with candle at wedding" class="hiw-step-img" loading="lazy">
         <h3>Guests Scan &amp; Share</h3>
         <p>Place QR codes around your venue. Guests scan with their phones and upload photos instantly &mdash; no app needed. Everyone's a photographer.</p>
       </div>
       <div class="hiw-step">
         <div class="hiw-num">4</div>
-        <img src="/img/photo-packages/album-beach-wedding.jpg" alt="Finished wedding album with professionally edited photos" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/mockups/wedding-photo-print.png" alt="Finished wedding photo print with greenery styling" class="hiw-step-img" loading="lazy">
         <h3>We Edit, Design &amp; Ship</h3>
         <p>We collect every photo, professionally edit them all, design your album layout, and ship a hardcover book to your door within 2 weeks.</p>
       </div>
@@ -270,7 +279,7 @@
   <div style="text-align:center;margin-bottom:48px">
     <h2 class="section-title">Choose Your Package</h2>
     <div class="divider"><span class="divider-dot" style="background:var(--gold)"></span></div>
-    <p style="color:var(--muted);font-size:15px;max-width:520px;margin:0 auto">Premium results without the premium price. Every package includes a printed album, professional editing, and free shipping.</p>
+    <p style="color:var(--muted);font-size:15px;max-width:520px;margin:0 auto">A polished album, professionally edited and beautifully printed. Every package includes free shipping.</p>
   </div>
   <div class="pkg-grid">
     <!-- SIMPLE PACKAGE -->
@@ -321,7 +330,7 @@
 <!-- ==================== QR POSTER ADD-ON ==================== -->
 <section class="addon-section">
   <div class="addon-card">
-    <img src="/img/photo-packages/canva-qr-table.png" alt="Professionally printed QR poster on table" class="addon-img" loading="lazy">
+    <img src="/img/photo-packages/mockups/wedding-qr-stand.png" alt="Capture the Love QR poster on acrylic stand at wedding venue" class="addon-img" loading="lazy">
     <div class="addon-content">
       <div class="addon-badge">Add-On</div>
       <h3>QR Poster Print &mdash; Mailed to You</h3>
@@ -332,110 +341,60 @@
   </div>
 </section>
 
-<!-- ==================== REVIEWS ==================== -->
-<section class="w-reviews">
-  <div class="w-reviews-inner">
-    <h2 class="section-title" style="text-align:center">What Our Couples Are Saying</h2>
-    <div class="divider"><span class="divider-dot" style="background:var(--gold)"></span></div>
-    <div class="w-reviews-grid">
-      <!-- Review 1 -->
-      <div class="w-review-card">
-        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="w-review-text">"We saved over $3,000 by skipping the traditional photographer and I have ZERO regrets. My sister followed the shot script and our 85 guests uploaded 400+ photos through the QR codes. The album has moments I never would have seen from one photographer &mdash; like my grandma dancing when she thought nobody was watching."</p>
-        <div class="w-review-author">
-          <div class="w-review-avatar" style="background:linear-gradient(135deg,#d4a853,#e8c068)">JR</div>
-          <div class="w-review-meta">
-            <div class="w-review-name">Jasmine W.</div>
-            <div class="w-review-role">Bride &mdash; Simple Package</div>
-          </div>
-        </div>
+<!-- Wedding Keepsake Collection -->
+<section style="padding:0 24px;background:var(--white)">
+  <div style="max-width:900px;margin:24px auto 0;background:var(--white);border-radius:14px;border:2px solid rgba(184,150,90,0.3);padding:28px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+    <div style="flex-shrink:0;width:120px;height:120px;background:linear-gradient(135deg,rgba(184,150,90,0.15),rgba(184,150,90,0.05));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem">&#127870;&#9749;</div>
+    <div style="flex:1;min-width:200px">
+      <div style="display:inline-block;background:var(--gold);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Keepsake Collection</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:6px">Wedding Keepsake Collection</h3>
+      <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:12px">A museum-quality 16×20 art print of your favorite wedding photo, paired with a custom ceramic mug featuring your wedding date. Beautiful on the wall, meaningful at the breakfast table.</p>
+      <span style="font-size:1.3rem;font-weight:800;color:var(--text)">$49.99</span><span style="font-size:12px;color:var(--muted);margin-left:8px;font-weight:400">16×20 Print + Custom Mug</span>
+      <div style="margin-top:14px"><button style="display:inline-block;padding:12px 28px;font-size:14px;border:none;cursor:pointer;border-radius:50px;background:var(--gold);color:#fff;font-weight:700;font-family:'Playfair Display',serif;letter-spacing:0.5px" data-cart-add data-id="wedding_keepsake_bundle" data-price-id="price_1TAzxyBiY2vwqUNMTNK0wYTV" data-title="Wedding Keepsake Collection — 16×20 Print + Mug" data-price="49.99" data-image="" data-type="merch">Add to Cart — $49.99</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- Wedding Merch Add-ons -->
+<section style="padding:0 24px;background:var(--white)">
+  <div style="max-width:900px;margin:24px auto 0">
+    <p style="text-align:center;font-family:'Playfair Display',serif;font-size:15px;color:var(--muted);margin-bottom:16px">Or add individually...</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <div style="background:var(--white);border-radius:14px;border:1px solid rgba(184,150,90,0.2);padding:20px;text-align:center">
+        <div style="font-size:2.2rem;margin-bottom:8px">&#128092;</div>
+        <h4 style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;margin-bottom:4px">Wedding Tote</h4>
+        <p style="font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px">Premium natural tote — perfect for bridesmaids</p>
+        <div style="font-weight:800;font-size:1.1rem;margin-bottom:10px">$29.99</div>
+        <button style="width:100%;padding:10px;font-size:12px;border:none;cursor:pointer;border-radius:50px;background:var(--gold);color:#fff;font-weight:700;font-family:'Playfair Display',serif" data-cart-add data-id="wedding_tote" data-price-id="price_1TB02aBiY2vwqUNM8ByGWmlh" data-title="Wedding Tote Bag" data-price="29.99" data-image="" data-type="merch">Add to Cart</button>
       </div>
-      <!-- Review 2 -->
-      <div class="w-review-card">
-        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="w-review-text">"My wife wanted the Max package and I thought $199 was steep for something without a photographer. I was wrong. The 60-page album is coffee-table quality &mdash; our parents literally fought over who gets copies. The 20x28 hanging print of our first dance is above our fireplace now. Best money I spent on the whole wedding."</p>
-        <div class="w-review-author">
-          <div class="w-review-avatar" style="background:linear-gradient(135deg,#8fa888,#adc4a5)">MT</div>
-          <div class="w-review-meta">
-            <div class="w-review-name">Marcus T.</div>
-            <div class="w-review-role">Groom &mdash; Max Package</div>
-          </div>
-        </div>
+      <div style="background:var(--white);border-radius:14px;border:1px solid rgba(184,150,90,0.2);padding:20px;text-align:center">
+        <div style="font-size:2.2rem;margin-bottom:8px">&#129380;</div>
+        <h4 style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;margin-bottom:4px">Water Bottle</h4>
+        <p style="font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px">17oz stainless steel, double-wall insulated</p>
+        <div style="font-weight:800;font-size:1.1rem;margin-bottom:10px">$29.99</div>
+        <button style="width:100%;padding:10px;font-size:12px;border:none;cursor:pointer;border-radius:50px;background:var(--gold);color:#fff;font-weight:700;font-family:'Playfair Display',serif" data-cart-add data-id="wedding_bottle" data-price-id="price_1TB02cBiY2vwqUNMl2tS7lQ8" data-title="Wedding Water Bottle - 17oz" data-price="29.99" data-image="" data-type="merch">Add to Cart</button>
       </div>
-      <!-- Review 3 -->
-      <div class="w-review-card">
-        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="w-review-text">"My daughter asked me to be the lead coordinator and I was terrified &mdash; I'm not a photographer. But the script literally told me 'stand here, capture this, move here next.' I felt like a professional. We ended up with 600 photos from the guests and the album has pictures from angles I didn't even know existed. Best role I could've had at the wedding."</p>
-        <div class="w-review-author">
-          <div class="w-review-avatar" style="background:linear-gradient(135deg,#b8965a,#d4a853)">DW</div>
-          <div class="w-review-meta">
-            <div class="w-review-name">Maria G.</div>
-            <div class="w-review-role">Madre de la Novia</div>
-          </div>
-        </div>
-      </div>
-      <!-- Review 4 -->
-      <div class="w-review-card">
-        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="w-review-text">"We used this for our engagement party as a trial run before the wedding. Ended up with over 300 photos from our friends and the album was beautiful. Already ordered the Max package for the actual wedding. The QR codes are such a fun touch &mdash; our guests loved it."</p>
-        <div class="w-review-author">
-          <div class="w-review-avatar" style="background:linear-gradient(135deg,#9b8fb5,#b5a8cc)">S&amp;K</div>
-          <div class="w-review-meta">
-            <div class="w-review-name">Sarah &amp; Kyle</div>
-            <div class="w-review-role">Engagement Party + Wedding</div>
-          </div>
-        </div>
-      </div>
-      <!-- Review 5 -->
-      <div class="w-review-card">
-        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="w-review-text">"I'm a wedding planner and I recommend this to every couple on a budget. The shot scripts are legitimately professional &mdash; better than some photographer checklists I've seen. Three of my clients have used it this year and every single album came out beautifully."</p>
-        <div class="w-review-author">
-          <div class="w-review-avatar" style="background:linear-gradient(135deg,#96783e,#b8965a)">LM</div>
-          <div class="w-review-meta">
-            <div class="w-review-name">Lauren M.</div>
-            <div class="w-review-role">Wedding Planner</div>
-          </div>
-        </div>
+      <div style="background:var(--white);border-radius:14px;border:1px solid rgba(184,150,90,0.2);padding:20px;text-align:center">
+        <div style="font-size:2.2rem;margin-bottom:8px">&#129509;</div>
+        <h4 style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;margin-bottom:4px">Wedding Hoodie</h4>
+        <p style="font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px">Cozy pullover with your wedding photo</p>
+        <div style="font-weight:800;font-size:1.1rem;margin-bottom:10px">$44.99</div>
+        <button style="width:100%;padding:10px;font-size:12px;border:none;cursor:pointer;border-radius:50px;background:var(--gold);color:#fff;font-weight:700;font-family:'Playfair Display',serif" data-cart-add data-id="wedding_hoodie" data-price-id="price_1TB02eBiY2vwqUNMX74ST54n" data-title="Wedding Hoodie" data-price="44.99" data-image="" data-type="merch">Add to Cart</button>
       </div>
     </div>
-      <!-- Review 6 -->
-      <div class="w-review-card">
-        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="w-review-text">"I recommended this to my best friend after seeing her photos. She paid $4,200 for a photographer and got 350 photos. I paid $49.99, got 500+ photos from our guests, AND a printed album. She's still waiting for her prints. Mine are on the shelf."</p>
-        <div class="w-review-author">
-          <div class="w-review-avatar" style="background:linear-gradient(135deg,#b8965a,#d4a853)">TH</div>
-          <div class="w-review-meta">
-            <div class="w-review-name">Priya K.</div>
-            <div class="w-review-role">Bride &mdash; Simple Package</div>
-          </div>
-        </div>
-      </div>
-      <!-- Review 7 -->
-      <div class="w-review-card">
-        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="w-review-text">"The coordinator script was the secret weapon. My brother-in-law isn't a 'photo guy' at all, but give him a checklist and he's unstoppable. He captured every single moment on the list plus 50 candid shots we never expected. The album tells our entire day start to finish."</p>
-        <div class="w-review-author">
-          <div class="w-review-avatar" style="background:linear-gradient(135deg,#8fa888,#adc4a5)">RJ</div>
-          <div class="w-review-meta">
-            <div class="w-review-name">Aisha M.</div>
-            <div class="w-review-role">Bride &mdash; Max Package</div>
-          </div>
-        </div>
-      </div>
-      <!-- Review 8 -->
-      <div class="w-review-card">
-        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="w-review-text">"We eloped with 30 guests and didn't want to hire a photographer for such an intimate event. This was the perfect solution. The QR code sign on the dinner table was a hit &mdash; everyone was snapping photos all night. The 30-page album is one of our most prized possessions."</p>
-        <div class="w-review-author">
-          <div class="w-review-avatar" style="background:linear-gradient(135deg,#96783e,#b8965a)">AN</div>
-          <div class="w-review-meta">
-            <div class="w-review-name">DeAndre &amp; Nina</div>
-            <div class="w-review-role">Elopement &mdash; Simple Package</div>
-          </div>
-        </div>
-      </div>
+    <style>@media(max-width:768px){[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important}}</style>
+  </div>
+</section>
+
+<!-- ==================== REVIEWS LINK ==================== -->
+<section style="padding:60px 24px;background:var(--bg);text-align:center">
+  <div style="max-width:600px;margin:0 auto">
+    <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px">
+      <span style="color:var(--gold);font-size:20px;letter-spacing:2px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
     </div>
+    <h2 class="section-title"><span class="rv-count">778</span> Five-Star Reviews</h2>
+    <p style="color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:24px">Don't take our word for it — see what real customers are saying about MrsMillennial Designs.</p>
+    <a href="/reviews.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;background:var(--text);color:#fff;font-size:15px;font-weight:600;transition:all 0.3s">Read Our Reviews &rarr;</a>
   </div>
 </section>
 
@@ -519,12 +478,54 @@
   </div>
 </section>
 
+<!-- ==================== CROSS-SELL ==================== -->
+<section style="padding:60px 24px;background:var(--bg)">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.5vw,1.8rem);margin-bottom:8px">Complete Your Celebration</h2>
+    <p style="color:var(--muted);font-size:15px;margin-bottom:32px;font-style:italic">Pair your photo package with a handmade keepsake &mdash; perfect for framing alongside your album.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px">
+      <a href="/products/4760045018.html" style="text-decoration:none;color:var(--text);background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(45,41,38,0.06);transition:all 0.3s ease;display:flex;flex-direction:column">
+        <img src="https://i.etsystatic.com/34326585/r/il/45ac91/4760045018/il_570xN.4760045018_1nip.jpg" alt="Personalized Handprint Art: Wildflower Family Keepsake" style="width:100%;aspect-ratio:1;object-fit:cover" loading="lazy">
+        <div style="padding:14px">
+          <div style="font-family:var(--font);font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.4">Personalized Wildflower Handprint Art</div>
+          <div style="font-size:14px;font-weight:800;color:var(--rose-dark)">$5.00</div>
+          <div style="margin-top:8px;font-size:12px;font-weight:600;color:var(--gold)">View Design &rarr;</div>
+        </div>
+      </a>
+      <a href="/products/4005425060.html" style="text-decoration:none;color:var(--text);background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(45,41,38,0.06);transition:all 0.3s ease;display:flex;flex-direction:column">
+        <img src="https://i.etsystatic.com/34326585/r/il/b28491/4005425060/il_570xN.4005425060_r5p1.jpg" alt="Wildflower Handprint Art: DIY Family Keepsake" style="width:100%;aspect-ratio:1;object-fit:cover" loading="lazy">
+        <div style="padding:14px">
+          <div style="font-family:var(--font);font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.4">Wildflower Handprint Art</div>
+          <div style="font-size:14px;font-weight:800;color:var(--rose-dark)">$3.00</div>
+          <div style="margin-top:8px;font-size:12px;font-weight:600;color:var(--gold)">View Design &rarr;</div>
+        </div>
+      </a>
+      <a href="/products/7821085499.html" style="text-decoration:none;color:var(--text);background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(45,41,38,0.06);transition:all 0.3s ease;display:flex;flex-direction:column">
+        <img src="https://i.etsystatic.com/34326585/r/il/a9233c/7821085499/il_570xN.7821085499_6fta.jpg" alt="Mother's Day Handprint Bouquet Craft" style="width:100%;aspect-ratio:1;object-fit:cover" loading="lazy">
+        <div style="padding:14px">
+          <div style="font-family:var(--font);font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.4">Handprint Bouquet Craft</div>
+          <div style="font-size:14px;font-weight:800;color:var(--rose-dark)">$4.00</div>
+          <div style="margin-top:8px;font-size:12px;font-weight:600;color:var(--gold)">View Design &rarr;</div>
+        </div>
+      </a>
+      <a href="/products/3963676945.html" style="text-decoration:none;color:var(--text);background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(45,41,38,0.06);transition:all 0.3s ease;display:flex;flex-direction:column">
+        <img src="https://i.etsystatic.com/34326585/r/il/140fe1/3963676945/il_570xN.3963676945_lqsl.jpg" alt="Family Handprint Art: DIY Kids Craft Keepsake" style="width:100%;aspect-ratio:1;object-fit:cover" loading="lazy">
+        <div style="padding:14px">
+          <div style="font-family:var(--font);font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.4">Family Handprint Art</div>
+          <div style="font-size:14px;font-weight:800;color:var(--rose-dark)">$3.00</div>
+          <div style="margin-top:8px;font-size:12px;font-weight:600;color:var(--gold)">View Design &rarr;</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ==================== FINAL CTA ==================== -->
 <section class="cta-bottom" id="order">
   <div class="cta-bottom-inner">
     <h2>Your Day Deserves to Be Remembered</h2>
     <p class="cta-sub">Every laugh, every tear, every dance move &mdash; captured by the people who love you most.</p>
-    <p class="cta-detail">This isn't a compromise. It's a game changer. Premium results without the premium price.</p>
+    <p class="cta-detail">A collaborative approach to wedding photography &mdash; intimate, personal, and beautifully crafted.</p>
     <div class="cta-btns">
       <a href="#packages" class="cta-btn-gold">Choose Your Package</a>
       <a href="/event-photos.html" class="cta-btn-ghost">Looking for Event Packages?</a>
@@ -540,7 +541,7 @@
       <div>
         <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
         <p class="footer-desc">Premium printable designs & event photo packages for life's biggest moments.</p>
-        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">777 reviews</a> &middot; 5.0 avg rating</p>
+        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">778 reviews</a> &middot; 5.0 avg rating</p>
       </div>
       <div>
         <h4>Shop</h4>
@@ -617,5 +618,6 @@ document.querySelectorAll('.faq-q').forEach(function(q){
 })();
 </script>
 <script src="/js/watermark-overlay.js" defer></script>
+<script src="/js/cart.js"></script>
 </body>
 </html>

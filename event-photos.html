@@ -16,7 +16,7 @@
     :root{--accent:#b8965a;--accent-dark:#96783e;--accent-light:#dbc9a0;--warm:#d4a853;--warm-light:rgba(212,168,83,0.12)}
 
     .w-hero{position:relative;overflow:hidden;padding:0;background:var(--text)}
-    .w-hero-img{width:100%;height:700px;object-fit:cover;display:block;opacity:0.45}
+    .w-hero-img{width:100%;height:750px;object-fit:cover;display:block;opacity:0.45}
     .w-hero-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:linear-gradient(180deg,rgba(45,41,38,0.10) 0%,rgba(45,41,38,0.55) 100%)}
     .w-hero-content{max-width:720px;color:#fff}
     .w-badge{display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:13px;font-weight:600;padding:6px 18px;border-radius:50px;margin-bottom:20px;letter-spacing:0.5px}
@@ -56,7 +56,7 @@
 
     .pkg-section{padding:72px 24px}
     .pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;margin:0 auto}
-    .pkg-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:2px solid rgba(45,41,38,0.06);position:relative;display:flex;flex-direction:column}
+    .pkg-card{background:var(--white);border-radius:var(--radius);overflow:visible;border:2px solid rgba(45,41,38,0.06);position:relative;display:flex;flex-direction:column}
     .pkg-card.featured{border-color:var(--accent)}
     .pkg-card.featured::before{content:'Most Popular';position:absolute;top:16px;right:16px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;z-index:1}
     .pkg-header{padding:32px 28px 0;text-align:center}
@@ -109,25 +109,30 @@
     .cta-bottom p{color:var(--muted);font-style:italic;margin-bottom:32px}
 
     @media(max-width:768px){
-      .w-hero-img{height:500px}
+      .w-hero-img{height:550px}
       .w-hero h1{font-size:2rem}
       .hero-buttons{flex-direction:column}
       .hero-buttons a,.btn-hero-primary,.btn-hero-outline{width:100%;justify-content:center;text-align:center}
       .gallery-mosaic{grid-template-columns:1fr 1fr}
       .gallery-mosaic img:nth-child(n+5){display:none}
       .event-types-grid{grid-template-columns:1fr 1fr}
+      .pkg-section{padding:48px 16px}
       .pkg-grid{grid-template-columns:1fr}
+      .pkg-card{overflow:visible;max-height:none;height:auto}
       .reviews-grid{grid-template-columns:1fr}
       .review-card.full-width{grid-column:auto}
       .included-grid{grid-template-columns:1fr}
-      .addon-card{flex-direction:column;text-align:center}
+      .addon-card{flex-direction:column;text-align:center;padding:24px 16px}
       .addon-img{width:100%;height:160px}
     }
     @media(max-width:480px){
-      .w-hero-img{height:460px}
+      .w-hero-img{height:400px}
       .gallery-mosaic{grid-template-columns:1fr}
       .gallery-mosaic img:nth-child(n+4){display:none}
       .event-types-grid{grid-template-columns:1fr}
+      .pkg-section{padding:36px 12px}
+      .pkg-card{overflow:visible;max-height:none}
+      .addon-card{padding:20px 12px}
     }
   </style>
 </head>
@@ -146,6 +151,7 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
+    <a href="/cart.html" class="nav-cart" aria-label="Shopping cart" style="position:relative;margin-left:auto;margin-right:12px;color:var(--text);text-decoration:none;font-size:20px;display:flex;align-items:center">&#128722;<span class="cart-count" style="position:absolute;top:-6px;right:-10px;background:var(--rose);color:#fff;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;line-height:1">0</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -154,7 +160,7 @@
 
 <!-- 1. Hero -->
 <section class="w-hero">
-  <img src="/img/photo-packages/diverse-birthday-group.jpg" alt="Family celebrating a birthday together" class="w-hero-img">
+  <img src="/img/photo-packages/mockups/birthday-album-hands.png" alt="Hands holding a birthday celebration photo album" class="w-hero-img" loading="eager">
   <div class="w-hero-overlay">
     <div class="w-hero-content">
       <div class="w-badge">Event Photography</div>
@@ -173,11 +179,11 @@
 <section style="padding:0 24px 48px;background:var(--bg)">
   <div class="gallery-mosaic">
     <img src="/img/photo-packages/birthday-cake-candles.jpg" alt="Birthday celebration with cake and candles" loading="lazy">
-    <img src="/img/photo-packages/scene-newborn.jpg" alt="Newborn family photo session" loading="lazy">
-    <img src="/img/photo-packages/corporate-conference.jpg" alt="Corporate event gathering" loading="lazy">
+    <img src="/img/photo-packages/mockups/newborn-album-spread.png" alt="Open newborn photo album showing tender moments — mother holding baby, tiny feet in hands, and a peacefully sleeping newborn" loading="lazy">
+    <img src="/img/photo-packages/mockups/corporate-album-together.png" alt="Professional hardcover corporate team photo album" loading="lazy">
     <img src="/img/photo-packages/celebration-toast.jpg" alt="Guests raising glasses in celebration" loading="lazy">
-    <img src="/img/photo-packages/canva-hardcover-hands.png" alt="Woman holding professional photo book" loading="lazy">
-    <img src="/img/photo-packages/canva-hanging-print.png" alt="Hanging poster print on wood hanger" loading="lazy">
+    <img src="/img/photo-packages/mockups/wedding-album-hands.png" alt="Hands holding a wedding photo album" loading="lazy">
+    <img src="/img/photo-packages/mockups/wedding-hanging-print.png" alt="Wedding hanging poster print on wood hanger" loading="lazy">
   </div>
 </section>
 
@@ -189,7 +195,7 @@
     <p style="text-align:center;color:var(--muted);font-size:14px;max-width:600px;margin:8px auto 0">From intimate family moments to large-scale corporate gatherings &mdash; our packages adapt to every event.</p>
     <div class="event-types-grid">
       <div class="event-type-card">
-        <img class="event-type-img" src="/img/photo-packages/diverse-birthday-group.jpg" alt="Diverse family celebrating a birthday together" loading="lazy">
+        <img class="event-type-img" src="/img/photo-packages/mockups/birthday-album-hands.png" alt="Hands holding a birthday celebration photo album" loading="lazy">
         <div class="event-type-body">
           <h3>Birthdays</h3>
           <p>Kids parties, milestone birthdays, surprise celebrations &mdash; capture the cake, the candles, and every candid laugh.</p>
@@ -207,10 +213,10 @@
         </div>
       </div>
       <div class="event-type-card">
-        <img class="event-type-img" src="/img/photo-packages/corporate-conference.jpg" alt="Corporate event" loading="lazy">
+        <img class="event-type-img" src="/img/photo-packages/mockups/corporate-album-together.png" alt="Professional hardcover corporate team photo album on styled white desk" loading="lazy">
         <div class="event-type-body">
           <h3>Corporate Gatherings</h3>
-          <p>Team events, conferences, company parties, galas &mdash; professional documentation without hiring a photographer.</p>
+          <p>Team events, conferences, company parties, galas &mdash; professional documentation with everyone contributing.</p>
           <a href="/events/corporate.html" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--accent-dark)">Learn more &rarr;</a>
         </div>
       </div>
@@ -223,7 +229,7 @@
         </div>
       </div>
       <div class="event-type-card">
-        <img class="event-type-img" src="/img/photo-packages/scene-newborn.jpg" alt="Newborn family session" loading="lazy">
+        <img class="event-type-img" src="/img/photo-packages/mockups/newborn-hardcover-noah.png" alt="Personalized 'When Noah Was Born' hardcover newborn album — a keepsake that captures your baby's first days forever" loading="lazy">
         <div class="event-type-body">
           <h3>Newborn Sessions</h3>
           <p>Those fleeting first days. Family captures the tiny yawns, wrinkled fingers, and first smiles &mdash; we make them last forever.</p>
@@ -333,52 +339,41 @@
 
   <!-- QR Poster Add-on -->
   <div class="addon-card">
-    <img class="addon-img" src="/img/photo-packages/canva-qr-table.png" alt="QR poster on table at event">
+    <img class="addon-img" src="/img/photo-packages/mockups/wedding-qr-table.png" alt="QR poster on table at wedding event" loading="lazy">
     <div class="addon-text">
       <h3>QR Poster Add-on</h3>
       <p>Want a beautiful, professionally printed QR poster mailed directly to you before your event? Add this to either package. Order at least 2 weeks before your event for guaranteed delivery, or grab the instant digital download to print yourself.</p>
       <span class="addon-price">$14.99</span><span class="addon-note">Printed poster or digital download</span>
+      <div style="margin-top:14px"><a href="https://buy.stripe.com/7sYfZgdu7b234rS3t8cEx0X" class="pkg-btn" style="display:inline-block;padding:12px 28px;font-size:14px;text-decoration:none" target="_blank" rel="noopener">Add to Your Package</a></div>
     </div>
+  </div>
+
+  <!-- Event Merch Bundle Add-on -->
+  <div style="max-width:900px;margin:24px auto 0;background:var(--white);border-radius:14px;border:2px dashed rgba(45,41,38,0.12);padding:28px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+    <div style="flex-shrink:0;width:120px;height:120px;background:linear-gradient(135deg,var(--sage),rgba(184,150,90,0.3));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem">&#9749;&#128085;</div>
+    <div style="flex:1;min-width:200px">
+      <div style="display:inline-block;background:var(--sage);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Save $10</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:6px">Event Merch Bundle</h3>
+      <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:12px">Custom 11oz ceramic mug + heavyweight crewneck t-shirt featuring your event photos. The perfect keepsake for everyone who celebrated with you.</p>
+      <span style="font-size:1.3rem;font-weight:800;color:var(--accent-dark,var(--text))">$44.99</span><span style="font-size:12px;color:var(--muted);margin-left:8px;font-weight:400"><s>$54.98</s> — Save $10</span>
+      <div style="margin-top:14px"><button class="pkg-btn" style="display:inline-block;padding:12px 28px;font-size:14px;border:none;cursor:pointer;border-radius:50px;background:var(--accent,var(--rose));color:#fff;font-weight:700" data-cart-add data-id="event_merch_bundle" data-price-id="price_1TAzxnBiY2vwqUNMzpJefJ3U" data-title="Event Merch Bundle — Mug + T-Shirt" data-price="44.99" data-image="" data-type="merch">Add to Cart — $44.99</button></div>
+    </div>
+  </div>
+  <div style="max-width:900px;margin:12px auto 0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <button class="pkg-btn-outline" style="padding:10px 20px;font-size:13px;border-radius:50px;cursor:pointer;border:1.5px solid rgba(45,41,38,0.15);background:transparent;font-weight:600" data-cart-add data-id="event_mug" data-price-id="price_1TAzwnBiY2vwqUNMyVk7Cx14" data-title="Event Photo Mug" data-price="19.99" data-image="" data-type="merch">Just the Mug — $19.99</button>
+    <button class="pkg-btn-outline" style="padding:10px 20px;font-size:13px;border-radius:50px;cursor:pointer;border:1.5px solid rgba(45,41,38,0.15);background:transparent;font-weight:600" data-cart-add data-id="event_tshirt" data-price-id="price_1TAzwpBiY2vwqUNMczsrDu5d" data-title="Event Photo T-Shirt" data-price="34.99" data-image="" data-type="merch">Just the T-Shirt — $34.99</button>
   </div>
 </section>
 
 <!-- 6. Reviews (5 fake reviews) -->
-<section class="reviews-section">
-  <div class="reviews-inner">
-    <h2 class="section-title" style="text-align:center">What Our Customers Say</h2>
-    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"My daughter's 5th birthday party was chaos in the best way. I never could have captured all those moments myself. The shot script was genius &mdash; my sister followed it and the album turned out like we hired a professional. Worth every penny."</p>
-        <div class="review-author">Jessica M.</div>
-        <div class="review-event">Kids Birthday Party &mdash; Simple Package</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"We used this for our annual company holiday party with 120 employees. The QR codes were a hit &mdash; everyone was scanning and uploading all night. The hardcover album is now in our lobby and the poster print is in our conference room. Incredible value for a corporate event."</p>
-        <div class="review-author">David R., Events Director</div>
-        <div class="review-event">Corporate Holiday Party &mdash; Max Package</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"For our 25th anniversary, our kids surprised us with this package. Guests from every table captured moments we never would have seen. The album made me cry &mdash; it's the most thoughtful gift we've ever received."</p>
-        <div class="review-author">Linda &amp; Robert K.</div>
-        <div class="review-event">25th Anniversary &mdash; Max Package</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"I wanted professional newborn photos but couldn't justify the $800 studio price. This was perfect. My mom and sister followed the shot script at home, the baby slept through the whole thing, and the edited album looks absolutely stunning. I'm ordering again for baby #2."</p>
-        <div class="review-author">Alyssa T.</div>
-        <div class="review-event">Newborn Session &mdash; Simple Package</div>
-      </div>
-      <div class="review-card full-width">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"Our church's 50th anniversary celebration had over 200 people. We put QR codes on every table and our youth group leader followed the shot script. We ended up with over 1,400 photos. The final album sits in our church library and the hanging poster print is displayed in the fellowship hall. Pastor loved it &mdash; we're using it again for Vacation Bible School this summer."</p>
-        <div class="review-author">Deacon Marcus W.</div>
-        <div class="review-event">Church 50th Anniversary &mdash; Max Package</div>
-      </div>
+<section style="padding:60px 24px;background:var(--bg);text-align:center">
+  <div style="max-width:600px;margin:0 auto">
+    <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px">
+      <span style="color:var(--gold);font-size:20px;letter-spacing:2px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
     </div>
+    <h2 class="section-title"><span class="rv-count">778</span> Five-Star Reviews</h2>
+    <p style="color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:24px">Don't take our word for it — see what real customers are saying about MrsMillennial Designs.</p>
+    <a href="/reviews.html" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;background:var(--text);color:#fff;font-size:15px;font-weight:600;transition:all 0.3s">Read Our Reviews &rarr;</a>
   </div>
 </section>
 
@@ -480,6 +475,48 @@
   </div>
 </section>
 
+<!-- ==================== CROSS-SELL ==================== -->
+<section style="padding:60px 24px;background:var(--bg)">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.5vw,1.8rem);margin-bottom:8px">Complete Your Celebration</h2>
+    <p style="color:var(--muted);font-size:15px;margin-bottom:32px;font-style:italic">Pair your photo package with a handmade keepsake &mdash; perfect for framing alongside your album.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px">
+      <a href="/products/4760045018.html" style="text-decoration:none;color:var(--text);background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(45,41,38,0.06);transition:all 0.3s ease;display:flex;flex-direction:column">
+        <img src="https://i.etsystatic.com/34326585/r/il/45ac91/4760045018/il_570xN.4760045018_1nip.jpg" alt="Personalized Handprint Art: Wildflower Family Keepsake" style="width:100%;aspect-ratio:1;object-fit:cover" loading="lazy">
+        <div style="padding:14px">
+          <div style="font-family:var(--font);font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.4">Personalized Wildflower Handprint Art</div>
+          <div style="font-size:14px;font-weight:800;color:var(--rose-dark)">$5.00</div>
+          <div style="margin-top:8px;font-size:12px;font-weight:600;color:var(--accent-dark)">View Design &rarr;</div>
+        </div>
+      </a>
+      <a href="/products/4005425060.html" style="text-decoration:none;color:var(--text);background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(45,41,38,0.06);transition:all 0.3s ease;display:flex;flex-direction:column">
+        <img src="https://i.etsystatic.com/34326585/r/il/b28491/4005425060/il_570xN.4005425060_r5p1.jpg" alt="Wildflower Handprint Art: DIY Family Keepsake" style="width:100%;aspect-ratio:1;object-fit:cover" loading="lazy">
+        <div style="padding:14px">
+          <div style="font-family:var(--font);font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.4">Wildflower Handprint Art</div>
+          <div style="font-size:14px;font-weight:800;color:var(--rose-dark)">$3.00</div>
+          <div style="margin-top:8px;font-size:12px;font-weight:600;color:var(--accent-dark)">View Design &rarr;</div>
+        </div>
+      </a>
+      <a href="/products/7821085499.html" style="text-decoration:none;color:var(--text);background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(45,41,38,0.06);transition:all 0.3s ease;display:flex;flex-direction:column">
+        <img src="https://i.etsystatic.com/34326585/r/il/a9233c/7821085499/il_570xN.7821085499_6fta.jpg" alt="Mother's Day Handprint Bouquet Craft" style="width:100%;aspect-ratio:1;object-fit:cover" loading="lazy">
+        <div style="padding:14px">
+          <div style="font-family:var(--font);font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.4">Handprint Bouquet Craft</div>
+          <div style="font-size:14px;font-weight:800;color:var(--rose-dark)">$4.00</div>
+          <div style="margin-top:8px;font-size:12px;font-weight:600;color:var(--accent-dark)">View Design &rarr;</div>
+        </div>
+      </a>
+      <a href="/products/3963676945.html" style="text-decoration:none;color:var(--text);background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(45,41,38,0.06);transition:all 0.3s ease;display:flex;flex-direction:column">
+        <img src="https://i.etsystatic.com/34326585/r/il/140fe1/3963676945/il_570xN.3963676945_lqsl.jpg" alt="Family Handprint Art: DIY Kids Craft Keepsake" style="width:100%;aspect-ratio:1;object-fit:cover" loading="lazy">
+        <div style="padding:14px">
+          <div style="font-family:var(--font);font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.4">Family Handprint Art</div>
+          <div style="font-size:14px;font-weight:800;color:var(--rose-dark)">$3.00</div>
+          <div style="margin-top:8px;font-size:12px;font-weight:600;color:var(--accent-dark)">View Design &rarr;</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- 9. Final CTA -->
 <section class="cta-bottom" id="order">
   <h2>Make Your Celebration Last Forever</h2>
@@ -497,7 +534,7 @@
       <div>
         <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
         <p class="footer-desc">Premium printable designs & event photo packages for life's biggest moments.</p>
-        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">777 reviews</a> &middot; 5.0 avg rating</p>
+        <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">778 reviews</a> &middot; 5.0 avg rating</p>
       </div>
       <div>
         <h4>Shop</h4>
@@ -550,5 +587,6 @@ l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.re
 })();
 </script>
 <script src="/js/watermark-overlay.js" defer></script>
+<script src="/js/cart.js"></script>
 </body>
 </html>
