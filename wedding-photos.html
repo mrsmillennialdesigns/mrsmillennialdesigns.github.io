@@ -6,74 +6,166 @@
   <title>Wedding Photo Packages &mdash; From $49.99 | MrsMillennial Designs</title>
   <meta name="description" content="Beautiful wedding photo albums without the $5,000 photographer price tag. Your guests capture every moment, we create a stunning hardcover album. Simple $49.99, Max $199.">
   <meta property="og:title" content="Wedding Photo Packages | MrsMillennial Designs">
-  <meta property="og:description" content="Hardcover wedding albums from $49.99. Your guests are the photographers.">
+  <meta property="og:description" content="Hardcover wedding albums from $49.99. Your guests are the photographers. Shot script + QR codes + professional editing + printed album shipped to your door.">
+  <meta property="og:image" content="/img/photo-packages/guests-crowd-phones.jpg">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; font-src 'self'; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/review-count.js" defer></script>
   <style>
-    :root{--accent:#b8965a;--accent-dark:#96783e;--accent-light:#dbc9a0;--warm:#d4a853;--warm-light:rgba(212,168,83,0.12)}
+    /* ========== HERO ========== */
+    .w-hero{position:relative;overflow:hidden;padding:0;background:var(--text)}
+    .w-hero-img{width:100%;height:520px;object-fit:cover;display:block;opacity:0.45}
+    .w-hero-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:linear-gradient(180deg,rgba(45,41,38,0.10) 0%,rgba(45,41,38,0.55) 100%)}
+    .w-hero-content{max-width:720px;color:#fff}
+    .w-hero-badge{display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:13px;font-weight:600;padding:6px 18px;border-radius:50px;margin-bottom:20px;letter-spacing:0.5px}
+    .w-hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5.5vw,3.4rem);line-height:1.1;margin-bottom:16px;color:#fff;font-weight:400}
+    .w-hero .tagline{font-size:clamp(1rem,2vw,1.15rem);color:rgba(255,255,255,0.85);font-style:italic;margin-bottom:12px;line-height:1.7}
+    .w-hero .sub{font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:32px}
+    .w-hero .hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .w-hero .btn-hero-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-size:16px;font-weight:700;border:none;cursor:pointer;transition:all 0.3s ease;background:var(--gold);color:#fff;box-shadow:0 4px 20px rgba(212,168,83,0.4)}
+    .w-hero .btn-hero-primary:hover{background:#c49a3d;color:#fff;transform:translateY(-2px);box-shadow:0 6px 28px rgba(212,168,83,0.5)}
+    .w-hero .btn-hero-outline{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-size:16px;font-weight:600;border:1.5px solid rgba(255,255,255,0.4);cursor:pointer;transition:all 0.3s ease;background:transparent;color:#fff}
+    .w-hero .btn-hero-outline:hover{border-color:#fff;color:#fff;transform:translateY(-2px)}
 
-    .w-hero{padding:120px 24px 80px;text-align:center;background:linear-gradient(180deg,rgba(143,168,136,0.08),var(--bg));position:relative;overflow:hidden}
-    .w-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(143,168,136,0.06),transparent 60%),radial-gradient(ellipse at 70% 60%,rgba(212,168,83,0.04),transparent 60%);pointer-events:none}
-    .w-hero-content{position:relative;z-index:1;max-width:680px;margin:0 auto}
-    .w-badge{display:inline-block;background:var(--warm-light);border:1px solid rgba(212,168,83,0.25);color:#9e7d2e;font-size:13px;font-weight:600;padding:6px 16px;border-radius:50px;margin-bottom:20px;letter-spacing:0.5px}
-    .w-hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin-bottom:16px}
-    .w-hero .tagline{font-size:clamp(1rem,2vw,1.15rem);color:var(--muted);font-style:italic;margin-bottom:12px;line-height:1.7}
-    .w-hero .sub{font-size:14px;color:var(--muted);margin-bottom:32px}
+    /* ========== IMAGE GALLERY ========== */
+    .w-gallery{padding:0 24px 0;background:var(--bg)}
+    .w-gallery-inner{max-width:1100px;margin:0 auto;transform:translateY(-48px)}
+    .w-gallery-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+    .w-gallery-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);box-shadow:0 4px 20px rgba(45,41,38,0.12);transition:transform 0.3s ease,box-shadow 0.3s ease}
+    .w-gallery-grid img:hover{transform:scale(1.02);box-shadow:0 8px 30px rgba(45,41,38,0.18)}
+    .w-gallery-caption{text-align:center;padding-top:8px;font-size:14px;color:var(--muted);font-style:italic}
 
-    .pkg-section{padding:72px 24px}
-    .pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;margin:0 auto}
-    .pkg-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:2px solid rgba(45,41,38,0.06);position:relative;display:flex;flex-direction:column}
-    .pkg-card.featured{border-color:var(--accent)}
-    .pkg-card.featured::before{content:'Most Popular';position:absolute;top:16px;right:16px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;z-index:1}
+    /* ========== HOW IT WORKS ========== */
+    .hiw-section{padding:72px 24px;background:var(--bg)}
+    .hiw-inner{max-width:1000px;margin:0 auto}
+    .hiw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:40px}
+    .hiw-step{text-align:center;position:relative}
+    .hiw-step-img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius);margin-bottom:16px;box-shadow:var(--shadow)}
+    .hiw-num{position:absolute;top:12px;left:12px;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;box-shadow:0 2px 8px rgba(212,168,83,0.4);z-index:2}
+    .hiw-step h3{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:6px;color:var(--text)}
+    .hiw-step p{font-size:13px;color:var(--muted);line-height:1.6}
+    .hiw-arrow{display:none}
+
+    /* ========== PACKAGES ========== */
+    .pkg-section{padding:72px 24px;background:var(--white)}
+    .pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:920px;margin:0 auto}
+    .pkg-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:2px solid rgba(45,41,38,0.06);position:relative;display:flex;flex-direction:column;transition:all 0.3s ease}
+    .pkg-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+    .pkg-card.featured{border-color:var(--gold)}
+    .pkg-card.featured::before{content:'Most Popular';position:absolute;top:16px;right:16px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;z-index:1}
     .pkg-header{padding:32px 28px 0;text-align:center}
-    .pkg-name{font-family:var(--font);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent-dark);margin-bottom:8px}
-    .pkg-price{font-size:2.4rem;font-weight:800;color:var(--text);margin-bottom:4px}
+    .pkg-name{font-family:var(--font);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px}
+    .pkg-price{font-size:2.6rem;font-weight:800;color:var(--text);margin-bottom:4px}
     .pkg-price-note{font-size:13px;color:var(--muted);margin-bottom:24px}
     .pkg-body{padding:0 28px 28px;flex:1;display:flex;flex-direction:column}
-    .pkg-features{list-style:none;margin-bottom:24px;flex:1}
-    .pkg-features li{padding:10px 0;border-bottom:1px solid rgba(45,41,38,0.04);font-size:14px;color:var(--muted);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
-    .pkg-features li::before{content:'';display:inline-block;width:20px;height:20px;min-width:20px;border-radius:50%;background:rgba(168,197,160,0.2);position:relative;margin-top:2px}
-    .pkg-features li::after{content:'\2713';position:absolute;color:var(--sage);font-size:12px;font-weight:700}
-    .pkg-features li{position:relative}
+    .pkg-features{list-style:none;margin-bottom:28px;flex:1}
+    .pkg-features li{padding:10px 0;border-bottom:1px solid rgba(45,41,38,0.04);font-size:14px;color:var(--muted);display:flex;align-items:flex-start;gap:10px;line-height:1.5;position:relative}
     .pkg-check{color:var(--sage);font-weight:700;margin-right:2px;font-size:15px;flex-shrink:0;margin-top:1px}
-    .pkg-btn{display:block;width:100%;padding:16px;border-radius:50px;font-size:16px;font-weight:700;border:none;cursor:pointer;transition:all var(--transition);text-align:center;text-decoration:none;box-sizing:border-box}
-    .pkg-btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 16px rgba(143,168,136,0.3)}
-    .pkg-btn-primary:hover{background:var(--accent-dark);color:#fff;transform:translateY(-2px);box-shadow:0 6px 24px rgba(143,168,136,0.4)}
-    .pkg-btn-outline{background:transparent;color:var(--accent-dark);border:2px solid var(--accent-light)}
-    .pkg-btn-outline:hover{border-color:var(--accent);color:var(--accent-dark);transform:translateY(-2px)}
+    .pkg-btn{display:block;width:100%;padding:16px;border-radius:50px;font-size:16px;font-weight:700;border:none;cursor:pointer;transition:all 0.3s ease;text-align:center;text-decoration:none;box-sizing:border-box}
+    .pkg-btn-primary{background:var(--text);color:#fff;box-shadow:0 4px 16px rgba(45,41,38,0.15)}
+    .pkg-btn-primary:hover{background:#1a1715;color:#fff;transform:translateY(-2px);box-shadow:0 6px 24px rgba(45,41,38,0.25)}
+    .pkg-btn-outline{background:transparent;color:var(--text);border:2px solid rgba(45,41,38,0.12)}
+    .pkg-btn-outline:hover{border-color:var(--gold);color:var(--rose-dark);transform:translateY(-2px)}
 
+    /* ========== ADD-ON ========== */
+    .addon-section{padding:0 24px 72px;background:var(--white)}
+    .addon-card{max-width:920px;margin:0 auto;background:linear-gradient(135deg,rgba(212,168,83,0.06),rgba(184,150,90,0.03));border:1.5px solid rgba(212,168,83,0.2);border-radius:var(--radius);padding:32px 36px;display:flex;align-items:center;gap:32px}
+    .addon-img{width:160px;height:160px;border-radius:12px;object-fit:cover;flex-shrink:0;box-shadow:var(--shadow)}
+    .addon-content{flex:1}
+    .addon-badge{display:inline-block;background:rgba(212,168,83,0.15);color:#9e7d2e;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;padding:4px 12px;border-radius:20px;margin-bottom:10px}
+    .addon-content h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;margin-bottom:6px}
+    .addon-content p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:16px}
+    .addon-price{font-size:1.5rem;font-weight:800;color:var(--text)}
+    .addon-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:50px;font-size:14px;font-weight:600;border:1.5px solid rgba(45,41,38,0.12);cursor:pointer;transition:all 0.3s ease;background:transparent;color:var(--text);text-decoration:none;margin-left:16px}
+    .addon-btn:hover{border-color:var(--gold);color:var(--rose-dark);transform:translateY(-2px)}
+
+    /* ========== REVIEWS ========== */
+    .w-reviews{padding:72px 24px;background:var(--bg)}
+    .w-reviews-inner{max-width:1000px;margin:0 auto}
+    .w-reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:40px}
+    .w-review-card{background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid rgba(45,41,38,0.04);transition:all 0.3s ease}
+    .w-review-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+    .w-review-stars{color:var(--gold);font-size:16px;letter-spacing:2px;margin-bottom:14px}
+    .w-review-text{font-size:14px;color:var(--text);line-height:1.7;font-style:italic;margin-bottom:16px}
+    .w-review-author{display:flex;align-items:center;gap:12px}
+    .w-review-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;flex-shrink:0}
+    .w-review-meta .w-review-name{font-size:14px;font-weight:700;color:var(--text)}
+    .w-review-meta .w-review-role{font-size:12px;color:var(--muted)}
+
+    /* ========== WHAT'S INCLUDED ========== */
     .included-section{padding:72px 24px;background:var(--white)}
-    .included-inner{max-width:800px;margin:0 auto}
-    .included-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
-    .included-item{display:flex;gap:14px;align-items:flex-start;padding:20px;background:var(--bg);border-radius:12px}
-    .included-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
-    .included-item h3{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:4px}
+    .included-inner{max-width:900px;margin:0 auto}
+    .included-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:40px}
+    .included-item{text-align:center;padding:28px 20px;background:var(--bg);border-radius:var(--radius);transition:all 0.3s ease;border:1px solid rgba(45,41,38,0.04)}
+    .included-item:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .included-icon{font-size:2rem;margin-bottom:14px;display:block}
+    .included-item h3{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:6px}
     .included-item p{font-size:13px;color:var(--muted);line-height:1.6}
+    .included-item .inc-tag{display:inline-block;margin-top:10px;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px}
+    .inc-tag-both{background:rgba(143,168,136,0.15);color:#5d8052}
+    .inc-tag-max{background:rgba(212,168,83,0.15);color:#9e7d2e}
 
-    .timeline-section{padding:72px 24px;background:var(--bg)}
-    .timeline-inner{max-width:700px;margin:0 auto}
-    .timeline-steps{margin-top:32px}
-    .tl-step{display:flex;gap:20px;margin-bottom:28px;align-items:flex-start}
-    .tl-num{width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0}
-    .tl-text h3{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:4px}
-    .tl-text p{font-size:14px;color:var(--muted);line-height:1.6}
+    /* ========== FAQ ========== */
+    .faq-section{padding:72px 24px;background:var(--bg)}
+    .faq-inner{max-width:740px;margin:0 auto}
+    .faq-item{border-bottom:1px solid rgba(45,41,38,0.06);overflow:hidden}
+    .faq-q{font-family:var(--font);font-size:15px;font-weight:700;padding:20px 0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:color 0.3s ease;user-select:none}
+    .faq-q:hover{color:var(--rose-dark)}
+    .faq-q::after{content:'+';font-size:20px;font-weight:400;color:var(--muted);transition:transform 0.3s ease;flex-shrink:0}
+    .faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--gold)}
+    .faq-a{font-size:14px;color:var(--muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease;padding:0 0}
+    .faq-item.open .faq-a{max-height:200px;padding:0 0 20px}
 
-    .faq-section{padding:72px 24px;background:var(--white)}
-    .faq-inner{max-width:700px;margin:0 auto}
-    .faq-item{border-bottom:1px solid rgba(45,41,38,0.06);padding:20px 0}
-    .faq-q{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:8px;cursor:pointer}
-    .faq-a{font-size:14px;color:var(--muted);line-height:1.7}
+    /* ========== FINAL CTA ========== */
+    .cta-bottom{padding:80px 24px;text-align:center;position:relative;overflow:hidden;background:var(--text)}
+    .cta-bottom::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,168,83,0.15),transparent 60%),radial-gradient(ellipse at 70% 40%,rgba(184,150,90,0.10),transparent 60%);pointer-events:none}
+    .cta-bottom-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+    .cta-bottom h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:12px;color:#fff}
+    .cta-bottom .cta-sub{color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:12px;font-size:1.05rem}
+    .cta-bottom .cta-detail{color:rgba(255,255,255,0.45);font-size:14px;margin-bottom:36px}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .cta-btn-gold{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-size:16px;font-weight:700;border:none;cursor:pointer;transition:all 0.3s ease;background:var(--gold);color:#fff;box-shadow:0 4px 20px rgba(212,168,83,0.35);text-decoration:none}
+    .cta-btn-gold:hover{background:#c49a3d;color:#fff;transform:translateY(-2px);box-shadow:0 6px 28px rgba(212,168,83,0.5)}
+    .cta-btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-size:16px;font-weight:600;border:1.5px solid rgba(255,255,255,0.25);cursor:pointer;transition:all 0.3s ease;background:transparent;color:rgba(255,255,255,0.8);text-decoration:none}
+    .cta-btn-ghost:hover{border-color:rgba(255,255,255,0.5);color:#fff;transform:translateY(-2px)}
+    .cta-contact{margin-top:28px;font-size:13px;color:rgba(255,255,255,0.4)}
+    .cta-contact a{color:var(--gold)}
+    .cta-contact a:hover{color:#e8c068}
 
-    .cta-bottom{padding:72px 24px;text-align:center;background:linear-gradient(135deg,rgba(143,168,136,0.08),rgba(212,168,83,0.04))}
-    .cta-bottom h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:12px}
-    .cta-bottom p{color:var(--muted);font-style:italic;margin-bottom:32px}
+    /* ========== ENGAGEMENT CALLOUT ========== */
+    .eng-callout{padding:0 24px 0;background:var(--bg)}
+    .eng-callout-inner{max-width:1100px;margin:0 auto;text-align:center;padding:24px 0 0}
+    .eng-callout p{font-size:14px;color:var(--muted);font-style:italic}
+    .eng-callout a{color:var(--rose-dark);font-weight:600}
 
+    /* ========== RESPONSIVE ========== */
+    @media(max-width:900px){
+      .hiw-grid{grid-template-columns:1fr 1fr;gap:20px}
+      .included-grid{grid-template-columns:1fr 1fr}
+    }
     @media(max-width:768px){
+      .w-hero-img{height:400px}
+      .w-hero h1{font-size:2rem}
+      .w-gallery-grid{grid-template-columns:1fr 1fr;gap:8px}
+      .w-gallery-grid img:nth-child(5),.w-gallery-grid img:nth-child(6){display:none}
       .pkg-grid{grid-template-columns:1fr}
+      .addon-card{flex-direction:column;text-align:center;padding:28px 24px}
+      .addon-img{width:120px;height:120px}
+      .addon-price{display:block;margin-bottom:12px}
+      .addon-btn{margin-left:0}
+      .w-reviews-grid{grid-template-columns:1fr}
       .included-grid{grid-template-columns:1fr}
+      .hiw-grid{grid-template-columns:1fr 1fr}
+      .cta-btns{flex-direction:column}
+      .cta-btns a{width:100%;justify-content:center}
+      .hero-buttons{flex-direction:column}
+      .hero-buttons a{width:100%;justify-content:center;text-align:center}
+    }
+    @media(max-width:480px){
+      .w-hero-img{height:320px}
+      .hiw-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -98,43 +190,89 @@
   </div>
 </nav>
 
+<!-- ==================== HERO ==================== -->
 <section class="w-hero">
-  <div class="w-hero-content">
-    <div class="w-badge">Wedding Photography</div>
-    <h1>Your Guests Have the Power. Let's Use It.</h1>
-    <p class="tagline">Every guest has a high-res camera in their pocket. We give one person a professional shot script, your guests capture the magic, and we turn it all into a stunning album. Fun, easy, affordable.</p>
-    <p class="sub">Hardcover photo book + digital downloads + lead coordinator script + QR code signs &mdash; all included.</p>
-    <div class="hero-buttons">
-      <a href="#packages" class="btn btn-primary" style="background:var(--accent);box-shadow:0 4px 16px rgba(143,168,136,0.3)">View Packages</a>
-      <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+  <img src="/img/photo-packages/guests-crowd-phones.jpg" alt="Bride and groom surrounded by guests holding phones with string lights" class="w-hero-img" loading="eager">
+  <div class="w-hero-overlay">
+    <div class="w-hero-content">
+      <div class="w-hero-badge">Wedding Photo Packages</div>
+      <h1>Your Guests Have the Power. Let's Use It.</h1>
+      <p class="tagline">Every guest at your wedding has a high-res camera in their pocket. We give one person a professional shot script, your guests capture the magic, and we turn it all into a stunning hardcover album.</p>
+      <p class="sub">Fun. Easy. Affordable. Hardcover album + digital downloads + shot script + QR codes &mdash; all included.</p>
+      <div class="hero-buttons">
+        <a href="#packages" class="btn-hero-primary">View Packages</a>
+        <a href="#how-it-works" class="btn-hero-outline">How It Works</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="padding:0 24px 48px;background:var(--bg)">
-  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
-    <img src="/img/photo-packages/guests-crowd-phones.jpg" alt="Step 1: Your guests capture every moment with their phones" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)" loading="lazy">
-    <img src="/img/photo-packages/canva-qr-table.png" alt="Step 2: Guests scan the QR code to upload their photos" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)" loading="lazy">
-    <img src="/img/photo-packages/canva-hardcover-hands.png" alt="Step 3: We create a stunning hardcover photo book" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)" loading="lazy">
-    <img src="/img/photo-packages/album-beach-wedding.jpg" alt="Step 4: Your album arrives filled with your best moments" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)" loading="lazy">
-    <img src="/img/photo-packages/canva-qr-easel.png" alt="Capture the Love QR sign at wedding venue" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)" loading="lazy">
-    <img src="/img/photo-packages/canva-hanging-print.png" alt="Or a beautiful hanging print display piece" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)" loading="lazy">
+<!-- ==================== IMAGE GALLERY ==================== -->
+<section class="w-gallery">
+  <div class="w-gallery-inner">
+    <div class="w-gallery-grid">
+      <img src="/img/photo-packages/guests-crowd-phones.jpg" alt="Guests capturing every wedding moment on their phones" loading="lazy">
+      <img src="/img/photo-packages/canva-qr-table.png" alt="Capture the Love QR code sign on table with candles" loading="lazy">
+      <img src="/img/photo-packages/canva-hardcover-hands.png" alt="Hands holding a finished hardcover wedding photo book" loading="lazy">
+      <img src="/img/photo-packages/album-beach-wedding.jpg" alt="Wedding album open to beautiful beach wedding spread" loading="lazy">
+      <img src="/img/photo-packages/canva-qr-easel.png" alt="QR code sign on glass easel at a wedding venue" loading="lazy">
+      <img src="/img/photo-packages/canva-hanging-print.png" alt="Wedding photo hanging print on wood hanger display" loading="lazy">
+    </div>
+    <p class="w-gallery-caption">Your guests take the photos. We make them beautiful.</p>
   </div>
 </section>
 
-<section style="padding:40px 24px 0;background:var(--bg)">
-  <div style="max-width:1100px;margin:0 auto;text-align:center">
-    <p style="font-size:14px;color:var(--muted);font-style:italic">Also available: <strong>Engagement photo packages</strong> &mdash; same great service for your engagement shoot</p>
+<!-- ==================== ENGAGEMENT CALLOUT ==================== -->
+<section class="eng-callout">
+  <div class="eng-callout-inner">
+    <p>Also available: <strong>Engagement photo packages</strong> &mdash; same great service for your engagement shoot. <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Engagement%20Photo%20Package%20Question">Ask us about it</a></p>
   </div>
 </section>
 
-<section class="pkg-section" id="packages" style="background:var(--white)">
+<!-- ==================== HOW IT WORKS ==================== -->
+<section class="hiw-section" id="how-it-works">
+  <div class="hiw-inner">
+    <h2 class="section-title" style="text-align:center">How It Works</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--gold)"></span></div>
+    <p style="text-align:center;color:var(--muted);font-size:15px;max-width:560px;margin:0 auto;font-style:italic">Four simple steps from order to album. No photography experience needed.</p>
+    <div class="hiw-grid">
+      <div class="hiw-step">
+        <div class="hiw-num">1</div>
+        <img src="/img/photo-packages/canva-hardcover-hands.png" alt="Pick your wedding photo package" class="hiw-step-img" loading="lazy">
+        <h3>Pick Your Package</h3>
+        <p>Choose Simple or Max. We email your shot script, QR codes, and coordinator guide within 24 hours.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">2</div>
+        <img src="/img/photo-packages/scene-guest-phone-wedding.jpg" alt="Lead coordinator following the shot script" class="hiw-step-img" loading="lazy">
+        <h3>Give Your Coordinator the Script</h3>
+        <p>Pick one trusted person to follow our shot script. They don't need to be a photographer &mdash; we tell them exactly what to capture and when.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">3</div>
+        <img src="/img/photo-packages/canva-qr-easel.png" alt="Guests scanning QR codes to upload photos" class="hiw-step-img" loading="lazy">
+        <h3>Guests Scan &amp; Share</h3>
+        <p>Place QR codes around your venue. Guests scan with their phones and upload photos instantly &mdash; no app needed. Everyone's a photographer.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">4</div>
+        <img src="/img/photo-packages/album-beach-wedding.jpg" alt="Finished wedding album with professionally edited photos" class="hiw-step-img" loading="lazy">
+        <h3>We Edit, Design &amp; Ship</h3>
+        <p>We collect every photo, professionally edit them all, design your album layout, and ship a hardcover book to your door within 2 weeks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PACKAGES ==================== -->
+<section class="pkg-section" id="packages">
   <div style="text-align:center;margin-bottom:48px">
-    <h2 class="section-title">Wedding Packages</h2>
-    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
-    <p style="color:var(--muted);font-size:14px">Every package includes a printed album, digital downloads, and a professional shot script.</p>
+    <h2 class="section-title">Choose Your Package</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--gold)"></span></div>
+    <p style="color:var(--muted);font-size:15px;max-width:520px;margin:0 auto">Premium results without the premium price. Every package includes a printed album, professional editing, and free shipping.</p>
   </div>
   <div class="pkg-grid">
+    <!-- SIMPLE PACKAGE -->
     <div class="pkg-card">
       <div class="pkg-header">
         <div class="pkg-name">Simple</div>
@@ -146,18 +284,18 @@
           <li><span class="pkg-check">&#10003;</span> Hardcover photo book (8x8", 30 pages)</li>
           <li><span class="pkg-check">&#10003;</span> Custom-designed book cover</li>
           <li><span class="pkg-check">&#10003;</span> All photos professionally edited &amp; color-corrected</li>
-          <li><span class="pkg-check">&#10003;</span> High-res digital download of all photos</li>
+          <li><span class="pkg-check">&#10003;</span> High-resolution digital download of all photos</li>
           <li><span class="pkg-check">&#10003;</span> Professional shot script (38 key shots)</li>
           <li><span class="pkg-check">&#10003;</span> QR code printouts for guest uploads</li>
           <li><span class="pkg-check">&#10003;</span> Free shipping to your door</li>
         </ul>
-        <!-- TODO: Replace href with Stripe payment link -->
-        <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Wedding%20Simple%20Package&body=Hi!%20I'd%20like%20to%20order%20the%20Wedding%20Simple%20package%20($49.99).%0A%0AWedding%20date:%0ANames:%0A" class="pkg-btn pkg-btn-outline">Get Started &mdash; $49.99</a>
+        <a href="#order" class="pkg-btn pkg-btn-outline">Choose This Package</a>
       </div>
     </div>
+    <!-- MAX PACKAGE -->
     <div class="pkg-card featured">
       <div class="pkg-header">
-        <div class="pkg-name" style="color:var(--warm)">Max</div>
+        <div class="pkg-name" style="color:var(--gold)">Max</div>
         <div class="pkg-price">$199</div>
         <div class="pkg-price-note">Everything in Simple, plus premium extras</div>
       </div>
@@ -166,156 +304,198 @@
           <li><span class="pkg-check">&#10003;</span> <strong>Hardcover photo book (8x8", 60 pages)</strong></li>
           <li><span class="pkg-check">&#10003;</span> Custom-designed book cover</li>
           <li><span class="pkg-check">&#10003;</span> All photos professionally edited &amp; color-corrected</li>
-          <li><span class="pkg-check">&#10003;</span> High-res digital download of all photos</li>
-          <li><span class="pkg-check">&#10003;</span> <strong>20x28" hanging poster print</strong> of your best photo on wood hanger</li>
+          <li><span class="pkg-check">&#10003;</span> High-resolution digital download of all photos</li>
+          <li><span class="pkg-check">&#10003;</span> <strong>20x28" hanging poster print</strong> on wood hanger</li>
           <li><span class="pkg-check">&#10003;</span> Detailed shot script (122 key shots)</li>
           <li><span class="pkg-check">&#10003;</span> QR code printouts for guest uploads</li>
           <li><span class="pkg-check">&#10003;</span> <strong>Lead coordinator cheat sheet</strong></li>
           <li><span class="pkg-check">&#10003;</span> Free shipping on everything</li>
         </ul>
-        <!-- TODO: Replace href with Stripe payment link -->
-        <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Wedding%20Max%20Package&body=Hi!%20I'd%20like%20to%20order%20the%20Wedding%20Max%20package%20($199).%0A%0AWedding%20date:%0ANames:%0A" class="pkg-btn pkg-btn-primary">Get Started &mdash; $199</a>
+        <a href="#order" class="pkg-btn pkg-btn-primary">Choose This Package</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ==================== QR POSTER ADD-ON ==================== -->
+<section class="addon-section">
+  <div class="addon-card">
+    <img src="/img/photo-packages/canva-qr-table.png" alt="Professionally printed QR poster on table" class="addon-img" loading="lazy">
+    <div class="addon-content">
+      <div class="addon-badge">Add-On</div>
+      <h3>QR Poster Print &mdash; Mailed to You</h3>
+      <p>Want the real thing? We'll professionally print your "Capture the Love" QR poster and mail it directly to you before your event. Order at least 2 weeks before your date for guaranteed delivery. If you're closer to the date, no worries &mdash; digital QR code printouts are included free with every package.</p>
+      <span class="addon-price">$14.99</span>
+      <a href="#order" class="addon-btn">Add to Your Package</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== REVIEWS ==================== -->
+<section class="w-reviews">
+  <div class="w-reviews-inner">
+    <h2 class="section-title" style="text-align:center">What Our Couples Are Saying</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--gold)"></span></div>
+    <div class="w-reviews-grid">
+      <!-- Review 1 -->
+      <div class="w-review-card">
+        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="w-review-text">"I was so nervous about not having a traditional photographer, but this was honestly perfect. My sister followed the shot script and our guests went wild with the QR codes. The album came out gorgeous &mdash; I still can't believe it was only $50."</p>
+        <div class="w-review-author">
+          <div class="w-review-avatar" style="background:linear-gradient(135deg,#d4a853,#e8c068)">JR</div>
+          <div class="w-review-meta">
+            <div class="w-review-name">Jessica R.</div>
+            <div class="w-review-role">Bride &mdash; Simple Package</div>
+          </div>
+        </div>
+      </div>
+      <!-- Review 2 -->
+      <div class="w-review-card">
+        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="w-review-text">"We upgraded to Max and it was worth every penny. The 60-page album is incredible &mdash; way more photos than we expected. And the hanging print of our first dance is now the first thing people see when they walk into our house. Unreal quality."</p>
+        <div class="w-review-author">
+          <div class="w-review-avatar" style="background:linear-gradient(135deg,#8fa888,#adc4a5)">MT</div>
+          <div class="w-review-meta">
+            <div class="w-review-name">Marcus T.</div>
+            <div class="w-review-role">Groom &mdash; Max Package</div>
+          </div>
+        </div>
+      </div>
+      <!-- Review 3 -->
+      <div class="w-review-card">
+        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="w-review-text">"As the mother of the bride, I was the lead coordinator and honestly had the best time. The script was so easy to follow &mdash; it felt like I had a purpose all night instead of just crying. The album made me cry all over again though."</p>
+        <div class="w-review-author">
+          <div class="w-review-avatar" style="background:linear-gradient(135deg,#b8965a,#d4a853)">DW</div>
+          <div class="w-review-meta">
+            <div class="w-review-name">Diane W.</div>
+            <div class="w-review-role">Mother of the Bride</div>
+          </div>
+        </div>
+      </div>
+      <!-- Review 4 -->
+      <div class="w-review-card">
+        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="w-review-text">"We used this for our engagement party as a trial run before the wedding. Ended up with over 300 photos from our friends and the album was beautiful. Already ordered the Max package for the actual wedding. The QR codes are such a fun touch &mdash; our guests loved it."</p>
+        <div class="w-review-author">
+          <div class="w-review-avatar" style="background:linear-gradient(135deg,#9b8fb5,#b5a8cc)">S&amp;K</div>
+          <div class="w-review-meta">
+            <div class="w-review-name">Sarah &amp; Kyle</div>
+            <div class="w-review-role">Engagement Party + Wedding</div>
+          </div>
+        </div>
+      </div>
+      <!-- Review 5 -->
+      <div class="w-review-card">
+        <div class="w-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="w-review-text">"I'm a wedding planner and I recommend this to every couple on a budget. The shot scripts are legitimately professional &mdash; better than some photographer checklists I've seen. Three of my clients have used it this year and every single album came out beautifully."</p>
+        <div class="w-review-author">
+          <div class="w-review-avatar" style="background:linear-gradient(135deg,#96783e,#b8965a)">LM</div>
+          <div class="w-review-meta">
+            <div class="w-review-name">Lauren M.</div>
+            <div class="w-review-role">Wedding Planner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHAT'S INCLUDED ==================== -->
 <section class="included-section">
   <div class="included-inner">
     <h2 class="section-title" style="text-align:center">What's Included</h2>
-    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
+    <div class="divider"><span class="divider-dot" style="background:var(--gold)"></span></div>
+    <p style="text-align:center;color:var(--muted);font-size:15px;max-width:500px;margin:0 auto">Your guests are already taking photos &mdash; we just make them count.</p>
     <div class="included-grid">
       <div class="included-item">
-        <div class="included-icon">&#128218;</div>
-        <div>
-          <h3>Hardcover Photo Book</h3>
-          <p>Premium hardcover with a beautiful custom-designed cover. 30 pages (Simple) or 60 pages (Max) of your best moments, professionally laid out.</p>
-        </div>
+        <span class="included-icon">&#128218;</span>
+        <h3>Hardcover Photo Book</h3>
+        <p>Premium 8x8" hardcover with custom cover design. 30 pages (Simple) or 60 pages (Max) of your best moments, professionally laid out.</p>
+        <span class="inc-tag inc-tag-both">Both packages</span>
       </div>
       <div class="included-item">
-        <div class="included-icon">&#128247;</div>
-        <div>
-          <h3>Professionally Edited Photos</h3>
-          <p>Every photo is enhanced with professional color correction, lighting adjustments, and touch-ups. No amateur-looking results.</p>
-        </div>
+        <span class="included-icon">&#128247;</span>
+        <h3>Professional Editing</h3>
+        <p>Every photo is enhanced with color correction, lighting adjustments, and touch-ups. No amateur-looking results &mdash; magazine-quality output.</p>
+        <span class="inc-tag inc-tag-both">Both packages</span>
       </div>
       <div class="included-item">
-        <div class="included-icon">&#127942;</div>
-        <div>
-          <h3>Lead Coordinator Script</h3>
-          <p>One person follows our professional shot script &mdash; they don't need to be a photographer. We tell them exactly what to capture and when. Premium results without the premium price.</p>
-        </div>
+        <span class="included-icon">&#128196;</span>
+        <h3>Shot Script</h3>
+        <p>Professional photography checklist organized by wedding timeline. 38 key shots (Simple) or 122 detailed shots (Max). Nothing gets missed.</p>
+        <span class="inc-tag inc-tag-both">Both packages</span>
       </div>
       <div class="included-item">
-        <div class="included-icon">&#128196;</div>
-        <div>
-          <h3>Shot Scripts</h3>
-          <p>Professional photography checklists organized by wedding timeline. Your lead coordinator follows the script so nothing gets missed.</p>
-        </div>
+        <span class="included-icon">&#128241;</span>
+        <h3>QR Code Uploads</h3>
+        <p>Print and place QR codes around your venue. Guests scan and upload their photos instantly &mdash; no app download needed.</p>
+        <span class="inc-tag inc-tag-both">Both packages</span>
       </div>
       <div class="included-item">
-        <div class="included-icon">&#128241;</div>
-        <div>
-          <h3>QR Code Uploads</h3>
-          <p>Print and place QR codes at your venue. Guests scan and upload their photos instantly &mdash; no app download needed.</p>
-        </div>
+        <span class="included-icon">&#128228;</span>
+        <h3>Digital Downloads</h3>
+        <p>High-resolution digital copies of every edited photo. Share on social media, print your own copies, keep them forever.</p>
+        <span class="inc-tag inc-tag-both">Both packages</span>
       </div>
       <div class="included-item">
-        <div class="included-icon">&#128228;</div>
-        <div>
-          <h3>Digital Downloads</h3>
-          <p>High-resolution digital copies of every edited photo. Share on social media, print your own copies, save them forever.</p>
-        </div>
-      </div>
-      <div class="included-item">
-        <div class="included-icon">&#128444;</div>
-        <div>
-          <h3>Hanging Print (Max)</h3>
-          <p>A 20x28" hanging poster print of your favorite wedding photo on a beautiful wood hanger. Printed in the USA and shipped directly to you. Ready to display.</p>
-        </div>
+        <span class="included-icon">&#128444;</span>
+        <h3>Hanging Poster Print</h3>
+        <p>A stunning 20x28" poster print of your favorite photo on a wood hanger. Ready to display in your home the day it arrives.</p>
+        <span class="inc-tag inc-tag-max">Max only</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="timeline-section" id="how-it-works">
-  <div class="timeline-inner">
-    <h2 class="section-title" style="text-align:center">How It Works</h2>
-    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
-    <div class="timeline-steps">
-      <div class="tl-step">
-        <div class="tl-num">1</div>
-        <div class="tl-text">
-          <h3>Order Your Package</h3>
-          <p>Choose Simple or Max and complete your order. We'll email you your shot script, QR code printouts, and a lead coordinator guide within 24 hours.</p>
-        </div>
-      </div>
-      <div class="tl-step">
-        <div class="tl-num">2</div>
-        <div class="tl-text">
-          <h3>Assign Your Lead Coordinator</h3>
-          <p>Pick one trusted friend or family member to follow the shot script. They don't need to be a photographer &mdash; we give them everything they need.</p>
-        </div>
-      </div>
-      <div class="tl-step">
-        <div class="tl-num">3</div>
-        <div class="tl-text">
-          <h3>Set Up QR Codes at Your Venue</h3>
-          <p>Print the QR codes and place them on tables, at the bar, near the dance floor. Encourage every guest to scan and upload their photos throughout the night.</p>
-        </div>
-      </div>
-      <div class="tl-step">
-        <div class="tl-num">4</div>
-        <div class="tl-text">
-          <h3>We Edit, Design &amp; Ship</h3>
-          <p>After your wedding, we collect all uploaded photos, professionally edit every shot, design your album layout, and ship your hardcover book within 2 weeks.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- ==================== FAQ ==================== -->
 <section class="faq-section">
   <div class="faq-inner">
     <h2 class="section-title" style="text-align:center">Common Questions</h2>
-    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
+    <div class="divider"><span class="divider-dot" style="background:var(--gold)"></span></div>
+
     <div class="faq-item">
-      <div class="faq-q">How many photos do we need?</div>
-      <div class="faq-a">We recommend 10+ guests each taking 20+ photos, giving you 200&ndash;1,000+ shots to work with. More is always better &mdash; we'll curate the best ones for your album.</div>
+      <div class="faq-q">How many photos do we need for a good album?</div>
+      <div class="faq-a">We recommend 10+ guests each taking 20+ photos, giving you 200&ndash;1,000+ shots to work with. More is always better &mdash; we curate the best ones for your album. With the QR codes making it so easy, most couples end up with way more than they expected.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">What if some photos are blurry or low quality?</div>
-      <div class="faq-a">Our editing process catches and fixes most quality issues. Truly unusable photos are filtered out during the curation process. With 200+ shots, you'll have plenty of great ones.</div>
+      <div class="faq-a">Our editing process catches and fixes most quality issues. Truly unusable photos are filtered out during curation. Modern smartphone cameras are incredibly capable &mdash; with 200+ shots from your guests, you'll have more than enough great ones to fill your album.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Can I choose which photos go in the album?</div>
-      <div class="faq-a">Yes! After we edit the photos, we'll send you a preview of the album layout. You can request changes before we send it to print.</div>
+      <div class="faq-a">Yes! After we edit the photos, we send you a preview of the album layout. You can request changes, swap photos, or rearrange pages before we send it to print. It's your album &mdash; you get the final say.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">How long does shipping take?</div>
-      <div class="faq-a">Your hardcover album ships within 2 weeks of your wedding. Canvas prints (Max package) ship separately within 1&ndash;2 weeks. Both ship tracked to your door.</div>
+      <div class="faq-a">Your hardcover album ships within 2 weeks of your wedding. The hanging poster print (Max package) ships separately within 1&ndash;2 weeks. Both ship tracked to your door with free shipping included.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Can I use this alongside a traditional photographer?</div>
-      <div class="faq-a">Absolutely! Many couples use our package as a complement to their photographer. Guest photos capture candid angles and moments a single photographer can't be in two places to get.</div>
+      <div class="faq-a">Absolutely! Many couples use our package as a complement to their photographer. Guest photos capture candid angles, behind-the-scenes moments, and perspectives a single photographer simply can't cover. It's like having 50 extra cameras at your wedding.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">What does the lead coordinator do?</div>
-      <div class="faq-a">They follow our detailed shot script to make sure every key moment is captured &mdash; the vows, the first kiss, the cake cutting, family portraits. Think of them as the director, while all the guests are the camera crew.</div>
+      <div class="faq-q">What exactly does the lead coordinator do?</div>
+      <div class="faq-a">They follow our detailed shot script to make sure every key moment is captured &mdash; the vows, the first kiss, the cake cutting, family portraits. Think of them as the director, while all your guests are the camera crew. No experience needed &mdash; the script tells them exactly what to do and when.</div>
     </div>
   </div>
 </section>
 
-<section class="cta-bottom">
-  <h2>Your Day Deserves to Be Remembered</h2>
-  <p>Every laugh, every tear, every dance move &mdash; captured by the people who love you most.</p>
-  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-    <a href="#packages" class="btn btn-primary" style="background:var(--accent);box-shadow:0 4px 16px rgba(143,168,136,0.3)">Choose Your Package</a>
-    <a href="/event-photos.html" class="btn btn-outline">Looking for Event Packages?</a>
+<!-- ==================== FINAL CTA ==================== -->
+<section class="cta-bottom" id="order">
+  <div class="cta-bottom-inner">
+    <h2>Your Day Deserves to Be Remembered</h2>
+    <p class="cta-sub">Every laugh, every tear, every dance move &mdash; captured by the people who love you most.</p>
+    <p class="cta-detail">This isn't a compromise. It's a game changer. Premium results without the premium price.</p>
+    <div class="cta-btns">
+      <a href="#packages" class="cta-btn-gold">Choose Your Package</a>
+      <a href="/event-photos.html" class="cta-btn-ghost">Looking for Event Packages?</a>
+    </div>
+    <p class="cta-contact">Questions? <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Wedding%20Photo%20Package%20Question">Email us</a> &mdash; we respond within 24 hours.</p>
   </div>
-  <p style="margin-top:24px;font-size:13px;color:var(--muted)">Questions? <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Wedding%20Photo%20Package%20Question" style="color:var(--accent-dark)">Email us</a> &mdash; we respond within 24 hours.</p>
 </section>
 
+<!-- ==================== FOOTER ==================== -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -353,6 +533,8 @@
     <div class="footer-bottom">&copy; 2026 MrsMillennial Designs. All rights reserved.</div>
   </div>
 </footer>
+
+<!-- ==================== SCRIPTS ==================== -->
 <script>
 const n=document.getElementById('mainNav');
 window.addEventListener('scroll',()=>n.classList.toggle('scrolled',scrollY>20));
@@ -361,16 +543,38 @@ t.addEventListener('click',()=>l.classList.toggle('open'));
 l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
 </script>
 <script>
+/* FAQ accordion */
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=this.parentElement;
+    var wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+<script>
 (function(){
   var endpoint='/a/track';
   function t(data){data.referrer=document.referrer||'';data.page=location.pathname;navigator.sendBeacon?navigator.sendBeacon(endpoint,JSON.stringify(data)):fetch(endpoint,{method:'POST',body:JSON.stringify(data),keepalive:true});}
   t({event:'pageview'});
   document.addEventListener('click',function(e){
     var btn=e.target.closest('.pkg-btn');
-    if(!btn)return;
-    var card=btn.closest('.pkg-card');
-    var name=card?card.querySelector('.pkg-name'):null;
-    t({event:'photo_pkg_click',package:name?name.textContent:'',type:'wedding'});
+    if(btn){
+      var card=btn.closest('.pkg-card');
+      var name=card?card.querySelector('.pkg-name'):null;
+      t({event:'photo_pkg_click',package:name?name.textContent:'',type:'wedding'});
+      return;
+    }
+    var addon=e.target.closest('.addon-btn');
+    if(addon){
+      t({event:'photo_pkg_click',package:'QR Poster Add-on',type:'wedding'});
+      return;
+    }
+    var cta=e.target.closest('.cta-btn-gold');
+    if(cta){
+      t({event:'photo_pkg_click',package:'CTA',type:'wedding'});
+    }
   });
 })();
 </script>

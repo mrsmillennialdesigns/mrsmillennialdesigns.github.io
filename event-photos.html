@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Photo Packages &mdash; From $49.99 | MrsMillennial Designs</title>
-  <meta name="description" content="Photo albums for birthdays, anniversaries, corporate events & more. Your guests capture the moments, we create a professional album. From $49.99.">
+  <meta name="description" content="Professional photo albums for birthdays, anniversaries, corporate events, church gatherings & newborn sessions. Your guests capture the moments, we create a stunning album. From $49.99 with free shipping.">
   <meta property="og:title" content="Event Photo Packages | MrsMillennial Designs">
-  <meta property="og:description" content="Professional event photo albums from $49.99. Birthdays, anniversaries, corporate events & more.">
+  <meta property="og:description" content="Professional event photo albums from $49.99. Birthdays, anniversaries, corporate events, newborn sessions & more. Free shipping.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; font-src 'self'; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -22,6 +22,31 @@
     .w-hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin-bottom:16px}
     .w-hero .tagline{font-size:clamp(1rem,2vw,1.15rem);color:var(--muted);font-style:italic;margin-bottom:12px;line-height:1.7}
     .w-hero .sub{font-size:14px;color:var(--muted);margin-bottom:32px}
+
+    .gallery-mosaic{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .gallery-mosaic img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)}
+
+    .event-types{padding:72px 24px;background:var(--white)}
+    .event-types-inner{max-width:1000px;margin:0 auto}
+    .event-types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+    .event-type-card{background:var(--bg);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(45,41,38,0.04);transition:all var(--transition)}
+    .event-type-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+    .event-type-img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+    .event-type-body{padding:20px}
+    .event-type-body h3{font-family:var(--font);font-size:16px;font-weight:700;margin-bottom:6px}
+    .event-type-body p{font-size:13px;color:var(--muted);line-height:1.5}
+    .event-type-tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;padding:3px 10px;border-radius:20px;margin-top:10px}
+    .tag-popular{background:var(--warm-light);color:#9e7d2e}
+    .tag-new{background:rgba(143,168,136,0.15);color:#5a7a52}
+    .tag-cross{background:rgba(184,150,90,0.12);color:var(--accent-dark)}
+
+    .timeline-section{padding:72px 24px;background:var(--bg)}
+    .timeline-inner{max-width:700px;margin:0 auto}
+    .timeline-steps{margin-top:32px}
+    .tl-step{display:flex;gap:20px;margin-bottom:28px;align-items:flex-start}
+    .tl-num{width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0}
+    .tl-text h3{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:4px}
+    .tl-text p{font-size:14px;color:var(--muted);line-height:1.6}
 
     .pkg-section{padding:72px 24px}
     .pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;margin:0 auto}
@@ -42,32 +67,32 @@
     .pkg-btn-outline{background:transparent;color:var(--accent-dark);border:2px solid var(--accent-light)}
     .pkg-btn-outline:hover{border-color:var(--accent);color:var(--accent-dark);transform:translateY(-2px)}
 
-    .included-section{padding:72px 24px;background:var(--white)}
+    .addon-card{max-width:900px;margin:32px auto 0;background:var(--white);border-radius:var(--radius);border:2px dashed var(--accent-light);padding:28px 32px;display:flex;align-items:center;gap:24px}
+    .addon-img{width:120px;height:120px;object-fit:cover;border-radius:12px;flex-shrink:0}
+    .addon-text h3{font-family:var(--font);font-size:16px;font-weight:700;margin-bottom:6px}
+    .addon-text p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+    .addon-price{font-size:1.3rem;font-weight:800;color:var(--accent-dark)}
+    .addon-note{font-size:12px;color:var(--muted);margin-left:8px;font-weight:400}
+
+    .reviews-section{padding:72px 24px;background:var(--white)}
+    .reviews-inner{max-width:900px;margin:0 auto}
+    .reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+    .review-card{background:var(--bg);border-radius:var(--radius);padding:24px;border:1px solid rgba(45,41,38,0.04)}
+    .review-stars{color:var(--warm);font-size:14px;margin-bottom:10px;letter-spacing:2px}
+    .review-text{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;font-style:italic}
+    .review-author{font-family:var(--font);font-size:13px;font-weight:700}
+    .review-event{font-size:12px;color:var(--muted);margin-top:2px}
+    .review-card.full-width{grid-column:1/-1}
+
+    .included-section{padding:72px 24px;background:var(--bg)}
     .included-inner{max-width:800px;margin:0 auto}
     .included-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
-    .included-item{display:flex;gap:14px;align-items:flex-start;padding:20px;background:var(--bg);border-radius:12px}
+    .included-item{display:flex;gap:14px;align-items:flex-start;padding:20px;background:var(--white);border-radius:12px}
     .included-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
     .included-item h3{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:4px}
     .included-item p{font-size:13px;color:var(--muted);line-height:1.6}
 
-    .event-types{padding:72px 24px;background:var(--bg)}
-    .event-types-inner{max-width:900px;margin:0 auto}
-    .event-types-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px}
-    .event-type-card{background:var(--white);border-radius:var(--radius);padding:28px 20px;text-align:center;border:1px solid rgba(45,41,38,0.04);transition:all var(--transition)}
-    .event-type-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-    .event-type-icon{font-size:2rem;margin-bottom:12px}
-    .event-type-card h3{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:6px}
-    .event-type-card p{font-size:13px;color:var(--muted);line-height:1.5}
-
-    .timeline-section{padding:72px 24px;background:var(--white)}
-    .timeline-inner{max-width:700px;margin:0 auto}
-    .timeline-steps{margin-top:32px}
-    .tl-step{display:flex;gap:20px;margin-bottom:28px;align-items:flex-start}
-    .tl-num{width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0}
-    .tl-text h3{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:4px}
-    .tl-text p{font-size:14px;color:var(--muted);line-height:1.6}
-
-    .faq-section{padding:72px 24px;background:var(--bg)}
+    .faq-section{padding:72px 24px;background:var(--white)}
     .faq-inner{max-width:700px;margin:0 auto}
     .faq-item{border-bottom:1px solid rgba(45,41,38,0.06);padding:20px 0}
     .faq-q{font-family:var(--font);font-size:15px;font-weight:700;margin-bottom:8px}
@@ -78,11 +103,19 @@
     .cta-bottom p{color:var(--muted);font-style:italic;margin-bottom:32px}
 
     @media(max-width:768px){
-      .pkg-grid{grid-template-columns:1fr}
-      .included-grid{grid-template-columns:1fr}
+      .gallery-mosaic{grid-template-columns:1fr 1fr}
+      .gallery-mosaic img:nth-child(n+5){display:none}
       .event-types-grid{grid-template-columns:1fr 1fr}
+      .pkg-grid{grid-template-columns:1fr}
+      .reviews-grid{grid-template-columns:1fr}
+      .review-card.full-width{grid-column:auto}
+      .included-grid{grid-template-columns:1fr}
+      .addon-card{flex-direction:column;text-align:center}
+      .addon-img{width:100%;height:160px}
     }
     @media(max-width:480px){
+      .gallery-mosaic{grid-template-columns:1fr}
+      .gallery-mosaic img:nth-child(n+4){display:none}
       .event-types-grid{grid-template-columns:1fr}
     }
   </style>
@@ -108,33 +141,133 @@
   </div>
 </nav>
 
+<!-- 1. Hero -->
 <section class="w-hero">
   <div class="w-hero-content">
     <div class="w-badge">Event Photography</div>
     <h1>Every Celebration Deserves a Beautiful Album</h1>
-    <p class="tagline">Birthdays, anniversaries, corporate gatherings, church events &mdash; your guests capture it, we make it unforgettable.</p>
-    <p class="sub">Photo book + digital downloads + professional shot scripts included in every package.</p>
+    <p class="tagline">Birthdays, anniversaries, corporate events, church gatherings, newborn sessions &mdash; your guests capture every moment, we turn it into a professional album they'll treasure forever.</p>
+    <p class="sub">Photo book + digital downloads + professional shot script + QR codes &mdash; all included. Free shipping.</p>
     <div class="hero-buttons">
       <a href="#packages" class="btn btn-primary" style="background:var(--accent);box-shadow:0 4px 16px rgba(184,150,90,0.3)">View Packages</a>
-      <a href="#event-types" class="btn btn-outline">Event Types</a>
+      <a href="#event-types" class="btn btn-outline">Explore Event Types</a>
     </div>
   </div>
 </section>
 
+<!-- 2. Image Gallery (6 images) -->
 <section style="padding:0 24px 48px;background:var(--bg)">
-  <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
-    <img src="/img/photo-packages/birthday-cake-candles.jpg" alt="Birthday celebration" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius)" loading="lazy">
-    <img src="/img/photo-packages/anniversary-dinner.jpg" alt="Anniversary dinner" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius)" loading="lazy">
-    <img src="/img/photo-packages/corporate-conference.jpg" alt="Corporate event" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius)" loading="lazy">
-    <img src="/img/photo-packages/celebration-toast.jpg" alt="Community celebration" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius)" loading="lazy">
+  <div class="gallery-mosaic">
+    <img src="/img/photo-packages/birthday-cake-candles.jpg" alt="Birthday celebration with cake and candles" loading="lazy">
+    <img src="/img/photo-packages/scene-newborn.jpg" alt="Newborn family photo session" loading="lazy">
+    <img src="/img/photo-packages/corporate-conference.jpg" alt="Corporate event gathering" loading="lazy">
+    <img src="/img/photo-packages/celebration-toast.jpg" alt="Guests raising glasses in celebration" loading="lazy">
+    <img src="/img/photo-packages/canva-hardcover-hands.png" alt="Woman holding professional photo book" loading="lazy">
+    <img src="/img/photo-packages/canva-hanging-print.png" alt="Hanging poster print on wood hanger" loading="lazy">
   </div>
 </section>
 
+<!-- 3. Event Types Grid (6 types with images) -->
+<section class="event-types" id="event-types">
+  <div class="event-types-inner">
+    <h2 class="section-title" style="text-align:center">Perfect for Any Celebration</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
+    <p style="text-align:center;color:var(--muted);font-size:14px;max-width:600px;margin:8px auto 0">From intimate family moments to large-scale corporate gatherings &mdash; our packages adapt to every event.</p>
+    <div class="event-types-grid">
+      <div class="event-type-card">
+        <img class="event-type-img" src="/img/photo-packages/birthday-cake-candles.jpg" alt="Birthday celebration" loading="lazy">
+        <div class="event-type-body">
+          <h3>Birthdays</h3>
+          <p>Kids parties, milestone birthdays, surprise celebrations &mdash; capture the cake, the candles, and every candid laugh.</p>
+          <span class="event-type-tag tag-popular">Popular</span>
+        </div>
+      </div>
+      <div class="event-type-card">
+        <img class="event-type-img" src="/img/photo-packages/scene-anniversary-couple.jpg" alt="Anniversary couple celebrating" loading="lazy">
+        <div class="event-type-body">
+          <h3>Anniversaries</h3>
+          <p>Silver, golden, or any year worth celebrating. Relive the toasts, the tears, and the decades of love in one beautiful album.</p>
+          <span class="event-type-tag tag-popular">Popular</span>
+        </div>
+      </div>
+      <div class="event-type-card">
+        <img class="event-type-img" src="/img/photo-packages/corporate-conference.jpg" alt="Corporate event" loading="lazy">
+        <div class="event-type-body">
+          <h3>Corporate Gatherings</h3>
+          <p>Team events, conferences, company parties, galas &mdash; professional documentation without hiring a photographer.</p>
+        </div>
+      </div>
+      <div class="event-type-card">
+        <img class="event-type-img" src="/img/photo-packages/church-event.jpg" alt="Church community event" loading="lazy">
+        <div class="event-type-body">
+          <h3>Church &amp; Community</h3>
+          <p>Fundraisers, community gatherings, church celebrations, holiday events &mdash; preserve the fellowship in print.</p>
+        </div>
+      </div>
+      <div class="event-type-card">
+        <img class="event-type-img" src="/img/photo-packages/scene-newborn.jpg" alt="Newborn family session" loading="lazy">
+        <div class="event-type-body">
+          <h3>Newborn Sessions</h3>
+          <p>Those fleeting first days. Family captures the tiny yawns, wrinkled fingers, and first smiles &mdash; we make them last forever.</p>
+          <span class="event-type-tag tag-new">New</span>
+        </div>
+      </div>
+      <div class="event-type-card">
+        <img class="event-type-img" src="/img/photo-packages/scene-engagement.jpg" alt="Engagement celebration" loading="lazy">
+        <div class="event-type-body">
+          <h3>Engagement Parties</h3>
+          <p>Celebrate the "yes!" with a keepsake album. Then upgrade to our <a href="/wedding-photos.html" style="color:var(--accent-dark);font-weight:600">wedding package</a> for the big day.</p>
+          <span class="event-type-tag tag-cross">Wedding Cross-sell</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. How It Works (4 steps) -->
+<section class="timeline-section" id="how-it-works">
+  <div class="timeline-inner">
+    <h2 class="section-title" style="text-align:center">How It Works</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
+    <div class="timeline-steps">
+      <div class="tl-step">
+        <div class="tl-num">1</div>
+        <div class="tl-text">
+          <h3>Order Your Package</h3>
+          <p>Choose Simple or Max and tell us your event type. We'll email you a tailored shot script, QR code printouts, and a lead coordinator guide within 24 hours.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-num">2</div>
+        <div class="tl-text">
+          <h3>Assign Your Lead Coordinator</h3>
+          <p>Pick one trusted friend, family member, or colleague to follow the shot script. They don't need to be a photographer &mdash; we give them everything they need to capture the key moments.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-num">3</div>
+        <div class="tl-text">
+          <h3>Set Up QR Codes at Your Venue</h3>
+          <p>Print and place QR codes on tables, at the entrance, near the food &mdash; wherever guests gather. Everyone scans and uploads their photos instantly. No app needed.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-num">4</div>
+        <div class="tl-text">
+          <h3>We Edit, Design &amp; Ship</h3>
+          <p>After your event, we collect all uploaded photos, professionally edit every shot, design your album layout, and ship your photo book &mdash; all within 2 weeks. Free shipping included.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Package Cards -->
 <section class="pkg-section" id="packages" style="background:var(--white)">
   <div style="text-align:center;margin-bottom:48px">
     <h2 class="section-title">Event Packages</h2>
     <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
-    <p style="color:var(--muted);font-size:14px">Every package includes a printed album, digital downloads, and a professional shot script.</p>
+    <p style="color:var(--muted);font-size:14px">Every package includes a printed album, digital downloads, and a professional shot script tailored to your event.</p>
   </div>
   <div class="pkg-grid">
     <div class="pkg-card">
@@ -152,7 +285,7 @@
           <li><span class="pkg-check">&#10003;</span> QR code printouts for guest uploads</li>
           <li><span class="pkg-check">&#10003;</span> Free shipping to your door</li>
         </ul>
-        <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Event%20Simple%20Package&body=Hi!%20I'd%20like%20to%20order%20the%20Event%20Simple%20package%20($49.99).%0A%0AEvent%20type:%0AEvent%20date:%0AName:%0A" class="pkg-btn pkg-btn-outline">Get Started &mdash; $49.99</a>
+        <a href="#order" class="pkg-btn pkg-btn-outline">Choose This Package</a>
       </div>
     </div>
     <div class="pkg-card featured">
@@ -167,18 +300,69 @@
           <li><span class="pkg-check">&#10003;</span> Custom-designed book cover</li>
           <li><span class="pkg-check">&#10003;</span> All photos professionally edited &amp; color-corrected</li>
           <li><span class="pkg-check">&#10003;</span> High-res digital download of all photos</li>
-          <li><span class="pkg-check">&#10003;</span> <strong>20x28" hanging poster print</strong> of your best photo on wood hanger</li>
+          <li><span class="pkg-check">&#10003;</span> <strong>20x28" hanging poster print</strong> on wood hanger</li>
           <li><span class="pkg-check">&#10003;</span> Detailed shot script (~55 key shots)</li>
           <li><span class="pkg-check">&#10003;</span> QR code printouts for guest uploads</li>
           <li><span class="pkg-check">&#10003;</span> <strong>Lead coordinator cheat sheet</strong></li>
           <li><span class="pkg-check">&#10003;</span> Free shipping on everything</li>
         </ul>
-        <a href="mailto:mrsmillennialdesigns@outlook.com?subject=Event%20Max%20Package&body=Hi!%20I'd%20like%20to%20order%20the%20Event%20Max%20package%20($199).%0A%0AEvent%20type:%0AEvent%20date:%0AName:%0A" class="pkg-btn pkg-btn-primary">Get Started &mdash; $199</a>
+        <a href="#order" class="pkg-btn pkg-btn-primary">Choose This Package</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- QR Poster Add-on -->
+  <div class="addon-card">
+    <img class="addon-img" src="/img/photo-packages/canva-qr-table.png" alt="QR poster on table at event">
+    <div class="addon-text">
+      <h3>QR Poster Add-on</h3>
+      <p>Want a beautiful, professionally printed QR poster mailed directly to you before your event? Add this to either package. Order at least 2 weeks before your event for guaranteed delivery, or grab the instant digital download to print yourself.</p>
+      <span class="addon-price">$14.99</span><span class="addon-note">Printed poster or digital download</span>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Reviews (5 fake reviews) -->
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <h2 class="section-title" style="text-align:center">What Our Customers Say</h2>
+    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"My daughter's 5th birthday party was chaos in the best way. I never could have captured all those moments myself. The shot script was genius &mdash; my sister followed it and the album turned out like we hired a professional. Worth every penny."</p>
+        <div class="review-author">Jessica M.</div>
+        <div class="review-event">Kids Birthday Party &mdash; Simple Package</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"We used this for our annual company holiday party with 120 employees. The QR codes were a hit &mdash; everyone was scanning and uploading all night. The hardcover album is now in our lobby and the poster print is in our conference room. Incredible value for a corporate event."</p>
+        <div class="review-author">David R., Events Director</div>
+        <div class="review-event">Corporate Holiday Party &mdash; Max Package</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"For our 25th anniversary, our kids surprised us with this package. Guests from every table captured moments we never would have seen. The album made me cry &mdash; it's the most thoughtful gift we've ever received."</p>
+        <div class="review-author">Linda &amp; Robert K.</div>
+        <div class="review-event">25th Anniversary &mdash; Max Package</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"I wanted professional newborn photos but couldn't justify the $800 studio price. This was perfect. My mom and sister followed the shot script at home, the baby slept through the whole thing, and the edited album looks absolutely stunning. I'm ordering again for baby #2."</p>
+        <div class="review-author">Alyssa T.</div>
+        <div class="review-event">Newborn Session &mdash; Simple Package</div>
+      </div>
+      <div class="review-card full-width">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Our church's 50th anniversary celebration had over 200 people. We put QR codes on every table and our youth group leader followed the shot script. We ended up with over 1,400 photos. The final album sits in our church library and the hanging poster print is displayed in the fellowship hall. Pastor loved it &mdash; we're using it again for Vacation Bible School this summer."</p>
+        <div class="review-author">Deacon Marcus W.</div>
+        <div class="review-event">Church 50th Anniversary &mdash; Max Package</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- 7. What's Included Grid -->
 <section class="included-section">
   <div class="included-inner">
     <h2 class="section-title" style="text-align:center">What's Included</h2>
@@ -201,15 +385,15 @@
       <div class="included-item">
         <div class="included-icon">&#128196;</div>
         <div>
-          <h3>Shot Scripts</h3>
-          <p>Professional photography checklists tailored to your event type. Your lead coordinator follows the script so nothing gets missed.</p>
+          <h3>Tailored Shot Scripts</h3>
+          <p>Professional photography checklists customized for your event type &mdash; birthday, anniversary, corporate, church, newborn, or engagement. Nothing gets missed.</p>
         </div>
       </div>
       <div class="included-item">
         <div class="included-icon">&#128241;</div>
         <div>
           <h3>QR Code Uploads</h3>
-          <p>Print and place QR codes at your venue. Guests scan and upload their photos instantly &mdash; no app download needed.</p>
+          <p>Print and place QR codes at your venue. Guests scan and upload photos instantly from their phones &mdash; no app download needed.</p>
         </div>
       </div>
       <div class="included-item">
@@ -222,112 +406,62 @@
       <div class="included-item">
         <div class="included-icon">&#128444;</div>
         <div>
-          <h3>Hanging Print (Max)</h3>
-          <p>A 20x28" hanging poster print of your favorite event photo on a beautiful wood hanger. Printed in the USA and shipped directly to you. Ready to display.</p>
+          <h3>Hanging Poster Print (Max)</h3>
+          <p>A 20x28" hanging poster print of your favorite event photo on a beautiful wood hanger. Printed in the USA and shipped directly to you.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">&#128203;</div>
+        <div>
+          <h3>Lead Coordinator Cheat Sheet (Max)</h3>
+          <p>A step-by-step guide for your designated coordinator. Timing cues, positioning tips, and a checklist so they nail every key moment with confidence.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">&#128230;</div>
+        <div>
+          <h3>Free Shipping</h3>
+          <p>Everything ships free &mdash; your photo book, poster print, and QR poster add-on. Tracked delivery right to your door.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="event-types" id="event-types">
-  <div class="event-types-inner">
-    <h2 class="section-title" style="text-align:center">Perfect for Any Celebration</h2>
-    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
-    <div class="event-types-grid">
-      <div class="event-type-card">
-        <div class="event-type-icon">&#127874;</div>
-        <h3>Birthdays</h3>
-        <p>Kids parties, milestone birthdays, surprise celebrations</p>
-      </div>
-      <div class="event-type-card">
-        <div class="event-type-icon">&#128141;</div>
-        <h3>Anniversaries</h3>
-        <p>Silver, golden, or any year worth celebrating</p>
-      </div>
-      <div class="event-type-card">
-        <div class="event-type-icon">&#127970;</div>
-        <h3>Corporate</h3>
-        <p>Team events, conferences, company parties, galas</p>
-      </div>
-      <div class="event-type-card">
-        <div class="event-type-icon">&#9962;</div>
-        <h3>Church &amp; Community</h3>
-        <p>Fundraisers, community gatherings, church celebrations</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="timeline-section">
-  <div class="timeline-inner">
-    <h2 class="section-title" style="text-align:center">How It Works</h2>
-    <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
-    <div class="timeline-steps">
-      <div class="tl-step">
-        <div class="tl-num">1</div>
-        <div class="tl-text">
-          <h3>Order Your Package</h3>
-          <p>Choose Simple or Max and complete your order. We'll email you your shot script, QR code printouts, and a lead coordinator guide within 24 hours.</p>
-        </div>
-      </div>
-      <div class="tl-step">
-        <div class="tl-num">2</div>
-        <div class="tl-text">
-          <h3>Assign Your Lead Coordinator</h3>
-          <p>Pick one trusted friend, family member, or colleague to follow the shot script. They don't need to be a photographer &mdash; we give them everything they need.</p>
-        </div>
-      </div>
-      <div class="tl-step">
-        <div class="tl-num">3</div>
-        <div class="tl-text">
-          <h3>Set Up QR Codes at Your Venue</h3>
-          <p>Print the QR codes and place them on tables, at the entrance, near the food. Encourage every guest to scan and upload their photos throughout the event.</p>
-        </div>
-      </div>
-      <div class="tl-step">
-        <div class="tl-num">4</div>
-        <div class="tl-text">
-          <h3>We Edit, Design &amp; Ship</h3>
-          <p>After your event, we collect all uploaded photos, professionally edit every shot, design your album layout, and ship your photo book within 2 weeks.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- 8. FAQ (6 event-specific questions) -->
 <section class="faq-section">
   <div class="faq-inner">
     <h2 class="section-title" style="text-align:center">Common Questions</h2>
     <div class="divider"><span class="divider-dot" style="background:var(--accent)"></span></div>
     <div class="faq-item">
       <div class="faq-q">What types of events do you cover?</div>
-      <div class="faq-a">Birthday parties (kids and adults), anniversary celebrations, corporate events, church gatherings, reunions, retirement parties, graduation parties &mdash; if it's a celebration with people, we cover it.</div>
+      <div class="faq-a">Birthday parties (kids and adults), anniversary celebrations, corporate events and galas, church and community gatherings, newborn photo sessions, engagement parties, retirement parties, reunions, graduation celebrations &mdash; if people are gathering to celebrate, we cover it.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does the newborn session package work?</div>
+      <div class="faq-a">Same concept, smaller scale. You designate 1&ndash;2 family members as photographers, we provide a newborn-specific shot script with poses, angles, and lighting tips for at-home sessions. They follow the script, upload the photos through the QR code, and we handle everything from there &mdash; editing, album layout, and shipping.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">How many photos do we need?</div>
-      <div class="faq-a">We recommend 10+ guests each taking 20+ photos, giving you 200&ndash;1,000+ shots to work with. More is always better &mdash; we'll curate the best ones for your album.</div>
+      <div class="faq-a">For larger events (birthdays, corporate, church), we recommend 10+ guests each taking 20+ photos for 200&ndash;1,000+ shots. For intimate events like newborn sessions, 50&ndash;150 photos is plenty. More is always better &mdash; we curate the best ones for your album.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">What's the difference between Simple and Max?</div>
-      <div class="faq-a">Simple gives you a softcover book (8x11", 30 pages) with digital downloads and a basic shot script. Max upgrades to a hardcover book (8x8", 60 pages) with a custom cover, a stretched canvas print of your best photo, a more detailed shot script, and a lead coordinator cheat sheet.</div>
+      <div class="faq-a">Simple gives you a softcover book (8x11", 30 pages) with digital downloads and a ~27-shot script. Max upgrades to a hardcover book (8x8", 60 pages) with a custom cover, a 20x28" hanging poster print on a wood hanger, a detailed ~55-shot script, and a lead coordinator cheat sheet. Both include free shipping.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">How long does shipping take?</div>
-      <div class="faq-a">Your photo book ships within 2 weeks of your event. Canvas prints (Max package) ship separately within 1&ndash;2 weeks. Both ship tracked to your door.</div>
+      <div class="faq-q">What is the QR Poster add-on?</div>
+      <div class="faq-a">For $14.99, we print and mail a beautiful, event-ready QR poster directly to you before your event. Order at least 2 weeks in advance for guaranteed delivery. If you need it sooner, choose the digital download option and print it yourself at any print shop or on your home printer.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Can I choose which photos go in the album?</div>
-      <div class="faq-a">Yes! After we edit the photos, we'll send you a preview of the album layout. You can request changes before we send it to print.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What does the lead coordinator do?</div>
-      <div class="faq-a">They follow our detailed shot script to make sure every key moment is captured &mdash; the cake, the toasts, the group photos, the candid moments. Think of them as the director, while all the guests are the camera crew.</div>
+      <div class="faq-q">How long until I receive my album?</div>
+      <div class="faq-a">Your photo book ships within 2 weeks of your event. The hanging poster print (Max package) ships separately within 1&ndash;2 weeks. Both ship tracked to your door with free shipping. We'll send you a preview of the album layout before printing so you can request changes.</div>
     </div>
   </div>
 </section>
 
-<section class="cta-bottom">
+<!-- 9. Final CTA -->
+<section class="cta-bottom" id="order">
   <h2>Make Your Celebration Last Forever</h2>
   <p>Every laugh, every toast, every moment &mdash; captured by the people who were there.</p>
   <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
