@@ -5,151 +5,105 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{width:1200px;height:675px;overflow:hidden;background:#2d2926;font-family:'Lato',sans-serif}
-.scene{position:absolute;inset:0;opacity:0}
-
-/* Scene 1: Hook */
-.s1{background:url('/img/photo-packages/mockups/birthday-album-hands.png') center/cover}
-.s1-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(35,30,28,0.85),rgba(35,30,28,0.45))}
-.s1-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:60px}
-.s1 h1{font-family:'Playfair Display',serif;font-size:52px;color:#fff;font-weight:400;line-height:1.15;margin-bottom:18px}
-.s1 h1 em{font-style:italic;color:#d4a853}
-.s1 p{font-size:20px;color:rgba(255,255,255,0.8);font-weight:300;letter-spacing:0.5px}
-
-/* Scene 2: How It Works 1-2 */
-.s2{background:#faf8f5;display:flex;align-items:center;padding:40px 60px;gap:40px}
-.s2-img{flex:0 0 400px;height:520px;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
-.s2-img img{width:100%;height:100%;object-fit:cover}
-.s2-text{flex:1;display:flex;flex-direction:column;justify-content:center}
-.s2-text .step-label{font-family:'Playfair Display',serif;font-size:14px;color:#d4a853;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
-.s2-text .step{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px}
-.s2-text .step-num{width:36px;height:36px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0;margin-top:2px}
-.s2-text .step-content{font-size:18px;color:#4a4340;line-height:1.5}
-
-/* Scene 3: How It Works 3-4 */
-.s3{background:#faf8f5;display:flex;align-items:center;padding:40px 60px;gap:40px}
-.s3-text{flex:1;display:flex;flex-direction:column;justify-content:center}
-.s3-text .step-label{font-family:'Playfair Display',serif;font-size:14px;color:#d4a853;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
-.s3-text .step{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px}
-.s3-text .step-num{width:36px;height:36px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0;margin-top:2px}
-.s3-text .step-content{font-size:18px;color:#4a4340;line-height:1.5}
-.s3-img{flex:0 0 400px;height:520px;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
-.s3-img img{width:100%;height:100%;object-fit:cover}
-
-/* Scene 4: What You Get */
-.s4{background:#2d2926;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:50px 80px}
-.s4 h2{font-family:'Playfair Display',serif;font-size:42px;color:#fff;margin-bottom:40px}
-.s4 p{font-size:20px;color:rgba(255,255,255,0.8);font-weight:300;line-height:2.2;letter-spacing:0.3px}
-.s4 p .sep{color:#d4a853;margin:0 8px}
-
-/* Scene 5: For Every Event */
-.s5{background:#faf8f5;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 60px;gap:20px}
-.s5-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%}
-.s5-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,0.08)}
-.s5-caption{font-family:'Playfair Display',serif;font-size:28px;color:#2d2926;margin-top:8px}
-
-/* Scene 6: The Experience */
-.s6{background:url('/img/photo-packages/mockups/birthday-softcover-girl.png') center/cover;position:relative}
-.s6-overlay{position:absolute;inset:0;background:rgba(35,30,28,0.82)}
-.s6-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:60px 100px}
-.s6 h2{font-family:'Playfair Display',serif;font-size:40px;color:#fff;margin-bottom:20px;line-height:1.2}
-.s6 h2 em{color:#d4a853;font-style:italic}
-.s6 p{font-size:19px;color:rgba(255,255,255,0.7);font-weight:300;line-height:1.6;max-width:750px}
-
-/* Scene 7: CTA */
-.s7{background:url('/img/photo-packages/mockups/newborn-hardcover-noah.png') center/cover;position:relative}
-.s7-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,30,28,0.72),rgba(35,30,28,0.9))}
-.s7-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:40px 60px}
-.s7 .brand{font-family:'Playfair Display',serif;font-size:22px;color:rgba(255,255,255,0.35);margin-bottom:16px;letter-spacing:1px}
-.s7 .brand em{color:#d4a853;font-style:normal}
-.s7 h2{font-family:'Playfair Display',serif;font-size:38px;color:#fff;margin-bottom:10px;line-height:1.2}
-.s7 p{font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:24px;font-weight:300;line-height:1.5}
-.s7 .cta-btn{display:inline-block;padding:14px 40px;border-radius:50px;background:#d4a853;color:#fff;font-size:18px;font-weight:700;letter-spacing:0.5px}
-.s7 .url{font-size:13px;color:rgba(255,255,255,0.35);margin-top:16px;letter-spacing:1px}
+body{width:1200px;height:675px;overflow:hidden;font-family:'Lato',sans-serif;background:#0a0806}
+.scene{position:absolute;inset:0;opacity:0;display:flex;flex-direction:row}
+.scene img.hero{height:100%;width:60%;object-fit:cover;flex-shrink:0}
+.scene .bar{flex:1;padding:32px 40px;background:#0a0806;display:flex;flex-direction:column;justify-content:center}
+.g{color:#d4a853}
+.pf{font-family:'Playfair Display',serif}
 </style>
 </head>
 <body>
 
-<!-- Scene 1: Hook -->
-<div class="scene s1" data-duration="4000" style="opacity:1">
-  <div class="s1-overlay"></div>
-  <div class="s1-content">
-    <h1>Every <em>Celebration</em> Deserves an Album</h1>
-    <p>Birthdays &bull; Milestones &bull; Moments that matter</p>
+<!-- S1: HOOK — hands holding birthday album -->
+<div class="scene" data-duration="5000" style="opacity:1">
+  <img class="hero" src="/img/photo-packages/mockups/birthday-album-hands.png">
+  <div class="bar" style="text-align:left;justify-content:flex-end;padding-bottom:48px">
+    <div class="g" style="font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px">MrsMillennial Designs</div>
+    <h1 class="pf" style="font-size:36px;color:#fff;line-height:1.1;margin-bottom:14px">It's 2026. Everyone's Taking <em class="g">Photos.</em></h1>
+    <p style="font-size:16px;color:rgba(255,255,255,0.55);font-weight:300;line-height:1.5">We turn them into a celebration album.</p>
   </div>
 </div>
 
-<!-- Scene 2: How It Works 1-2 -->
-<div class="scene s2" data-duration="5000" style="opacity:0">
-  <div class="s2-img">
-    <img src="/img/photo-packages/mockups/birthday-hardcover-one.png" alt="Hardcover birthday album">
-  </div>
-  <div class="s2-text">
-    <div class="step-label">How It Works</div>
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-content">Pick your package — Simple ($49.99) or Max ($199)</div>
+<!-- S2: STEP 1 — hardcover "ONE" cover -->
+<div class="scene" data-duration="4000" style="opacity:0">
+  <img class="hero" src="/img/photo-packages/mockups/birthday-hardcover-one.png">
+  <div class="bar">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+      <div style="width:38px;height:38px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0">1</div>
+      <div class="pf" style="font-size:26px;color:#fff">Choose Simple or Max</div>
     </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-content">We send a shot script + QR codes for your event</div>
+    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.5;padding-left:50px">Pick your event type. We send a custom shot guide + QR codes for your celebration.</p>
+  </div>
+</div>
+
+<!-- S3: STEP 2 — QR at venue -->
+<div class="scene" data-duration="4000" style="opacity:0">
+  <img class="hero" src="/img/photo-packages/mockups/wedding-qr-stand.png">
+  <div class="bar">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+      <div style="width:38px;height:38px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0">2</div>
+      <div class="pf" style="font-size:26px;color:#fff">Set up QR codes at your event</div>
+    </div>
+    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.5;padding-left:50px">Tables, entrance, photo areas — guests scan with their phone and start uploading.</p>
+  </div>
+</div>
+
+<!-- S4: STEP 3 — guests scan QR codes -->
+<div class="scene" data-duration="4000" style="opacity:0">
+  <img class="hero" src="/img/photo-packages/mockups/wedding-qr-table.png">
+  <div class="bar">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+      <div style="width:38px;height:38px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0">3</div>
+      <div class="pf" style="font-size:26px;color:#fff">Everyone captures the moments</div>
+    </div>
+    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.5;padding-left:50px">First bites. Big smiles. Group hugs. Your guests see angles no single camera ever could.</p>
+  </div>
+</div>
+
+<!-- S5: STEP 4 — open album spread (child) -->
+<div class="scene" data-duration="4000" style="opacity:0">
+  <img class="hero" src="/img/photo-packages/mockups/birthday-album-child-open.png">
+  <div class="bar">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+      <div style="width:38px;height:38px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0">4</div>
+      <div class="pf" style="font-size:26px;color:#fff">We create your album</div>
+    </div>
+    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.5;padding-left:50px">Professionally edited. Beautifully designed. Shipped free to your door in 2 weeks.</p>
+  </div>
+</div>
+
+<!-- S6: MAX — personalized cover -->
+<div class="scene" data-duration="5000" style="opacity:0">
+  <img class="hero" src="/img/photo-packages/mockups/newborn-hardcover-noah.png">
+  <div class="bar" style="padding:28px 36px">
+    <div style="margin-bottom:16px">
+      <div style="display:inline-block;background:rgba(212,168,83,0.15);border:1px solid rgba(212,168,83,0.3);padding:4px 14px;border-radius:50px;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px" class="g">Best Value</div>
+      <h2 class="pf" style="font-size:30px;color:#fff">The Max Package</h2>
+      <div class="pf g" style="font-size:32px">$199</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:14px;color:rgba(255,255,255,0.7)">
+      <div>&#10003; 60-page hardcover album</div>
+      <div>&#10003; Custom cover with your event</div>
+      <div>&#10003; 55+ shot guide</div>
+      <div>&#10003; All photos edited</div>
+      <div>&#10003; Digital downloads</div>
+      <div>&#10003; Free shipping</div>
     </div>
   </div>
 </div>
 
-<!-- Scene 3: How It Works 3-4 -->
-<div class="scene s3" data-duration="5000" style="opacity:0">
-  <div class="s3-text">
-    <div class="step-label">How It Works</div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-content">Everyone takes photos and uploads via QR code</div>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-content">We edit, design, and ship your album in 2 weeks</div>
-    </div>
-  </div>
-  <div class="s3-img">
-    <img src="/img/photo-packages/mockups/birthday-album-baby-open.png" alt="Open baby birthday album">
-  </div>
-</div>
-
-<!-- Scene 4: What You Get -->
-<div class="scene s4" data-duration="4000" style="opacity:0">
-  <h2>What's Included</h2>
-  <p>Printed photo album <span class="sep">&bull;</span> Professional editing <span class="sep">&bull;</span> Digital downloads <span class="sep">&bull;</span> Free shipping</p>
-</div>
-
-<!-- Scene 5: For Every Event -->
-<div class="scene s5" data-duration="4000" style="opacity:0">
-  <div class="s5-grid">
-    <img src="/img/photo-packages/mockups/birthday-album-hands.png" alt="Birthday album">
-    <img src="/img/photo-packages/mockups/newborn-hardcover-noah.png" alt="Newborn album">
-    <img src="/img/photo-packages/mockups/corporate-album-together.png" alt="Corporate album">
-    <img src="/img/photo-packages/mockups/birthday-album-child-open.png" alt="Child's birthday album">
-  </div>
-  <div class="s5-caption">From first birthdays to corporate retreats</div>
-</div>
-
-<!-- Scene 6: The Experience -->
-<div class="scene s6" data-duration="4000" style="opacity:0">
-  <div class="s6-overlay"></div>
-  <div class="s6-content">
-    <h2>Everyone participates.<br><em>Everyone's part of the story.</em></h2>
-    <p>A collaborative keepsake your family will treasure forever.</p>
-  </div>
-</div>
-
-<!-- Scene 7: CTA -->
-<div class="scene s7" data-duration="5000" style="opacity:0">
-  <div class="s7-overlay"></div>
-  <div class="s7-content">
-    <div class="brand">Mrs<em>Millennial</em> Designs</div>
-    <h2>Your Celebration,<br>Beautifully Remembered</h2>
-    <p>Photo albums for birthdays, newborns, corporate events &amp; more</p>
-    <div class="cta-btn">Starting at $49.99</div>
-    <div class="url">mrsmillennialdesigns.com/event-photos</div>
+<!-- S7: CTA — holding birthday album -->
+<div class="scene" data-duration="5000" style="opacity:0">
+  <img class="hero" src="/img/photo-packages/mockups/birthday-album-hands.png" style="opacity:0.85">
+  <div class="bar" style="text-align:center;justify-content:center">
+    <div style="font-size:40px;color:#d4a853;margin-bottom:6px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <div class="pf" style="font-size:18px;color:rgba(255,255,255,0.45);margin-bottom:14px">From a 778-Review Etsy Shop</div>
+    <h2 class="pf" style="font-size:28px;color:#fff;line-height:1.1;margin-bottom:12px">Every Celebration,<br>Beautifully Remembered</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:8px">Max <span class="g">$199</span> &middot; Simple <span class="g">$49.99</span></p>
+    <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:18px">Birthdays &middot; Newborns &middot; Corporate &middot; Milestones</p>
+    <div style="display:inline-block;padding:14px 36px;border-radius:50px;background:#d4a853;color:#fff;font-size:17px;font-weight:700;margin-bottom:10px">Shop Event Packages</div>
+    <div style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1.5px">mrsmillennialdesigns.com/event-photos</div>
   </div>
 </div>
 

@@ -20,7 +20,7 @@
     .w-hero-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:linear-gradient(180deg,rgba(45,41,38,0.10) 0%,rgba(45,41,38,0.55) 100%)}
     .w-hero-content{max-width:720px;color:#fff}
     .w-hero-badge{display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:13px;font-weight:600;padding:6px 18px;border-radius:50px;margin-bottom:20px;letter-spacing:0.5px}
-    .w-hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5.5vw,3.4rem);line-height:1.1;margin-bottom:16px;color:#fff;font-weight:400}
+    .w-hero h1{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.6rem);line-height:1.2;margin-bottom:16px;color:#fff;font-weight:400}
     .w-hero .tagline{font-size:clamp(1rem,2vw,1.15rem);color:rgba(255,255,255,0.85);font-style:italic;margin-bottom:12px;line-height:1.7}
     .w-hero .sub{font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:32px}
     .w-hero .hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -148,7 +148,7 @@
     }
     @media(max-width:768px){
       .w-hero-img{height:550px}
-      .w-hero h1{font-size:2rem}
+      .w-hero h1{font-size:1.5rem}
       .w-gallery-grid{grid-template-columns:1fr 1fr;gap:8px}
       .w-gallery-grid img:nth-child(5),.w-gallery-grid img:nth-child(6){display:none}
       .pkg-section{padding:48px 16px}
@@ -343,13 +343,23 @@
 
 <!-- Wedding Keepsake Collection -->
 <section style="padding:0 24px;background:var(--white)">
-  <div style="max-width:900px;margin:24px auto 0;background:var(--white);border-radius:14px;border:2px solid rgba(184,150,90,0.3);padding:28px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap">
-    <div style="flex-shrink:0;width:120px;height:120px;background:linear-gradient(135deg,rgba(184,150,90,0.15),rgba(184,150,90,0.05));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2.5rem">&#127870;&#9749;</div>
+  <div style="max-width:900px;margin:24px auto 0;background:linear-gradient(135deg,rgba(184,150,90,0.06),rgba(184,150,90,0.02));border-radius:14px;border:2px solid rgba(184,150,90,0.3);padding:36px 40px;display:flex;align-items:center;gap:32px;flex-wrap:wrap">
+    <div style="flex-shrink:0;display:flex;gap:12px;align-items:center">
+      <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,rgba(184,150,90,0.2),rgba(184,150,90,0.08));border:1.5px solid rgba(184,150,90,0.25);display:flex;align-items:center;justify-content:center;flex-direction:column">
+        <span style="font-size:18px;font-weight:800;color:var(--text);line-height:1">16x20</span>
+        <span style="font-size:9px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px">Print</span>
+      </div>
+      <div style="font-size:20px;font-weight:300;color:rgba(184,150,90,0.5)">+</div>
+      <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,rgba(184,150,90,0.2),rgba(184,150,90,0.08));border:1.5px solid rgba(184,150,90,0.25);display:flex;align-items:center;justify-content:center;flex-direction:column">
+        <span style="font-size:18px;font-weight:800;color:var(--text);line-height:1">Mug</span>
+        <span style="font-size:9px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px">Custom</span>
+      </div>
+    </div>
     <div style="flex:1;min-width:200px">
       <div style="display:inline-block;background:var(--gold);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Keepsake Collection</div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:6px">Wedding Keepsake Collection</h3>
-      <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:12px">A museum-quality 16×20 art print of your favorite wedding photo, paired with a custom ceramic mug featuring your wedding date. Beautiful on the wall, meaningful at the breakfast table.</p>
-      <span style="font-size:1.3rem;font-weight:800;color:var(--text)">$49.99</span><span style="font-size:12px;color:var(--muted);margin-left:8px;font-weight:400">16×20 Print + Custom Mug</span>
+      <h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:6px">Wedding Keepsake Collection</h3>
+      <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:12px">A museum-quality 16x20 art print of your favorite wedding photo, paired with a custom ceramic mug featuring your wedding date. Beautiful on the wall, meaningful at the breakfast table.</p>
+      <span style="font-size:1.3rem;font-weight:800;color:var(--text)">$49.99</span><span style="font-size:12px;color:var(--muted);margin-left:8px;font-weight:400">16x20 Print + Custom Mug</span>
       <div style="margin-top:14px"><button style="display:inline-block;padding:12px 28px;font-size:14px;border:none;cursor:pointer;border-radius:50px;background:var(--gold);color:#fff;font-weight:700;font-family:'Playfair Display',serif;letter-spacing:0.5px" data-cart-add data-id="wedding_keepsake_bundle" data-price-id="price_1TAzxyBiY2vwqUNMTNK0wYTV" data-title="Wedding Keepsake Collection — 16×20 Print + Mug" data-price="49.99" data-image="" data-type="merch">Add to Cart — $49.99</button></div>
     </div>
   </div>
@@ -360,26 +370,26 @@
   <div style="max-width:900px;margin:24px auto 0">
     <p style="text-align:center;font-family:'Playfair Display',serif;font-size:15px;color:var(--muted);margin-bottom:16px">Or add individually...</p>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-      <div style="background:var(--white);border-radius:14px;border:1px solid rgba(184,150,90,0.2);padding:20px;text-align:center">
-        <div style="font-size:2.2rem;margin-bottom:8px">&#128092;</div>
+      <div style="background:var(--white);border-radius:14px;border:1px solid rgba(184,150,90,0.2);padding:24px 20px;text-align:center">
+        <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,rgba(184,150,90,0.18),rgba(184,150,90,0.06));border:1.5px solid rgba(184,150,90,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:20px;font-weight:800;color:var(--text)">T</div>
         <h4 style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;margin-bottom:4px">Wedding Tote</h4>
         <p style="font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px">Premium natural tote — perfect for bridesmaids</p>
-        <div style="font-weight:800;font-size:1.1rem;margin-bottom:10px">$29.99</div>
-        <button style="width:100%;padding:10px;font-size:12px;border:none;cursor:pointer;border-radius:50px;background:var(--gold);color:#fff;font-weight:700;font-family:'Playfair Display',serif" data-cart-add data-id="wedding_tote" data-price-id="price_1TB02aBiY2vwqUNM8ByGWmlh" data-title="Wedding Tote Bag" data-price="29.99" data-image="" data-type="merch">Add to Cart</button>
+        <div style="font-weight:800;font-size:1.1rem;margin-bottom:12px">$29.99</div>
+        <button style="width:100%;padding:12px;font-size:13px;border:none;cursor:pointer;border-radius:50px;background:var(--gold);color:#fff;font-weight:700;font-family:'Playfair Display',serif" data-cart-add data-id="wedding_tote" data-price-id="price_1TB02aBiY2vwqUNM8ByGWmlh" data-title="Wedding Tote Bag" data-price="29.99" data-image="" data-type="merch">Add to Cart</button>
       </div>
-      <div style="background:var(--white);border-radius:14px;border:1px solid rgba(184,150,90,0.2);padding:20px;text-align:center">
-        <div style="font-size:2.2rem;margin-bottom:8px">&#129380;</div>
+      <div style="background:var(--white);border-radius:14px;border:1px solid rgba(184,150,90,0.2);padding:24px 20px;text-align:center">
+        <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,rgba(184,150,90,0.18),rgba(184,150,90,0.06));border:1.5px solid rgba(184,150,90,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:20px;font-weight:800;color:var(--text)">B</div>
         <h4 style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;margin-bottom:4px">Water Bottle</h4>
         <p style="font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px">17oz stainless steel, double-wall insulated</p>
-        <div style="font-weight:800;font-size:1.1rem;margin-bottom:10px">$29.99</div>
-        <button style="width:100%;padding:10px;font-size:12px;border:none;cursor:pointer;border-radius:50px;background:var(--gold);color:#fff;font-weight:700;font-family:'Playfair Display',serif" data-cart-add data-id="wedding_bottle" data-price-id="price_1TB02cBiY2vwqUNMl2tS7lQ8" data-title="Wedding Water Bottle - 17oz" data-price="29.99" data-image="" data-type="merch">Add to Cart</button>
+        <div style="font-weight:800;font-size:1.1rem;margin-bottom:12px">$29.99</div>
+        <button style="width:100%;padding:12px;font-size:13px;border:none;cursor:pointer;border-radius:50px;background:var(--gold);color:#fff;font-weight:700;font-family:'Playfair Display',serif" data-cart-add data-id="wedding_bottle" data-price-id="price_1TB02cBiY2vwqUNMl2tS7lQ8" data-title="Wedding Water Bottle - 17oz" data-price="29.99" data-image="" data-type="merch">Add to Cart</button>
       </div>
-      <div style="background:var(--white);border-radius:14px;border:1px solid rgba(184,150,90,0.2);padding:20px;text-align:center">
-        <div style="font-size:2.2rem;margin-bottom:8px">&#129509;</div>
+      <div style="background:var(--white);border-radius:14px;border:1px solid rgba(184,150,90,0.2);padding:24px 20px;text-align:center">
+        <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,rgba(184,150,90,0.18),rgba(184,150,90,0.06));border:1.5px solid rgba(184,150,90,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:20px;font-weight:800;color:var(--text)">H</div>
         <h4 style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;margin-bottom:4px">Wedding Hoodie</h4>
         <p style="font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px">Cozy pullover with your wedding photo</p>
-        <div style="font-weight:800;font-size:1.1rem;margin-bottom:10px">$44.99</div>
-        <button style="width:100%;padding:10px;font-size:12px;border:none;cursor:pointer;border-radius:50px;background:var(--gold);color:#fff;font-weight:700;font-family:'Playfair Display',serif" data-cart-add data-id="wedding_hoodie" data-price-id="price_1TB02eBiY2vwqUNMX74ST54n" data-title="Wedding Hoodie" data-price="44.99" data-image="" data-type="merch">Add to Cart</button>
+        <div style="font-weight:800;font-size:1.1rem;margin-bottom:12px">$44.99</div>
+        <button style="width:100%;padding:12px;font-size:13px;border:none;cursor:pointer;border-radius:50px;background:var(--gold);color:#fff;font-weight:700;font-family:'Playfair Display',serif" data-cart-add data-id="wedding_hoodie" data-price-id="price_1TB02eBiY2vwqUNMX74ST54n" data-title="Wedding Hoodie" data-price="44.99" data-image="" data-type="merch">Add to Cart</button>
       </div>
     </div>
     <style>@media(max-width:768px){[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important}}</style>
