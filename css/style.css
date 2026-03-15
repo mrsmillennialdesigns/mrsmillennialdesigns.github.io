@@ -29,7 +29,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--text)}
 .nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(45,41,38,0.06)}
 .nav.scrolled{box-shadow:var(--shadow)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px}
-.nav-logo{font-family:var(--serif);font-size:20px;color:var(--text);font-weight:400}
+.nav-logo{font-family:var(--serif);font-size:20px;color:var(--text);font-weight:400;margin-right:32px}
 .nav-logo span{color:var(--gold)}
 .nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;padding:4px 0;position:relative}

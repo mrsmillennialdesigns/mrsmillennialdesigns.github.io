@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Photo Packages &mdash; From $49.99 | MrsMillennial Designs</title>
-  <meta name="description" content="Professional photo albums for birthdays, anniversaries, corporate events, church gatherings & newborn sessions. Your guests capture the moments, we create a stunning album. From $49.99 with free shipping.">
+  <meta name="description" content="Professional photo albums for birthdays, anniversaries, corporate events, church gatherings & newborn sessions. Your guests capture the moments, we create a stunning album. From $49.99 with free shipping within USA.">
   <meta property="og:title" content="Event Photo Packages | MrsMillennial Designs">
-  <meta property="og:description" content="Professional event photo albums from $49.99. Birthdays, anniversaries, corporate events, newborn sessions & more. Free shipping.">
+  <meta property="og:description" content="Professional event photo albums from $49.99. Birthdays, anniversaries, corporate events, newborn sessions & more. Free shipping within USA.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; font-src 'self'; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -17,7 +17,7 @@
 
     .w-hero{position:relative;overflow:hidden;padding:0;background:var(--text)}
     .w-hero-img{width:100%;height:750px;object-fit:cover;display:block;opacity:0.45}
-    .w-hero-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:linear-gradient(180deg,rgba(45,41,38,0.10) 0%,rgba(45,41,38,0.55) 100%)}
+    .w-hero-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px 32px;background:linear-gradient(180deg,rgba(45,41,38,0.10) 0%,rgba(45,41,38,0.55) 100%)}
     .w-hero-content{max-width:720px;color:#fff}
     .w-badge{display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:13px;font-weight:600;padding:6px 18px;border-radius:50px;margin-bottom:20px;letter-spacing:0.5px}
     .w-hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5.5vw,3.4rem);line-height:1.1;margin-bottom:16px;color:#fff;font-weight:400}
@@ -108,6 +108,23 @@
     .cta-bottom h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:12px}
     .cta-bottom p{color:var(--muted);font-style:italic;margin-bottom:32px}
 
+    .img-divider{position:relative;height:360px;overflow:hidden}
+    .img-divider img{width:100%;height:100%;object-fit:cover;display:block}
+    .img-divider::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(45,41,38,0.35) 0%,rgba(45,41,38,0.55) 100%);pointer-events:none}
+    .img-divider-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;color:#fff;text-align:center;padding:24px}
+    .img-divider-text h2{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:400;color:#fff;max-width:600px}
+
+    .timeline-section{position:relative}
+    .timeline-section::before{content:'';position:absolute;inset:0;background:url('/img/photo-packages/stock/paid/curated-lifestyle-kMwE0WG0vj4-unsplash.jpg') center/cover no-repeat;opacity:0.04;pointer-events:none}
+    .pkg-section{position:relative}
+    .pkg-section::before{content:'';position:absolute;inset:0;background:url('/img/photo-packages/stock/paid/jennifer-kalenberg-pFSOsWouuzo-unsplash.jpg') center/cover no-repeat;opacity:0.05;pointer-events:none}
+    .included-section{position:relative}
+    .included-section::before{content:'';position:absolute;inset:0;background:url('/img/photo-packages/stock/paid/morefun_boy-3asjZSd_NAw-unsplash.jpg') center/cover no-repeat;opacity:0.04;pointer-events:none}
+    .faq-section{position:relative}
+    .faq-section::before{content:'';position:absolute;inset:0;background:url('/img/photo-packages/stock/paid/macro-jr-n-JtXGmt4X4-unsplash.jpg') center/cover no-repeat;opacity:0.05;pointer-events:none}
+    .cta-bottom{position:relative}
+    .cta-bottom::before{content:'';position:absolute;inset:0;background:url('/img/photo-packages/stock/paid/ralph-labay-e24yc_hqZc4-unsplash.jpg') center/cover no-repeat;opacity:0.06;pointer-events:none}
+
     @media(max-width:768px){
       .w-hero-img{height:550px}
       .w-hero h1{font-size:2rem}
@@ -124,9 +141,14 @@
       .included-grid{grid-template-columns:1fr}
       .addon-card{flex-direction:column;text-align:center;padding:24px 16px}
       .addon-img{width:100%;height:160px}
+      .img-divider{height:260px}
+      .w-hero-overlay{padding:24px 20px}
+      .w-hero-content{padding:0 8px}
     }
     @media(max-width:480px){
       .w-hero-img{height:400px}
+      .w-hero-overlay{padding:20px 16px}
+      .w-hero-content{padding:0 8px}
       .gallery-mosaic{grid-template-columns:1fr}
       .gallery-mosaic img:nth-child(n+4){display:none}
       .event-types-grid{grid-template-columns:1fr}
@@ -160,13 +182,13 @@
 
 <!-- 1. Hero -->
 <section class="w-hero">
-  <img src="/img/photo-packages/stock/corporate-party-cheers.jpg" alt="Diverse group celebrating at a party with champagne and confetti" class="w-hero-img" loading="eager">
+  <img src="/img/photo-packages/stock/paid/getty-images-aD4GMAnTyts-unsplash.jpg" alt="Diverse group celebrating at a corporate party with confetti" class="w-hero-img" loading="eager">
   <div class="w-hero-overlay">
     <div class="w-hero-content">
       <div class="w-badge">Event Photography</div>
       <h1>Every Celebration Deserves a Beautiful Album</h1>
       <p class="tagline">Birthdays, anniversaries, corporate events, church gatherings, newborn sessions &mdash; your guests capture every moment, we turn it into a professional album they'll treasure forever.</p>
-      <p class="sub">Photo book + digital downloads + professional shot script + QR codes &mdash; all included. Free shipping.</p>
+      <p class="sub">Photo book + digital downloads + professional shot script + QR codes &mdash; all included. Free shipping within USA.</p>
       <div class="hero-buttons">
         <a href="#packages" class="btn-hero-primary">View Packages</a>
         <a href="#event-types" class="btn-hero-outline">Explore Event Types</a>
@@ -178,12 +200,12 @@
 <!-- 2. Image Gallery (6 images) -->
 <section style="padding:0 24px 48px;background:var(--bg)">
   <div class="gallery-mosaic">
-    <img src="/img/photo-packages/birthday-cake-candles.jpg" alt="Birthday celebration with cake and candles" loading="lazy">
+    <img src="/img/photo-packages/stock/paid/sujan-khalifa-LO1lToLGGFA-unsplash.jpg" alt="Birthday confetti celebration" loading="lazy">
     <img src="/img/photo-packages/mockups/newborn-album-spread.png" alt="Open newborn photo album showing tender moments — mother holding baby, tiny feet in hands, and a peacefully sleeping newborn" loading="lazy">
-    <img src="/img/photo-packages/mockups/corporate-album-together.png" alt="Professional hardcover corporate team photo album" loading="lazy">
-    <img src="/img/photo-packages/celebration-toast.jpg" alt="Guests raising glasses in celebration" loading="lazy">
-    <img src="/img/photo-packages/mockups/wedding-album-hands.png" alt="Hands holding a wedding photo album" loading="lazy">
-    <img src="/img/photo-packages/mockups/wedding-hanging-print.png" alt="Wedding hanging poster print on wood hanger" loading="lazy">
+    <img src="/img/photo-packages/stock/paid/getty-images-aD4GMAnTyts-unsplash.jpg" alt="Diverse corporate party with confetti" loading="lazy">
+    <img src="/img/photo-packages/stock/paid/jd-chow-FWAgr5sqOLU-unsplash.jpg" alt="Girls celebrating New Year's Eve with champagne" loading="lazy">
+    <img src="/img/photo-packages/stock/paid/getty-images-XDOb-zgT8GY-unsplash.jpg" alt="Couple surrounded by phones with fairy lights" loading="lazy">
+    <img src="/img/photo-packages/stock/paid/kristyna-squared-one-HxW77k4tLvE-unsplash.jpg" alt="Beach wedding album spread" loading="lazy">
   </div>
 </section>
 
@@ -195,7 +217,7 @@
     <p style="text-align:center;color:var(--muted);font-size:14px;max-width:600px;margin:8px auto 0">From intimate family moments to large-scale corporate gatherings &mdash; our packages adapt to every event.</p>
     <div class="event-types-grid">
       <div class="event-type-card">
-        <img class="event-type-img" src="/img/photo-packages/mockups/birthday-album-hands.png" alt="Hands holding a birthday celebration photo album" loading="lazy">
+        <img class="event-type-img" src="/img/photo-packages/stock/paid/sujan-khalifa-LO1lToLGGFA-unsplash.jpg" alt="Birthday confetti celebration" loading="lazy">
         <div class="event-type-body">
           <h3>Birthdays</h3>
           <p>Kids parties, milestone birthdays, surprise celebrations &mdash; capture the cake, the candles, and every candid laugh.</p>
@@ -204,7 +226,7 @@
         </div>
       </div>
       <div class="event-type-card">
-        <img class="event-type-img" src="/img/photo-packages/mockups/wedding-album-hands.png" alt="Couple holding anniversary photo album" loading="lazy">
+        <img class="event-type-img" src="/img/photo-packages/stock/paid/kateryna-hliznitsova-Lcuv041eUo0-unsplash.jpg" alt="Elderly couple celebrating 50th anniversary with cake" loading="lazy">
         <div class="event-type-body">
           <h3>Anniversaries</h3>
           <p>Silver, golden, or any year worth celebrating. Relive the toasts, the tears, and the decades of love in one beautiful album.</p>
@@ -213,7 +235,7 @@
         </div>
       </div>
       <div class="event-type-card">
-        <img class="event-type-img" src="/img/photo-packages/mockups/corporate-album-together.png" alt="Professional hardcover corporate team photo album on styled white desk" loading="lazy">
+        <img class="event-type-img" src="/img/photo-packages/stock/paid/getty-images-Ch-NgSnzHNk-unsplash.jpg" alt="Corporate office party with party hats" loading="lazy">
         <div class="event-type-body">
           <h3>Corporate Gatherings</h3>
           <p>Team events, conferences, company parties, galas &mdash; professional documentation with everyone contributing.</p>
@@ -229,7 +251,7 @@
         </div>
       </div>
       <div class="event-type-card">
-        <img class="event-type-img" src="/img/photo-packages/mockups/newborn-hardcover-noah.png" alt="Personalized 'When Noah Was Born' hardcover newborn album — a keepsake that captures your baby's first days forever" loading="lazy">
+        <img class="event-type-img" src="/img/photo-packages/stock/paid/kelly-sikkema-WvVyudMd1Es-unsplash.jpg" alt="Parents holding newborn baby by window" loading="lazy">
         <div class="event-type-body">
           <h3>Newborn Sessions</h3>
           <p>Those fleeting first days. Family captures the tiny yawns, wrinkled fingers, and first smiles &mdash; we make them last forever.</p>
@@ -238,7 +260,7 @@
         </div>
       </div>
       <div class="event-type-card">
-        <img class="event-type-img" src="/img/photo-packages/stock/wedding-flatlay-vows.jpg" alt="Wedding keepsakes and vow book" loading="lazy">
+        <img class="event-type-img" src="/img/photo-packages/stock/paid/karolina-grabowska-coEry14VkI0-unsplash.jpg" alt="Couple holding phones showing kiss photo" loading="lazy">
         <div class="event-type-body">
           <h3>Engagement Parties</h3>
           <p>Celebrate the "yes!" with a keepsake album. Then upgrade to our <a href="/wedding-photos.html" style="color:var(--accent-dark);font-weight:600">wedding package</a> for the big day.</p>
@@ -247,6 +269,14 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Divider: Event Types → How It Works -->
+<section class="img-divider">
+  <img src="/img/photo-packages/stock/paid/fotografo-samuel-cruz-8l6jIEuvQCY-unsplash.jpg" alt="Bridesmaid photographing wedding couple with phone" loading="lazy">
+  <div class="img-divider-text">
+    <h2>Your guests are already capturing the moments &mdash; we turn them into art.</h2>
   </div>
 </section>
 
@@ -281,10 +311,18 @@
         <div class="tl-num">4</div>
         <div class="tl-text">
           <h3>We Edit, Design &amp; Ship</h3>
-          <p>After your event, we collect all uploaded photos, professionally edit every shot, design your album layout, and ship your photo book &mdash; all within 2 weeks. Free shipping included.</p>
+          <p>After your event, we collect all uploaded photos, professionally edit every shot, design your album layout, and ship your photo book &mdash; all within 2 weeks. Free shipping within USA included.</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Divider: How It Works → Packages -->
+<section class="img-divider">
+  <img src="/img/photo-packages/stock/paid/shutter-speed-z3qCHGYbLWk-unsplash.jpg" alt="Bride surrounded by phones at bridal shower" loading="lazy">
+  <div class="img-divider-text">
+    <h2>Every phone at your event is a camera &mdash; every photo becomes part of the story.</h2>
   </div>
 </section>
 
@@ -309,9 +347,9 @@
           <li><span class="pkg-check">&#10003;</span> High-res digital download of all photos</li>
           <li><span class="pkg-check">&#10003;</span> Professional shot script (~27 key shots)</li>
           <li><span class="pkg-check">&#10003;</span> QR code printouts for guest uploads</li>
-          <li><span class="pkg-check">&#10003;</span> Free shipping to your door</li>
+          <li><span class="pkg-check">&#10003;</span> Free shipping within USA</li>
         </ul>
-        <a href="https://buy.stripe.com/00w00i3Tx8TVcYo9RwcEx0V" class="pkg-btn pkg-btn-outline">Choose This Package</a>
+        <button class="pkg-btn pkg-btn-outline" data-cart-add data-id="event_simple" data-price-id="price_1TBF6WBiY2vwqUNMHwqmkzO5" data-title="Event Simple Package" data-price="49.99" data-image="" data-type="photo-package">Add to Cart &mdash; $49.99</button>
       </div>
     </div>
     <div class="pkg-card featured">
@@ -330,12 +368,13 @@
           <li><span class="pkg-check">&#10003;</span> Detailed shot script (~55 key shots)</li>
           <li><span class="pkg-check">&#10003;</span> QR code printouts for guest uploads</li>
           <li><span class="pkg-check">&#10003;</span> <strong>Lead coordinator cheat sheet</strong></li>
-          <li><span class="pkg-check">&#10003;</span> Free shipping on everything</li>
+          <li><span class="pkg-check">&#10003;</span> Free shipping within USA on everything</li>
         </ul>
-        <a href="https://buy.stripe.com/9B614meyb5HJe2s4xccEx0W" class="pkg-btn pkg-btn-primary">Choose This Package</a>
+        <button class="pkg-btn pkg-btn-primary" data-cart-add data-id="event_max" data-price-id="price_1TBF6XBiY2vwqUNMC2tATGh9" data-title="Event Max Package" data-price="199" data-image="" data-type="photo-package">Add to Cart &mdash; $199</button>
       </div>
     </div>
   </div>
+  <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:20px;opacity:0.7">International orders: please <a href="/contact.html" style="color:var(--muted);text-decoration:underline">contact us</a> for shipping quotes.</p>
 
   <!-- QR Poster Add-on -->
   <div class="addon-card">
@@ -344,7 +383,7 @@
       <h3>QR Poster Add-on</h3>
       <p>Want a beautiful, professionally printed QR poster mailed directly to you before your event? Add this to either package. Order at least 2 weeks before your event for guaranteed delivery, or grab the instant digital download to print yourself.</p>
       <span class="addon-price">$14.99</span><span class="addon-note">Printed poster or digital download</span>
-      <div style="margin-top:14px"><a href="https://buy.stripe.com/7sYfZgdu7b234rS3t8cEx0X" class="pkg-btn" style="display:inline-block;padding:12px 28px;font-size:14px;text-decoration:none" target="_blank" rel="noopener">Add to Your Package</a></div>
+      <div style="margin-top:14px"><button class="pkg-btn" style="display:inline-block;padding:12px 28px;font-size:14px;border:none;cursor:pointer" data-cart-add data-id="qr_poster_addon" data-price-id="price_1TBF6YBiY2vwqUNMZywfUI88" data-title="Printed QR Poster Add-on" data-price="14.99" data-image="" data-type="addon">Add to Cart &mdash; $14.99</button></div>
     </div>
   </div>
 
@@ -360,8 +399,16 @@
     </div>
   </div>
   <div style="max-width:900px;margin:12px auto 0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-    <button class="pkg-btn-outline" style="padding:10px 20px;font-size:13px;border-radius:50px;cursor:pointer;border:1.5px solid rgba(45,41,38,0.15);background:transparent;font-weight:600" data-cart-add data-id="event_mug" data-price-id="price_1TAzwnBiY2vwqUNMyVk7Cx14" data-title="Event Photo Mug" data-price="19.99" data-image="" data-type="merch">Just the Mug — $19.99</button>
-    <button class="pkg-btn-outline" style="padding:10px 20px;font-size:13px;border-radius:50px;cursor:pointer;border:1.5px solid rgba(45,41,38,0.15);background:transparent;font-weight:600" data-cart-add data-id="event_tshirt" data-price-id="price_1TAzwpBiY2vwqUNMczsrDu5d" data-title="Event Photo T-Shirt" data-price="34.99" data-image="" data-type="merch">Just the T-Shirt — $34.99</button>
+    <button class="pkg-btn-outline" style="padding:10px 20px;font-size:13px;border-radius:50px;cursor:pointer;border:1.5px solid rgba(45,41,38,0.15);background:transparent;font-weight:600" data-cart-add data-id="event_mug" data-price-id="price_1TAzwnBiY2vwqUNMyVk7Cx14" data-title="Event Photo Mug" data-price="24.99" data-image="" data-type="merch">Just the Mug — $24.99</button>
+    <button class="pkg-btn-outline" style="padding:10px 20px;font-size:13px;border-radius:50px;cursor:pointer;border:1.5px solid rgba(45,41,38,0.15);background:transparent;font-weight:600" data-cart-add data-id="event_tshirt" data-price-id="price_1TBGN5BiY2vwqUNMbsHK4nKA" data-title="Event Photo T-Shirt" data-price="26.99" data-image="" data-type="merch">Just the T-Shirt — $26.99</button>
+  </div>
+</section>
+
+<!-- Divider: Packages → Reviews -->
+<section class="img-divider">
+  <img src="/img/photo-packages/stock/paid/mockaroon-qisUsQOmHtA-unsplash.jpg" alt="Photo album with polaroid couple" loading="lazy">
+  <div class="img-divider-text">
+    <h2>A printed album you'll reach for again and again.</h2>
   </div>
 </section>
 
@@ -435,11 +482,19 @@
       <div class="included-item">
         <div class="included-icon">&#128230;</div>
         <div>
-          <h3>Free Shipping</h3>
+          <h3>Free Shipping within USA</h3>
           <p>Everything ships free &mdash; your photo book, poster print, and QR poster add-on. Tracked delivery right to your door.</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Divider: What's Included → FAQ -->
+<section class="img-divider">
+  <img src="/img/photo-packages/stock/paid/ed-dy-MOgWnVYISLc-unsplash.jpg" alt="Hand photographing a beautifully styled table setting" loading="lazy">
+  <div class="img-divider-text">
+    <h2>From phone to forever &mdash; professional quality from every angle.</h2>
   </div>
 </section>
 
@@ -462,7 +517,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">What's the difference between Simple and Max?</div>
-      <div class="faq-a">Simple gives you a softcover book (8x11", 30 pages) with digital downloads and a ~27-shot script. Max upgrades to a hardcover book (8x8", 60 pages) with a custom cover, a 20x28" hanging poster print on a wood hanger, a detailed ~55-shot script, and a lead coordinator cheat sheet. Both include free shipping.</div>
+      <div class="faq-a">Simple gives you a softcover book (8x11", 30 pages) with digital downloads and a ~27-shot script. Max upgrades to a hardcover book (8x8", 60 pages) with a custom cover, a 20x28" hanging poster print on a wood hanger, a detailed ~55-shot script, and a lead coordinator cheat sheet. Both include free shipping within USA.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">What is the QR Poster add-on?</div>
@@ -470,7 +525,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">How long until I receive my album?</div>
-      <div class="faq-a">Your photo book ships within 2 weeks of your event. The hanging poster print (Max package) ships separately within 1&ndash;2 weeks. Both ship tracked to your door with free shipping. We'll send you a preview of the album layout before printing so you can request changes.</div>
+      <div class="faq-a">Your photo book ships within 2 weeks of your event. The hanging poster print (Max package) ships separately within 1&ndash;2 weeks. Both ship tracked to your door with free shipping within USA. We'll send you a preview of the album layout before printing so you can request changes.</div>
     </div>
   </div>
 </section>
@@ -534,6 +589,7 @@
       <div>
         <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
         <p class="footer-desc">Premium printable designs & event photo packages for life's biggest moments.</p>
+        <p class="footer-desc" style="font-size:11px;margin-top:4px;opacity:0.7">International orders: please <a href="/contact.html" style="color:rgba(255,255,255,0.6);text-decoration:underline">contact us</a> for shipping quotes.</p>
         <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">778 reviews</a> &middot; 5.0 avg rating</p>
       </div>
       <div>

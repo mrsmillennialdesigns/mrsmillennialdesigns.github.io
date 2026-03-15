@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Your Photos | MrsMillennial Designs</title>
+  <meta name="robots" content="noindex">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: https://api.qrserver.com data:; font-src 'self'; connect-src 'self' https://mmd-uploads.mrsmillennial.workers.dev;">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    :root{--upload-accent:#d4a853}
+
+    body{background:var(--bg);min-height:100vh}
+    .upload-page{max-width:520px;margin:0 auto;padding:100px 20px 60px}
+
+    /* Event header */
+    .event-header{text-align:center;margin-bottom:32px}
+    .event-badge{display:inline-block;background:rgba(212,168,83,0.15);color:#9e7d2e;font-size:12px;font-weight:700;padding:5px 16px;border-radius:50px;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:12px}
+    .event-header h1{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2rem);margin-bottom:8px;line-height:1.2}
+    .event-header .event-date{font-size:15px;color:var(--muted);font-style:italic}
+    .event-message{font-size:14px;color:var(--muted);line-height:1.7;text-align:center;margin-bottom:28px;padding:16px 20px;background:var(--white);border-radius:var(--radius);border:1px solid rgba(45,41,38,0.06)}
+
+    /* Upload card */
+    .upload-card{background:var(--white);border-radius:var(--radius);padding:28px 24px;border:1px solid rgba(45,41,38,0.06);margin-bottom:20px}
+    .upload-card h2{font-family:var(--font);font-size:16px;font-weight:700;margin-bottom:16px;text-align:center}
+
+    /* Name input */
+    .name-group{margin-bottom:20px}
+    .name-group label{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
+    .name-group input{width:100%;padding:12px 16px;border:1.5px solid rgba(45,41,38,0.12);border-radius:10px;font-size:15px;font-family:var(--font);color:var(--text);background:var(--bg);box-sizing:border-box;transition:border-color 0.2s}
+    .name-group input:focus{outline:none;border-color:var(--upload-accent)}
+
+    /* Drop zone */
+    .drop-zone{border:2px dashed rgba(45,41,38,0.15);border-radius:14px;padding:40px 20px;text-align:center;cursor:pointer;transition:all 0.3s;background:var(--bg);position:relative}
+    .drop-zone:hover,.drop-zone.dragover{border-color:var(--upload-accent);background:rgba(212,168,83,0.04)}
+    .drop-zone-icon{font-size:3rem;margin-bottom:12px;display:block;opacity:0.6}
+    .drop-zone-text{font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px}
+    .drop-zone-sub{font-size:13px;color:var(--muted)}
+    .drop-zone input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer}
+
+    /* Camera button (mobile) */
+    .camera-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:50px;font-size:15px;font-weight:700;border:none;cursor:pointer;background:var(--text);color:#fff;margin-top:12px;transition:all 0.2s}
+    .camera-btn:hover{background:#1a1715}
+    @media(min-width:769px){.camera-btn{display:none}}
+
+    /* Preview grid */
+    .preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+    .preview-item{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden}
+    .preview-item img{width:100%;height:100%;object-fit:cover}
+    .preview-remove{position:absolute;top:4px;right:4px;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,0.6);color:#fff;border:none;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;line-height:1}
+    .preview-count{text-align:center;font-size:13px;color:var(--muted);margin-top:8px}
+
+    /* Upload button */
+    .upload-btn{display:block;width:100%;padding:16px;border-radius:50px;font-size:16px;font-weight:700;border:none;cursor:pointer;background:var(--upload-accent);color:#fff;margin-top:20px;transition:all 0.3s;box-shadow:0 4px 16px rgba(212,168,83,0.3)}
+    .upload-btn:hover{background:#c49a3d;transform:translateY(-2px);box-shadow:0 6px 24px rgba(212,168,83,0.4)}
+    .upload-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;box-shadow:none}
+
+    /* Progress */
+    .progress-bar{width:100%;height:6px;background:rgba(45,41,38,0.08);border-radius:3px;overflow:hidden;margin-top:12px;display:none}
+    .progress-fill{height:100%;background:var(--upload-accent);border-radius:3px;width:0%;transition:width 0.3s}
+
+    /* Status message */
+    .status{text-align:center;padding:16px;border-radius:var(--radius);margin-top:16px;font-size:14px;line-height:1.6;display:none}
+    .status.success{display:block;background:rgba(143,168,136,0.15);color:#4a7040;border:1px solid rgba(143,168,136,0.3)}
+    .status.error{display:block;background:rgba(220,80,80,0.1);color:#a63030;border:1px solid rgba(220,80,80,0.2)}
+
+    /* Upload count */
+    .upload-count{text-align:center;font-size:13px;color:var(--muted);margin-top:12px}
+    .upload-count strong{color:var(--text)}
+
+    /* Loading state */
+    .loading{text-align:center;padding:60px 20px}
+    .loading-spinner{width:40px;height:40px;border:3px solid rgba(45,41,38,0.1);border-top-color:var(--upload-accent);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* Error state */
+    .error-page{text-align:center;padding:60px 20px}
+    .error-page h1{font-size:1.5rem;margin-bottom:12px}
+    .error-page p{color:var(--muted);font-size:15px;line-height:1.7}
+
+    /* Footer */
+    .upload-footer{text-align:center;padding:24px 0;font-size:12px;color:var(--muted)}
+    .upload-footer a{color:var(--upload-accent)}
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav" style="position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);border-bottom:1px solid rgba(45,41,38,0.06)">
+  <div class="nav-inner" style="justify-content:center">
+    <a href="/" class="nav-logo">Mrs<span>Millennial</span> Designs</a>
+  </div>
+</nav>
+
+<div class="upload-page">
+
+  <!-- Loading state -->
+  <div id="loadingState" class="loading">
+    <div class="loading-spinner"></div>
+    <p style="color:var(--muted)">Loading event...</p>
+  </div>
+
+  <!-- Error state (hidden by default) -->
+  <div id="errorState" class="error-page" style="display:none">
+    <div style="font-size:3rem;margin-bottom:16px;opacity:0.4">&#128247;</div>
+    <h1>Event Not Found</h1>
+    <p>This upload link doesn't match any active event. Please check your QR code and try again.</p>
+    <p style="margin-top:20px"><a href="mailto:mrsmillennialdesigns@outlook.com">Contact us for help</a></p>
+  </div>
+
+  <!-- Main upload UI (hidden until event loads) -->
+  <div id="uploadUI" style="display:none">
+
+    <div class="event-header">
+      <div class="event-badge" id="eventType">Wedding</div>
+      <h1 id="eventName">Loading...</h1>
+      <p class="event-date" id="eventDate"></p>
+    </div>
+
+    <p class="event-message" id="eventMessage">
+      Thank you for being part of this celebration! Upload your photos below.
+    </p>
+
+    <div class="upload-card">
+      <h2>Share Your Photos</h2>
+
+      <div class="name-group">
+        <label for="guestName">Your Name (optional)</label>
+        <input type="text" id="guestName" placeholder="e.g. Sarah M." autocomplete="name">
+      </div>
+
+      <div class="drop-zone" id="dropZone">
+        <span class="drop-zone-icon">&#128247;</span>
+        <p class="drop-zone-text">Tap to choose photos</p>
+        <p class="drop-zone-sub">or drag & drop &bull; JPEG, PNG, HEIC &bull; max 20MB each</p>
+        <input type="file" id="fileInput" multiple accept="image/jpeg,image/png,image/heic,image/heif,image/webp,.jpg,.jpeg,.png,.heic,.heif,.webp">
+      </div>
+
+      <button class="camera-btn" id="cameraBtn">
+        &#128248; Take a Photo
+      </button>
+      <input type="file" id="cameraInput" accept="image/*" capture="environment" multiple style="display:none">
+
+      <div class="preview-grid" id="previewGrid"></div>
+      <p class="preview-count" id="previewCount" style="display:none"></p>
+
+      <button class="upload-btn" id="uploadBtn" disabled>Upload Photos</button>
+
+      <div class="progress-bar" id="progressBar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div id="statusMsg" class="status"></div>
+    </div>
+
+    <p class="upload-count" id="uploadCount" style="display:none">
+      <strong id="totalCount">0</strong> photos uploaded for this event so far
+    </p>
+
+  </div>
+</div>
+
+<div class="upload-footer">
+  <p>&copy; 2026 <a href="https://mrsmillennialdesigns.com">MrsMillennial Designs</a> &bull; Event Photo Packages</p>
+</div>
+
+<script>
+const WORKER_URL = 'https://mmd-uploads.mrsmillennial.workers.dev';
+let eventCode = null;
+let selectedFiles = [];
+
+// ==================== INIT ====================
+
+(function init() {
+  const params = new URLSearchParams(window.location.search);
+  eventCode = (params.get('event') || '').toUpperCase().trim();
+
+  if (!eventCode || !/^[A-Z0-9]{6,12}$/.test(eventCode)) {
+    showError();
+    return;
+  }
+
+  // Fetch event info
+  fetch(`${WORKER_URL}/event/${eventCode}`)
+    .then(r => {
+      if (!r.ok) throw new Error('Event not found');
+      return r.json();
+    })
+    .then(data => {
+      document.getElementById('loadingState').style.display = 'none';
+      document.getElementById('uploadUI').style.display = 'block';
+
+      document.getElementById('eventName').textContent = data.name;
+      document.getElementById('eventType').textContent = data.type || 'Event';
+      if (data.date) {
+        const d = new Date(data.date);
+        document.getElementById('eventDate').textContent = d.toLocaleDateString('en-US', {
+          weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        });
+      }
+      if (data.message) {
+        document.getElementById('eventMessage').textContent = data.message;
+      }
+      if (data.uploadCount > 0) {
+        document.getElementById('totalCount').textContent = data.uploadCount;
+        document.getElementById('uploadCount').style.display = 'block';
+      }
+    })
+    .catch(() => showError());
+})();
+
+function showError() {
+  document.getElementById('loadingState').style.display = 'none';
+  document.getElementById('errorState').style.display = 'block';
+}
+
+// ==================== FILE SELECTION ====================
+
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+const cameraBtn = document.getElementById('cameraBtn');
+const cameraInput = document.getElementById('cameraInput');
+const previewGrid = document.getElementById('previewGrid');
+const previewCount = document.getElementById('previewCount');
+const uploadBtn = document.getElementById('uploadBtn');
+
+// Drag & drop
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('dragover');
+  addFiles(e.dataTransfer.files);
+});
+
+// File input change
+fileInput.addEventListener('change', e => addFiles(e.target.files));
+
+// Camera button
+cameraBtn.addEventListener('click', () => cameraInput.click());
+cameraInput.addEventListener('change', e => addFiles(e.target.files));
+
+function addFiles(fileList) {
+  for (const file of fileList) {
+    // Check duplicate by name+size
+    const isDup = selectedFiles.some(f => f.name === file.name && f.size === file.size);
+    if (isDup) continue;
+
+    // Check type (loose — also allow by extension)
+    const ext = file.name.split('.').pop().toLowerCase();
+    const validType = ['image/jpeg','image/png','image/heic','image/heif','image/webp'].includes(file.type);
+    const validExt = ['jpg','jpeg','png','heic','heif','webp'].includes(ext);
+    if (!validType && !validExt) continue;
+
+    // Check size
+    if (file.size > 20 * 1024 * 1024) continue;
+
+    selectedFiles.push(file);
+  }
+
+  renderPreviews();
+  uploadBtn.disabled = selectedFiles.length === 0;
+  // Reset input so same file can be re-selected
+  fileInput.value = '';
+  cameraInput.value = '';
+}
+
+function renderPreviews() {
+  previewGrid.innerHTML = '';
+  selectedFiles.forEach((file, i) => {
+    const div = document.createElement('div');
+    div.className = 'preview-item';
+
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(file);
+    img.onload = () => URL.revokeObjectURL(img.src);
+    div.appendChild(img);
+
+    const btn = document.createElement('button');
+    btn.className = 'preview-remove';
+    btn.textContent = '×';
+    btn.onclick = () => {
+      selectedFiles.splice(i, 1);
+      renderPreviews();
+      uploadBtn.disabled = selectedFiles.length === 0;
+    };
+    div.appendChild(btn);
+
+    previewGrid.appendChild(div);
+  });
+
+  if (selectedFiles.length > 0) {
+    previewCount.style.display = 'block';
+    previewCount.textContent = `${selectedFiles.length} photo${selectedFiles.length > 1 ? 's' : ''} selected`;
+  } else {
+    previewCount.style.display = 'none';
+  }
+}
+
+// ==================== UPLOAD ====================
+
+uploadBtn.addEventListener('click', doUpload);
+
+async function doUpload() {
+  if (selectedFiles.length === 0) return;
+
+  uploadBtn.disabled = true;
+  uploadBtn.textContent = 'Uploading...';
+  const progressBar = document.getElementById('progressBar');
+  const progressFill = document.getElementById('progressFill');
+  const statusMsg = document.getElementById('statusMsg');
+  statusMsg.className = 'status';
+  statusMsg.style.display = 'none';
+  progressBar.style.display = 'block';
+
+  const guestName = document.getElementById('guestName').value.trim() || 'Anonymous';
+  const totalFiles = selectedFiles.length;
+  let uploadedCount = 0;
+  let allErrors = [];
+
+  // Upload in batches of 10
+  const batches = [];
+  for (let i = 0; i < selectedFiles.length; i += 10) {
+    batches.push(selectedFiles.slice(i, i + 10));
+  }
+
+  for (const batch of batches) {
+    const formData = new FormData();
+    formData.append('guest_name', guestName);
+    batch.forEach(file => formData.append('photos', file));
+
+    try {
+      const res = await fetch(`${WORKER_URL}/upload/${eventCode}`, {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (data.uploaded) uploadedCount += data.uploaded;
+      if (data.errors) allErrors = allErrors.concat(data.errors);
+
+      // Update total count
+      if (data.total) {
+        document.getElementById('totalCount').textContent = data.total;
+        document.getElementById('uploadCount').style.display = 'block';
+      }
+    } catch (err) {
+      allErrors.push('Network error — please check your connection and try again.');
+    }
+
+    // Update progress
+    const progress = Math.min(100, Math.round(((uploadedCount + allErrors.length) / totalFiles) * 100));
+    progressFill.style.width = progress + '%';
+  }
+
+  progressFill.style.width = '100%';
+
+  // Show result
+  if (uploadedCount > 0) {
+    statusMsg.className = 'status success';
+    statusMsg.innerHTML = `<strong>${uploadedCount} photo${uploadedCount > 1 ? 's' : ''} uploaded successfully!</strong><br>Thank you for sharing your moments.`;
+    if (allErrors.length > 0) {
+      statusMsg.innerHTML += `<br><small style="opacity:0.7">${allErrors.length} file${allErrors.length > 1 ? 's' : ''} couldn't be uploaded.</small>`;
+    }
+    // Clear selection
+    selectedFiles = [];
+    renderPreviews();
+  } else {
+    statusMsg.className = 'status error';
+    statusMsg.innerHTML = `<strong>Upload failed.</strong><br>${allErrors[0] || 'Please try again.'}`;
+  }
+
+  uploadBtn.textContent = 'Upload More Photos';
+  uploadBtn.disabled = true; // re-enable when new files selected
+
+  // Hide progress after a beat
+  setTimeout(() => {
+    progressBar.style.display = 'none';
+    progressFill.style.width = '0%';
+  }, 1500);
+}
+</script>
+</body>
+</html>

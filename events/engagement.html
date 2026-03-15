@@ -7,7 +7,7 @@
   <meta name="description" content="Professional engagement party photo albums. Capture every hug, every toast, every happy tear — then upgrade to our wedding package for the big day. From $49.99.">
   <meta property="og:title" content="Engagement Photo Packages | MrsMillennial Designs">
   <meta property="og:description" content="Professional engagement party photo albums. Capture every hug, every toast, every happy tear — then upgrade to our wedding package for the big day. From $49.99.">
-  <meta property="og:image" content="/img/photo-packages/stock/crowd-phones-wedding.jpg">
+  <meta property="og:image" content="/img/photo-packages/stock/paid/ralph-labay-e24yc_hqZc4-unsplash.jpg">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.etsystatic.com data:; font-src 'self'; connect-src 'self' https://mmd-review-counter.mrsmillennial.workers.dev;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -19,7 +19,7 @@
     /* ========== HERO ========== */
     .ev-hero{position:relative;overflow:hidden;padding:0;background:var(--text)}
     .ev-hero-img{width:100%;height:580px;object-fit:cover;display:block;opacity:0.4}
-    .ev-hero-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:linear-gradient(180deg,rgba(45,41,38,0.10) 0%,rgba(45,41,38,0.60) 100%)}
+    .ev-hero-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px 32px;background:linear-gradient(180deg,rgba(45,41,38,0.10) 0%,rgba(45,41,38,0.60) 100%)}
     .ev-hero-content{max-width:720px;color:#fff}
     .ev-hero-badge{display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:13px;font-weight:600;padding:6px 18px;border-radius:50px;margin-bottom:20px;letter-spacing:0.5px}
     .ev-hero h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);line-height:1.12;margin-bottom:16px;color:#fff;font-weight:400}
@@ -107,9 +107,13 @@
       .cta-btns a{width:100%;justify-content:center}
       .hero-buttons{flex-direction:column}
       .hero-buttons a{width:100%;justify-content:center;text-align:center}
+      .ev-hero-overlay{padding:24px 20px}
+      .ev-hero-content{padding:0 8px}
     }
     @media(max-width:480px){
       .ev-hero-img{height:350px}
+      .ev-hero-overlay{padding:20px 16px}
+      .ev-hero-content{padding:0 8px}
       .hiw-grid{grid-template-columns:1fr}
     }
   </style>
@@ -138,13 +142,13 @@
 
 <!-- ==================== HERO ==================== -->
 <section class="ev-hero">
-  <img src="/img/photo-packages/stock/crowd-phones-wedding.jpg" alt="Engagement Photo Packages" class="ev-hero-img" loading="eager">
+  <img src="/img/photo-packages/stock/paid/ralph-labay-e24yc_hqZc4-unsplash.jpg" alt="Couple taking a selfie showing off engagement ring" class="ev-hero-img" loading="eager">
   <div class="ev-hero-overlay">
     <div class="ev-hero-content">
       <div class="ev-hero-badge">Engagement Photography</div>
       <h1>Celebrate the &lsquo;Yes&rsquo; With a Beautiful Album</h1>
       <p class="tagline">Your engagement party is the warm-up. Capture every hug, every toast, every happy tear &mdash; then upgrade to our wedding package for the big day.</p>
-      <p class="sub">Photo book + digital downloads + professional shot script + QR codes &mdash; all included. Free shipping.</p>
+      <p class="sub">Photo book + digital downloads + professional shot script + QR codes &mdash; all included. Free shipping within USA.</p>
       <div class="hero-buttons">
         <a href="#packages" class="btn-hero-primary">View Packages</a>
         <a href="#how-it-works" class="btn-hero-outline">How It Works</a>
@@ -153,8 +157,18 @@
   </div>
 </section>
 
+<!-- ==================== IMAGE DIVIDER ==================== -->
+<section style="position:relative;height:360px;overflow:hidden">
+  <img src="/img/photo-packages/stock/paid/karolina-grabowska-coEry14VkI0-unsplash.jpg" alt="Couple holding two phones showing a kiss" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(45,41,38,0.35) 0%,rgba(45,41,38,0.55) 100%)"></div>
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;color:#fff;text-align:center;padding:24px">
+    <h2 style="font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:400;color:#fff;max-width:600px">The engagement party is just the beginning of your story.</h2>
+  </div>
+</section>
+
 <!-- ==================== HOW IT WORKS (4 steps with images) ==================== -->
-<section class="hiw-section" id="how-it-works">
+<section class="hiw-section" id="how-it-works" style="position:relative">
+  <style>.hiw-section::before{content:'';position:absolute;inset:0;background:url('/img/photo-packages/stock/paid/hoi-an-and-da-nang-photographer-3lNOKeHszJs-unsplash.jpg') center/cover no-repeat;opacity:0.05;pointer-events:none}</style>
   <div class="hiw-inner">
     <h2 class="section-title" style="text-align:center">How It Works</h2>
     <div class="divider"><span class="divider-dot" style="background:var(--gold)"></span></div>
@@ -168,7 +182,7 @@
       </div>
       <div class="hiw-step">
         <div class="hiw-num">2</div>
-        <img src="/img/photo-packages/stock/guest-phone-couple-closeup.jpg" alt="Guest capturing the moment on their phone" class="hiw-step-img" loading="lazy">
+        <img src="/img/photo-packages/stock/paid/hoi-an-and-da-nang-photographer-3lNOKeHszJs-unsplash.jpg" alt="Guest capturing couple on phone at party" class="hiw-step-img" loading="lazy">
         <h3>Your Coordinator Gets the Script</h3>
         <p>One person follows our professional shot checklist. They don&rsquo;t need to be a photographer &mdash; we tell them exactly what to capture and when.</p>
       </div>
@@ -182,7 +196,7 @@
         <div class="hiw-num">4</div>
         <img src="/img/photo-packages/mockups/wedding-hanging-print.png" alt="We create your professionally designed album" class="hiw-step-img" loading="lazy">
         <h3>We Create Your Album</h3>
-        <p>Professionally edited, beautifully designed, shipped to your door within 2 weeks. Free shipping included.</p>
+        <p>Professionally edited, beautifully designed, shipped to your door within 2 weeks. Free shipping within USA included.</p>
       </div>
     </div>
   </div>
@@ -203,7 +217,7 @@
       <h3>Add a Printed QR Poster &mdash; $14.99</h3>
       <p>We&rsquo;ll print a beautiful &ldquo;Capture the Love&rdquo; or &ldquo;Share the Moment&rdquo; QR poster and ship it to you before your event. Guests scan it to upload their photos instantly.</p>
       <span class="addon-price">$14.99</span>
-      <a href="https://buy.stripe.com/7sYfZgdu7b234rS3t8cEx0X" class="addon-btn">Add QR Poster</a>
+      <button class="addon-btn" data-cart-add data-id="qr_poster_addon" data-price-id="price_1TBF6YBiY2vwqUNMZywfUI88" data-title="Printed QR Poster Add-on" data-price="14.99" data-image="" data-type="addon">Add to Cart &mdash; $14.99</button>
     </div>
   </div>
 </section>
@@ -219,6 +233,15 @@
       <span style="font-size:1.3rem;font-weight:800;color:var(--accent-dark,var(--text))">$44.99</span><span style="font-size:12px;color:var(--muted);margin-left:8px;font-weight:400"><s>$54.98</s> — Save $10</span>
       <div style="margin-top:14px"><button class="pkg-btn" style="display:inline-block;padding:12px 28px;font-size:14px;border:none;cursor:pointer;border-radius:50px;background:var(--accent,var(--rose));color:#fff;font-weight:700" data-cart-add data-id="event_merch_bundle" data-price-id="price_1TAzxnBiY2vwqUNMzpJefJ3U" data-title="Event Merch Bundle — Mug + T-Shirt" data-price="44.99" data-image="" data-type="merch">Add to Cart — $44.99</button></div>
     </div>
+  </div>
+</section>
+
+<!-- ==================== IMAGE DIVIDER ==================== -->
+<section style="position:relative;height:360px;overflow:hidden">
+  <img src="/img/photo-packages/stock/paid/hoi-an-and-da-nang-photographer-3lNOKeHszJs-unsplash.jpg" alt="Guest capturing couple on phone at engagement party" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(45,41,38,0.35) 0%,rgba(45,41,38,0.55) 100%)"></div>
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;color:#fff;text-align:center;padding:24px">
+    <h2 style="font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:400;color:#fff;max-width:600px">Every guest sees a different moment. We capture them all.</h2>
   </div>
 </section>
 
@@ -244,9 +267,9 @@
           <li><span class="pkg-check">&#10003;</span> High-res digital download of all photos</li>
           <li><span class="pkg-check">&#10003;</span> Professional shot script (~27 key shots)</li>
           <li><span class="pkg-check">&#10003;</span> QR code printouts for guest uploads</li>
-          <li><span class="pkg-check">&#10003;</span> Free shipping to your door</li>
+          <li><span class="pkg-check">&#10003;</span> Free shipping within USA</li>
         </ul>
-        <a href="https://buy.stripe.com/fZu14mfCfdab1fGbZEcEx0T" class="pkg-btn pkg-btn-outline">Choose This Package</a>
+        <button class="pkg-btn pkg-btn-outline" data-cart-add data-id="event_simple" data-price-id="price_1TBF6WBiY2vwqUNMHwqmkzO5" data-title="Event Simple Package" data-price="49.99" data-image="" data-type="photo-package">Add to Cart &mdash; $49.99</button>
       </div>
     </div>
     <!-- MAX PACKAGE -->
@@ -266,12 +289,13 @@
           <li><span class="pkg-check">&#10003;</span> Detailed shot script (~55 key shots)</li>
           <li><span class="pkg-check">&#10003;</span> QR code printouts for guest uploads</li>
           <li><span class="pkg-check">&#10003;</span> <strong>Lead coordinator cheat sheet</strong></li>
-          <li><span class="pkg-check">&#10003;</span> Free shipping on everything</li>
+          <li><span class="pkg-check">&#10003;</span> Free shipping within USA on everything</li>
         </ul>
-        <a href="https://buy.stripe.com/5kQ00i3Tx0np6A04xccEx0U" class="pkg-btn pkg-btn-primary">Choose This Package</a>
+        <button class="pkg-btn pkg-btn-primary" data-cart-add data-id="event_max" data-price-id="price_1TBF6XBiY2vwqUNMC2tATGh9" data-title="Event Max Package" data-price="199" data-image="" data-type="photo-package">Add to Cart &mdash; $199</button>
       </div>
     </div>
   </div>
+  <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:20px;opacity:0.7">International orders: please <a href="/contact.html" style="color:var(--muted);text-decoration:underline">contact us</a> for shipping quotes.</p>
 </section>
 
 <!-- ==================== FINAL CTA ==================== -->
@@ -279,7 +303,7 @@
   <div class="cta-bottom-inner">
     <h2>Ready to Capture Your Engagement?</h2>
     <p class="cta-sub">Every laugh, every toast, every moment &mdash; captured by the people who were there.</p>
-    <p class="cta-detail">Premium results without the premium price. Album + digital downloads + free shipping.</p>
+    <p class="cta-detail">Premium results without the premium price. Album + digital downloads + free shipping within USA.</p>
     <div class="cta-btns">
       <a href="#packages" class="cta-btn-gold">Choose Your Package</a>
       <a href="/wedding-photos.html" class="btn-hero-outline" style="border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.85)">View Wedding Packages</a>
@@ -295,6 +319,7 @@
       <div>
         <div class="footer-brand">Mrs<span>Millennial</span> Designs</div>
         <p class="footer-desc">Premium printable designs & event photo packages for life's biggest moments.</p>
+        <p class="footer-desc" style="font-size:11px;margin-top:4px;opacity:0.7">International orders: please <a href="/contact.html" style="color:rgba(255,255,255,0.6);text-decoration:underline">contact us</a> for shipping quotes.</p>
         <p class="footer-stats"><a href="/reviews.html" style="color:rgba(255,255,255,0.5)">778 reviews</a> &middot; 5.0 avg rating</p>
       </div>
       <div>

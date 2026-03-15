@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Admin | MrsMillennial Designs</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body{background:var(--bg);min-height:100vh}
+    .admin-page{max-width:900px;margin:0 auto;padding:100px 24px 60px}
+    .admin-page h1{font-size:1.8rem;margin-bottom:8px}
+    .admin-page .subtitle{color:var(--muted);font-size:15px;margin-bottom:32px}
+
+    /* Login */
+    .login-card{max-width:400px;margin:60px auto;background:var(--white);padding:40px 32px;border-radius:var(--radius);border:1px solid rgba(45,41,38,0.06);text-align:center}
+    .login-card h2{font-size:1.3rem;margin-bottom:20px}
+    .login-card input{width:100%;padding:12px 16px;border:1.5px solid rgba(45,41,38,0.12);border-radius:10px;font-size:15px;font-family:var(--font);box-sizing:border-box;margin-bottom:16px}
+    .login-card button{width:100%;padding:14px;border-radius:50px;font-size:15px;font-weight:700;border:none;cursor:pointer;background:var(--text);color:#fff}
+
+    /* Create form */
+    .create-card{background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid rgba(45,41,38,0.06);margin-bottom:24px}
+    .create-card h2{font-size:1.1rem;font-weight:700;margin-bottom:16px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+    .form-row.full{grid-template-columns:1fr}
+    .form-group label{display:block;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 14px;border:1.5px solid rgba(45,41,38,0.10);border-radius:8px;font-size:14px;font-family:var(--font);box-sizing:border-box}
+    .form-group textarea{height:60px;resize:vertical}
+    .create-btn{padding:12px 32px;border-radius:50px;font-size:14px;font-weight:700;border:none;cursor:pointer;background:#d4a853;color:#fff;margin-top:8px}
+
+    /* Event list */
+    .event-list{list-style:none;padding:0}
+    .event-item{background:var(--white);border-radius:var(--radius);padding:20px 24px;border:1px solid rgba(45,41,38,0.06);margin-bottom:12px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;cursor:pointer;transition:all 0.2s}
+    .event-item:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+    .event-code{font-family:monospace;font-size:18px;font-weight:800;color:var(--text);background:var(--bg);padding:6px 14px;border-radius:8px;letter-spacing:2px;flex-shrink:0}
+    .event-info{flex:1;min-width:150px}
+    .event-info h3{font-size:15px;font-weight:700;margin-bottom:2px}
+    .event-info p{font-size:13px;color:var(--muted)}
+    .event-count{text-align:right;flex-shrink:0}
+    .event-count .num{font-size:1.5rem;font-weight:800;color:var(--text)}
+    .event-count .label{font-size:11px;color:var(--muted);text-transform:uppercase}
+
+    /* Event detail */
+    .event-detail{background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid rgba(45,41,38,0.06);margin-bottom:24px}
+    .detail-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+    .detail-header h2{flex:1;font-size:1.2rem}
+    .back-btn{font-size:13px;color:var(--muted);cursor:pointer;padding:6px 16px;border:1px solid rgba(45,41,38,0.1);border-radius:50px;background:none}
+    .qr-section{text-align:center;padding:20px;background:var(--bg);border-radius:var(--radius);margin-bottom:20px}
+    .qr-section canvas{margin:12px auto;display:block}
+    .qr-url{font-family:monospace;font-size:12px;color:var(--muted);word-break:break-all;margin-top:8px}
+    .copy-btn{padding:8px 20px;border-radius:50px;font-size:13px;font-weight:600;border:1px solid rgba(45,41,38,0.12);background:var(--white);cursor:pointer;margin-top:8px}
+
+    /* Photo grid */
+    .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:16px}
+    .photo-thumb{aspect-ratio:1;border-radius:8px;overflow:hidden;position:relative;cursor:pointer}
+    .photo-thumb img{width:100%;height:100%;object-fit:cover}
+    .photo-thumb .meta{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));color:#fff;padding:6px 8px;font-size:10px}
+
+    .empty-state{text-align:center;padding:40px;color:var(--muted)}
+    @media(max-width:600px){.form-row{grid-template-columns:1fr}.event-item{flex-direction:column;align-items:flex-start}.event-count{text-align:left}}
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav" style="position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);border-bottom:1px solid rgba(45,41,38,0.06)">
+  <div class="nav-inner" style="justify-content:center">
+    <a href="/" class="nav-logo">Mrs<span>Millennial</span> Designs</a>
+  </div>
+</nav>
+
+<!-- Login screen -->
+<div id="loginScreen" class="admin-page">
+  <div class="login-card">
+    <h2>Photo Admin</h2>
+    <input type="password" id="passwordInput" placeholder="Password" autofocus>
+    <button onclick="doLogin()">Sign In</button>
+  </div>
+</div>
+
+<!-- Admin dashboard -->
+<div id="dashboard" class="admin-page" style="display:none">
+  <h1>Photo Events</h1>
+  <p class="subtitle">Create events, generate QR codes, view uploaded photos.</p>
+
+  <!-- Create new event -->
+  <div class="create-card">
+    <h2>Create New Event</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Event Name</label>
+        <input type="text" id="newName" placeholder="Smith Wedding">
+      </div>
+      <div class="form-group">
+        <label>Event Date</label>
+        <input type="date" id="newDate">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Type</label>
+        <select id="newType">
+          <option value="Wedding">Wedding</option>
+          <option value="Birthday">Birthday</option>
+          <option value="Anniversary">Anniversary</option>
+          <option value="Corporate">Corporate</option>
+          <option value="Newborn">Newborn</option>
+          <option value="Engagement">Engagement</option>
+          <option value="Church">Church</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Customer Email</label>
+        <input type="email" id="newEmail" placeholder="customer@email.com">
+      </div>
+    </div>
+    <div class="form-row full">
+      <div class="form-group">
+        <label>Guest Message (shown on upload page)</label>
+        <textarea id="newMessage" placeholder="Thank you for celebrating with us! Share your favorite photos..."></textarea>
+      </div>
+    </div>
+    <button class="create-btn" onclick="createEvent()">Create Event & Get QR Code</button>
+  </div>
+
+  <!-- Event list -->
+  <h2 style="font-size:1rem;margin-bottom:12px">All Events</h2>
+  <ul class="event-list" id="eventList">
+    <li class="empty-state">Loading events...</li>
+  </ul>
+
+  <!-- Event detail (hidden) -->
+  <div id="eventDetail" style="display:none">
+    <div class="event-detail">
+      <div class="detail-header">
+        <button class="back-btn" onclick="showList()">&larr; Back</button>
+        <h2 id="detailName">Event Name</h2>
+        <span id="detailCode" class="event-code">CODE</span>
+      </div>
+
+      <div class="qr-section">
+        <h3 style="font-size:14px;margin-bottom:4px">QR Code for Guests</h3>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:8px">Print this or display it at the venue</p>
+        <canvas id="qrCanvas"></canvas>
+        <p class="qr-url" id="qrUrl"></p>
+        <button class="copy-btn" onclick="copyUrl()">Copy Upload Link</button>
+        <button class="copy-btn" onclick="downloadQR()" style="margin-left:8px">Download QR</button>
+      </div>
+
+      <h3 style="font-size:14px;margin-bottom:4px" id="photoCountLabel">Photos (0)</h3>
+      <div class="photo-grid" id="photoGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- QR Code library (lightweight) -->
+<script>
+// Minimal QR code generator (qr-creator pattern)
+// Using canvas-based generation
+!function(){
+  // We'll use a simple fetch to a QR API for the canvas, or include a minimal lib
+  // For now, use the Google Charts QR API rendered into an image then drawn to canvas
+  window.generateQR = function(text, canvas, size) {
+    size = size || 200;
+    canvas.width = size;
+    canvas.height = size;
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = function() {
+      canvas.getContext('2d').drawImage(img, 0, 0, size, size);
+    };
+    // Use a simple QR generation approach with canvas
+    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(text)}&margin=10`;
+  };
+}();
+</script>
+
+<script>
+const WORKER_URL = 'https://mmd-uploads.mrsmillennial.workers.dev';
+let authToken = '';
+let currentEvents = [];
+
+// ==================== AUTH ====================
+
+function doLogin() {
+  authToken = document.getElementById('passwordInput').value;
+  // Test auth by listing events
+  fetch(`${WORKER_URL}/admin/events`, {
+    headers: { 'Authorization': `Bearer ${authToken}` }
+  })
+  .then(r => {
+    if (!r.ok) throw new Error('Wrong password');
+    return r.json();
+  })
+  .then(data => {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+    currentEvents = data.events || [];
+    renderEvents();
+  })
+  .catch(() => {
+    alert('Wrong password');
+  });
+}
+
+document.getElementById('passwordInput').addEventListener('keypress', e => {
+  if (e.key === 'Enter') doLogin();
+});
+
+// ==================== CREATE EVENT ====================
+
+function createEvent() {
+  const name = document.getElementById('newName').value.trim();
+  const date = document.getElementById('newDate').value;
+  const type = document.getElementById('newType').value;
+  const email = document.getElementById('newEmail').value.trim();
+  const guestMessage = document.getElementById('newMessage').value.trim();
+
+  if (!name) { alert('Event name is required'); return; }
+
+  fetch(`${WORKER_URL}/admin/events`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${authToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ name, date: date || null, type, email: email || null, guestMessage: guestMessage || null }),
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.error) { alert(data.error); return; }
+
+    // Clear form
+    document.getElementById('newName').value = '';
+    document.getElementById('newDate').value = '';
+    document.getElementById('newEmail').value = '';
+    document.getElementById('newMessage').value = '';
+
+    // Add to list and show detail
+    currentEvents.push(data.event);
+    renderEvents();
+    showDetail(data.event.code);
+
+    alert(`Event created!\n\nCode: ${data.event.code}\nUpload URL: ${data.uploadUrl}`);
+  })
+  .catch(() => alert('Failed to create event'));
+}
+
+// ==================== EVENT LIST ====================
+
+function renderEvents() {
+  const list = document.getElementById('eventList');
+  if (currentEvents.length === 0) {
+    list.innerHTML = '<li class="empty-state">No events yet. Create one above.</li>';
+    return;
+  }
+
+  // Sort by date descending
+  const sorted = [...currentEvents].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+  list.innerHTML = sorted.map(ev => `
+    <li class="event-item" onclick="showDetail('${ev.code}')">
+      <span class="event-code">${ev.code}</span>
+      <div class="event-info">
+        <h3>${ev.name}</h3>
+        <p>${ev.type || 'Event'}${ev.date ? ' &bull; ' + new Date(ev.date).toLocaleDateString() : ''}</p>
+      </div>
+      <div class="event-count">
+        <div class="num">${ev.uploadCount || 0}</div>
+        <div class="label">photos</div>
+      </div>
+    </li>
+  `).join('');
+}
+
+// ==================== EVENT DETAIL ====================
+
+function showList() {
+  document.getElementById('eventDetail').style.display = 'none';
+  document.querySelector('.create-card').style.display = 'block';
+  document.querySelector('.event-list').style.display = 'block';
+  document.querySelector('h2[style]').style.display = 'block';
+  // Refresh
+  loadEvents();
+}
+
+function loadEvents() {
+  fetch(`${WORKER_URL}/admin/events`, {
+    headers: { 'Authorization': `Bearer ${authToken}` }
+  })
+  .then(r => r.json())
+  .then(data => {
+    currentEvents = data.events || [];
+    renderEvents();
+  });
+}
+
+function showDetail(code) {
+  document.getElementById('eventDetail').style.display = 'block';
+  document.querySelector('.create-card').style.display = 'none';
+  document.querySelector('.event-list').style.display = 'none';
+
+  const ev = currentEvents.find(e => e.code === code);
+  if (!ev) return;
+
+  document.getElementById('detailName').textContent = ev.name;
+  document.getElementById('detailCode').textContent = ev.code;
+
+  const uploadUrl = `https://mrsmillennialdesigns.com/upload.html?event=${code}`;
+  document.getElementById('qrUrl').textContent = uploadUrl;
+
+  // Generate QR
+  generateQR(uploadUrl, document.getElementById('qrCanvas'), 220);
+
+  // Load photos
+  document.getElementById('photoCountLabel').textContent = `Photos (${ev.uploadCount || 0})`;
+  document.getElementById('photoGrid').innerHTML = '<p style="color:var(--muted);font-size:13px">Loading photos...</p>';
+
+  fetch(`${WORKER_URL}/admin/photos/${code}`, {
+    headers: { 'Authorization': `Bearer ${authToken}` }
+  })
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById('photoCountLabel').textContent = `Photos (${data.count})`;
+
+    if (data.count === 0) {
+      document.getElementById('photoGrid').innerHTML = '<p class="empty-state">No photos uploaded yet.</p>';
+      return;
+    }
+
+    document.getElementById('photoGrid').innerHTML = data.photos.map(p => `
+      <div class="photo-thumb" onclick="window.open('${WORKER_URL}/admin/download/${p.key}?auth=${encodeURIComponent(authToken)}','_blank')">
+        <img src="${WORKER_URL}/admin/download/${p.key}?auth=${encodeURIComponent(authToken)}" loading="lazy">
+        <div class="meta">${p.guestName || 'Guest'}</div>
+      </div>
+    `).join('');
+  })
+  .catch(() => {
+    document.getElementById('photoGrid').innerHTML = '<p class="empty-state">Failed to load photos.</p>';
+  });
+}
+
+function copyUrl() {
+  const url = document.getElementById('qrUrl').textContent;
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy Upload Link', 2000);
+  });
+}
+
+function downloadQR() {
+  const canvas = document.getElementById('qrCanvas');
+  const link = document.createElement('a');
+  link.download = 'capture-the-love-qr.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
+</script>
+</body>
+</html>
