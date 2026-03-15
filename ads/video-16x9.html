@@ -5,105 +5,84 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{width:1200px;height:675px;overflow:hidden;font-family:'Lato',sans-serif;background:#0a0806}
-.scene{position:absolute;inset:0;opacity:0;display:flex;flex-direction:row}
-.scene img.hero{height:100%;width:60%;object-fit:cover;flex-shrink:0}
-.scene .bar{flex:1;padding:32px 40px;background:#0a0806;display:flex;flex-direction:column;justify-content:center}
+body{width:1200px;height:676px;overflow:hidden;font-family:'Lato',sans-serif;background:#0a0806}
+.scene{position:absolute;inset:0;opacity:0;display:flex}
+img.hero{height:100%;flex:0 0 55%;object-fit:cover}
+.bar{flex:1;padding:32px 36px;background:#0a0806;display:flex;flex-direction:column;justify-content:center}
 .g{color:#d4a853}
 .pf{font-family:'Playfair Display',serif}
 </style>
 </head>
 <body>
 
-<!-- S1: HOOK — couple's photo on wall -->
 <div class="scene" data-duration="5000" style="opacity:1">
-  <img class="hero" src="/img/photo-packages/mockups/wedding-wall-print.png">
-  <div class="bar" style="text-align:left;justify-content:flex-end;padding-bottom:48px">
-    <div class="g" style="font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px">MrsMillennial Designs</div>
-    <h1 class="pf" style="font-size:36px;color:#fff;line-height:1.1;margin-bottom:14px">It's 2026. Every Guest Has a <em class="g">Pro Camera.</em></h1>
-    <p style="font-size:16px;color:rgba(255,255,255,0.55);font-weight:300;line-height:1.5">We turn their wedding photos into a keepsake album.</p>
+  <img class="hero" src="/img/photo-packages/stock/crowd-phones-wedding.jpg">
+  <div class="bar" style="text-align:center">
+    <div class="g" style="font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px">MrsMillennial Designs</div>
+    <h1 class="pf" style="font-size:32px;color:#fff;line-height:1.12;margin-bottom:12px">Every guest pulls out their phone.<br><em class="g">Hundreds of photos.</em></h1>
+    <p style="font-size:15px;color:rgba(255,255,255,0.5)">They usually disappear forever. Not anymore.</p>
   </div>
 </div>
 
-<!-- S2: STEP 1 — holding album -->
-<div class="scene" data-duration="4000" style="opacity:0">
+<div class="scene" data-duration="5000" style="opacity:0">
   <img class="hero" src="/img/photo-packages/mockups/wedding-album-hands.png">
-  <div class="bar">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-      <div style="width:38px;height:38px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0">1</div>
-      <div class="pf" style="font-size:26px;color:#fff">Choose Simple or Max</div>
-    </div>
-    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.5;padding-left:50px">We send your professional shot guide + QR codes — everything you need to get started.</p>
+  <div class="bar" style="text-align:center">
+    <h2 class="pf" style="font-size:30px;color:#fff;line-height:1.15;margin-bottom:12px">What if those photos<br>became <em class="g">this?</em></h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:1.5">A professionally edited hardcover album<br>shipped to your door.</p>
   </div>
 </div>
 
-<!-- S3: STEP 2 — QR on stand at venue -->
 <div class="scene" data-duration="4000" style="opacity:0">
   <img class="hero" src="/img/photo-packages/mockups/wedding-qr-stand.png">
   <div class="bar">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-      <div style="width:38px;height:38px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0">2</div>
-      <div class="pf" style="font-size:26px;color:#fff">Place QR codes at your venue</div>
-    </div>
-    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.5;padding-left:50px">One coordinator follows our shot-by-shot guide. No photography experience required.</p>
+    <h2 class="pf" style="font-size:26px;color:#fff;margin-bottom:10px">Here's how it works.</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.6">We send you a shot guide + QR codes. Display them at your venue. One person follows the guide.</p>
   </div>
 </div>
 
-<!-- S4: STEP 3 — QR on table -->
-<div class="scene" data-duration="4000" style="opacity:0">
-  <img class="hero" src="/img/photo-packages/mockups/wedding-qr-table.png">
-  <div class="bar">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-      <div style="width:38px;height:38px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0">3</div>
-      <div class="pf" style="font-size:26px;color:#fff">Guests scan, snap &amp; upload</div>
-    </div>
-    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.5;padding-left:50px">Every table. Every angle. Every candid moment. Straight from their phones — no app needed.</p>
-  </div>
-</div>
-
-<!-- S5: STEP 4 — album delivered -->
-<div class="scene" data-duration="4000" style="opacity:0">
-  <img class="hero" src="/img/photo-packages/mockups/wedding-wall-print.png">
-  <div class="bar">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-      <div style="width:38px;height:38px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0">4</div>
-      <div class="pf" style="font-size:26px;color:#fff">We handle the rest</div>
-    </div>
-    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.5;padding-left:50px">Every photo professionally edited. Your album designed and shipped to your door — free.</p>
-  </div>
-</div>
-
-<!-- S6: MAX — hanging print on hanger -->
 <div class="scene" data-duration="5000" style="opacity:0">
+  <img class="hero" src="/img/photo-packages/stock/guest-photographing-bride.jpg">
+  <div class="bar">
+    <h2 class="pf" style="font-size:26px;color:#fff;margin-bottom:10px">Guests scan the QR<br>and upload <em class="g">their best shots.</em></h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.6">No app. Just their phone. 10+ angles — real moments a single photographer could never capture.</p>
+  </div>
+</div>
+
+<div class="scene" data-duration="4000" style="opacity:0">
   <img class="hero" src="/img/photo-packages/mockups/wedding-hanging-print.png">
-  <div class="bar" style="padding:28px 36px">
-    <div style="margin-bottom:16px">
-      <div style="display:inline-block;background:rgba(212,168,83,0.15);border:1px solid rgba(212,168,83,0.3);padding:4px 14px;border-radius:50px;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px" class="g">Best Value</div>
-      <h2 class="pf" style="font-size:30px;color:#fff">The Max Package</h2>
-      <div class="pf g" style="font-size:32px">$199</div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:14px;color:rgba(255,255,255,0.7)">
-      <div>&#10003; 60-page hardcover album</div>
-      <div>&#10003; This 20&#215;28" hanging print</div>
-      <div>&#10003; 55+ shot guide</div>
-      <div>&#10003; All photos edited</div>
-      <div>&#10003; Digital downloads</div>
-      <div>&#10003; Free shipping</div>
+  <div class="bar">
+    <h2 class="pf" style="font-size:26px;color:#fff;margin-bottom:10px">We handle the rest.</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.6">Every photo edited. Album + prints shipped free in 2 weeks.</p>
+  </div>
+</div>
+
+<div class="scene" data-duration="5000" style="opacity:0">
+  <img class="hero" src="/img/photo-packages/stock/bride-surrounded-phones.jpg">
+  <div class="bar" style="padding:24px 28px">
+    <div style="display:flex;gap:14px">
+      <div style="flex:1;background:rgba(212,168,83,0.08);border:1px solid rgba(212,168,83,0.25);border-radius:12px;padding:14px;text-align:center">
+        <div class="g" style="font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px">Best Value</div>
+        <div class="pf" style="font-size:20px;color:#fff">Max</div>
+        <div class="pf g" style="font-size:26px;margin-bottom:6px">$199</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);line-height:1.6;text-align:left">&#10003; 60-pg hardcover<br>&#10003; 20&#215;28" hanging print<br>&#10003; 122-shot script<br>&#10003; Coordinator guide<br>&#10003; Photos edited + digital<br>&#10003; Free shipping</div>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px;text-align:center">
+        <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;color:rgba(255,255,255,0.35)">Start here</div>
+        <div class="pf" style="font-size:20px;color:#fff">Simple</div>
+        <div class="pf" style="font-size:26px;color:rgba(255,255,255,0.75);margin-bottom:6px">$49.99</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.45);line-height:1.6;text-align:left">&#10003; 30-pg hardcover<br>&#10003; 38-shot script<br>&#10003; Photos edited + digital<br>&#10003; Free shipping</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- S7: CTA — holding album -->
-<div class="scene" data-duration="5000" style="opacity:0">
+<div class="scene" data-duration="4000" style="opacity:0">
   <img class="hero" src="/img/photo-packages/mockups/wedding-album-hands.png" style="opacity:0.85">
-  <div class="bar" style="text-align:center;justify-content:center">
-    <div style="font-size:40px;color:#d4a853;margin-bottom:6px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-    <div class="pf" style="font-size:18px;color:rgba(255,255,255,0.45);margin-bottom:14px">From a 778-Review Etsy Shop</div>
-    <h2 class="pf" style="font-size:30px;color:#fff;line-height:1.1;margin-bottom:12px">Your Wedding,<br>Beautifully Remembered</h2>
-    <p style="font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:8px">Max <span class="g">$199</span> &middot; Simple <span class="g">$49.99</span></p>
-    <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:18px">Hardcover or softcover &middot; Digital downloads &middot; Free shipping</p>
-    <div style="display:inline-block;padding:14px 36px;border-radius:50px;background:#d4a853;color:#fff;font-size:17px;font-weight:700;margin-bottom:10px">Shop Wedding Packages</div>
-    <div style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1.5px">mrsmillennialdesigns.com/wedding-photos</div>
+  <div class="bar" style="text-align:center">
+    <h2 class="pf" style="font-size:28px;color:#fff;line-height:1.12;margin-bottom:10px">Your memories. Their cameras.<br><em class="g">One beautiful album.</em></h2>
+    <p style="font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:14px">Max <span class="g">$199</span> &middot; Simple <span class="g">$49.99</span> &middot; Free shipping</p>
+    <div style="display:inline-block;padding:12px 36px;border-radius:50px;background:#d4a853;color:#fff;font-size:17px;font-weight:700;margin-bottom:8px">Shop Wedding Packages</div>
+    <div style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px">mrsmillennialdesigns.com/wedding-photos</div>
   </div>
 </div>
 

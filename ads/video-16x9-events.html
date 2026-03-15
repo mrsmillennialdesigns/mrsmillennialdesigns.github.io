@@ -5,105 +5,89 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{width:1200px;height:675px;overflow:hidden;font-family:'Lato',sans-serif;background:#0a0806}
-.scene{position:absolute;inset:0;opacity:0;display:flex;flex-direction:row}
-.scene img.hero{height:100%;width:60%;object-fit:cover;flex-shrink:0}
-.scene .bar{flex:1;padding:32px 40px;background:#0a0806;display:flex;flex-direction:column;justify-content:center}
+body{width:1200px;height:676px;overflow:hidden;font-family:'Lato',sans-serif;background:#0a0806}
+.scene{position:absolute;inset:0;opacity:0;display:flex}
+img.hero{height:100%;flex:0 0 55%;object-fit:cover}
+.bar{flex:1;padding:32px 36px;background:#0a0806;display:flex;flex-direction:column;justify-content:center}
 .g{color:#d4a853}
 .pf{font-family:'Playfair Display',serif}
 </style>
 </head>
 <body>
 
-<!-- S1: HOOK — hands holding birthday album -->
 <div class="scene" data-duration="5000" style="opacity:1">
-  <img class="hero" src="/img/photo-packages/mockups/birthday-album-hands.png">
-  <div class="bar" style="text-align:left;justify-content:flex-end;padding-bottom:48px">
-    <div class="g" style="font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px">MrsMillennial Designs</div>
-    <h1 class="pf" style="font-size:36px;color:#fff;line-height:1.1;margin-bottom:14px">It's 2026. Everyone's Taking <em class="g">Photos.</em></h1>
-    <p style="font-size:16px;color:rgba(255,255,255,0.55);font-weight:300;line-height:1.5">We turn them into a celebration album.</p>
+  <img class="hero" src="/img/photo-packages/stock/corporate-party-cheers.jpg">
+  <div class="bar" style="text-align:center">
+    <div class="g" style="font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px">MrsMillennial Designs</div>
+    <h1 class="pf" style="font-size:30px;color:#fff;line-height:1.12;margin-bottom:12px">At every celebration —<br><em class="g">everyone's taking photos.</em></h1>
+    <p style="font-size:15px;color:rgba(255,255,255,0.5)">What if those became a keepsake album?</p>
   </div>
 </div>
 
-<!-- S2: STEP 1 — hardcover "ONE" cover -->
-<div class="scene" data-duration="4000" style="opacity:0">
-  <img class="hero" src="/img/photo-packages/mockups/birthday-hardcover-one.png">
-  <div class="bar">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-      <div style="width:38px;height:38px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0">1</div>
-      <div class="pf" style="font-size:26px;color:#fff">Choose Simple or Max</div>
-    </div>
-    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.5;padding-left:50px">Pick your event type. We send a custom shot guide + QR codes for your celebration.</p>
+<div class="scene" data-duration="5000" style="opacity:0">
+  <div style="height:100%;flex:0 0 55%;display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:3px">
+    <img src="/img/photo-packages/mockups/birthday-album-hands.png" style="width:100%;height:100%;object-fit:cover">
+    <img src="/img/photo-packages/mockups/birthday-hardcover-one.png" style="width:100%;height:100%;object-fit:cover">
+    <img src="/img/photo-packages/mockups/newborn-hardcover-noah.png" style="width:100%;height:100%;object-fit:cover">
+    <img src="/img/photo-packages/stock/corporate-party-selfie.jpg" style="width:100%;height:100%;object-fit:cover">
+  </div>
+  <div class="bar" style="text-align:center">
+    <h2 class="pf" style="font-size:26px;color:#fff;line-height:1.15;margin-bottom:10px">Birthdays. Newborns.<br>Corporate. <em class="g">Any milestone.</em></h2>
+    <p style="font-size:14px;color:rgba(255,255,255,0.5)">Custom albums for every celebration.</p>
   </div>
 </div>
 
-<!-- S3: STEP 2 — QR at venue -->
 <div class="scene" data-duration="4000" style="opacity:0">
   <img class="hero" src="/img/photo-packages/mockups/wedding-qr-stand.png">
   <div class="bar">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-      <div style="width:38px;height:38px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0">2</div>
-      <div class="pf" style="font-size:26px;color:#fff">Set up QR codes at your event</div>
-    </div>
-    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.5;padding-left:50px">Tables, entrance, photo areas — guests scan with their phone and start uploading.</p>
+    <h2 class="pf" style="font-size:24px;color:#fff;margin-bottom:10px">Here's how it works.</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.6">Pick your event. We send a shot guide + QR codes. Place them at your venue.</p>
   </div>
 </div>
 
-<!-- S4: STEP 3 — guests scan QR codes -->
-<div class="scene" data-duration="4000" style="opacity:0">
-  <img class="hero" src="/img/photo-packages/mockups/wedding-qr-table.png">
-  <div class="bar">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-      <div style="width:38px;height:38px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0">3</div>
-      <div class="pf" style="font-size:26px;color:#fff">Everyone captures the moments</div>
-    </div>
-    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.5;padding-left:50px">First bites. Big smiles. Group hugs. Your guests see angles no single camera ever could.</p>
-  </div>
-</div>
-
-<!-- S5: STEP 4 — open album spread (child) -->
-<div class="scene" data-duration="4000" style="opacity:0">
-  <img class="hero" src="/img/photo-packages/mockups/birthday-album-child-open.png">
-  <div class="bar">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-      <div style="width:38px;height:38px;border-radius:50%;background:#d4a853;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex-shrink:0">4</div>
-      <div class="pf" style="font-size:26px;color:#fff">We create your album</div>
-    </div>
-    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.5;padding-left:50px">Professionally edited. Beautifully designed. Shipped free to your door in 2 weeks.</p>
-  </div>
-</div>
-
-<!-- S6: MAX — personalized cover -->
 <div class="scene" data-duration="5000" style="opacity:0">
-  <img class="hero" src="/img/photo-packages/mockups/newborn-hardcover-noah.png">
-  <div class="bar" style="padding:28px 36px">
-    <div style="margin-bottom:16px">
-      <div style="display:inline-block;background:rgba(212,168,83,0.15);border:1px solid rgba(212,168,83,0.3);padding:4px 14px;border-radius:50px;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px" class="g">Best Value</div>
-      <h2 class="pf" style="font-size:30px;color:#fff">The Max Package</h2>
-      <div class="pf g" style="font-size:32px">$199</div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:14px;color:rgba(255,255,255,0.7)">
-      <div>&#10003; 60-page hardcover album</div>
-      <div>&#10003; Custom cover with your event</div>
-      <div>&#10003; 55+ shot guide</div>
-      <div>&#10003; All photos edited</div>
-      <div>&#10003; Digital downloads</div>
-      <div>&#10003; Free shipping</div>
+  <img class="hero" src="/img/photo-packages/stock/event-phone-crowd.jpg">
+  <div class="bar">
+    <h2 class="pf" style="font-size:24px;color:#fff;margin-bottom:10px">Everyone captures<br><em class="g">the moments.</em></h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.6">Guests scan the QR and upload their best shots. Every smile, every candle, every group hug.</p>
+  </div>
+</div>
+
+<div class="scene" data-duration="4000" style="opacity:0">
+  <img class="hero" src="/img/photo-packages/mockups/birthday-album-family-open.png">
+  <div class="bar">
+    <h2 class="pf" style="font-size:24px;color:#fff;margin-bottom:10px">We create your album.</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.6">Every photo edited. Beautifully designed. Shipped free in 2 weeks.</p>
+  </div>
+</div>
+
+<div class="scene" data-duration="5000" style="opacity:0">
+  <img class="hero" src="/img/photo-packages/stock/nye-party-phone.jpg">
+  <div class="bar" style="padding:24px 28px">
+    <div style="display:flex;gap:14px">
+      <div style="flex:1;background:rgba(212,168,83,0.08);border:1px solid rgba(212,168,83,0.25);border-radius:12px;padding:14px;text-align:center">
+        <div class="g" style="font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px">Best Value</div>
+        <div class="pf" style="font-size:20px;color:#fff">Max</div>
+        <div class="pf g" style="font-size:26px;margin-bottom:6px">$199</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);line-height:1.6;text-align:left">&#10003; 60-pg hardcover<br>&#10003; 20&#215;28" hanging print<br>&#10003; Custom cover<br>&#10003; 55+ shot guide<br>&#10003; Photos edited + digital<br>&#10003; Free shipping</div>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px;text-align:center">
+        <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;color:rgba(255,255,255,0.35)">Start here</div>
+        <div class="pf" style="font-size:20px;color:#fff">Simple</div>
+        <div class="pf" style="font-size:26px;color:rgba(255,255,255,0.75);margin-bottom:6px">$49.99</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.45);line-height:1.6;text-align:left">&#10003; 30-pg softcover<br>&#10003; 27-shot guide<br>&#10003; Photos edited + digital<br>&#10003; Free shipping</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- S7: CTA — holding birthday album -->
-<div class="scene" data-duration="5000" style="opacity:0">
+<div class="scene" data-duration="4000" style="opacity:0">
   <img class="hero" src="/img/photo-packages/mockups/birthday-album-hands.png" style="opacity:0.85">
-  <div class="bar" style="text-align:center;justify-content:center">
-    <div style="font-size:40px;color:#d4a853;margin-bottom:6px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-    <div class="pf" style="font-size:18px;color:rgba(255,255,255,0.45);margin-bottom:14px">From a 778-Review Etsy Shop</div>
-    <h2 class="pf" style="font-size:28px;color:#fff;line-height:1.1;margin-bottom:12px">Every Celebration,<br>Beautifully Remembered</h2>
-    <p style="font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:8px">Max <span class="g">$199</span> &middot; Simple <span class="g">$49.99</span></p>
-    <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:18px">Birthdays &middot; Newborns &middot; Corporate &middot; Milestones</p>
-    <div style="display:inline-block;padding:14px 36px;border-radius:50px;background:#d4a853;color:#fff;font-size:17px;font-weight:700;margin-bottom:10px">Shop Event Packages</div>
-    <div style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1.5px">mrsmillennialdesigns.com/event-photos</div>
+  <div class="bar" style="text-align:center">
+    <h2 class="pf" style="font-size:26px;color:#fff;line-height:1.12;margin-bottom:10px">Their cameras. Your memories.<br><em class="g">One keepsake album.</em></h2>
+    <p style="font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:14px">Max <span class="g">$199</span> &middot; Simple <span class="g">$49.99</span> &middot; Free shipping</p>
+    <div style="display:inline-block;padding:12px 36px;border-radius:50px;background:#d4a853;color:#fff;font-size:17px;font-weight:700;margin-bottom:8px">Shop Event Packages</div>
+    <div style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px">mrsmillennialdesigns.com/event-photos</div>
   </div>
 </div>
 
