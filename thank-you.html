@@ -303,48 +303,75 @@ const PRODUCTS={
 // Check for product parameter from Stripe redirect
 (function(){
   const params = new URLSearchParams(window.location.search);
-  const productId = params.get('product');
+  // Support both ?product=ID (single) and ?products=ID1,ID2 (multi from cart)
+  const raw = params.get('products') || params.get('product') || '';
+  const productIds = raw.split(',').map(function(s){ return s.trim(); }).filter(function(s){ return s && PRODUCTS[s]; });
 
-  if (productId && PRODUCTS[productId]) {
-    // Show product name
-    document.getElementById('product-name').textContent = PRODUCTS[productId];
+  if (productIds.length === 0) {
+    document.getElementById('fallback-section').style.display = 'block';
+    return;
+  }
 
-    // Check if download file exists by trying to fetch it
-    const extensions = ['pdf', 'zip', 'jpg', 'png'];
-    let found = false;
+  // Show product names
+  var names = productIds.map(function(id){ return PRODUCTS[id]; });
+  document.getElementById('product-name').textContent = names.join(' + ');
 
-    function tryDownload(ext) {
-      const url = '/downloads/' + productId + '.' + ext;
+  // Try to find a downloadable file for each product
+  var extensions = ['pdf', 'zip', 'jpg', 'png'];
+  var foundAny = false;
+
+  function tryExtensions(pid) {
+    function attempt(i) {
+      if (i >= extensions.length) return Promise.resolve(null);
+      var url = '/downloads/' + pid + '.' + extensions[i];
       return fetch(url, { method: 'HEAD' }).then(function(res) {
-        if (res.ok) {
-          document.getElementById('download-btn').href = url;
-          document.getElementById('download-btn').setAttribute('download', '');
-          document.getElementById('download-section').style.display = 'block';
-          found = true;
-          return true;
-        }
-        return false;
-      }).catch(function() { return false; });
+        return res.ok ? url : attempt(i + 1);
+      }).catch(function() { return attempt(i + 1); });
+    }
+    return attempt(0);
+  }
+
+  // Check all products in parallel
+  Promise.all(productIds.map(function(pid) {
+    return tryExtensions(pid).then(function(url) {
+      return url ? { id: pid, url: url } : null;
+    });
+  })).then(function(results) {
+    var found = results.filter(function(r) { return r; });
+
+    if (found.length === 0) {
+      document.getElementById('fallback-section').style.display = 'block';
+      return;
     }
 
-    // Try each extension
-    tryDownload('pdf').then(function(ok) {
-      if (!ok) return tryDownload('zip');
-    }).then(function(ok) {
-      if (!ok) return tryDownload('jpg');
-    }).then(function(ok) {
-      if (!ok) return tryDownload('png');
-    }).then(function() {
-      if (!found) {
-        // File not yet uploaded — show email fallback
-        document.getElementById('download-section').style.display = 'none';
-        document.getElementById('fallback-section').style.display = 'block';
-      }
-    });
-  } else {
-    // No product ID or unknown product — show generic fallback
-    document.getElementById('fallback-section').style.display = 'block';
-  }
+    if (found.length === 1) {
+      // Single file — use the existing download button
+      document.getElementById('download-btn').href = found[0].url;
+      document.getElementById('download-btn').setAttribute('download', '');
+      document.getElementById('download-section').style.display = 'block';
+    } else {
+      // Multiple files — create a download button for each
+      var container = document.getElementById('download-section');
+      container.innerHTML = '';
+      found.forEach(function(item) {
+        var a = document.createElement('a');
+        a.className = 'download-btn';
+        a.href = item.url;
+        a.setAttribute('download', '');
+        a.innerHTML = '<svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Download: ' + (PRODUCTS[item.id] || item.id);
+        a.style.display = 'inline-flex';
+        a.style.marginBottom = '12px';
+        container.appendChild(a);
+        container.appendChild(document.createElement('br'));
+      });
+      container.style.display = 'block';
+    }
+
+    // Show fallback for any products that didn't have files
+    if (found.length < productIds.length) {
+      document.getElementById('fallback-section').style.display = 'block';
+    }
+  });
 })();
 </script>
 

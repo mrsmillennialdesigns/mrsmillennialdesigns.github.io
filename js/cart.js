@@ -172,7 +172,8 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           items: items,
-          success_url: 'https://mrsmillennialdesigns.com/thank-you.html',
+          product_ids: cart.map(function(item) { return item.id; }).join(','),
+          success_url: 'https://mrsmillennialdesigns.com/thank-you.html?products=' + encodeURIComponent(cart.map(function(item) { return item.id; }).join(',')),
           cancel_url: 'https://mrsmillennialdesigns.com/cart.html'
         })
       });
